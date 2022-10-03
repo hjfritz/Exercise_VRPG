@@ -4,14 +4,12 @@ using UnityEngine;
 
 namespace ForceField
 {
-    public class CircleTrigger : BattleAbility
+    public class CircleTrigger : MonoBehaviour
     {
         [SerializeField] private GameObject diameter;
         [SerializeField] private GameObject hand;
-        [SerializeField] private GameObject forceField;
 
         private Vector3 _hand2D;
-        private int _fieldStrength = 0;
         
         private bool _inTrigger = false;
         private float _handSpeed;
@@ -25,7 +23,6 @@ namespace ForceField
         void Start()
         {
             _oldPosition = transform.position;
-            forceField.SetActive(false);
         }
 
         // Update is called once per frame
@@ -33,8 +30,6 @@ namespace ForceField
         {
             //Timers
             _secondTimer += Time.deltaTime;
-            
-            DisplayName = "Force Field Defense";
             TrackHand();
             
             if (_inTrigger)
@@ -43,15 +38,11 @@ namespace ForceField
                 if (_secondTimer > 1f && _handSpeed < 10)
                 {
                     AddFieldStrength(_handSpeed);
-                    Debug.Log(_fieldStrength);
                     _secondTimer = 0;
                 }
             }
 
-            if (_fieldStrength >= 100)
-            {
-                Success();
-            }
+            
         }
 
         private void OnTriggerEnter(Collider other)
@@ -81,13 +72,7 @@ namespace ForceField
         
         private void AddFieldStrength(float handSpeed)
         {
-            _fieldStrength += (int)handSpeed;
-        }
-
-        private void Success()
-        {
-            Debug.Log("Success!");
-            forceField.SetActive(true);
+            ForceFieldDefense.fieldStrength += (int)handSpeed;
         }
     }
 }
