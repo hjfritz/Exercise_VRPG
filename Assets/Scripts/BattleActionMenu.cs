@@ -21,10 +21,11 @@ public class BattleActionMenu : MonoBehaviour
         
     }
 
-    private void ButtonClicked()
+    private void ButtonClicked(int index)
     {
         Debug.Log("ButtonClicked");
-        MenuActionSelected.Invoke(0);
+        
+        MenuActionSelected.Invoke(index);
     }
 
     // Update is called once per frame
@@ -52,9 +53,11 @@ public class BattleActionMenu : MonoBehaviour
             Button button = Instantiate(buttonPrefab,canvas.GetComponent<RectTransform>());
 
             RectTransform rect = button.GetComponent<RectTransform>();
-            rect.anchoredPosition = new Vector2(0, i * 40);
-            
-            button.onClick.AddListener(ButtonClicked);
+            rect.anchoredPosition = new Vector2(0, i * -70);
+
+            BattleActionMenuButton battleActionMenuButton = button.GetComponent<BattleActionMenuButton>();
+            battleActionMenuButton.id = i;
+            battleActionMenuButton.BattleMenuButtonClicked.AddListener(ButtonClicked);
 
             TMP_Text buttonText = button.GetComponentInChildren<TMP_Text>();
             buttonText.text = $"{abilities[i].DisplayName}";
