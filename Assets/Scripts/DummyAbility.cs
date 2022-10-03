@@ -18,6 +18,19 @@ public class DummyAbility : BattleAbility
         DisplayName = "Dummy Ability";
         base.Start();
     }
+    
+    public override void ExecuteAction()
+    {
+        counting = true;
+        attackTimer = attackDuration;
+        base.ExecuteAction();
+    }
+
+    public override void FinalizeAction()
+    {
+        AbilityComplete.Invoke(repCounter);
+        ResetAbility();
+    }
 
     private void CountRep(InputAction.CallbackContext obj)
     {
@@ -39,19 +52,6 @@ public class DummyAbility : BattleAbility
         {
             attackTimer -= Time.deltaTime;
         }
-    }
-
-    public override void ExecuteAction()
-    {
-        counting = true;
-        attackTimer = attackDuration;
-        base.ExecuteAction();
-    }
-
-    public override void FinalizeAction()
-    {
-        AbilityComplete.Invoke(repCounter);
-        ResetAbility();
     }
 
     private void ResetAbility()
