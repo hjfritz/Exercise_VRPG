@@ -1,16 +1,14 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RockManager : MonoBehaviour
+public class SkeletonManager : MonoBehaviour
 {
-
+    // Start is called before the first frame update
     [SerializeField] private int _resistance;
     [SerializeField] private int _hitstaken;
     [SerializeField] private AudioSource punchSound;
-
-    [SerializeField] private GameObject brokenBoulder;
+    [SerializeField] private Animator _animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +21,11 @@ public class RockManager : MonoBehaviour
         _hitstaken += damage;
         if (_hitstaken >= _resistance)
         {
-            breakdown();
+            _animator.SetBool("Dead",true);
+        }
+        else
+        {
+            _animator.SetBool("Attack",true);
         }
     }
     
@@ -38,14 +40,5 @@ public class RockManager : MonoBehaviour
         }
     }
 
-    private void breakdown()
-    {
-        var gm = Instantiate(brokenBoulder);
-        /*gm.GetComponent<RockManager>()._hitstaken = 0;
-        gm.transform.localScale = transform.localScale / 2;
-        gm = Instantiate(gameObject);
-        gm.GetComponent<RockManager>()._hitstaken = 0;
-        gm.transform.localScale = transform.localScale / 2;*/
-        Destroy(gameObject);
-    }
+
 }
