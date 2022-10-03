@@ -60,7 +60,8 @@ namespace ForceField
 
         private void TrackHand()
         {
-            _hand2D = new Vector3(hand.transform.position.x, hand.transform.position.y, diameter.transform.position.z);
+            //_hand2D = new Vector3(hand.transform.position.x, hand.transform.position.y, diameter.transform.position.z);
+            _hand2D = new Vector3(hand.transform.position.x, hand.transform.position.y, hand.transform.position.z);
             diameter.transform.LookAt(_hand2D);
         }
 
