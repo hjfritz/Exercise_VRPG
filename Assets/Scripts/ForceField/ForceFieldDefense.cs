@@ -11,7 +11,7 @@ namespace ForceField
         private Vector3 _ffScale = new Vector3(.1f, .1f, .01f);
         
         // Start is called before the first frame update
-        void Start()
+        new void Start()
         {
             forceField.transform.localScale = _ffScale;
         }
