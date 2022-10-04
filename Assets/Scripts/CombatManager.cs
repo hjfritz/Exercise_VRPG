@@ -17,7 +17,7 @@ public class CombatManager : MonoBehaviour
 
     private void ResolveTurn(BattleAction battleAction)
     {
-        Debug.Log($"Action Taker - {battleAction.actionTaker}");
+        //Debug.Log($"Action Taker - {battleAction.actionTaker}");
         Debug.Log($"Attack Power - {battleAction.attackPower}");
         
         NextTurn();

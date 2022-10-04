@@ -1217,7 +1217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: efe9381559c516743bd05cef82f39ebb, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: efe9381559c516743bd05cef82f39ebb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1279,6 +1279,7 @@ GameObject:
   - component: {fileID: 779815579}
   - component: {fileID: 779815580}
   - component: {fileID: 779815578}
+  - component: {fileID: 779815581}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -1519,6 +1520,27 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Dummy Ability
   buttonRef: {fileID: 3133590359150246299, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+--- !u!114 &779815581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779815570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3be788041d5c5d642a69e75872c0167e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  DisplayName: Rsuuian Twists Ability
+  floor: {fileID: 0}
+  sfx: {fileID: 151489128}
+  repCountClip: {fileID: 8300000, guid: e93b01c5ae35a1a409cde18b82462657, type: 3}
+  targetsPrefab: {fileID: 6215593975301883444, guid: 2a3b43178f8ff1f4aa803153ed82ded0, type: 3}
+  xrOrigin: {fileID: 779815577}
 --- !u!1 &899771991
 GameObject:
   m_ObjectHideFlags: 0
@@ -1658,7 +1680,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh41550
+  m_Name: pb_Mesh26454
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2868,7 +2890,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &4574872543096824163
 PrefabInstance:
@@ -2924,6 +2946,10 @@ PrefabInstance:
     - target: {fileID: 6871722520934555767, guid: 6a62094dc82022f438100b68b9e8e31f, type: 3}
       propertyPath: m_Name
       value: LeftHand
+      objectReference: {fileID: 0}
+    - target: {fileID: 6871722520934555767, guid: 6a62094dc82022f438100b68b9e8e31f, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a62094dc82022f438100b68b9e8e31f, type: 3}
@@ -2981,6 +3007,10 @@ PrefabInstance:
     - target: {fileID: 3133043808710126374, guid: 333179c4c27c3c140bfc5fc297111ee6, type: 3}
       propertyPath: m_Name
       value: RightHand
+      objectReference: {fileID: 0}
+    - target: {fileID: 3133043808710126374, guid: 333179c4c27c3c140bfc5fc297111ee6, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 333179c4c27c3c140bfc5fc297111ee6, type: 3}

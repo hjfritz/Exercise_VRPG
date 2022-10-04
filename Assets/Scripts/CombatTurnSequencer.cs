@@ -25,6 +25,7 @@ public class CombatTurnSequencer
 
     private void ActionSelected(BattleAbility ability)
     {
+        Debug.Log($"Selected Ability - {ability.DisplayName}");
         currentAction.selectedAbility = ability;
         currentAction.actionTaker.TurnActionComplete.AddListener(ActionComplete);
         currentAction.actionTaker.TakeAction();
