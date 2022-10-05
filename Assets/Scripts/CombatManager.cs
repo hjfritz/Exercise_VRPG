@@ -30,13 +30,13 @@ public class CombatManager : MonoBehaviour
         for (; i < PartyMembers.Length; i++)
         {
             BattleTurnOrder[i] = PartyMembers[i];
-            PartyMembers[i].HP = 100;
+            PartyMembers[i].UpdateHP(100);
         }
 
         for (int j = 0; j < EnemyPartyMembers.Length; j++)
         {
             BattleTurnOrder[i] = EnemyPartyMembers[j];
-            EnemyPartyMembers[j].HP = 100;
+            EnemyPartyMembers[j].UpdateHP(100);
             i++;
         }
 
@@ -54,17 +54,22 @@ public class CombatManager : MonoBehaviour
 
         int damage = Mathf.FloorToInt(.2f * battleAction.attackPower);
 
+        
         var damageTarget = BattleTurnOrder[(turnCounter + 1) % BattleTurnOrder.Length];
-        damageTarget.HP -= damage;
+        var damageTargetHP = damageTarget.GetHP();
+        var damageTargetNewHP = damageTargetHP - damage;
+        
         Debug.Log($"Damage - {damage} to {damageTarget}");
 
-        if (damageTarget.HP <= 0)
+        if (damageTargetNewHP <= 0)
         {
             Debug.Log($"Battle Over - Fatal Blow Dealt by {battleAction.actionTaker}");
+            damageTarget.UpdateHP(0);
             menu.ShowRestartCanvas();
         }
         else
         {
+            damageTarget.UpdateHP(damageTargetNewHP);
             turnCounter++;
             NextTurn();
         }
