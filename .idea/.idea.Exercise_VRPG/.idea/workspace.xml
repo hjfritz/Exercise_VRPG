@@ -1,43 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="Updating the Punching Activity logic">
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/SkeletonAnimator.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/SkeletonAnimator.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/mixkit-weak-fast-blow-2145.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/mixkit-weak-fast-blow-2145.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/Red.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/Red.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Bat.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Bat.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Dragon.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Dragon.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Skeleton.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Skeleton.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Slime.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Slime.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/ENvironment/BrokenBoulder.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/ENvironment/BrokenBoulder.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/PunchingActivity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/PunchingActivity/Martial Art Teacher.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/PunchingActivity/Martial Art Teacher.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/PunchingActivity/Punching Area.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/PunchingActivity/Punching Area.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/PunchingActivity/Rock.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/PunchingActivity/Rock.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Punching/MasterManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Punching/MasterManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Punching/PunchAbility.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Punching/PunchAbility.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Punching/SkeletonManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Punching/SkeletonManager.cs.meta" afterDir="false" />
+    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="Merging all branches back to main">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Martial Art Teacher.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Martial Art Teacher.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rock.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rock.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SiksScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SiksScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Punching/RockManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Punching/RockManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +21,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Punching/PunchAbility.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Punching/SkeletonManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.probuilder@4.5.2/Runtime/Core/Submesh.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -120,6 +86,7 @@
       <updated>1664612592337</updated>
       <workItem from="1664612642958" duration="9366000" />
       <workItem from="1664808143701" duration="2054000" />
+      <workItem from="1664963844023" duration="1126000" />
     </task>
     <task id="LOCAL-00001" summary="trying to create a separated branch">
       <created>1664612695537</created>
@@ -170,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664817408650</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Merging all branches back to main">
+      <created>1664964295956</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1664964295956</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +175,7 @@
     <MESSAGE value="merging with kate's commit" />
     <MESSAGE value="prefabing XR rig and Game Manager" />
     <MESSAGE value="Updating the Punching Activity logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating the Punching Activity logic" />
+    <MESSAGE value="Merging all branches back to main" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merging all branches back to main" />
   </component>
 </project>
