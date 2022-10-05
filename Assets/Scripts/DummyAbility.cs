@@ -9,6 +9,8 @@ public class DummyAbility : BattleAbility
     private bool counting = false;
     private float attackDuration = 5.0f;
     private float attackTimer = 0f;
+
+    private int targetReps = 30;
     
     [SerializeField] private InputActionReference buttonRef;
     // Start is called before the first frame update
@@ -28,7 +30,8 @@ public class DummyAbility : BattleAbility
 
     public override void FinalizeAction()
     {
-        AbilityComplete.Invoke(repCounter);
+        int attackPower = (int)(Mathf.Min((float)repCounter / (float)targetReps, 1f) * 100);
+        AbilityComplete.Invoke(attackPower);
         ResetAbility();
     }
 
