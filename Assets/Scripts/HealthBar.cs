@@ -6,7 +6,7 @@ using UnityEngine;
 public class HealthBar : MonoBehaviour
 {
     [SerializeField] private TMP_Text healthText;
-    private int health;
+    private int health = 100;
     
 
     public void UpdateHealth(int newHealth)

@@ -24,7 +24,7 @@ public class CombatManager : MonoBehaviour
 
     public void StartBattle()
     {
-        menu.HideMenu();
+        menu.ShowBattleHudCanvas();
         BattleTurnOrder = new Combatant[PartyMembers.Length + EnemyPartyMembers.Length];
         int i = 0;
         for (; i < PartyMembers.Length; i++)
@@ -84,6 +84,7 @@ public class CombatManager : MonoBehaviour
 
     private void NextTurn()
     {
+        menu.turnIndicator.ShowTurnTaker(BattleTurnOrder[turnCounter%BattleTurnOrder.Length].name);
         seq.StartNewTurn(BattleTurnOrder[turnCounter%BattleTurnOrder.Length]);
     }
 }
