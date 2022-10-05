@@ -647,7 +647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 50
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 3368431844683604230}
   ActionSelected:
     m_PersistentCalls:
       m_Calls: []
