@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = System.Random;
 
 public class Combatant : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class Combatant : MonoBehaviour
 
     public BattleAbility[] actionAbilities;
     protected BattleAbility selectedAbility;
+    
+    private Random random = new Random();
     
     // Start is called before the first frame update
     void Start()
@@ -29,8 +32,10 @@ public class Combatant : MonoBehaviour
     public virtual void SelectAction()
     {
         actionAbilities = GetComponents<BattleAbility>();
-        selectedAbility = actionAbilities[0];
-        ActionSelected.Invoke(actionAbilities[0]);
+
+        int randomIndex = random.Next(0, actionAbilities.Length);
+        selectedAbility = actionAbilities[randomIndex];
+        ActionSelected.Invoke(actionAbilities[randomIndex]);
     }
 
     public void TakeAction()
