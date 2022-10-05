@@ -23,8 +23,6 @@ public class BattleActionMenu : MonoBehaviour
 
     private void ButtonClicked(int index)
     {
-        Debug.Log("ButtonClicked");
-        
         MenuActionSelected.Invoke(index);
     }
 

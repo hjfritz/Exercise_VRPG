@@ -8,6 +8,8 @@ public class SquatAbility : BattleAbility
     private bool counting = false;
     private float attackDuration = 15.0f;
     private float attackTimer = 0f;
+    
+    private int targetReps = 12;
 
     private bool squatting;
     private float squatThresholdHeight;
@@ -30,7 +32,8 @@ public class SquatAbility : BattleAbility
 
     public override void FinalizeAction()
     {
-        AbilityComplete.Invoke(repCounter);
+        int attackPower = (int)(Mathf.Min((float)repCounter / (float)targetReps, 1f) * 100);
+        AbilityComplete.Invoke(attackPower);
         ResetAbility();
     }
     

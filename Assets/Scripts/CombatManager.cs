@@ -37,11 +37,25 @@ public class CombatManager : MonoBehaviour
 
     private void ResolveTurn(BattleAction battleAction)
     {
-        Debug.Log($"Action Taker - {battleAction.actionTaker}");
-        Debug.Log($"Attack Power - {battleAction.attackPower}");
+        Debug.Log($"Action Taker - {battleAction.actionTaker}, Attack Ability - {battleAction.selectedAbility}, Attack Power - {battleAction.attackPower}");
+        
 
-        turnCounter++;
-        NextTurn();
+        int damage = Mathf.FloorToInt(.2f * battleAction.attackPower);
+
+        var damageTarget = BattleTurnOrder[(turnCounter + 1) % BattleTurnOrder.Length];
+        damageTarget.HP -= damage;
+        Debug.Log($"Damage - {damage} to {damageTarget}");
+
+        if (damageTarget.HP <= 0)
+        {
+            Debug.Log($"Battle Over - Fatal Blow Dealt by {battleAction.actionTaker}");
+        }
+        else
+        {
+            turnCounter++;
+            NextTurn();
+        }
+        
     }
 
     // Update is called once per frame

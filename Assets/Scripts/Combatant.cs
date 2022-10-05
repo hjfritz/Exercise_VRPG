@@ -6,6 +6,7 @@ using Random = System.Random;
 
 public class Combatant : MonoBehaviour
 {
+    public int HP;
     
 
     public UnityEvent<BattleAbility> ActionSelected = new UnityEvent<BattleAbility>();
