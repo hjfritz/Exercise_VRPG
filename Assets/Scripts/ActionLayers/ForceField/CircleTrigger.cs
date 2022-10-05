@@ -1,8 +1,6 @@
-using System;
-using UnityEditor.XR.Interaction.Toolkit.AR;
 using UnityEngine;
 
-namespace ForceField
+namespace ActionLayers.ForceField
 {
     public class CircleTrigger : MonoBehaviour
     {

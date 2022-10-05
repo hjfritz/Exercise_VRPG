@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace ForceField
+namespace ActionLayers.ForceField
 {
     public class ForceFieldDefense : BattleAbility
     {
-        
         [SerializeField] private GameObject forceField;
+        [SerializeField] private GameObject forceFieldLayer;
+        [SerializeField] private GameObject actionLayer;
         [SerializeField] private InputActionReference start;
         
         public static int fieldStrength = 0;
@@ -35,14 +36,14 @@ namespace ForceField
         {
             counting = true;
             defenseTimer = defenseDuration;
+            actionLayer.transform.position = transform.position;
+            forceFieldLayer.SetActive(true);
             base.ExecuteAction();
         }
 
         // Update is called once per frame
         void Update()
         {
-            
-            
             if (fieldStrength >= 100)
             {
                 FinalizeAction();

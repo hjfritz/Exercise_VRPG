@@ -1222,6 +1222,7 @@ GameObject:
   - component: {fileID: 7920967440296655861}
   - component: {fileID: 7920967440296655860}
   - component: {fileID: 7920967440296655863}
+  - component: {fileID: 7710645421675750825}
   - component: {fileID: 7920967440296655862}
   - component: {fileID: 7920967440296655817}
   m_Layer: 0
@@ -1286,6 +1287,26 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Dummy Ability
   buttonRef: {fileID: 3133590359150246299, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+--- !u!114 &7710645421675750825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7920967440296655816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf00b573a7a70e443952b431414c6c58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  DisplayName: Force Field Defense
+  forceField: {fileID: 0}
+  forceFieldLayer: {fileID: 0}
+  actionLayer: {fileID: 0}
+  start: {fileID: -3586691158265670612, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &7920967440296655862
 MonoBehaviour:
   m_ObjectHideFlags: 0
