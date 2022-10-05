@@ -20,16 +20,10 @@ namespace ActionLayers.ForceField
         // Start is called before the first frame update
         new void Start()
         {
-            forceField.transform.localScale = _ffScale;
+            forceField.transform.localScale = new Vector3(0,0,0);
+            
             
             base.Start();
-
-            start.action.performed += TestGame;
-        }
-
-        private void TestGame(InputAction.CallbackContext obj)
-        {
-            ExecuteAction();
         }
 
         public override void ExecuteAction()
@@ -37,6 +31,7 @@ namespace ActionLayers.ForceField
             counting = true;
             defenseTimer = defenseDuration;
             actionLayer.transform.position = transform.position;
+            fieldStrength = 0;
             forceFieldLayer.SetActive(true);
             base.ExecuteAction();
         }
@@ -77,7 +72,7 @@ namespace ActionLayers.ForceField
         {
             counting = false;
             defenseTimer = defenseDuration;
-            fieldStrength = 0;
+            forceFieldLayer.SetActive(false);
         }
     }
 }
