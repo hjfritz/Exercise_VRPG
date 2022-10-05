@@ -5,14 +5,14 @@ using UnityEngine.Events;
 
 public class Combatant : MonoBehaviour
 {
-    [SerializeField] private BattleActionMenu actionMenu;
+    
 
     public UnityEvent<BattleAbility> ActionSelected = new UnityEvent<BattleAbility>();
     public UnityEvent DefenseSelected = new UnityEvent();
     public UnityEvent<int> TurnActionComplete = new UnityEvent<int>();
 
     public BattleAbility[] actionAbilities;
-    private BattleAbility selectedAbility;
+    protected BattleAbility selectedAbility;
     
     // Start is called before the first frame update
     void Start()
@@ -26,19 +26,11 @@ public class Combatant : MonoBehaviour
         
     }
 
-    public void SelectAction()
+    public virtual void SelectAction()
     {
         actionAbilities = GetComponents<BattleAbility>();
-        actionMenu.MenuActionSelected.AddListener(MenuActionSelected);
-        displayActionMenu();
-        
-    }
-
-    private void MenuActionSelected(int arg0)
-    {
-        selectedAbility = actionAbilities[arg0];
-        ActionSelected.Invoke(actionAbilities[arg0]);
-        hideActionMenu();
+        selectedAbility = actionAbilities[0];
+        ActionSelected.Invoke(actionAbilities[0]);
     }
 
     public void TakeAction()
@@ -54,21 +46,9 @@ public class Combatant : MonoBehaviour
         
     }
 
-    public void displayActionMenu()
-    {
-        actionMenu.BuildMenu(actionAbilities);
-        actionMenu.gameObject.SetActive(true);
-    }
-
-    public void hideActionMenu()
-    {
-        actionMenu.gameObject.SetActive(false);
-    }
-
-    private void ResetForNextTurn()
+    protected virtual void ResetForNextTurn()
     {
         selectedAbility.AbilityComplete.RemoveListener(CompleteTurnAction);
-        actionMenu.MenuActionSelected.RemoveListener(MenuActionSelected);
     }
     
 }
