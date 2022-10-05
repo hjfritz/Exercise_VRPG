@@ -13,26 +13,38 @@ public class CombatManager : MonoBehaviour
     private CombatTurnSequencer seq;
     
     private int turnCounter = 0;
+
+    [SerializeField] private CombatManagerMenu menu;
     
     // Start is called before the first frame update
     void Start()
     {
+        menu.ShowWelcomeCanvas();
+    }
+
+    public void StartBattle()
+    {
+        menu.HideMenu();
         BattleTurnOrder = new Combatant[PartyMembers.Length + EnemyPartyMembers.Length];
         int i = 0;
         for (; i < PartyMembers.Length; i++)
         {
             BattleTurnOrder[i] = PartyMembers[i];
+            PartyMembers[i].HP = 100;
         }
 
         for (int j = 0; j < EnemyPartyMembers.Length; j++)
         {
             BattleTurnOrder[i] = EnemyPartyMembers[j];
+            EnemyPartyMembers[j].HP = 100;
             i++;
         }
-        
+
+        turnCounter = 0;
         seq = new CombatTurnSequencer();
         seq.TurnComplete.AddListener(ResolveTurn);
         NextTurn();
+        
     }
 
     private void ResolveTurn(BattleAction battleAction)
@@ -49,6 +61,7 @@ public class CombatManager : MonoBehaviour
         if (damageTarget.HP <= 0)
         {
             Debug.Log($"Battle Over - Fatal Blow Dealt by {battleAction.actionTaker}");
+            menu.ShowRestartCanvas();
         }
         else
         {
