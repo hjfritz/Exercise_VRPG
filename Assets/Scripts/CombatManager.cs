@@ -56,20 +56,16 @@ public class CombatManager : MonoBehaviour
 
         
         var damageTarget = BattleTurnOrder[(turnCounter + 1) % BattleTurnOrder.Length];
-        var damageTargetHP = damageTarget.GetHP();
-        var damageTargetNewHP = damageTargetHP - damage;
-        
+        damageTarget.TakeDamage(damage);
         Debug.Log($"Damage - {damage} to {damageTarget}");
 
-        if (damageTargetNewHP <= 0)
+        if (damageTarget.GetHP() <= 0)
         {
             Debug.Log($"Battle Over - Fatal Blow Dealt by {battleAction.actionTaker}");
-            damageTarget.UpdateHP(0);
             menu.ShowRestartCanvas();
         }
         else
         {
-            damageTarget.UpdateHP(damageTargetNewHP);
             turnCounter++;
             NextTurn();
         }

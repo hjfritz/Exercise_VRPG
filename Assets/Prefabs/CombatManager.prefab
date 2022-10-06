@@ -940,7 +940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Enemy
-  HP: 50
+  HP: 20
   healthBar: {fileID: 3368431844683604230}
   abilityTimer: {fileID: 4890518367657891379}
   ActionSelected:
