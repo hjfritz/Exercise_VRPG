@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CombatManagerMenu : MonoBehaviour
@@ -9,6 +10,7 @@ public class CombatManagerMenu : MonoBehaviour
     [SerializeField] private Canvas battleHudCanvas;
 
     [SerializeField] public TurnIndicator turnIndicator;
+    [SerializeField] public TMP_Text winnerText;
     
     // Start is called before the first frame update
     void Start()
@@ -29,8 +31,9 @@ public class CombatManagerMenu : MonoBehaviour
         battleHudCanvas.gameObject.SetActive(false);
     }
 
-    public void ShowRestartCanvas()
+    public void ShowRestartCanvas(string winnerName)
     {
+        winnerText.text = $"{winnerName} wins";
         restartCanvas.gameObject.SetActive(true);
         welcomeCanvas.gameObject.SetActive(false);
         battleHudCanvas.gameObject.SetActive(false);

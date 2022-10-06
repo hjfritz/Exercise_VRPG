@@ -25,17 +25,20 @@ public class CombatManager : MonoBehaviour
     public void StartBattle()
     {
         menu.ShowBattleHudCanvas();
+        
         BattleTurnOrder = new Combatant[PartyMembers.Length + EnemyPartyMembers.Length];
         int i = 0;
         for (; i < PartyMembers.Length; i++)
         {
             BattleTurnOrder[i] = PartyMembers[i];
+            PartyMembers[i].healthBar.gameObject.SetActive(true);
             PartyMembers[i].UpdateHP(100);
         }
 
         for (int j = 0; j < EnemyPartyMembers.Length; j++)
         {
             BattleTurnOrder[i] = EnemyPartyMembers[j];
+            EnemyPartyMembers[j].healthBar.gameObject.SetActive(true);
             EnemyPartyMembers[j].UpdateHP(100);
             i++;
         }
@@ -62,7 +65,9 @@ public class CombatManager : MonoBehaviour
         if (damageTarget.GetHP() <= 0)
         {
             Debug.Log($"Battle Over - Fatal Blow Dealt by {battleAction.actionTaker}");
-            menu.ShowRestartCanvas();
+            menu.ShowRestartCanvas(battleAction.actionTaker.displayName);
+            ShowHideHealthBars(false);
+            
         }
         else
         {
@@ -82,5 +87,13 @@ public class CombatManager : MonoBehaviour
     {
         menu.turnIndicator.ShowTurnTaker(BattleTurnOrder[turnCounter%BattleTurnOrder.Length].displayName);
         seq.StartNewTurn(BattleTurnOrder[turnCounter%BattleTurnOrder.Length]);
+    }
+
+    private void ShowHideHealthBars(bool show)
+    {
+        foreach (var combatant in BattleTurnOrder)
+        {
+            combatant.healthBar.gameObject.SetActive(show);
+        }
     }
 }
