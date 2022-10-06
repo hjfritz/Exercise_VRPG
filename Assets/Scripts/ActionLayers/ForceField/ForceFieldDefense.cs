@@ -8,6 +8,9 @@ namespace ActionLayers.ForceField
         [SerializeField] private GameObject forceField;
         [SerializeField] private GameObject forceFieldLayer;
         [SerializeField] private GameObject actionLayer;
+
+        [SerializeField] private AudioSource sfx;
+        [SerializeField] private AudioClip ambiance;
         
         public static int fieldStrength = 0;
         
@@ -19,7 +22,7 @@ namespace ActionLayers.ForceField
         new void Start()
         {
             forceField.transform.localScale = new Vector3(0,0,0);
-            
+            abilityDuration = _defenseDuration;
             base.Start();
         }
 
@@ -29,6 +32,7 @@ namespace ActionLayers.ForceField
             actionLayer.SetActive(true);
             fieldStrength = 0;
             forceFieldLayer.SetActive(true);
+            sfx.PlayOneShot(ambiance);
             base.ExecuteAction();
         }
 
@@ -62,7 +66,7 @@ namespace ActionLayers.ForceField
         {
             _defenseTimer = _defenseDuration;
             forceFieldLayer.SetActive(false);
-            
+            sfx.Stop();
         }
     }
 }

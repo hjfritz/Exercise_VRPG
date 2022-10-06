@@ -234,6 +234,8 @@ MonoBehaviour:
   gripLeft: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   gripRight: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   left: 1
+  sfx: {fileID: 1575513893}
+  successSound: {fileID: 8300000, guid: 2a5f08c6b1d1f4a4db773c7732ade65f, type: 3}
 --- !u!43 &46096351
 Mesh:
   m_ObjectHideFlags: 0
@@ -398,6 +400,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!4 &110843217 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1771468863733260380, guid: 3e5eac27724e34d41a2a5c4cf46620b1, type: 3}
+  m_PrefabInstance: {fileID: 1653427090}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &129126246
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,6 +504,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7710645421675750825, guid: 932699b946ba7ae44a00ed2b1a7e7241, type: 3}
+      propertyPath: sfx
+      value: 
+      objectReference: {fileID: 1575513893}
+    - target: {fileID: 7710645421675750825, guid: 932699b946ba7ae44a00ed2b1a7e7241, type: 3}
+      propertyPath: ambiance
+      value: 
+      objectReference: {fileID: 8300000, guid: af88e937d79beb74e93d0eea9acc76c7, type: 3}
+    - target: {fileID: 7710645421675750825, guid: 932699b946ba7ae44a00ed2b1a7e7241, type: 3}
       propertyPath: forceField
       value: 
       objectReference: {fileID: 655365260}
@@ -556,6 +571,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: CombatManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7920967440296655817, guid: 932699b946ba7ae44a00ed2b1a7e7241, type: 3}
+      propertyPath: floor
+      value: 
+      objectReference: {fileID: 110843217}
+    - target: {fileID: 7920967440296655817, guid: 932699b946ba7ae44a00ed2b1a7e7241, type: 3}
+      propertyPath: xrOrigin
+      value: 
+      objectReference: {fileID: 896349398186002892}
+    - target: {fileID: 7920967440296655862, guid: 932699b946ba7ae44a00ed2b1a7e7241, type: 3}
+      propertyPath: head
+      value: 
+      objectReference: {fileID: 896349397577014258}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 932699b946ba7ae44a00ed2b1a7e7241, type: 3}
 --- !u!1 &389325312 stripped
@@ -1252,6 +1279,8 @@ MonoBehaviour:
   gripLeft: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   gripRight: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   left: 0
+  sfx: {fileID: 1575513893}
+  successSound: {fileID: 8300000, guid: 2a5f08c6b1d1f4a4db773c7732ade65f, type: 3}
 --- !u!1 &1454728333
 GameObject:
   m_ObjectHideFlags: 0
@@ -6545,6 +6574,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DisplayName: Energy Ball Attack
+  abilityDuration: 0
   WholeLayer: {fileID: 1612942519}
   triggerLayer: {fileID: 160723556}
   energyBallLayer: {fileID: 1571860854}

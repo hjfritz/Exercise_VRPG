@@ -19,6 +19,7 @@ namespace ActionLayers.EnergyBallAttack
         new void Start()
         {
             base.Start();
+            abilityDuration = _attackDuration;
             WholeLayer.SetActive(false);
         }
         
@@ -58,11 +59,6 @@ namespace ActionLayers.EnergyBallAttack
             AbilityComplete.Invoke(attackPower);
             energyBall.GetComponent<Rigidbody>().AddForce(Vector3.forward * 60);
             ResetAbility();
-        }
-
-        public void AddPowerToEnergyBall(int addedPower)
-        {
-            attackPower += addedPower;
         }
         
         private void ResetAbility()

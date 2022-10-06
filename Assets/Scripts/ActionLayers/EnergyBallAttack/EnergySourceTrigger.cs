@@ -10,6 +10,9 @@ namespace ActionLayers.EnergyBallAttack
         [SerializeField] private InputActionReference gripRight;
         [SerializeField] private bool left = true;
         
+        [SerializeField] private AudioSource sfx;
+        [SerializeField] private AudioClip successSound;
+        
         public static bool leftInDestination = false;
         public static bool rightInDestination = false;
 
@@ -72,6 +75,7 @@ namespace ActionLayers.EnergyBallAttack
             if (leftInDestination && startedInBox)
             {
                 AddPowerToEnergyBall(10);
+                sfx.PlayOneShot(successSound);
             }
             
             gripHeld = false;
