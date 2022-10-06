@@ -939,6 +939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6b9423fa884cb4eaf65d0b70ed1fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  displayName: Enemy
   HP: 50
   healthBar: {fileID: 3368431844683604230}
   abilityTimer: {fileID: 4890518367657891379}
@@ -1772,6 +1773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aff2daa9c9c81e4ca4c5b80e4ba1f12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  displayName: Player
   HP: 100
   healthBar: {fileID: 1921811663420627328}
   abilityTimer: {fileID: 7169172876469349942}

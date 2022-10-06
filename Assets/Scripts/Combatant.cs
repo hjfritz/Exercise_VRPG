@@ -8,6 +8,7 @@ using Random = System.Random;
 
 public class Combatant : MonoBehaviour
 {
+    [SerializeField] public string displayName = "Enemy";
     [SerializeField] private int HP;
     [SerializeField] private HealthBar healthBar;
     [SerializeField] public AbilityTimer abilityTimer;

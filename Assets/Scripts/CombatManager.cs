@@ -84,7 +84,7 @@ public class CombatManager : MonoBehaviour
 
     private void NextTurn()
     {
-        menu.turnIndicator.ShowTurnTaker(BattleTurnOrder[turnCounter%BattleTurnOrder.Length].name);
+        menu.turnIndicator.ShowTurnTaker(BattleTurnOrder[turnCounter%BattleTurnOrder.Length].displayName);
         seq.StartNewTurn(BattleTurnOrder[turnCounter%BattleTurnOrder.Length]);
     }
 }
