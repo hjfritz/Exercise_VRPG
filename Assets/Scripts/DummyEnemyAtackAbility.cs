@@ -15,6 +15,7 @@ public class DummyEnemyAtackAbility : BattleAbility
     {
         
         DisplayName = "Enemy Ability";
+        abilityDuration = attackDuration;
         base.Start();
     }
 

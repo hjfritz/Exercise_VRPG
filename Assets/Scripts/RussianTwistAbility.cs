@@ -26,6 +26,7 @@ public class RussianTwistAbility : BattleAbility
     new void Start()
     {
         DisplayName = "Russian Twist Ability";
+        abilityDuration = attackDuration;
         targetsPrefab = Instantiate(targetsPrefab, xrOrigin);
         targetsPrefab.transform.position = new Vector3(0.525f, .1f, -0.179f);
         twistTargets = targetsPrefab.GetComponentsInChildren<RussianTwistTarget>();

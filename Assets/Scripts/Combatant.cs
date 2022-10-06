@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.PlayerLoop;
+using UnityEngine.XR.Interaction.Toolkit;
 using Random = System.Random;
 
 public class Combatant : MonoBehaviour
 {
-    public int HP;
+    [SerializeField] public string displayName = "Enemy";
+    [SerializeField] private int HP;
+    [SerializeField] public HealthBar healthBar;
+    [SerializeField] public AbilityTimer abilityTimer;
     
 
     public UnityEvent<BattleAbility> ActionSelected = new UnityEvent<BattleAbility>();
@@ -42,6 +47,7 @@ public class Combatant : MonoBehaviour
     public void TakeAction()
     {
         selectedAbility.AbilityComplete.AddListener(CompleteTurnAction);
+        abilityTimer.StartTimer(selectedAbility.abilityDuration);
         selectedAbility.ExecuteAction();
     }
 
@@ -56,5 +62,21 @@ public class Combatant : MonoBehaviour
     {
         selectedAbility.AbilityComplete.RemoveListener(CompleteTurnAction);
     }
-    
+
+    public void UpdateHP(int newHP)
+    {
+        HP = newHP;
+        healthBar.UpdateHealth(newHP);
+    }
+
+    public int GetHP()
+    {
+        return HP;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        HP = Mathf.Max(0, HP - damage);
+        healthBar.UpdateHealth(HP);
+    }
 }
