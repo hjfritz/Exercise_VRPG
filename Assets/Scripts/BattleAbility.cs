@@ -8,7 +8,7 @@ public class BattleAbility : MonoBehaviour
 {
     public UnityEvent<int> AbilityComplete = new UnityEvent<int>();
     public String DisplayName = "Display Name Not Set";
-    
+    public float abilityDuration;
     
     // Start is called before the first frame update
     protected void Start()

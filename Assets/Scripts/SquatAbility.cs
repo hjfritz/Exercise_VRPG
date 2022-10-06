@@ -19,6 +19,7 @@ public class SquatAbility : BattleAbility
     new void Start()
     {
         DisplayName = "Squat Ability";
+        abilityDuration = attackDuration;
         base.Start();
     }
     

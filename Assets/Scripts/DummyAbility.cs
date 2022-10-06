@@ -18,6 +18,7 @@ public class DummyAbility : BattleAbility
     {
         buttonRef.action.started += CountRep;
         DisplayName = "Dummy Ability";
+        abilityDuration = attackDuration;
         base.Start();
     }
     

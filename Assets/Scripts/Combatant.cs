@@ -10,6 +10,7 @@ public class Combatant : MonoBehaviour
 {
     [SerializeField] private int HP;
     [SerializeField] private HealthBar healthBar;
+    [SerializeField] public AbilityTimer abilityTimer;
     
 
     public UnityEvent<BattleAbility> ActionSelected = new UnityEvent<BattleAbility>();
@@ -45,6 +46,7 @@ public class Combatant : MonoBehaviour
     public void TakeAction()
     {
         selectedAbility.AbilityComplete.AddListener(CompleteTurnAction);
+        abilityTimer.StartTimer(selectedAbility.abilityDuration);
         selectedAbility.ExecuteAction();
     }
 
