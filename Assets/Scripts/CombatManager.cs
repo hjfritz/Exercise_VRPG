@@ -39,7 +39,7 @@ public class CombatManager : MonoBehaviour
         {
             BattleTurnOrder[i] = EnemyPartyMembers[j];
             EnemyPartyMembers[j].healthBar.gameObject.SetActive(true);
-            EnemyPartyMembers[j].UpdateHP(100);
+            EnemyPartyMembers[j].UpdateHP(EnemyPartyMembers[j].GetHP());
             i++;
         }
 
