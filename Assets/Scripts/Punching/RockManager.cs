@@ -33,7 +33,7 @@ public class RockManager : MonoBehaviour
         PunchAbility punchAbility= other.GetComponent<PunchAbility>();
         if (punchAbility)
         {
-            punchAbility.Hit();
+            //punchAbility.Hit();
             punchSound.Play();
         }
     }

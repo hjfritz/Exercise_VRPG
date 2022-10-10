@@ -17,6 +17,7 @@ public class Combatant : MonoBehaviour
     public UnityEvent<BattleAbility> ActionSelected = new UnityEvent<BattleAbility>();
     public UnityEvent DefenseSelected = new UnityEvent();
     public UnityEvent<int> TurnActionComplete = new UnityEvent<int>();
+    public UnityEvent DeathConfirmed = new UnityEvent();
 
     public BattleAbility[] actionAbilities;
     protected BattleAbility selectedAbility;
@@ -78,5 +79,10 @@ public class Combatant : MonoBehaviour
     {
         HP = Mathf.Max(0, HP - damage);
         healthBar.UpdateHealth(HP);
+
+        if (HP <= 0)
+        {
+            DeathConfirmed.Invoke();
+        }
     }
 }

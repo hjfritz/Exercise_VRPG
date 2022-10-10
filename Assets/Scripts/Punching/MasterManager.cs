@@ -23,7 +23,7 @@ public class MasterManager : MonoBehaviour
         PunchAbility punch = other.GetComponentInChildren<PunchAbility>();
         if (punch)
         {
-            punch.punchingArea = transform.GetChild(0).gameObject;
+            //punch.punchingArea = transform.GetChild(0).gameObject;
             punch.ExecuteAction();
         }
     }
