@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class PunchTarget : MonoBehaviour
 {
     public UnityEvent<int> SingleHitTrigger;
-    public UnityEvent<int> DoubleHitTrigger;
+    //public UnityEvent<int> DoubleHitTrigger;
     public int id;
     private string lastentered = "";
 
@@ -15,22 +15,25 @@ public class PunchTarget : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        //if (other.CompareTag("Player") && other.name != lastentered && other.name != "")
+        hitsinTrigger++;
+        SingleHitTrigger.Invoke(hitsinTrigger);
+        
+        /*if (other.CompareTag("Player") && other.name != lastentered && other.name != "")
         if (hitsinTrigger < 2)
         {
             hitsinTrigger++;
             lastentered = other.name;
             Debug.Log("Verified Collider Name :" + other.name);
             SingleHitTrigger.Invoke(hitsinTrigger);
-        }
+        }*/
 
         
-        if (hitsinTrigger >= 2)
+        /*if (hitsinTrigger >= 2)
         {
                 DoubleHitTrigger.Invoke(hitsinTrigger);
 
                 ResetTarget();
-        }
+        }*/
         
     }
 
