@@ -10,29 +10,25 @@ public class PunchTarget : MonoBehaviour
     public int id;
     private string lastentered = "";
 
-    public int numHandsInTrigger = 0;
+    public int hitsinTrigger = 0;
 
     private void OnTriggerEnter(Collider other)
     {
 
-        Debug.Log("Collider Name :" + other.name);
-
         //if (other.CompareTag("Player") && other.name != lastentered && other.name != "")
-        if (numHandsInTrigger < 2)
+        if (hitsinTrigger < 2)
         {
-            numHandsInTrigger++;
+            hitsinTrigger++;
             lastentered = other.name;
             Debug.Log("Verified Collider Name :" + other.name);
-            SingleHitTrigger.Invoke(numHandsInTrigger);
+            SingleHitTrigger.Invoke(hitsinTrigger);
         }
 
         
-     
-
-        if (numHandsInTrigger >= 2)
+        if (hitsinTrigger >= 2)
         {
-                DoubleHitTrigger.Invoke(numHandsInTrigger);
-                numHandsInTrigger = 0;
+                DoubleHitTrigger.Invoke(hitsinTrigger);
+
                 ResetTarget();
         }
         
@@ -42,7 +38,7 @@ public class PunchTarget : MonoBehaviour
 
     public void ResetTarget()
         {
-            numHandsInTrigger = 0;
+            hitsinTrigger = 0;
             lastentered = "";
         }
 

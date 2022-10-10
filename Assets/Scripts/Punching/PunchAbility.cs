@@ -41,6 +41,7 @@ public class PunchAbility : BattleAbility
     private void TargetTriggered(int targethit)
     {
         sfx.PlayOneShot(punchClip);
+        
         if (targethit >= 2)
         {
             repCounter++;
