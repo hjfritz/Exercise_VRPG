@@ -11,49 +11,50 @@ public class PunchTarget : MonoBehaviour
     private string lastentered = "";
 
     public int numHandsInTrigger = 0;
-    
+
     private void OnTriggerEnter(Collider other)
     {
-        
-        
-        if (other.CompareTag("Player") && other.name != lastentered && other.name != "")
+
+        Debug.Log("Collider Name :" + other.name);
+
+        //if (other.CompareTag("Player") && other.name != lastentered && other.name != "")
+        if (numHandsInTrigger < 2)
         {
             numHandsInTrigger++;
             lastentered = other.name;
-            Debug.Log("Collider Name :" + other.name);
+            Debug.Log("Verified Collider Name :" + other.name);
+            SingleHitTrigger.Invoke(numHandsInTrigger);
         }
+
+        
+     
 
         if (numHandsInTrigger >= 2)
         {
-            DoubleHitTrigger.Invoke(numHandsInTrigger);
-            ResetTarget();
+                DoubleHitTrigger.Invoke(numHandsInTrigger);
+                numHandsInTrigger = 0;
+                ResetTarget();
         }
+        
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        /*if (other.CompareTag("Player"))
-        {
-            numHandsInTrigger--;
-        }
-        */
-    }
+
 
     public void ResetTarget()
-    {
-        numHandsInTrigger = 0;
-        lastentered = "";
-    }
+        {
+            numHandsInTrigger = 0;
+            lastentered = "";
+        }
 
-    // Start is called before the first frame update
-    void Start()
-    {
+        // Start is called before the first frame update
+        void Start()
+        {
         
-    }
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
+        // Update is called once per frame
+        void Update()
+        {
         
-    }
+        }
 }

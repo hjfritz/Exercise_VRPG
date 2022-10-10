@@ -1,29 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="1st commit week 2 post merge">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/PunchingActivity/PunchTarget.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/PunchingActivity/PunchTarget.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/PunchingActivity/Punching Area 1.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/PunchingActivity/Punching Area 1.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/PunchingActivity/PunchingCombatPrefab.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/PunchingActivity/PunchingCombatPrefab.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/SikTestScene 1.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/SikTestScene 1.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Punching/PunchTarget.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Punching/PunchTarget.cs.meta" afterDir="false" />
+    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="ANimating enemy fight &amp; death&#10;Compete refactoring of the punching games following implementation of russian twist&#10;Minor update of Combatant script to allow a death unity event">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Teacher 1.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Teacher 1.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PunchingActivity/Punching Area.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PunchingActivity/Punching Area.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SikScenefromKate.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SikScenefromKate.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combatant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combatant.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Punching/MasterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Punching/MasterManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Punching/PunchAbility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Punching/PunchAbility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Punching/RockManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Punching/RockManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Punching/SkeletonManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Punching/SkeletonManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/XR/XR Origin 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/XR/XR Origin 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SikTestScene 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SikTestScene 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Punching/PunchTarget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Punching/PunchTarget.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +20,11 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/Assets/Prefabs/XR/XR Origin 1.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/Assets/Scripts/Combatant.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Punching/MasterManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Punching/PunchAbility.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/Assets/Scripts/Punching/PunchAbility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Punching/SkeletonManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.probuilder@4.5.2/Runtime/Core/Submesh.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
