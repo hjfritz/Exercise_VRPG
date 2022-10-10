@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 896349397879067320}
   - component: {fileID: 896349397879067321}
   - component: {fileID: 896349397879067322}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RightHand Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -724,7 +724,7 @@ GameObject:
   - component: {fileID: 896349398215205599}
   - component: {fileID: 896349398215205592}
   - component: {fileID: 896349398215205593}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LeftHand Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1481,6 +1481,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftHand
       objectReference: {fileID: 0}
+    - target: {fileID: 6871722520934555767, guid: 6a62094dc82022f438100b68b9e8e31f, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a62094dc82022f438100b68b9e8e31f, type: 3}
 --- !u!4 &7429774748821067589 stripped
@@ -1542,6 +1546,10 @@ PrefabInstance:
     - target: {fileID: 3133043808710126374, guid: 333179c4c27c3c140bfc5fc297111ee6, type: 3}
       propertyPath: m_Name
       value: RightHand
+      objectReference: {fileID: 0}
+    - target: {fileID: 3133043808710126374, guid: 333179c4c27c3c140bfc5fc297111ee6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 333179c4c27c3c140bfc5fc297111ee6, type: 3}

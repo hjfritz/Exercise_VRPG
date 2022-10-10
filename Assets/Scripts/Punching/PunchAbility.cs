@@ -3,58 +3,97 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class PunchAbility : BattleAbility
 {
+    
     private int repCounter = 0;
     private bool counting = false;
     private float attackTimer = 0f;
+    private PunchTarget _punchTarget;  
     
-    [SerializeField] private float attackDuration = 5.0f;   
     
-    public GameObject punchingArea;
+    
+    [SerializeField] private float attackDuration = 10.0f;
+    [SerializeField] private int targetReps = 10;
+    [SerializeField] private Transform floor;
+    [SerializeField] private AudioSource sfx;
+    [SerializeField] private AudioClip repCountClip;
+    [SerializeField] private AudioClip punchClip;
+    [SerializeField] private GameObject targetsPrefab;
+    [SerializeField] private Transform xrOrigin;
+    
+    // Start is called before the first frame update
+    new void Start()
+    {
+        DisplayName = "Punch Ability";
+        abilityDuration = attackDuration;
+        targetsPrefab = Instantiate(targetsPrefab, xrOrigin);
+        targetsPrefab.transform.position = new Vector3(0f, 1.4f, .6f); // factor 1 / .77 / .33
+        _punchTarget = targetsPrefab.GetComponent<PunchTarget>();
+        _punchTarget.SingleHitTrigger.AddListener(TargetTriggered);
+        _punchTarget.DoubleHitTrigger.AddListener(TargetTriggered);
+        targetsPrefab.gameObject.SetActive(false);
+        base.Start();
+    }
+
+    private void TargetTriggered(int targethit)
+    {
+        Debug.Log("TargetTriggered");
+        sfx.PlayOneShot(punchClip);
+        if (targethit >= 2)
+        {
+            Debug.Log("1Rep");
+            repCounter++;
+            sfx.PlayOneShot(repCountClip);
+        }
+
+    }
+
+
 
     public override void ExecuteAction()
     {
-        punchingArea.SetActive(true);
         counting = true;
         attackTimer = attackDuration;
+        targetsPrefab.SetActive(true);
+        base.ExecuteAction();
     }
-
+    
     public override void FinalizeAction()
     {
-        punchingArea.SetActive(false);
-        Debug.Log("Reps :" + repCounter);
-        AbilityComplete.Invoke(repCounter);
-        
+        int attackPower = (int)(Mathf.Min((float)repCounter / (float)targetReps, 1f) * 100);
+        AbilityComplete.Invoke(attackPower);
         ResetAbility();
-        base.FinalizeAction();
     }
+    
 
-
-    public void Hit()
+    // Update is called once per frame
+    void Update()
     {
         if (counting)
         {
-            repCounter++;
+            if (attackTimer < 0)
+            {
+                FinalizeAction();
+            }
+            else
+            {
+                attackTimer -= Time.deltaTime;
+            }
         }
+       
     }
-
-    void Update()
-    {
-        if (counting && attackTimer < 0)
-        {
-            FinalizeAction();
-        }
-        else
-        {
-            attackTimer -= Time.deltaTime;
-        }
-    }
+    
 
     private void ResetAbility()
     {
         counting = false;
         attackTimer = 0.0f;
         repCounter = 0;
+        _punchTarget.ResetTarget();
+        targetsPrefab.SetActive(false);
     }
+
 }

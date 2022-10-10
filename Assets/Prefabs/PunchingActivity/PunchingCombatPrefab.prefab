@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!65 &6907105382553203572
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6954396545431609370}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2.0000005, z: 1.0000004}
-  m_Center: {x: 0.00000005960464, y: 0.0000019073486, z: -0.00000008940698}
 --- !u!95 &6907105383571848251
 Animator:
   serializedVersion: 3
@@ -46,7 +33,7 @@ GameObject:
   - component: {fileID: 6907105383883130981}
   - component: {fileID: 6907105383883130986}
   m_Layer: 0
-  m_Name: Punching Area
+  m_Name: PunchingCombatPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,6 +129,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4984239a8fc720246976d7729bb78844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &6907105382553203572
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6954396545431609370}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.0000005, z: 1.0000004}
+  m_Center: {x: 0.00000005960464, y: 0.0000019073486, z: -0.00000008940698}
 --- !u!1001 &1607881047366941551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -211,7 +211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5299224431186781368, guid: a4aa7416ed045bf4a8c5b22b319798ec, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5299224431927354798, guid: a4aa7416ed045bf4a8c5b22b319798ec, type: 3}
       propertyPath: _resistance
@@ -247,7 +247,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ed442f7f9235b5548a09ff051abc40e1, type: 2}
     - target: {fileID: 8562096627400317813, guid: a4aa7416ed045bf4a8c5b22b319798ec, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9104488753854295570, guid: a4aa7416ed045bf4a8c5b22b319798ec, type: 3}
@@ -331,7 +331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7bec2d15a7519dd4c8951c51e1a69c6f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bec2d15a7519dd4c8951c51e1a69c6f, type: 3}
