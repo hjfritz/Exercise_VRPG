@@ -273,6 +273,8 @@ public class ElectricOwl : MonoBehaviour {
 	private bool rightButtonPressed = false;
 
 	//// Controllers ////
+	[SerializeField] private InputActionReference leftButton;
+	[SerializeField] private InputActionReference rightButton;
 	[SerializeField] private GameObject leftControllerGameObject;
 	[SerializeField] private GameObject rightControllerGameObject;
 	[SerializeField] private XRBaseController leftController;
@@ -1312,13 +1314,12 @@ public class ElectricOwl : MonoBehaviour {
 	// Sets the button variables each frame
 	void getControllerButtons() {
 		// Left
-		
-		leftButtonPressed = true;
+		leftButtonPressed = leftButton.action.ReadValue<float>() == 1f;
 		
 
 		//Right
 		
-		rightButtonPressed = true;
+		rightButtonPressed = rightButton.action.ReadValue<float>() == 1f;
 		
 	}
 
