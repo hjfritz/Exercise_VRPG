@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &76421206
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3650,7 +3650,7 @@ GameObject:
   - component: {fileID: 2123972347}
   - component: {fileID: 2123972346}
   m_Layer: 0
-  m_Name: Terrain_0_0_3e97bca5-15c2-48eb-9c4d-b898f10df0ad
+  m_Name: Island
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
