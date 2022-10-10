@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="Merging all branches back to main">
+    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="Minor fixes + combat manager as prefab in progress">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -12,16 +12,20 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="SikBranch" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/Assets/Prefabs/XR/XR Origin 1.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/Assets/Scripts/Combatant.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Punching/CombatAreaManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Punching/MasterManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Punching/PunchAbility.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/Assets/Scripts/Punching/PunchAbility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/Assets/Scripts/Punching/PunchAbility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Punching/SkeletonManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.probuilder@4.5.2/Runtime/Core/Submesh.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -86,7 +90,8 @@
       <updated>1664612592337</updated>
       <workItem from="1664612642958" duration="9366000" />
       <workItem from="1664808143701" duration="2054000" />
-      <workItem from="1664963844023" duration="1126000" />
+      <workItem from="1664963844023" duration="1273000" />
+      <workItem from="1665395067526" duration="9270000" />
     </task>
     <task id="LOCAL-00001" summary="trying to create a separated branch">
       <created>1664612695537</created>
@@ -144,7 +149,49 @@
       <option name="project" value="LOCAL" />
       <updated>1664964295956</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Setup post merge">
+      <created>1664970342575</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1664970342575</updated>
+    </task>
+    <task id="LOCAL-00010" summary="1st commit week 2 post merge">
+      <created>1665395271061</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1665395271061</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Reupdating branch">
+      <created>1665412263320</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1665412263320</updated>
+    </task>
+    <task id="LOCAL-00012" summary="script optimization">
+      <created>1665412461689</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1665412461689</updated>
+    </task>
+    <task id="LOCAL-00013" summary="reviewing file structure">
+      <created>1665415112758</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1665415112758</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Minor fixes + combat manager as prefab in progress">
+      <created>1665418469903</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1665418469903</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,6 +223,13 @@
     <MESSAGE value="prefabing XR rig and Game Manager" />
     <MESSAGE value="Updating the Punching Activity logic" />
     <MESSAGE value="Merging all branches back to main" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merging all branches back to main" />
+    <MESSAGE value="Setup post merge" />
+    <MESSAGE value="1st commit week 2 post merge" />
+    <MESSAGE value="Reupdating branch" />
+    <MESSAGE value="script optimization" />
+    <MESSAGE value="Polishing enemy animation" />
+    <MESSAGE value="reviewing file structure" />
+    <MESSAGE value="Minor fixes + combat manager as prefab in progress" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor fixes + combat manager as prefab in progress" />
   </component>
 </project>
