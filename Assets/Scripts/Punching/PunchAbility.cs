@@ -30,7 +30,7 @@ public class PunchAbility : BattleAbility
         DisplayName = "Punch Ability";
         abilityDuration = attackDuration;
         targetsPrefab = Instantiate(targetsPrefab, xrOrigin);
-        targetsPrefab.transform.position = new Vector3(0f, 1.4f, .6f); // factor 1 / .77 / .33
+        targetsPrefab.transform.position = new Vector3(0f, 1.4f, .8f); // factor 1 / .77 / .44
         _punchTarget = targetsPrefab.GetComponent<PunchTarget>();
         _punchTarget.SingleHitTrigger.AddListener(TargetTriggered);
         _punchTarget.DoubleHitTrigger.AddListener(TargetTriggered);
@@ -40,11 +40,9 @@ public class PunchAbility : BattleAbility
 
     private void TargetTriggered(int targethit)
     {
-        Debug.Log("TargetTriggered");
         sfx.PlayOneShot(punchClip);
         if (targethit >= 2)
         {
-            Debug.Log("1Rep");
             repCounter++;
             sfx.PlayOneShot(repCountClip);
         }

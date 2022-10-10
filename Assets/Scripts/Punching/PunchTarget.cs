@@ -15,21 +15,18 @@ public class PunchTarget : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         
-        Debug.Log("Collider Name :" + other.name);
         
-        //if (other.CompareTag("Player")) 
-        if (numHandsInTrigger <2)
+        if (other.CompareTag("Player") && other.name != lastentered && other.name != "")
         {
             numHandsInTrigger++;
             lastentered = other.name;
-            Debug.Log("Verified Collider Name :" + other.name);
-            SingleHitTrigger.Invoke(numHandsInTrigger);
+            Debug.Log("Collider Name :" + other.name);
         }
 
         if (numHandsInTrigger >= 2)
         {
             DoubleHitTrigger.Invoke(numHandsInTrigger);
-            numHandsInTrigger = 0;
+            ResetTarget();
         }
     }
 

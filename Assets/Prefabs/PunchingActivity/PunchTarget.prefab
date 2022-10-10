@@ -108,9 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ffd49aaa76f0ea439621f0f0bc6893b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SingleHitTrigger:
-    m_PersistentCalls:
-      m_Calls: []
   DoubleHitTrigger:
     m_PersistentCalls:
       m_Calls: []
