@@ -1540,7 +1540,7 @@ GameObject:
   - component: {fileID: 7920967439528242288}
   - component: {fileID: 7920967439528242302}
   m_Layer: 0
-  m_Name: CombatManager
+  m_Name: TeacherCombatManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
