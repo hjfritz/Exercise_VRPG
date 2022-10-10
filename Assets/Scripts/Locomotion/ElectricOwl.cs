@@ -2,8 +2,10 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 
-public class ArmSwinger : MonoBehaviour {
+public class ElectricOwl : MonoBehaviour {
 
 	/***** CLASS VARIABLES *****/
 
@@ -267,20 +269,14 @@ public class ArmSwinger : MonoBehaviour {
 	private AnimationCurve inspectorCurve;
 
 	//// Controller buttons ////
-	private Valve.VR.EVRButtonId steamVRArmSwingButton;
 	private bool leftButtonPressed = false;
 	private bool rightButtonPressed = false;
 
 	//// Controllers ////
-	private SteamVR_ControllerManager controllerManager;
-	private GameObject leftControllerGameObject;
-	private GameObject rightControllerGameObject;
-	private SteamVR_TrackedObject leftControllerTrackedObj;
-	private SteamVR_TrackedObject rightControllerTrackedObj;
-	private SteamVR_Controller.Device leftController;
-	private SteamVR_Controller.Device rightController;
-	private int leftControllerIndex;
-	private int rightControllerIndex;
+	[SerializeField] private GameObject leftControllerGameObject;
+	[SerializeField] private GameObject rightControllerGameObject;
+	[SerializeField] private XRBaseController leftController;
+	[SerializeField] private XRBaseController rightController;
 
 	// Wall Clip tracking
 	[HideInInspector]
@@ -294,37 +290,17 @@ public class ArmSwinger : MonoBehaviour {
 
 	// One Button Same Controller Exclusive mode only
 	private GameObject activeSwingController = null;
-
-	// Prevent Wall Clip's HeadsetCollider script
-	private HeadsetCollider headsetCollider;
+	
 
 	// GameObjects
-	private GameObject headsetGameObject;
-	private GameObject cameraRigGameObject;
+	[SerializeField] private GameObject headsetGameObject;
+	[SerializeField] private GameObject cameraRigGameObject;
 
 	// Camera Rig scaling
 	private float cameraRigScaleModifier = 1.0f;
 	
 	/****** INITIALIZATION ******/
 	void Awake() {
-
-		// Find an assign components and objects
-		controllerManager = this.GetComponent<SteamVR_ControllerManager>();
-		leftControllerGameObject = controllerManager.left;
-		rightControllerGameObject = controllerManager.right;
-		leftControllerTrackedObj = leftControllerGameObject.GetComponent<SteamVR_TrackedObject>();
-		rightControllerTrackedObj = rightControllerGameObject.GetComponent<SteamVR_TrackedObject>();
-
-		headsetGameObject = GameObject.FindObjectOfType<SteamVR_Camera>().gameObject;
-		cameraRigGameObject = GameObject.FindObjectOfType<SteamVR_ControllerManager>().gameObject;
-
-		// Determine the Steam VR button for ArmSwinging
-		steamVRArmSwingButton = convertControllerButtonToSteamVRButton(armSwingButton);
-		
-		// Setup wall clipping on the headset gameobject, if enabled
-		if (preventWallClip) {
-			setupHeadsetCollider();
-		}
 
 		// Save the initial movement curve, in case it's switched off
 		inspectorCurve = armSwingControllerToMovementCurve;
@@ -378,11 +354,7 @@ public class ArmSwinger : MonoBehaviour {
 		rewindThisFrame = false;
 		wallClipThisFrame = false;
 
-		// Check for wall clipping
-		if (preventWallClip && headsetCollider.inGeometry) {
-			triggerRewind(PreventionReason.HEADSET);
-		}
-
+		
 		// Save the current controller positions for our use
 		leftControllerLocalPosition = leftControllerGameObject.transform.localPosition;
 		rightControllerLocalPosition = rightControllerGameObject.transform.localPosition;
@@ -423,10 +395,7 @@ public class ArmSwinger : MonoBehaviour {
     /***** VERIFY SETTINGS *****/
     void verifySettings() {
 
-        // Camera Rig checking
-        if (!this.GetComponent<SteamVR_ControllerManager>()) {
-            Debug.LogError("ArmSwinger.verifySettings():: ArmSwinger is applied on a GameObject that is not a SteamVR CameraRig, or is a CameraRig without a SteamVR Controller Manager.  Please review the ArmSwinger instructions.  ArmSwinger will fail.");
-        }
+
 
         // Rewind Settings
         if (rewindNumSavedPositionsToRewind > rewindNumSavedPositionsToStore) {
@@ -486,23 +455,6 @@ public class ArmSwinger : MonoBehaviour {
 		}
 
 		if (movedThisFrame) {
-			// If raycastOnlyHeightAdjustWhileArmSwinging is enabled, check to see if the Y distance between the previous arm swinging position and
-			// the current ArmSwinging position are higher than the instant height change max.  This ensures that players who have 
-			// raycastOnlyHeightAdjustWhileArmSwinging enabled are not instantly teleported to the terrain when they start arm swinging.
-			if (!armSwinging && raycastOnlyHeightAdjustWhileArmSwinging) {
-				armSwinging = true;
-
-				bool didStartSwingingRayHit;
-				RaycastHit startSwingingRaycastHit = raycast(headsetGameObject.transform.position, Vector3.down, raycastMaxLength, raycastGroundLayerMask, out didStartSwingingRayHit);
-				
-				if (didStartSwingingRayHit) {
-					ohawasInstantHeightChangeCheck(startSwingingRaycastHit.point.y, lastRaycastHitWhileArmSwinging.point.y);
-					// If we need to rewind, don't arm swing this frame
-					if (currentPreventionReason != PreventionReason.NONE) {
-						return Vector3.zero;
-					}
-				}
-			}
 
 			armSwinging = true;
 			
@@ -963,44 +915,11 @@ public class ArmSwinger : MonoBehaviour {
 		if (preventionsPaused || anglePreventionsPaused) {
 			return;
 		}
-
-		// We allow players to climb/descend stairs instantly (across one frame) as long as the stair is shorter than instantHeightMaxChange
-		// If the current raycast and the previous raycast indicate a height difference larger than instantHeightMaxChange,
-		// we know for sure that the player needs to be rewound.
-
-		// This also prevents players from taking a long fall over a single frame (since multiple frames in a row need to agree to rewind normally)
-
-		// Finally, this also affects raycastOnlyHeightAdjustWhileArmSwinging.  If the player moves around physically, and then starts Arm Swinging again,
-		// we'll instantly check to see if they've changed more than instantHeightMaxChange.  If they have, we'll do a quick rewind to ensure
-		// they start in a comfortable position
-
-		PreventionReason preventionReason = instantHeightChangeReason(thisYValue, lastYValue);
-
-		if (preventionReason != PreventionReason.NONE) {
-			triggerRewind(preventionReason);
-		}
 	}
 
-	// Instant Height Change Check for when raycastOnlyHeightAdjustWhileArmSwinging (OHAWAS) is enabled, and the player starts ArmSwinging
-	void ohawasInstantHeightChangeCheck(float thisYValue, float lastYValue) {
-		if (instantHeightChangeReason(thisYValue, lastYValue) != PreventionReason.NONE) {
-			triggerRewind(PreventionReason.OHAWAS);
-		}
-	}
 
-	// Adjusts the camera rig for raycastOnlyHeightAdjustWhileArmSwinging (OHAWAS) without triggering other Prevention mechanisms
-	void ohawasCameraRigAdjust() {
-		bool didRayHit;
-		RaycastHit raycastHit = raycast(headsetGameObject.transform.position, Vector3.down, raycastMaxLength, raycastGroundLayerMask, out didRayHit);
 
-		if (didRayHit) {
-			moveCameraRig(new Vector3(cameraRigGameObject.transform.position.x, raycastHit.point.y, cameraRigGameObject.transform.position.z), PreventionReason.OHAWAS);
-			fadeIn();
-		} else {
-			fadeIn();
-			outOfBounds = false;
-		}
-	}
+	
 
 	void centerPreventionCheck(RaycastHit thisRaycastHit, RaycastHit lastRaycastHit) {
 
@@ -1020,9 +939,7 @@ public class ArmSwinger : MonoBehaviour {
 				}
 			}
 
-			if (allReasonsAgree) {
-				triggerRewind(thisOOBReason);
-			}
+			
 		}
 	}
 
@@ -1051,10 +968,7 @@ public class ArmSwinger : MonoBehaviour {
 				}
 			}
 
-			// If the number of wall walks is >= numWallWalkChecksOOBBeforeRewind, trigger a rewind
-			if (wallWalkCount >= checksNumWallWalkChecksOOBBeforeRewind) {
-				triggerRewind(thisOOBReason);
-			}
+		
 		}
 	}
 
@@ -1117,45 +1031,7 @@ public class ArmSwinger : MonoBehaviour {
 
 		return PreventionReason.NONE;
 	}
-
-	public void triggerRewind(PreventionReason reason = PreventionReason.MANUAL) {
-
-        currentPreventionReason = reason;
-
-		if (reason == PreventionReason.HEADSET) {
-			wallClipThisFrame = true;
-		}
-
-        //Debug.Log(Time.frameCount + "|ArmSwinger.triggerRewind():: Rewind triggered due to " + reason);
-
-		if (!outOfBounds) {
-			// Special handling for raycastOnlyHeightAdjustWhileArmSwinging (OHAWAS) events where the player walks into geometry and then starts arm swinging.
-			if (reason == PreventionReason.OHAWAS) {
-				outOfBounds = true;
-				fadeOut();
-				Invoke("ohawasCameraRigAdjust", rewindFadeOutSec);
-			}
-			// Everything else
-			else {
-				outOfBounds = true;
-
-                // If the prevention mode is REWIND and a rewind isn't already pending - fade out, rewind, fade back in
-                if (currentPreventionMode == PreventionMode.Rewind && !rewindInProgress) {
-					rewindInProgress = true;
-					fadeOut();
-					Invoke("rewindPositionModeRewind", rewindFadeOutSec);
-					Invoke("fadeIn", rewindFadeOutSec);
-				}
-				// Otherwise the mode is PushBack, so we instantly push back
-				else {
-					rewindPosition(PreventionMode.PushBack);
-					if (pushBackOverride) {
-						decrementPushBackOverride();
-					}
-				}
-			}			
-		}
-	}
+	
 
 	// Helper function for the Invoke() in triggerRewind, since Invoke doesn't support any parameters in called functions
 	void rewindPositionModeRewind() {
@@ -1260,7 +1136,7 @@ public class ArmSwinger : MonoBehaviour {
 	static Vector3 calculateCameraRigRewindPosition(Vector3 cameraRigPreviousPosition, Vector3 headsetPreviousPosition, Vector3 cameraRigPosition, Vector3 headsetPosition, PreventionMode preventionMode) {
 
 		// We only care about the X/Z positioning of the headset
-		Vector3 headsetPositionDifference = ArmSwinger.vector3XZOnly(headsetPreviousPosition) - ArmSwinger.vector3XZOnly(headsetPosition);
+		Vector3 headsetPositionDifference = ElectricOwl.vector3XZOnly(headsetPreviousPosition) - ElectricOwl.vector3XZOnly(headsetPosition);
 
 		Vector3 returnPosition = cameraRigPreviousPosition + headsetPositionDifference;
 
@@ -1318,11 +1194,7 @@ public class ArmSwinger : MonoBehaviour {
 		// start with the assumption that the position is safe
 		// if we the features and options enabled below have us check and find an unsafe position, we'll change it then
 		bool isPositionSafe = true;
-
-		// if the headset is in geometry, don't save this position
-		if (preventWallClip && headsetCollider.inGeometry) {
-			isPositionSafe = false;
-		}
+		
 
 		// only applies if both preventFalling and preventClimbing are enabled, and if the user wants to skip unsafe positions
 		if (isPositionSafe && preventFalling && preventClimbing && rewindDontSaveUnsafeClimbFallPositions) {
@@ -1440,87 +1312,24 @@ public class ArmSwinger : MonoBehaviour {
 	// Sets the button variables each frame
 	void getControllerButtons() {
 		// Left
-		int newLeftControllerIndex = (int) leftControllerTrackedObj.index;
-
-		if (newLeftControllerIndex != -1 && newLeftControllerIndex != leftControllerIndex) {
-			leftControllerIndex = newLeftControllerIndex;
-			leftController = SteamVR_Controller.Input(leftControllerIndex);
-		}
-
-		if (newLeftControllerIndex != -1) {
-			leftButtonPressed = leftController.GetPress(steamVRArmSwingButton);
-		}
-		else {
-			leftButtonPressed = false;
-		}
+		
+		leftButtonPressed = true;
+		
 
 		//Right
-		int newRightControllerIndex = (int) rightControllerTrackedObj.index;
-
-		if (newRightControllerIndex != -1 && newRightControllerIndex != rightControllerIndex) {
-			rightControllerIndex = newRightControllerIndex;
-			rightController = SteamVR_Controller.Input(rightControllerIndex);
-		}
-
-		if (newRightControllerIndex != -1) {
-			rightButtonPressed = rightController.GetPress(steamVRArmSwingButton);
-		}
-		else {
-			rightButtonPressed = false;
-		}
+		
+		rightButtonPressed = true;
+		
 	}
 
-	// Assigns the real SteamVR button based on the user selection
-	Valve.VR.EVRButtonId convertControllerButtonToSteamVRButton(ControllerButton controllerButton) {
-		EVRButtonId returnValue;
 
-		switch (controllerButton) {
-			case ControllerButton.Grip:
-				returnValue = EVRButtonId.k_EButton_Grip;
-				break;
-			case ControllerButton.Menu:
-				returnValue = EVRButtonId.k_EButton_ApplicationMenu;
-				break;
-			case ControllerButton.TouchPad:
-				returnValue = EVRButtonId.k_EButton_SteamVR_Touchpad;
-				break;
-			case ControllerButton.Trigger:
-				returnValue = EVRButtonId.k_EButton_SteamVR_Trigger;
-				break;
-			default:
-				returnValue = EVRButtonId.k_EButton_Grip;
-				break;
-		}
-
-		return returnValue;
-	}
 
 	// Returns the average of two Quaternions
 	Quaternion averageRotation(Quaternion rot1, Quaternion rot2) {
 		return Quaternion.Slerp(rot1, rot2, 0.5f);
 	}
 
-	// Fade the screen to black
-	void fadeOut() {
-		// SteamVR_Fade is too fast in builds.  We compenstate for this here.
-#if UNITY_EDITOR
-		SteamVR_Fade.View(Color.black, rewindFadeOutSec);
-#else
-				SteamVR_Fade.View(Color.black, rewindFadeOutSec * .666f);
-#endif
-    }
-
-    // Fade the screen back to clear
-    void fadeIn() {
-		// SteamVR_Fade is too fast in builds.  We compenstate for this here.
-#if UNITY_EDITOR
-		SteamVR_Fade.View(Color.clear, rewindFadeInSec);
-#else
-				SteamVR_Fade.View(Color.clear, rewindFadeInSec * .666f);
-#endif
-    }
-
-    // Returns a Vector3 with only the X and Z components (Y is 0'd)
+	// Returns a Vector3 with only the X and Z components (Y is 0'd)
     public static Vector3 vector3XZOnly(Vector3 vec) {
 		return new Vector3(vec.x, 0f, vec.z);
 	}
@@ -1649,18 +1458,7 @@ public class ArmSwinger : MonoBehaviour {
 	bool isDistanceFarEnough(Vector3 position1, Vector3 position2, float minDistance) {
 		return (Vector3.Distance(position1, position2) >= minDistance);
 	}
-
-	// Adds the Collider script to the headset if it doesn't already exist
-	void setupHeadsetCollider() {
-		headsetCollider = headsetGameObject.GetComponent<HeadsetCollider>();
-		if (!headsetCollider) {
-			headsetCollider = headsetGameObject.AddComponent<HeadsetCollider>();
-
-		}
-		headsetCollider.setLayerMask(preventWallClipLayerMask);
-		headsetCollider.setHeadsetSphereColliderRadius(preventWallClipHeadsetColliderRadius);
-		headsetCollider.setMinAngleWallClipForOOB(preventWallClipMinAngleToTrigger);
-	}
+	
 
 	static float calculateMovement(AnimationCurve curve, float change, float maxInput, float maxSpeed) {
 		float changeInWUPS = change / Time.deltaTime;
@@ -1828,38 +1626,7 @@ public class ArmSwinger : MonoBehaviour {
 			}
 		}
 	}
-
-	public bool preventWallClip {
-		get {
-			return _preventWallClip;
-		}
-
-		set {
-			_preventWallClip = value;
-			if (_preventWallClip) {
-				setupHeadsetCollider();
-			}
-		}
-	}
-
-	public float preventWallClipMinAngleToTrigger {
-		get {
-			return _preventWallClipMinAngleToTrigger;
-		}
-
-		set {
-			float min = 0f;
-			float max = 90f;
-
-			if (value >= min && value <= max) {
-				_preventWallClipMinAngleToTrigger = value;
-				headsetCollider.setMinAngleWallClipForOOB(value);
-			}
-			else {
-				Debug.LogWarning("ArmSwinger:preventWallClipMinAngleToTrigger:: Requested new value " + value + " is out of range (" + min + ".." + max + ")");
-			}
-		}
-	}
+	
 
 	public float preventClimbingMaxAnglePlayerCanClimb {
 		get {
@@ -2075,13 +1842,5 @@ public class ArmSwinger : MonoBehaviour {
 		}
 	}
 
-	public ControllerButton armSwingButton {
-		get {
-			return _armSwingButton;
-		}
-		set {
-			steamVRArmSwingButton = convertControllerButtonToSteamVRButton(value);
-			_armSwingButton = value;
-		}
-	}
+	
 }
