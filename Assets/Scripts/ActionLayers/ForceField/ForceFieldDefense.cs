@@ -17,17 +17,22 @@ namespace ActionLayers.ForceField
         private Vector3 _ffScale = new Vector3(.1f, .1f, .01f);
         private float _defenseDuration = 20.0f;
         private float _defenseTimer = 0f;
+
+        private bool abilityActive = false;
         
         // Start is called before the first frame update
         new void Start()
         {
+            base.Start();
             forceField.transform.localScale = new Vector3(0,0,0);
             abilityDuration = _defenseDuration;
-            base.Start();
+            actionLayer.SetActive(false);
+            
         }
 
         public override void ExecuteAction()
         {
+            abilityActive = true;
             _defenseTimer = _defenseDuration;
             actionLayer.SetActive(true);
             fieldStrength = 0;
@@ -39,33 +44,39 @@ namespace ActionLayers.ForceField
         // Update is called once per frame
         void Update()
         {
-            if (fieldStrength >= 100)
+            if (abilityActive)
             {
-                FinalizeAction();
-            }else if (_defenseTimer < 0)
-            {
-                FinalizeAction();
-            }
-            else
-            {
-                _defenseTimer -= Time.deltaTime;
+                if (fieldStrength >= 100)
+                {
+                    FinalizeAction();
+                }else if (_defenseTimer < 0)
+                {
+                    FinalizeAction();
+                }
+                else
+                {
+                    Debug.Log($"defnse ability running- {_defenseTimer}");
+                    _defenseTimer -= Time.deltaTime;
                 
-                _ffScale = new Vector3(.01f * fieldStrength, .01f * fieldStrength, .01f);
+                    _ffScale = new Vector3(.01f * fieldStrength, .01f * fieldStrength, .01f);
 
-                forceField.transform.localScale = _ffScale;
+                    forceField.transform.localScale = _ffScale;
+                }
             }
+            
         }
         
         public override void FinalizeAction()
         {
+            Debug.Log("finalizing");
             AbilityComplete.Invoke(fieldStrength);
             ResetAbility();
         }
         
         private void ResetAbility()
         {
-            _defenseTimer = _defenseDuration;
-            forceFieldLayer.SetActive(false);
+            abilityActive = false;
+            actionLayer.SetActive(false);
             sfx.Stop();
         }
     }
