@@ -22,7 +22,6 @@ public class PunchAbility : BattleAbility
     [SerializeField] private AudioClip repCountClip;
     [SerializeField] private AudioClip punchClip;
     [SerializeField] private GameObject targetsPrefab;
-    [SerializeField] private Transform xrOrigin;
     [SerializeField] private Transform punchingArea;
     
     // Start is called before the first frame update
