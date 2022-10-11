@@ -15,20 +15,21 @@ public class RussianTwistAbility : BattleAbility
 
     private RussianTwistTarget[] twistTargets;
     private int currentTargetIndex = -1;
-    [SerializeField] private Transform floor;
+   
     [SerializeField] private AudioSource sfx;
     [SerializeField] private AudioClip repCountClip;
 
     [SerializeField] private GameObject targetsPrefab;
-    [SerializeField] private Transform xrOrigin;
-    
+
     // Start is called before the first frame update
     new void Start()
     {
+        base.Start();
         DisplayName = "Russian Twist Ability";
         abilityDuration = attackDuration;
-        targetsPrefab = Instantiate(targetsPrefab, xrOrigin);
-        targetsPrefab.transform.position = new Vector3(0.525f, .1f, -0.179f);
+        targetsPrefab = Instantiate(targetsPrefab, xrOrigin.transform);
+        targetsPrefab.transform.position = new Vector3(0.525f, .1f, -0.179f) + xrOrigin.transform.position;
+        
         twistTargets = targetsPrefab.GetComponentsInChildren<RussianTwistTarget>();
         
         foreach (var twistTarget in twistTargets)
@@ -68,6 +69,7 @@ public class RussianTwistAbility : BattleAbility
         counting = true;
         attackTimer = attackDuration;
         targetsPrefab.SetActive(true);
+        targetsPrefab.transform.parent = null;
         
         base.ExecuteAction();
     }
@@ -109,6 +111,7 @@ public class RussianTwistAbility : BattleAbility
             twistTarget.ResetTarget();
         }
         targetsPrefab.SetActive(false);
+        targetsPrefab.transform.parent = xrOrigin.transform;
     }
 
 
