@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="Minor fixes + combat manager as prefab in progress">
+    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,16 +17,11 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/Assets/Prefabs/XR/XR Origin 1.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/Assets/Scripts/Combatant.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Punching/CombatAreaManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Punching/MasterManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Punching/PunchAbility.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/Assets/Scripts/Punching/PunchAbility.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/Assets/Scripts/Punching/PunchAbility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Punching/SkeletonManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.probuilder@4.5.2/Runtime/Core/Submesh.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -92,6 +87,7 @@
       <workItem from="1664808143701" duration="2054000" />
       <workItem from="1664963844023" duration="1273000" />
       <workItem from="1665395067526" duration="9270000" />
+      <workItem from="1665485832650" duration="278000" />
     </task>
     <task id="LOCAL-00001" summary="trying to create a separated branch">
       <created>1664612695537</created>
@@ -191,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665418469903</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="minor up">
+      <created>1665419070262</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1665419070262</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,6 +233,7 @@
     <MESSAGE value="Polishing enemy animation" />
     <MESSAGE value="reviewing file structure" />
     <MESSAGE value="Minor fixes + combat manager as prefab in progress" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor fixes + combat manager as prefab in progress" />
+    <MESSAGE value="minor up" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor up" />
   </component>
 </project>
