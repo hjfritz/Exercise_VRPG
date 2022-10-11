@@ -23,15 +23,16 @@ public class PunchAbility : BattleAbility
     [SerializeField] private AudioClip punchClip;
     [SerializeField] private GameObject targetsPrefab;
     [SerializeField] private Transform xrOrigin;
+    [SerializeField] private Transform punchingArea;
     
     // Start is called before the first frame update
     new void Start()
     {
         DisplayName = "Punch Ability";
         abilityDuration = attackDuration;
-        targetsPrefab = Instantiate(targetsPrefab, xrOrigin);
-        targetsPrefab.transform.position = new Vector3(0f , 1.4f, .8f) +xrOrigin.position ; 
-        targetsPrefab.transform.rotation = transform.rotation ;// factor 1 / .77 / .44
+        targetsPrefab = Instantiate(targetsPrefab, punchingArea);
+        targetsPrefab.transform.position = new Vector3(0f , 1.4f, 0f) + punchingArea.position + punchingArea.forward; //new Vector3(0f , 1.4f, .8f) + p
+        //targetsPrefab.transform.rotation = transform.rotation ;// factor 1 / .77 / .44
         _punchTarget = targetsPrefab.GetComponent<PunchTarget>();
         _punchTarget.SingleHitTrigger.AddListener(TargetTriggered);
         //_punchTarget.DoubleHitTrigger.AddListener(TargetTriggered);
