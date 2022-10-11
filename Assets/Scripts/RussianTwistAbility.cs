@@ -5,17 +5,17 @@ using UnityEngine;
 
 public class RussianTwistAbility : BattleAbility
 {
-    
+
     private int repCounter = 0;
     private bool counting = false;
     private float attackDuration = 15.0f;
     private float attackTimer = 0f;
-    
+
     private int targetReps = 25;
 
     private RussianTwistTarget[] twistTargets;
     private int currentTargetIndex = -1;
-   
+
     [SerializeField] private AudioSource sfx;
     [SerializeField] private AudioClip repCountClip;
 
@@ -28,14 +28,14 @@ public class RussianTwistAbility : BattleAbility
         DisplayName = "Russian Twist Ability";
         abilityDuration = attackDuration;
         targetsPrefab = Instantiate(targetsPrefab, xrOrigin.transform);
-        targetsPrefab.transform.position = new Vector3(0.525f, .1f, -0.179f) + xrOrigin.transform.position;
-        
+        SetPrefabPostion();
         twistTargets = targetsPrefab.GetComponentsInChildren<RussianTwistTarget>();
-        
+
         foreach (var twistTarget in twistTargets)
         {
             twistTarget.TwoHandTrigger.AddListener(TargetTriggered);
         }
+
         targetsPrefab.gameObject.SetActive(false);
         base.Start();
     }
@@ -43,7 +43,7 @@ public class RussianTwistAbility : BattleAbility
     private void TargetTriggered(int targetid)
     {
         //Debug.Log($"currentTargetIndex = {currentTargetIndex},  targetID = {targetid}");
-        if (currentTargetIndex == -1  || targetid == currentTargetIndex)
+        if (currentTargetIndex == -1 || targetid == currentTargetIndex)
         {
             currentTargetIndex = targetid;
             repCounter++;
@@ -69,11 +69,19 @@ public class RussianTwistAbility : BattleAbility
         counting = true;
         attackTimer = attackDuration;
         targetsPrefab.SetActive(true);
+        SetPrefabPostion();
         targetsPrefab.transform.parent = null;
-        
         base.ExecuteAction();
     }
-    
+
+
+    public void SetPrefabPostion()
+    {
+        targetsPrefab.transform.position = new Vector3(0.5f, -.3f, 0f) + mainCameraObj.transform.position;
+        float yRotation = mainCameraObj.transform.eulerAngles.y;
+        targetsPrefab.transform.eulerAngles = new Vector3(0, yRotation, 0);
+    }
+
     public override void FinalizeAction()
     {
         int attackPower = (int)(Mathf.Min((float)repCounter / (float)targetReps, 1f) * 100);
