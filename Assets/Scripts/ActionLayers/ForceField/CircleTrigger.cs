@@ -1,6 +1,8 @@
+using System;
+using UnityEditor.XR;
 using UnityEngine;
 
-namespace ActionLayers.ForceField
+namespace ForceField
 {
     public class CircleTrigger : MonoBehaviour
     {
@@ -71,7 +73,7 @@ namespace ActionLayers.ForceField
         
         private void AddFieldStrength(float handSpeed)
         {
-            ForceFieldDefense.fieldStrength += ((int)handSpeed * 2);
+            ForceFieldDefense.fieldStrength += (int)handSpeed;
         }
     }
 }
