@@ -10,7 +10,8 @@ public class Combatant : MonoBehaviour
 {
     [SerializeField] public string displayName = "Enemy";
     [SerializeField] private int HP;
-    [SerializeField] public HealthBar healthBar;
+    [SerializeField] private int maxHP = 100;
+    [SerializeField] public ProgressBar healthBar;
     [SerializeField] public AbilityTimer abilityTimer;
     
 
@@ -67,7 +68,7 @@ public class Combatant : MonoBehaviour
     public void UpdateHP(int newHP)
     {
         HP = newHP;
-        healthBar.UpdateHealth(newHP);
+        healthBar.SetProgress(newHP, maxHP);
     }
 
     public int GetHP()
@@ -75,10 +76,15 @@ public class Combatant : MonoBehaviour
         return HP;
     }
 
+    public void HealToFullHealth()
+    {
+        UpdateHP(maxHP);
+    }
+
     public void TakeDamage(int damage)
     {
         HP = Mathf.Max(0, HP - damage);
-        healthBar.UpdateHealth(HP);
+        healthBar.SetProgress(HP, maxHP);
 
         if (HP <= 0)
         {

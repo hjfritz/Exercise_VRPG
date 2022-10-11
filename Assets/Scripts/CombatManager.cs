@@ -32,7 +32,7 @@ public class CombatManager : MonoBehaviour
         {
             BattleTurnOrder[i] = PartyMembers[i];
             PartyMembers[i].healthBar.gameObject.SetActive(true);
-            PartyMembers[i].UpdateHP(100);
+            PartyMembers[i].HealToFullHealth();
         }
 
         for (int j = 0; j < EnemyPartyMembers.Length; j++)
@@ -40,6 +40,7 @@ public class CombatManager : MonoBehaviour
             BattleTurnOrder[i] = EnemyPartyMembers[j];
             EnemyPartyMembers[j].healthBar.gameObject.SetActive(true);
             EnemyPartyMembers[j].UpdateHP(EnemyPartyMembers[j].GetHP());
+            EnemyPartyMembers[j].HealToFullHealth();
             i++;
         }
 
