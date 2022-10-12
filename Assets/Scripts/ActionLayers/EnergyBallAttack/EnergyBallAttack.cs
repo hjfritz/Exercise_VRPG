@@ -2,12 +2,12 @@ using UnityEngine;
 
 namespace ActionLayers.EnergyBallAttack
 {
-    public class EnergyBallAttack : BattleAbility
+    public class EnergyBallAttack : PositionRelativeBattleAbility
     {
-        [SerializeField] private GameObject WholeLayer;
-        [SerializeField] private GameObject triggerLayer;
-        [SerializeField] private GameObject energyBallLayer;
-        [SerializeField] private GameObject energyBall;
+        private GameObject WholeLayer;
+        private GameObject triggerLayer;
+        private GameObject energyBallLayer;
+        private GameObject energyBall;
 
         public static int attackPower = 5;
         
@@ -20,6 +20,12 @@ namespace ActionLayers.EnergyBallAttack
         {
             base.Start();
             abilityDuration = _attackDuration;
+
+            WholeLayer = targetsPrefab;
+            triggerLayer = targetsPrefab.GetComponentInChildren<TriggersLayer>().gameObject;
+            energyBallLayer = targetsPrefab.GetComponentInChildren<EnergyBallLayer>().gameObject;
+            energyBall = energyBallLayer.GetComponentInChildren<ParticleSystem>().gameObject;
+
             WholeLayer.SetActive(false);
         }
         

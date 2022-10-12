@@ -96,6 +96,7 @@ namespace ActionLayers.EnergyBallAttack
             if (rightInDestination && startedInBox)
             {
                 AddPowerToEnergyBall(10);
+                sfx.PlayOneShot(successSound);
             }
             
             gripHeld = false;
