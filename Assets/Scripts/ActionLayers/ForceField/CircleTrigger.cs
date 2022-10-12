@@ -5,7 +5,8 @@ namespace ActionLayers.ForceField
     public class CircleTrigger : MonoBehaviour
     {
         [SerializeField] private GameObject diameter;
-        [SerializeField] private GameObject hand;
+        private GameObject hand;
+        [SerializeField] private bool left = false;
 
         private Vector3 _hand2D;
         
@@ -21,6 +22,14 @@ namespace ActionLayers.ForceField
         void Start()
         {
             _oldPosition = transform.position;
+            if (left)
+            {
+                hand = FindObjectOfType<LeftHand>().gameObject;
+            }
+            else
+            {
+                hand = FindObjectOfType<RightHand>().gameObject;
+            }
         }
 
         // Update is called once per frame

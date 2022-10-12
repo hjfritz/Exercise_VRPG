@@ -521,11 +521,10 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Force Field Defense
   abilityDuration: 0
-  forceField: {fileID: 0}
-  forceFieldLayer: {fileID: 0}
-  actionLayer: {fileID: 0}
-  sfx: {fileID: 0}
-  ambiance: {fileID: 0}
+  targetsPrefab: {fileID: 1646926091751065471, guid: b973d5a6b55ace94ba04ba20be5db30b, type: 3}
+  relativeTransform: {x: 0, y: -0.6, z: 0.5}
+  sfx: {fileID: 2230399104329598767}
+  ambiance: {fileID: 8300000, guid: af88e937d79beb74e93d0eea9acc76c7, type: 3}
 --- !u!114 &2230399104620384423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -563,9 +562,10 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Rsuuian Twists Ability
   abilityDuration: 0
+  targetsPrefab: {fileID: 6215593975301883444, guid: 2a3b43178f8ff1f4aa803153ed82ded0, type: 3}
+  relativeTransform: {x: 0.5, y: -0.3, z: 0}
   sfx: {fileID: 2230399104329598767}
   repCountClip: {fileID: 8300000, guid: e93b01c5ae35a1a409cde18b82462657, type: 3}
-  targetsPrefab: {fileID: 6215593975301883444, guid: 2a3b43178f8ff1f4aa803153ed82ded0, type: 3}
 --- !u!114 &6916065901081448684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -598,7 +598,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2230399104620384409}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7757c1a3c121b7f4d956ecdd8a1c8667, type: 3}
   m_Name: 

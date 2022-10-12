@@ -669,6 +669,7 @@ GameObject:
   - component: {fileID: 6059192617200745165}
   - component: {fileID: 6926665347984670997}
   - component: {fileID: 5398387211691234171}
+  - component: {fileID: 4493013769100850906}
   m_Layer: 0
   m_Name: LeftHand
   m_TagString: Untagged
@@ -721,6 +722,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4493013769100850906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6871722520934555767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a107e3c14ecec214aa2ae4f2dfcd9ace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7470298707246550805
 GameObject:
   m_ObjectHideFlags: 0

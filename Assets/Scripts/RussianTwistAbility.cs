@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RussianTwistAbility : BattleAbility
+public class RussianTwistAbility : PositionRelativeBattleAbility
 {
 
     private int repCounter = 0;
@@ -19,7 +19,7 @@ public class RussianTwistAbility : BattleAbility
     [SerializeField] private AudioSource sfx;
     [SerializeField] private AudioClip repCountClip;
 
-    [SerializeField] private GameObject targetsPrefab;
+    
 
     // Start is called before the first frame update
     new void Start()
@@ -27,8 +27,7 @@ public class RussianTwistAbility : BattleAbility
         base.Start();
         DisplayName = "Russian Twist Ability";
         abilityDuration = attackDuration;
-        targetsPrefab = Instantiate(targetsPrefab, xrOrigin.transform);
-        SetPrefabPostion();
+        
         twistTargets = targetsPrefab.GetComponentsInChildren<RussianTwistTarget>();
 
         foreach (var twistTarget in twistTargets)
@@ -37,7 +36,7 @@ public class RussianTwistAbility : BattleAbility
         }
 
         targetsPrefab.gameObject.SetActive(false);
-        base.Start();
+        
     }
 
     private void TargetTriggered(int targetid)
@@ -70,16 +69,7 @@ public class RussianTwistAbility : BattleAbility
         attackTimer = attackDuration;
         targetsPrefab.SetActive(true);
         SetPrefabPostion();
-        targetsPrefab.transform.parent = null;
         base.ExecuteAction();
-    }
-
-
-    public void SetPrefabPostion()
-    {
-        targetsPrefab.transform.position = new Vector3(0.5f, -.3f, 0f) + mainCameraObj.transform.position;
-        float yRotation = mainCameraObj.transform.eulerAngles.y;
-        targetsPrefab.transform.eulerAngles = new Vector3(0, yRotation, 0);
     }
 
     public override void FinalizeAction()
@@ -119,7 +109,6 @@ public class RussianTwistAbility : BattleAbility
             twistTarget.ResetTarget();
         }
         targetsPrefab.SetActive(false);
-        targetsPrefab.transform.parent = xrOrigin.transform;
     }
 
 

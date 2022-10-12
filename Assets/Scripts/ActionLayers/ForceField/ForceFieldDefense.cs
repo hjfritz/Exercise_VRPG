@@ -3,11 +3,11 @@ using UnityEngine.InputSystem;
 
 namespace ActionLayers.ForceField
 {
-    public class ForceFieldDefense : BattleAbility
+    public class ForceFieldDefense : PositionRelativeBattleAbility
     {
-        [SerializeField] private GameObject forceField;
-        [SerializeField] private GameObject forceFieldLayer;
-        [SerializeField] private GameObject actionLayer;
+        private GameObject forceField;
+        private GameObject forceFieldLayer;
+        private GameObject actionLayer;
 
         [SerializeField] private AudioSource sfx;
         [SerializeField] private AudioClip ambiance;
@@ -19,15 +19,21 @@ namespace ActionLayers.ForceField
         private float _defenseTimer = 0f;
 
         private bool abilityActive = false;
+
         
         // Start is called before the first frame update
         new void Start()
         {
             base.Start();
-            forceField.transform.localScale = new Vector3(0,0,0);
-            abilityDuration = _defenseDuration;
-            actionLayer.SetActive(false);
             
+            abilityDuration = _defenseDuration;
+
+            actionLayer = targetsPrefab;
+            forceFieldLayer = targetsPrefab.GetComponentInChildren<CircleDefenseFacing>().gameObject;
+            forceField = targetsPrefab.GetComponentInChildren<global::ForceField>().gameObject;
+            forceField.transform.localScale = new Vector3(0,0,0);
+            actionLayer.SetActive(false);
+
         }
 
         public override void ExecuteAction()

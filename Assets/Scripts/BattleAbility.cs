@@ -12,13 +12,12 @@ public class BattleAbility : MonoBehaviour
     public float abilityDuration;
 
     protected XROrigin xrOrigin;
-    protected GameObject mainCameraObj;
     
+
     // Start is called before the first frame update
     protected void Start()
     {
         xrOrigin = FindObjectOfType<XROrigin>();
-        mainCameraObj = GameObject.FindGameObjectsWithTag("MainCamera")[0];
 
     }
 
