@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="adding a few surprises">
+    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="Adding the menu prefab ( to be either displayed on a specific scene or on the hand when triggering secondary button of right controller">
       <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Game Menu.prefab" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Game Menu.prefab.meta" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/Scripts/MenuDisplay.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/Scripts/MenuDisplay.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.1.1/Starter Assets/XRI Default Input Actions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.1.1/Starter Assets/XRI Default Input Actions.inputactions" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +32,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Punching/PunchAbility.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Punching/SkeletonManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.probuilder@4.5.2/Runtime/Core/Submesh.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.1.1/Runtime/Inputs/InputActionManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.1.1/Runtime/Interaction/XRInteractionManager.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -225,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665581940866</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Adding the menu prefab ( to be either displayed on a specific scene or on the hand when triggering secondary button of right controller">
+      <created>1665583275895</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1665583275896</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,6 +278,7 @@
     <MESSAGE value="Completing Level 1 + Extra animations" />
     <MESSAGE value="Minor updates and polish" />
     <MESSAGE value="adding a few surprises" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding a few surprises" />
+    <MESSAGE value="Adding the menu prefab ( to be either displayed on a specific scene or on the hand when triggering secondary button of right controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding the menu prefab ( to be either displayed on a specific scene or on the hand when triggering secondary button of right controller" />
   </component>
 </project>
