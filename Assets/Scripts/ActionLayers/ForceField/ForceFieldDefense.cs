@@ -27,6 +27,8 @@ namespace ActionLayers.ForceField
             base.Start();
             
             abilityDuration = _defenseDuration;
+            relativeTransform = new Vector3(0f, -.5f, .3f);
+            //relativeTransform = new Vector3(0f, 0f, 0f);
 
             actionLayer = targetsPrefab;
             forceFieldLayer = targetsPrefab.GetComponentInChildren<CircleDefenseFacing>().gameObject;

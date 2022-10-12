@@ -20,6 +20,8 @@ namespace ActionLayers.EnergyBallAttack
         {
             base.Start();
             abilityDuration = _attackDuration;
+            relativeTransform = new Vector3(0f, -.5f, .2f);
+            //relativeTransform = new Vector3(0f, 0f, 0f);
 
             WholeLayer = targetsPrefab;
             triggerLayer = targetsPrefab.GetComponentInChildren<TriggersLayer>().gameObject;

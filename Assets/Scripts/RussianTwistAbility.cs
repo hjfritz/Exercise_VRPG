@@ -27,7 +27,8 @@ public class RussianTwistAbility : PositionRelativeBattleAbility
         base.Start();
         DisplayName = "Russian Twist Ability";
         abilityDuration = attackDuration;
-        
+        relativeTransform = new Vector3(0f, -.3f, .1f);
+        //relativeTransform = new Vector3(0f, 0f, 0f);
         twistTargets = targetsPrefab.GetComponentsInChildren<RussianTwistTarget>();
 
         foreach (var twistTarget in twistTargets)

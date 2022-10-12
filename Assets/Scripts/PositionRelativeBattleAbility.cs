@@ -6,7 +6,7 @@ public class PositionRelativeBattleAbility : BattleAbility
 {
     protected GameObject mainCameraObj;
     [SerializeField] protected GameObject targetsPrefab;
-    [SerializeField] private Vector3 relativeTransform;
+    protected Vector3 relativeTransform;
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -24,10 +24,10 @@ public class PositionRelativeBattleAbility : BattleAbility
 
     public void SetPrefabPostion()
     {
-        targetsPrefab.transform.parent = xrOrigin.transform;
-        targetsPrefab.transform.position = relativeTransform + mainCameraObj.transform.position;
-        float yRotation = mainCameraObj.transform.eulerAngles.y;
-        targetsPrefab.transform.eulerAngles = new Vector3(0, yRotation, 0);
+        targetsPrefab.transform.parent = xrOrigin.transform.GetChild(0);
+        float yRotation = mainCameraObj.transform.localEulerAngles.y;
+        targetsPrefab.transform.localEulerAngles = new Vector3(0, yRotation, 0);
+        targetsPrefab.transform.localPosition = relativeTransform + mainCameraObj.transform.localPosition;
         targetsPrefab.transform.parent = null;
     }
 
