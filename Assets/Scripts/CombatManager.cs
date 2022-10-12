@@ -28,7 +28,7 @@ public class CombatManager : MonoBehaviour
     {
         menu.ShowBattleHudCanvas();
         
-        BGM.Play();
+        //BGM.Play();
         
         BattleTurnOrder = new Combatant[PartyMembers.Length + EnemyPartyMembers.Length];
         int i = 0;
@@ -71,7 +71,7 @@ public class CombatManager : MonoBehaviour
         {
             Debug.Log($"Battle Over - Fatal Blow Dealt by {battleAction.actionTaker}");
             menu.ShowRestartCanvas(battleAction.actionTaker.displayName);
-            BGM.Stop();
+            //BGM.Stop();
             ShowHideHealthBars(false);
             
         }
