@@ -13,13 +13,14 @@ public class SquatAbility : BattleAbility
 
     private bool squatting;
     private float squatThresholdHeight;
-    [SerializeField] private Transform head;
+    private Transform head;
     [SerializeField] private AudioSource sfx;
     [SerializeField] private AudioClip repCountClip;
     new void Start()
     {
         DisplayName = "Squat Ability";
         abilityDuration = attackDuration;
+        head = GameObject.FindGameObjectsWithTag("MainCamera")[0].transform;
         base.Start();
     }
     
