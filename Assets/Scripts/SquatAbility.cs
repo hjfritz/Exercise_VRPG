@@ -28,7 +28,8 @@ public class SquatAbility : BattleAbility
     {
         counting = true;
         attackTimer = attackDuration;
-        squatThresholdHeight = head.transform.position.y * .85f;
+        squatThresholdHeight = head.transform.localPosition.y * .85f;
+        Debug.Log($"head height set to {head.transform.localPosition.y}");
         base.ExecuteAction();
     }
 
@@ -53,7 +54,7 @@ public class SquatAbility : BattleAbility
             {
                 attackTimer -= Time.deltaTime;
             
-                if (head.transform.position.y < squatThresholdHeight)
+                if (head.transform.localPosition.y < squatThresholdHeight)
                 {
                     if (squatting == false)
                     {
