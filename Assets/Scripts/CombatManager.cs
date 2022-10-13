@@ -21,7 +21,7 @@ public class CombatManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        menu.ShowWelcomeCanvas();
+        //menu.ShowWelcomeCanvas();
     }
 
     public void StartBattle()

@@ -10,8 +10,7 @@ public class DummyAbility : BattleAbility
     private float attackDuration = 5.0f;
     private float attackTimer = 0f;
 
-    private int targetReps = 30;
-    
+    [SerializeField] private int targetReps = 30;
     [SerializeField] private InputActionReference buttonRef;
     // Start is called before the first frame update
     new void Start()
@@ -22,8 +21,18 @@ public class DummyAbility : BattleAbility
         base.Start();
     }
     
+    private void SetRepsWithDifficulty()
+    {
+        var pm = transform.parent.GetComponent<PlayerManager>();
+        if (pm)
+        {
+            targetReps *= pm.difficulty;
+        }
+    }
+    
     public override void ExecuteAction()
     {
+        SetRepsWithDifficulty();
         counting = true;
         attackTimer = attackDuration;
         base.ExecuteAction();

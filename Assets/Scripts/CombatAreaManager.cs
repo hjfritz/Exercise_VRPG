@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,10 +21,20 @@ public class CombatAreaManager : MonoBehaviour
             pm.currentCombatManager= transform.parent.GetComponent<CombatManager>();
             pm.menu.SetActive(true);
             pm.currentCombatManager.StartBattle();
+            pm.FightStart.Invoke();
         }
 
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        var pm = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
+        if (pm)
+        {
 
-    
+            pm.currentCombatManager = null;
+            pm.menu.SetActive(false);
+            pm.FightEnd.Invoke();
+        }
+    }
 }

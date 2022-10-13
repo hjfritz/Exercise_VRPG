@@ -11,11 +11,12 @@ public class RussianTwistAbility : PositionRelativeBattleAbility
     private float attackDuration = 15.0f;
     private float attackTimer = 0f;
 
-    private int targetReps = 25;
+    
 
     private RussianTwistTarget[] twistTargets;
     private int currentTargetIndex = -1;
 
+    [SerializeField]private int targetReps = 25;
     [SerializeField] private AudioSource sfx;
     [SerializeField] private AudioClip repCountClip;
 
@@ -63,9 +64,19 @@ public class RussianTwistAbility : PositionRelativeBattleAbility
             currentTargetIndex = 0;
         }
     }
+    
+    private void SetRepsWithDifficulty()
+    {
+        var pm = transform.parent.GetComponent<PlayerManager>();
+        if (pm)
+        {
+            targetReps *= pm.difficulty;
+        }
+    }
 
     public override void ExecuteAction()
     {
+        SetRepsWithDifficulty();
         counting = true;
         attackTimer = attackDuration;
         targetsPrefab.SetActive(true);

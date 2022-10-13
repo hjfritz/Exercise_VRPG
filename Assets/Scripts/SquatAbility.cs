@@ -9,11 +9,13 @@ public class SquatAbility : BattleAbility
     private float attackDuration = 15.0f;
     private float attackTimer = 0f;
     
-    private int targetReps = 12;
+    
 
     private bool squatting;
     private float squatThresholdHeight;
     private Transform head;
+    
+    [SerializeField] private int targetReps = 12;
     [SerializeField] private AudioSource sfx;
     [SerializeField] private AudioClip repCountClip;
     new void Start()
@@ -24,8 +26,18 @@ public class SquatAbility : BattleAbility
         base.Start();
     }
     
+    
+    private void SetRepsWithDifficulty()
+    {
+        var pm = transform.parent.GetComponent<PlayerManager>();
+        if (pm)
+        {
+            targetReps *= pm.difficulty;
+        }
+    }
     public override void ExecuteAction()
     {
+        SetRepsWithDifficulty();
         counting = true;
         attackTimer = attackDuration;
         squatThresholdHeight = head.transform.localPosition.y * .85f;

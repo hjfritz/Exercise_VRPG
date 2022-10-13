@@ -230,18 +230,6 @@ MonoBehaviour:
   StartFight:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2650274695889549650}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 7515785293807246530}
         m_TargetAssemblyTypeName: EnemyANimationManager, Assembly-CSharp
         m_MethodName: StartAnim
@@ -270,7 +258,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6613439801712872474
 Transform:
   m_ObjectHideFlags: 0
@@ -1439,7 +1427,7 @@ MonoBehaviour:
   - {fileID: 2650274694705121749}
   BGM: {fileID: 6754960455577409057}
   BattleTurnOrder: []
-  menu: {fileID: 2650274695889549651}
+  menu: {fileID: 0}
 --- !u!82 &2650274696374030224
 AudioSource:
   m_ObjectHideFlags: 0

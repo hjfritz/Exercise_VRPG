@@ -29,18 +29,7 @@ public class PunchAbility : BattleAbility
     {
         DisplayName = "Punch Ability";
         abilityDuration = attackDuration;
-        var pm = transform.parent.GetComponent<PlayerManager>();
-        if (pm)
-        {
-            //punchingArea = pm.currentCombatManager.GetComponentInChildren<CombatAreaManager>().transform;
-        }
-        targetsPrefab = Instantiate(targetsPrefab, punchingArea);
-        targetsPrefab.transform.position = new Vector3(0f , 1.4f, 0f) + punchingArea.position + punchingArea.forward; //new Vector3(0f , 1.4f, .8f) + p
-        //targetsPrefab.transform.rotation = transform.rotation ;// factor 1 / .77 / .44
-        _punchTarget = targetsPrefab.GetComponent<PunchTarget>();
-        _punchTarget.SingleHitTrigger.AddListener(TargetTriggered);
-        //_punchTarget.DoubleHitTrigger.AddListener(TargetTriggered);
-        targetsPrefab.gameObject.SetActive(false);
+        
         base.Start();
     }
 
@@ -56,10 +45,38 @@ public class PunchAbility : BattleAbility
 
     }
 
+    private void settarget()
+    {
+        targetsPrefab = Instantiate(targetsPrefab, punchingArea);
+        targetsPrefab.transform.position = new Vector3(0f , 1.4f, 0f) + punchingArea.position + (punchingArea.forward * 0.5f); //new Vector3(0f , 1.4f, .8f) + p
+        //targetsPrefab.transform.rotation = transform.rotation ;// factor 1 / .77 / .44
+        _punchTarget = targetsPrefab.GetComponent<PunchTarget>();
+        _punchTarget.SingleHitTrigger.AddListener(TargetTriggered);
+        //_punchTarget.DoubleHitTrigger.AddListener(TargetTriggered);
+        targetsPrefab.gameObject.SetActive(false);
+    }
 
-
+    private void SetRepsWithDifficulty()
+    {
+        var pm = transform.parent.GetComponent<PlayerManager>();
+        if (pm)
+        {
+            targetReps *= pm.difficulty;
+        }
+    }
     public override void ExecuteAction()
     {
+        SetRepsWithDifficulty();
+        settarget();
+        var pm = transform.parent.GetComponent<PlayerManager>();
+        if (pm)
+        {
+            targetReps *= pm.difficulty;
+            Debug.Log(pm.name);
+            Debug.Log(pm.currentCombatManager.name);
+            Debug.Log(pm.currentCombatManager.GetComponentInChildren<CombatAreaManager>().name);
+            //punchingArea = pm.currentCombatManager.GetComponentInChildren<CombatAreaManager>().transform;
+        }
         counting = true;
         attackTimer = attackDuration;
         targetsPrefab.SetActive(true);
