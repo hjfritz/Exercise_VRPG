@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
 
-public class DummyEnemyAtackAbility : BattleAbility
+public class DummyEnemyAtackAbility : BattleAttackAbility
 {
     private bool counting = false;
     private float attackDuration = 5.0f;

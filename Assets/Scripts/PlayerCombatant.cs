@@ -19,7 +19,7 @@ public class PlayerCombatant : Combatant
     }
     public override void SelectAction()
     {
-        actionAbilities = GetComponents<BattleAbility>();
+        actionAbilities = GetComponents<BattleAttackAbility>();
         actionMenu.MenuActionSelected.AddListener(MenuActionSelected);
         displayActionMenu();
     }

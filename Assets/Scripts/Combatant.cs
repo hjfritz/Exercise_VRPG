@@ -20,9 +20,9 @@ public class Combatant : MonoBehaviour
     public UnityEvent<int> TurnActionComplete = new UnityEvent<int>();
     public UnityEvent DeathConfirmed = new UnityEvent();
 
-    public BattleAbility[] actionAbilities;
+    public BattleAttackAbility[] actionAbilities;
     public DefenseAbility[] defenseAbilities;
-    protected BattleAbility selectedAbility;
+    protected BattleAttackAbility selectedAbility;
     
     private Random random = new Random();
     
@@ -40,7 +40,7 @@ public class Combatant : MonoBehaviour
 
     public virtual void SelectAction()
     {
-        actionAbilities = GetComponents<BattleAbility>();
+        actionAbilities = GetComponents<BattleAttackAbility>();
         //hard code to index 0 for now to avoid selecting the defense ability
         //int randomIndex = random.Next(0, actionAbilities.Length);
         selectedAbility = actionAbilities[0];
