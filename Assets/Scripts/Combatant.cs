@@ -15,14 +15,15 @@ public class Combatant : MonoBehaviour
     [SerializeField] public AbilityTimer abilityTimer;
     
 
-    public UnityEvent<BattleAbility> ActionSelected = new UnityEvent<BattleAbility>();
-    public UnityEvent DefenseSelected = new UnityEvent();
+    public UnityEvent<BattleAttackAbility> ActionSelected = new UnityEvent<BattleAttackAbility>();
+    public UnityEvent<DefenseAbility> DefenseSelected = new UnityEvent<DefenseAbility>();
     public UnityEvent<int> TurnActionComplete = new UnityEvent<int>();
     public UnityEvent DeathConfirmed = new UnityEvent();
 
     public BattleAttackAbility[] actionAbilities;
     public DefenseAbility[] defenseAbilities;
     protected BattleAttackAbility selectedAbility;
+    protected DefenseAbility selectedDefense;
     
     private Random random = new Random();
     
@@ -47,11 +48,23 @@ public class Combatant : MonoBehaviour
         ActionSelected.Invoke(actionAbilities[0]);
     }
 
+    public virtual void SelectDefense()
+    {
+        defenseAbilities = GetComponents<DefenseAbility>();
+        selectedDefense = defenseAbilities[0];
+        DefenseSelected.Invoke(selectedDefense);
+    }
+
     public void TakeAction()
     {
         selectedAbility.AbilityComplete.AddListener(CompleteTurnAction);
         abilityTimer.StartTimer(selectedAbility.abilityDuration);
         selectedAbility.ExecuteAction();
+    }
+
+    public void TakeDefense(float duration)
+    {
+        selectedDefense.ExecuteDefense(duration);
     }
 
     private void CompleteTurnAction(int attackPower)

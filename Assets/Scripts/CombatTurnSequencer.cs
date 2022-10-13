@@ -24,14 +24,25 @@ public class CombatTurnSequencer
         currentAction.actionTaker.SelectAction();
     }
 
-    private void ActionSelected(BattleAbility ability)
+    private void ActionSelected(BattleAttackAbility ability)
     {
         currentAction.selectedAbility = ability;
+        currentAction.actionTarget.DefenseSelected.AddListener(DefenseSelected);
+        currentAction.actionTarget.SelectDefense();
+    }
+
+    private void DefenseSelected(DefenseAbility ability)
+    {
+        currentAction.selectedDefense = ability;
+        SynchronizeStart();
+    }
+
+    private void SynchronizeStart()
+    {
         currentAction.actionTaker.TurnActionComplete.AddListener(ActionComplete);
-        currentAction.actionTarget.defenseAbilities[0].AbilityComplete.AddListener(DefenseComplete);
         currentAction.actionTaker.TakeAction();
-        currentAction.actionTarget.defenseAbilities[0].ExecuteDefense(currentAction.selectedAbility.abilityDuration);
-       
+        currentAction.selectedDefense.AbilityComplete.AddListener(DefenseComplete);
+        currentAction.actionTarget.TakeDefense(currentAction.selectedAbility.abilityDuration);
     }
 
     private void ActionComplete(int attackPower)
@@ -55,7 +66,8 @@ public class CombatTurnSequencer
         {
             currentAction.actionTaker.ActionSelected.RemoveListener(ActionSelected);
             currentAction.actionTaker.TurnActionComplete.RemoveListener(ActionComplete);
-            currentAction.actionTarget.defenseAbilities[0].AbilityComplete.RemoveListener(DefenseComplete);
+            currentAction.actionTarget.DefenseSelected.RemoveListener(DefenseSelected);
+            currentAction.selectedDefense.AbilityComplete.RemoveListener(DefenseComplete);
             TurnComplete.Invoke(currentAction);
             ResetForNextTurn();
         }

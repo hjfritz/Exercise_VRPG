@@ -7,7 +7,8 @@ public class BattleAction
 {
     public Combatant actionTaker;
     public Combatant actionTarget;
-    public BattleAbility selectedAbility;
+    public BattleAttackAbility selectedAbility;
+    public DefenseAbility selectedDefense;
     public int attackPower;
     public int defensePower;
     public bool attackComplete;
