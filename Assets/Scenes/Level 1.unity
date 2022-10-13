@@ -1081,6 +1081,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DragonCombatManager 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8396746476851257105, guid: 0c3e11b2008df9d4380e04c8fd2c7e25, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8396746476851257107, guid: 0c3e11b2008df9d4380e04c8fd2c7e25, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2125,6 +2129,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WitchCombatManager 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8396746476851257105, guid: 01f0b10afba62f047865b1d717e6ff76, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8396746476851257107, guid: 01f0b10afba62f047865b1d717e6ff76, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2181,6 +2189,10 @@ PrefabInstance:
     - target: {fileID: 8396746476851257105, guid: da6c1e0f04cae394ea1c438bc8d5b37c, type: 3}
       propertyPath: m_Name
       value: SkeletonCombatManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396746476851257105, guid: da6c1e0f04cae394ea1c438bc8d5b37c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8396746476851257107, guid: da6c1e0f04cae394ea1c438bc8d5b37c, type: 3}
       propertyPath: m_RootOrder

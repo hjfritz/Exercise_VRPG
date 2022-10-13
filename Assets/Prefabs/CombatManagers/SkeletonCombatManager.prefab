@@ -3389,7 +3389,6 @@ GameObject:
   - component: {fileID: 8396746477685065899}
   - component: {fileID: 3859031888861055199}
   - component: {fileID: 6802949175221455683}
-  - component: {fileID: 1490856792145967383}
   m_Layer: 0
   m_Name: PlayerCombatant
   m_TagString: Untagged
@@ -3478,9 +3477,9 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Force Field Defense
   abilityDuration: 0
-  targetsPrefab: {fileID: 1646926091751065471, guid: b973d5a6b55ace94ba04ba20be5db30b, type: 3}
   sfx: {fileID: 8396746476851257116}
   ambiance: {fileID: 8300000, guid: af88e937d79beb74e93d0eea9acc76c7, type: 3}
+  targetsPrefab: {fileID: 1646926091751065471, guid: b973d5a6b55ace94ba04ba20be5db30b, type: 3}
 --- !u!114 &8396746477685065876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3563,23 +3562,6 @@ MonoBehaviour:
   DisplayName: Energy Ball
   abilityDuration: 0
   targetsPrefab: {fileID: 8342547735152388511, guid: b46a14d895ce6a140bc7f7529bb9b58b, type: 3}
---- !u!114 &1490856792145967383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8396746477685065898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 791763ea0c1edc040addf34903a2ed35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityComplete:
-    m_PersistentCalls:
-      m_Calls: []
-  DisplayName: Display Name Not Set
-  abilityDuration: 0
 --- !u!1 &8746540583969484619
 GameObject:
   m_ObjectHideFlags: 0
@@ -3742,16 +3724,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f81fae7066b91fa40b77246a104de3d9, type: 3}
---- !u!1 &5757881214504833014 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7128096695280760874, guid: f81fae7066b91fa40b77246a104de3d9, type: 3}
-  m_PrefabInstance: {fileID: 3243731207328692188}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &4839526426579155906 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7939142439354321950, guid: f81fae7066b91fa40b77246a104de3d9, type: 3}
-  m_PrefabInstance: {fileID: 3243731207328692188}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3224246694147822079 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 124657207290914339, guid: f81fae7066b91fa40b77246a104de3d9, type: 3}
@@ -3766,5 +3738,15 @@ MonoBehaviour:
 --- !u!4 &4946019852826760524 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7613271952654344848, guid: f81fae7066b91fa40b77246a104de3d9, type: 3}
+  m_PrefabInstance: {fileID: 3243731207328692188}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5757881214504833014 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7128096695280760874, guid: f81fae7066b91fa40b77246a104de3d9, type: 3}
+  m_PrefabInstance: {fileID: 3243731207328692188}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4839526426579155906 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7939142439354321950, guid: f81fae7066b91fa40b77246a104de3d9, type: 3}
   m_PrefabInstance: {fileID: 3243731207328692188}
   m_PrefabAsset: {fileID: 0}

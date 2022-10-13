@@ -6,7 +6,7 @@ using Random = System.Random;
 public class DummyEnemyAtackAbility : BattleAttackAbility
 {
     private bool counting = false;
-    private float attackDuration = 5.0f;
+    private float attackDuration = 10.0f;
     private float attackTimer = 0f;
     
     private Random random = new Random();
@@ -30,7 +30,6 @@ public class DummyEnemyAtackAbility : BattleAttackAbility
             }
             else
             {
-                Debug.Log($"enemy attack {attackTimer}");
                 attackTimer -= Time.deltaTime;
             }
         } 

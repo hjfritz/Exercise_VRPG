@@ -36,7 +36,7 @@ public class DefenseAbility : BattleAbility
         } 
     }
     
-    public override void ExecuteDefense(float duration)
+    public  override void ExecuteDefense(float duration)
     {
         Debug.Log($"defense duration {duration}");
         defenseTimer = duration;
