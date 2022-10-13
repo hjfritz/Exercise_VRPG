@@ -8,6 +8,8 @@ public class CombatManager : MonoBehaviour
 {
     [SerializeField] private Combatant[] PartyMembers;
     [SerializeField] private Combatant[] EnemyPartyMembers;
+
+    [SerializeField] private AudioSource BGM;
     
     [SerializeField] private Combatant[] BattleTurnOrder;
     private CombatTurnSequencer seq;
@@ -25,6 +27,8 @@ public class CombatManager : MonoBehaviour
     public void StartBattle()
     {
         menu.ShowBattleHudCanvas();
+        
+        //BGM.Play();
         
         BattleTurnOrder = new Combatant[PartyMembers.Length + EnemyPartyMembers.Length];
         int i = 0;
@@ -68,6 +72,7 @@ public class CombatManager : MonoBehaviour
         {
             Debug.Log($"Battle Over - Fatal Blow Dealt by {battleAction.actionTaker}");
             menu.ShowRestartCanvas(battleAction.actionTaker.displayName);
+            //BGM.Stop();
             ShowHideHealthBars(false);
             
         }
