@@ -42,10 +42,10 @@ public class Combatant : MonoBehaviour
     public virtual void SelectAction()
     {
         actionAbilities = GetComponents<BattleAttackAbility>();
-        //hard code to index 0 for now to avoid selecting the defense ability
-        //int randomIndex = random.Next(0, actionAbilities.Length);
-        selectedAbility = actionAbilities[0];
-        ActionSelected.Invoke(actionAbilities[0]);
+       
+        int randomIndex = random.Next(0, actionAbilities.Length);
+        selectedAbility = actionAbilities[randomIndex];
+        ActionSelected.Invoke(actionAbilities[randomIndex]);
     }
 
     public virtual void SelectDefense()
