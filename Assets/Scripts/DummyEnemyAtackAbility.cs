@@ -22,14 +22,18 @@ public class DummyEnemyAtackAbility : BattleAbility
     // Update is called once per frame
     void Update()
     {
-        if (counting && attackTimer < 0)
+        if (counting)
         {
-            FinalizeAction();
-        }
-        else
-        {
-            attackTimer -= Time.deltaTime;
-        }
+            if(attackTimer < 0)
+            {
+                FinalizeAction();
+            }
+            else
+            {
+                Debug.Log($"enemy attack {attackTimer}");
+                attackTimer -= Time.deltaTime;
+            }
+        } 
     }
     
     public override void ExecuteAction()

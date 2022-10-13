@@ -9,4 +9,7 @@ public class BattleAction
     public Combatant actionTarget;
     public BattleAbility selectedAbility;
     public int attackPower;
+    public int defensePower;
+    public bool attackComplete;
+    public bool defenseComplete;
 }

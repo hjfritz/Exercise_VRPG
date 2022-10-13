@@ -21,14 +21,15 @@ public class Combatant : MonoBehaviour
     public UnityEvent DeathConfirmed = new UnityEvent();
 
     public BattleAbility[] actionAbilities;
+    public DefenseAbility[] defenseAbilities;
     protected BattleAbility selectedAbility;
     
     private Random random = new Random();
     
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
-        
+        defenseAbilities = GetComponents<DefenseAbility>();
     }
 
     // Update is called once per frame
@@ -40,10 +41,10 @@ public class Combatant : MonoBehaviour
     public virtual void SelectAction()
     {
         actionAbilities = GetComponents<BattleAbility>();
-
-        int randomIndex = random.Next(0, actionAbilities.Length);
-        selectedAbility = actionAbilities[randomIndex];
-        ActionSelected.Invoke(actionAbilities[randomIndex]);
+        //hard code to index 0 for now to avoid selecting the defense ability
+        //int randomIndex = random.Next(0, actionAbilities.Length);
+        selectedAbility = actionAbilities[0];
+        ActionSelected.Invoke(actionAbilities[0]);
     }
 
     public void TakeAction()

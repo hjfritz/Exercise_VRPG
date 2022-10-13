@@ -10,10 +10,11 @@ public class CombatTurnSequencer
     private BattleAction currentAction;
     public UnityEvent<BattleAction> TurnComplete = new UnityEvent<BattleAction>();
 
-    public void StartNewTurn(Combatant actionTaker)
+    public void StartNewTurn(Combatant actionTaker, Combatant actionTarget)
     {
         currentAction = new BattleAction();
         currentAction.actionTaker = actionTaker;
+        currentAction.actionTarget = actionTarget;
         DetermineAction();
     }
 
@@ -27,16 +28,37 @@ public class CombatTurnSequencer
     {
         currentAction.selectedAbility = ability;
         currentAction.actionTaker.TurnActionComplete.AddListener(ActionComplete);
+        currentAction.actionTarget.defenseAbilities[0].AbilityComplete.AddListener(DefenseComplete);
         currentAction.actionTaker.TakeAction();
+        currentAction.actionTarget.defenseAbilities[0].ExecuteDefense(currentAction.selectedAbility.abilityDuration);
+       
     }
 
     private void ActionComplete(int attackPower)
     {
         currentAction.attackPower = attackPower;
-        currentAction.actionTaker.ActionSelected.RemoveListener(ActionSelected);
-        currentAction.actionTaker.TurnActionComplete.RemoveListener(ActionComplete);
-        TurnComplete.Invoke(currentAction);
-        ResetForNextTurn();
+        currentAction.attackComplete = true;
+        ActionAndDefenseComplete();
+
+    }
+
+    private void DefenseComplete(int defensePower)
+    {
+        currentAction.defensePower = defensePower;
+        currentAction.defenseComplete = true;
+        ActionAndDefenseComplete();
+    }
+
+    private void ActionAndDefenseComplete()
+    {
+        if (currentAction.attackComplete && currentAction.defenseComplete)
+        {
+            currentAction.actionTaker.ActionSelected.RemoveListener(ActionSelected);
+            currentAction.actionTaker.TurnActionComplete.RemoveListener(ActionComplete);
+            currentAction.actionTarget.defenseAbilities[0].AbilityComplete.RemoveListener(DefenseComplete);
+            TurnComplete.Invoke(currentAction);
+            ResetForNextTurn();
+        }
     }
 
     private void ResetForNextTurn()

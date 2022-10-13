@@ -54,6 +54,7 @@ public class CombatManager : MonoBehaviour
     private void ResolveTurn(BattleAction battleAction)
     {
         Debug.Log($"Action Taker - {battleAction.actionTaker}, Attack Ability - {battleAction.selectedAbility}, Attack Power - {battleAction.attackPower}");
+        Debug.Log($"Action Target - {battleAction.actionTarget}, Defense Power - {battleAction.defensePower}");
         
 
         int damage = Mathf.FloorToInt(.2f * battleAction.attackPower);
@@ -87,7 +88,7 @@ public class CombatManager : MonoBehaviour
     private void NextTurn()
     {
         menu.turnIndicator.ShowTurnTaker(BattleTurnOrder[turnCounter%BattleTurnOrder.Length].displayName);
-        seq.StartNewTurn(BattleTurnOrder[turnCounter%BattleTurnOrder.Length]);
+        seq.StartNewTurn(BattleTurnOrder[turnCounter%BattleTurnOrder.Length],BattleTurnOrder[(turnCounter+1)%BattleTurnOrder.Length] );
     }
 
     private void ShowHideHealthBars(bool show)
