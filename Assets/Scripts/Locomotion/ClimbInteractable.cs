@@ -1,27 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class ClimbInteractable : XRBaseInteractable
+namespace Locomotion
 {
-    protected override void OnSelectEntered(SelectEnterEventArgs args)
+    public class ClimbInteractable : XRBaseInteractable
     {
-        base.OnSelectEntered(args);
-        Debug.Log("Start CLimbing");
-        if(args.interactorObject is XRDirectInteractor)
-        Climber.climbingHand = args.interactorObject.transform.GetComponent<XRController>();
-    }
-
-    protected override void OnSelectExited(SelectExitEventArgs args)
-    {
-        base.OnSelectExited(args);
-        Debug.Log("Stop CLimbing");
-        if (args.interactorObject is XRDirectInteractor)
+        protected override void OnSelectEntered(SelectEnterEventArgs args)
         {
-            if(Climber.climbingHand && Climber.climbingHand.name == args.interactorObject.transform.name)
-                Climber.climbingHand = null;
-        }
+            base.OnSelectEntered(args);
             
+            XRDirectInteractor xrd = args.interactorObject.transform.GetComponent<XRDirectInteractor>();
+            if (xrd)
+            {
+                Climber.climbingHand = args.interactorObject.transform
+                    .GetComponent<ActionBasedController>();
+            }
+                
+        }
+
+        protected override void OnSelectExited(SelectExitEventArgs args)
+        {
+            base.OnSelectExited(args);
+            
+            XRDirectInteractor xrd = args.interactorObject.transform.GetComponent<XRDirectInteractor>();
+            if(xrd)
+            {
+                if(Climber.climbingHand && Climber.climbingHand.name == args.interactorObject.transform.name)
+                    Climber.climbingHand = null;
+            }
+            
+        }
     }
 }

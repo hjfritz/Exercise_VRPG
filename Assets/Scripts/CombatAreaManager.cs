@@ -8,9 +8,12 @@ using UnityEngine.Events;
 public class CombatAreaManager : MonoBehaviour
 {
     public UnityEvent StartFight;
+    
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
+        
+        
         StartFight.Invoke();
         
         var pm = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
