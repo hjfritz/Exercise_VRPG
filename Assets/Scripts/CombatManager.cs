@@ -17,6 +17,8 @@ public class CombatManager : MonoBehaviour
     private int turnCounter = 0;
 
     [SerializeField] private CombatManagerMenu menu;
+
+    public bool battleActive = false;
     
     // Start is called before the first frame update
     void Start()
@@ -26,32 +28,36 @@ public class CombatManager : MonoBehaviour
 
     public void StartBattle()
     {
-        menu.ShowBattleHudCanvas();
-        
-        //BGM.Play();
-        
-        BattleTurnOrder = new Combatant[PartyMembers.Length + EnemyPartyMembers.Length];
-        int i = 0;
-        for (; i < PartyMembers.Length; i++)
+        if (battleActive == false)
         {
-            BattleTurnOrder[i] = PartyMembers[i];
-            PartyMembers[i].healthBar.gameObject.SetActive(true);
-            PartyMembers[i].HealToFullHealth();
-        }
+            menu.ShowBattleHudCanvas();
+            battleActive = true;
+        
+            //BGM.Play();
+        
+            BattleTurnOrder = new Combatant[PartyMembers.Length + EnemyPartyMembers.Length];
+            int i = 0;
+            for (; i < PartyMembers.Length; i++)
+            {
+                BattleTurnOrder[i] = PartyMembers[i];
+                PartyMembers[i].healthBar.gameObject.SetActive(true);
+                PartyMembers[i].HealToFullHealth();
+            }
 
-        for (int j = 0; j < EnemyPartyMembers.Length; j++)
-        {
-            BattleTurnOrder[i] = EnemyPartyMembers[j];
-            EnemyPartyMembers[j].healthBar.gameObject.SetActive(true);
-            EnemyPartyMembers[j].UpdateHP(EnemyPartyMembers[j].GetHP());
-            EnemyPartyMembers[j].HealToFullHealth();
-            i++;
-        }
+            for (int j = 0; j < EnemyPartyMembers.Length; j++)
+            {
+                BattleTurnOrder[i] = EnemyPartyMembers[j];
+                EnemyPartyMembers[j].healthBar.gameObject.SetActive(true);
+                EnemyPartyMembers[j].UpdateHP(EnemyPartyMembers[j].GetHP());
+                EnemyPartyMembers[j].HealToFullHealth();
+                i++;
+            }
 
-        turnCounter = 0;
-        seq = new CombatTurnSequencer();
-        seq.TurnComplete.AddListener(ResolveTurn);
-        NextTurn();
+            turnCounter = 0;
+            seq = new CombatTurnSequencer();
+            seq.TurnComplete.AddListener(ResolveTurn);
+            NextTurn();
+        }
         
     }
 
@@ -74,7 +80,8 @@ public class CombatManager : MonoBehaviour
             menu.ShowRestartCanvas(battleAction.actionTaker.displayName);
             //BGM.Stop();
             ShowHideHealthBars(false);
-            
+            battleActive = false;
+
         }
         else
         {

@@ -3794,9 +3794,9 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Force Field Defense
   abilityDuration: 0
-  targetsPrefab: {fileID: 1646926091751065471, guid: b973d5a6b55ace94ba04ba20be5db30b, type: 3}
   sfx: {fileID: 1126591115}
   ambiance: {fileID: 8300000, guid: af88e937d79beb74e93d0eea9acc76c7, type: 3}
+  targetsPrefab: {fileID: 1646926091751065471, guid: b973d5a6b55ace94ba04ba20be5db30b, type: 3}
 --- !u!114 &1711403686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3845,6 +3845,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   actionAbilities: []
+  defenseAbilities: []
   actionMenu: {fileID: 297085298}
 --- !u!1001 &1780941019
 PrefabInstance:
@@ -3860,6 +3861,10 @@ PrefabInstance:
     - target: {fileID: 2650274696374030237, guid: 0974fe5d479a2e74b93b9d3e72db5902, type: 3}
       propertyPath: m_Name
       value: AutonomousCombatManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2650274696374030237, guid: 0974fe5d479a2e74b93b9d3e72db5902, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2650274696374030238, guid: 0974fe5d479a2e74b93b9d3e72db5902, type: 3}
       propertyPath: menu

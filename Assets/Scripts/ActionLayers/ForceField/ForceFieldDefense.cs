@@ -82,7 +82,7 @@ namespace ActionLayers.ForceField
                 }
                 else
                 {
-                    Debug.Log($"defnse ability running- {_defenseTimer}");
+                    //Debug.Log($"defense ability running- {_defenseTimer}");
                     _defenseTimer -= Time.deltaTime;
                 
                     _ffScale = new Vector3(.01f * fieldStrength, .01f * fieldStrength, .01f);
