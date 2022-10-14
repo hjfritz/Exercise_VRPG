@@ -29,6 +29,11 @@ public class PunchAbility : BattleAttackAbility
     {
         DisplayName = "Punch Ability";
         abilityDuration = attackDuration;
+        var pm = transform.parent.GetComponent<PlayerManager>();
+        if (pm)
+        {
+            //punchingArea = pm.currentCombatManager.GetComponentInChildren<CombatAreaManager>().transform;
+        }
         targetsPrefab = Instantiate(targetsPrefab, punchingArea);
         targetsPrefab.transform.position = new Vector3(0f , 1.4f, 0f) + punchingArea.position + punchingArea.forward; //new Vector3(0f , 1.4f, .8f) + p
         //targetsPrefab.transform.rotation = transform.rotation ;// factor 1 / .77 / .44
