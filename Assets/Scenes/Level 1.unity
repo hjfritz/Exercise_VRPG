@@ -527,7 +527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 896349397167408761, guid: 49d1fd0a964c1ea43a22d7b3a4a98cfb, type: 3}
       propertyPath: m_Name
-      value: XR Origin 1
+      value: XR Origin
       objectReference: {fileID: 0}
     - target: {fileID: 896349397167408767, guid: 49d1fd0a964c1ea43a22d7b3a4a98cfb, type: 3}
       propertyPath: m_RootOrder
@@ -628,6 +628,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 719515567318764959, guid: e7f9b227eaa642d2aef3099fd6f0bb10, type: 3}
+      propertyPath: punchingArea
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 719515567614841305, guid: e7f9b227eaa642d2aef3099fd6f0bb10, type: 3}
       propertyPath: m_IsActive
       value: 0
