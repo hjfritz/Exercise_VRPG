@@ -47,6 +47,11 @@ public class PunchAbility : BattleAttackAbility
 
     private void settarget()
     {
+
+        punchingArea = GetComponent<PlayerManager>().currentCombatManager.transform
+            .GetComponentInChildren<CombatAreaManager>().transform;
+        
+        
         targetsPrefab = Instantiate(targetsPrefab, punchingArea);
         targetsPrefab.transform.position = new Vector3(0f , 1.4f, 0f) + punchingArea.position + (punchingArea.forward * 0.5f); //new Vector3(0f , 1.4f, .8f) + p
         //targetsPrefab.transform.rotation = transform.rotation ;// factor 1 / .77 / .44

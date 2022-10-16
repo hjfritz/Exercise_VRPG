@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4758328591546002949}
   - component: {fileID: 4758328591546002948}
   - component: {fileID: 4456397699169788508}
+  - component: {fileID: 1949162540092883698}
   m_Layer: 0
   m_Name: BattleActionMenuButton
   m_TagString: Untagged
@@ -138,6 +139,19 @@ MonoBehaviour:
   BattleMenuButtonClicked:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &1949162540092883698
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4758328591546002951}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 201.19464, y: 50.007507, z: 7.07111}
+  m_Center: {x: -0.09561157, y: -0.1324768, z: -0.7340145}
 --- !u!1 &4758328592263148862
 GameObject:
   m_ObjectHideFlags: 0

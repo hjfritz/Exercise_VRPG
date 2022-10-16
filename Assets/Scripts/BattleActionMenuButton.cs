@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,11 @@ public class BattleActionMenuButton : MonoBehaviour
     }
 
     private void ClickListener()
+    {
+        BattleMenuButtonClicked.Invoke(id);
+    }
+
+    private void OnTriggerEnter(Collider other)
     {
         BattleMenuButtonClicked.Invoke(id);
     }
