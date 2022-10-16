@@ -27,6 +27,11 @@ public class BattleActionMenuButton : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        BattleMenuButtonClicked.Invoke(id);
+        //tempbugfix - temporary fix for the non autonomous combat manager.  limits to the colliders on the hands
+        //Character controller collider was triggering the energy ball ability by accident due to the repositioning
+        if (other.CompareTag("Player"))
+        {
+            BattleMenuButtonClicked.Invoke(id);
+        }
     }
 }
