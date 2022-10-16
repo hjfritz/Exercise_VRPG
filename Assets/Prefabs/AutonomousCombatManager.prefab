@@ -242,6 +242,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  _teleportTime: 1.5
 --- !u!1 &1890233319183911522
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,6 +648,7 @@ GameObject:
   - component: {fileID: 2650274694705121737}
   - component: {fileID: 2650274694705121749}
   - component: {fileID: 2650274694705121748}
+  - component: {fileID: 7670679587531507812}
   m_Layer: 0
   m_Name: EnemyCombatant
   m_TagString: Untagged
@@ -749,6 +751,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   actionAbilities: []
+  defenseAbilities: []
 --- !u!114 &2650274694705121748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -759,6 +762,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75d53e8a4a2368d47ad17d05e0afa15f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  DisplayName: Display Name Not Set
+  abilityDuration: 0
+--- !u!114 &7670679587531507812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2650274694705121747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 791763ea0c1edc040addf34903a2ed35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   AbilityComplete:
@@ -1428,6 +1448,7 @@ MonoBehaviour:
   BGM: {fileID: 6754960455577409057}
   BattleTurnOrder: []
   menu: {fileID: 0}
+  battleActive: 0
 --- !u!82 &2650274696374030224
 AudioSource:
   m_ObjectHideFlags: 0
