@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="Climbing completed">
+    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BattleActionMenuButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BattleActionMenuButton.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleActionMenuButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleActionMenuButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CombatAreaManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CombatAreaManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Punching/PunchAbility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Punching/PunchAbility.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrain/Terrain_0_0_18c9d2e8-c3e9-40e3-ba70-665c202124ec.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Terrain/Terrain_0_0_18c9d2e8-c3e9-40e3-ba70-665c202124ec.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +19,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/Assets/Scripts/BattleActionMenuButton.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BattleUI/AbilityTimer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyANimationManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/Assets/Scripts/Locomotion/Climber.cs" root0="SKIP_HIGHLIGHTING" />
@@ -102,7 +100,7 @@
       <workItem from="1665485832650" duration="278000" />
       <workItem from="1665507992619" duration="1597000" />
       <workItem from="1665667979521" duration="13273000" />
-      <workItem from="1665748977315" duration="18891000" />
+      <workItem from="1665748977315" duration="20148000" />
     </task>
     <task id="LOCAL-00001" summary="trying to create a separated branch">
       <created>1664612695537</created>
@@ -272,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665781654820</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="UI direct input + xrrig telport on combat area enter">
+      <created>1665783592292</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1665783592292</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +300,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Setting the scene + teacher" />
     <MESSAGE value="Working Commit for breaking boulders" />
     <MESSAGE value="trying the merge" />
     <MESSAGE value="renaming scene" />
@@ -320,6 +324,7 @@
     <MESSAGE value="up" />
     <MESSAGE value="Implementing the climbing mechanics" />
     <MESSAGE value="Climbing completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Climbing completed" />
+    <MESSAGE value="UI direct input + xrrig telport on combat area enter" />
+    <option name="LAST_COMMIT_MESSAGE" value="UI direct input + xrrig telport on combat area enter" />
   </component>
 </project>
