@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CombatManager : MonoBehaviour
 {
-    [SerializeField] private Combatant[] PartyMembers;
+    private Combatant[] PartyMembers;
     [SerializeField] private Combatant[] EnemyPartyMembers;
 
     [SerializeField] private AudioSource BGM;
@@ -16,7 +16,7 @@ public class CombatManager : MonoBehaviour
     
     private int turnCounter = 0;
 
-    [SerializeField] private CombatManagerMenu menu;
+    private CombatManagerMenu menu;
 
     public bool battleActive = false;
     
@@ -24,6 +24,8 @@ public class CombatManager : MonoBehaviour
     void Start()
     {
         //menu.ShowWelcomeCanvas();
+        PartyMembers = FindObjectsOfType<PlayerCombatant>();
+        menu = FindObjectOfType<PlayerManager>().GetComponentInChildren<CombatManagerMenu>();
     }
 
     public void StartBattle()
