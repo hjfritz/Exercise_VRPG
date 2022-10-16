@@ -31,6 +31,11 @@ public class BattleAbility : MonoBehaviour
     {
         
     }
+    
+    public virtual void ExecuteDefense(float duration)
+    {
+        
+    }
 
     public virtual void FinalizeAction()
     {

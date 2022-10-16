@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 
-public class PunchAbility : BattleAbility
+public class PunchAbility : BattleAttackAbility
 {
     
     private int repCounter = 0;

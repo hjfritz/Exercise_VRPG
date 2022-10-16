@@ -7,9 +7,9 @@ public class PlayerCombatant : Combatant
     [SerializeField] private BattleActionMenu actionMenu;
     
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        
+        base.Start();
     }
 
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class PlayerCombatant : Combatant
     }
     public override void SelectAction()
     {
-        actionAbilities = GetComponents<BattleAbility>();
+        actionAbilities = GetComponents<BattleAttackAbility>();
         actionMenu.MenuActionSelected.AddListener(MenuActionSelected);
         displayActionMenu();
     }

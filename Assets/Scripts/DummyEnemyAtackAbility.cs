@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
 
-public class DummyEnemyAtackAbility : BattleAbility
+public class DummyEnemyAtackAbility : BattleAttackAbility
 {
     private bool counting = false;
-    private float attackDuration = 5.0f;
+    private float attackDuration = 10.0f;
     private float attackTimer = 0f;
     
     private Random random = new Random();
@@ -22,14 +22,17 @@ public class DummyEnemyAtackAbility : BattleAbility
     // Update is called once per frame
     void Update()
     {
-        if (counting && attackTimer < 0)
+        if (counting)
         {
-            FinalizeAction();
-        }
-        else
-        {
-            attackTimer -= Time.deltaTime;
-        }
+            if(attackTimer < 0)
+            {
+                FinalizeAction();
+            }
+            else
+            {
+                attackTimer -= Time.deltaTime;
+            }
+        } 
     }
     
     public override void ExecuteAction()

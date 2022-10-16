@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class DummyAbility : BattleAbility
+public class DummyAbility : BattleAttackAbility
 {
     private int repCounter = 0;
     private bool counting = false;
