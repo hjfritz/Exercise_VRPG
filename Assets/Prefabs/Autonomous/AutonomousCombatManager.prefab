@@ -242,6 +242,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  _teleportTime: 1.5
 --- !u!1 &1890233319183911522
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,6 +750,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   actionAbilities: []
+  defenseAbilities: []
 --- !u!114 &2650274694705121748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1428,6 +1430,7 @@ MonoBehaviour:
   BGM: {fileID: 6754960455577409057}
   BattleTurnOrder: []
   menu: {fileID: 0}
+  battleActive: 0
 --- !u!82 &2650274696374030224
 AudioSource:
   m_ObjectHideFlags: 0

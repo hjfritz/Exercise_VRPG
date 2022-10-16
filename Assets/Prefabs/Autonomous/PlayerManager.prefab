@@ -624,6 +624,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   actionAbilities: []
+  defenseAbilities: []
   actionMenu: {fileID: 719515568248641103}
 --- !u!114 &719515567318764955
 MonoBehaviour:
@@ -642,6 +643,7 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Dummy Ability
   abilityDuration: 0
+  targetReps: 30
   buttonRef: {fileID: 3133590359150246299, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &719515567318764952
 MonoBehaviour:
@@ -660,9 +662,9 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Force Field Defense
   abilityDuration: 0
-  targetsPrefab: {fileID: 1646926091751065471, guid: b973d5a6b55ace94ba04ba20be5db30b, type: 3}
   sfx: {fileID: 0}
   ambiance: {fileID: 8300000, guid: af88e937d79beb74e93d0eea9acc76c7, type: 3}
+  targetsPrefab: {fileID: 1646926091751065471, guid: b973d5a6b55ace94ba04ba20be5db30b, type: 3}
 --- !u!114 &719515567318764953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -680,6 +682,7 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Squat Ability
   abilityDuration: 0
+  targetReps: 12
   sfx: {fileID: 0}
   repCountClip: {fileID: 8300000, guid: e93b01c5ae35a1a409cde18b82462657, type: 3}
 --- !u!114 &719515567318764958
@@ -700,6 +703,7 @@ MonoBehaviour:
   DisplayName: Rsuuian Twists Ability
   abilityDuration: 0
   targetsPrefab: {fileID: 6215593975301883444, guid: 2a3b43178f8ff1f4aa803153ed82ded0, type: 3}
+  targetReps: 25
   sfx: {fileID: 0}
   repCountClip: {fileID: 8300000, guid: e93b01c5ae35a1a409cde18b82462657, type: 3}
 --- !u!114 &719515567318764959
@@ -1206,7 +1210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2126e9140edd2b64e9e9ee63f21509b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficulty: 0
+  difficulty: 1
   currentCombatManager: {fileID: 0}
   menu: {fileID: 719515567614841305}
   FightStart:
