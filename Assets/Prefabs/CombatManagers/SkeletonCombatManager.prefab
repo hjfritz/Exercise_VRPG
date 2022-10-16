@@ -2341,6 +2341,7 @@ GameObject:
   - component: {fileID: 8396746476087466309}
   - component: {fileID: 8396746476087466329}
   - component: {fileID: 8396746476087466328}
+  - component: {fileID: 7484936112665019587}
   m_Layer: 0
   m_Name: EnemyCombatant
   m_TagString: Untagged
@@ -2443,6 +2444,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   actionAbilities: []
+  defenseAbilities: []
 --- !u!114 &8396746476087466328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2453,6 +2455,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75d53e8a4a2368d47ad17d05e0afa15f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  DisplayName: Display Name Not Set
+  abilityDuration: 0
+--- !u!114 &7484936112665019587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8396746476087466335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 791763ea0c1edc040addf34903a2ed35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   AbilityComplete:
@@ -3034,6 +3053,7 @@ MonoBehaviour:
   - {fileID: 8396746477685065878}
   EnemyPartyMembers:
   - {fileID: 8396746476087466329}
+  BGM: {fileID: 0}
   BattleTurnOrder: []
   menu: {fileID: 8396746477335751135}
 --- !u!82 &8396746476851257116
@@ -3420,6 +3440,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   actionAbilities: []
+  defenseAbilities: []
   actionMenu: {fileID: 8396746477444905772}
 --- !u!114 &8396746477685065877
 MonoBehaviour:
@@ -3456,10 +3477,9 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Force Field Defense
   abilityDuration: 0
-  targetsPrefab: {fileID: 1646926091751065471, guid: b973d5a6b55ace94ba04ba20be5db30b, type: 3}
-  relativeTransform: {x: 0, y: -0.6, z: 0.5}
   sfx: {fileID: 8396746476851257116}
   ambiance: {fileID: 8300000, guid: af88e937d79beb74e93d0eea9acc76c7, type: 3}
+  targetsPrefab: {fileID: 1646926091751065471, guid: b973d5a6b55ace94ba04ba20be5db30b, type: 3}
 --- !u!114 &8396746477685065876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3497,7 +3517,6 @@ MonoBehaviour:
   DisplayName: Rsuuian Twists Ability
   abilityDuration: 0
   targetsPrefab: {fileID: 6215593975301883444, guid: 2a3b43178f8ff1f4aa803153ed82ded0, type: 3}
-  relativeTransform: {x: 0.5, y: -0.3, z: 0}
   sfx: {fileID: 8396746476851257116}
   repCountClip: {fileID: 8300000, guid: e93b01c5ae35a1a409cde18b82462657, type: 3}
 --- !u!114 &3859031888861055199
@@ -3543,7 +3562,6 @@ MonoBehaviour:
   DisplayName: Energy Ball
   abilityDuration: 0
   targetsPrefab: {fileID: 8342547735152388511, guid: b46a14d895ce6a140bc7f7529bb9b58b, type: 3}
-  relativeTransform: {x: 0, y: -0.4, z: 0.5}
 --- !u!1 &8746540583969484619
 GameObject:
   m_ObjectHideFlags: 0
@@ -3706,11 +3724,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f81fae7066b91fa40b77246a104de3d9, type: 3}
---- !u!4 &4946019852826760524 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7613271952654344848, guid: f81fae7066b91fa40b77246a104de3d9, type: 3}
-  m_PrefabInstance: {fileID: 3243731207328692188}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3224246694147822079 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 124657207290914339, guid: f81fae7066b91fa40b77246a104de3d9, type: 3}
@@ -3722,13 +3735,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b124a607042b47044b495a5adc82a1a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &4839526426579155906 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7939142439354321950, guid: f81fae7066b91fa40b77246a104de3d9, type: 3}
+--- !u!4 &4946019852826760524 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7613271952654344848, guid: f81fae7066b91fa40b77246a104de3d9, type: 3}
   m_PrefabInstance: {fileID: 3243731207328692188}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &5757881214504833014 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7128096695280760874, guid: f81fae7066b91fa40b77246a104de3d9, type: 3}
+  m_PrefabInstance: {fileID: 3243731207328692188}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4839526426579155906 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7939142439354321950, guid: f81fae7066b91fa40b77246a104de3d9, type: 3}
   m_PrefabInstance: {fileID: 3243731207328692188}
   m_PrefabAsset: {fileID: 0}

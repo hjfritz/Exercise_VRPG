@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PositionRelativeBattleAbility : BattleAbility
+public class PositionRelativeBattleAbility : BattleAttackAbility
 {
     protected GameObject mainCameraObj;
     [SerializeField] protected GameObject targetsPrefab;

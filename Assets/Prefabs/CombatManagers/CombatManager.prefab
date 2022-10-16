@@ -500,6 +500,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   actionAbilities: []
+  defenseAbilities: []
   actionMenu: {fileID: 2230399104789029663}
 --- !u!114 &2230399104620384422
 MonoBehaviour:
@@ -536,9 +537,9 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Force Field Defense
   abilityDuration: 0
-  targetsPrefab: {fileID: 1646926091751065471, guid: b973d5a6b55ace94ba04ba20be5db30b, type: 3}
   sfx: {fileID: 2230399104329598767}
   ambiance: {fileID: 8300000, guid: af88e937d79beb74e93d0eea9acc76c7, type: 3}
+  targetsPrefab: {fileID: 1646926091751065471, guid: b973d5a6b55ace94ba04ba20be5db30b, type: 3}
 --- !u!114 &2230399104620384423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1505,6 +1506,7 @@ GameObject:
   - component: {fileID: 2230399106149630326}
   - component: {fileID: 2230399106149630314}
   - component: {fileID: 2230399106149630315}
+  - component: {fileID: 1765924697}
   m_Layer: 0
   m_Name: EnemyCombatant
   m_TagString: Untagged
@@ -1607,6 +1609,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   actionAbilities: []
+  defenseAbilities: []
 --- !u!114 &2230399106149630315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1617,6 +1620,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75d53e8a4a2368d47ad17d05e0afa15f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  DisplayName: Display Name Not Set
+  abilityDuration: 0
+--- !u!114 &1765924697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2230399106149630316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 791763ea0c1edc040addf34903a2ed35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   AbilityComplete:
@@ -2564,11 +2584,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f22e4f6ea6157242868078d115c2c5b, type: 3}
---- !u!224 &7493554412886569628 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5082393780356640783, guid: 5f22e4f6ea6157242868078d115c2c5b, type: 3}
-  m_PrefabInstance: {fileID: 2411183086980416147}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3633144180005556028 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1377463081783233967, guid: 5f22e4f6ea6157242868078d115c2c5b, type: 3}
@@ -2580,6 +2595,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7a75bbd209cb82419dbdcc5da7125ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &7493554412886569628 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5082393780356640783, guid: 5f22e4f6ea6157242868078d115c2c5b, type: 3}
+  m_PrefabInstance: {fileID: 2411183086980416147}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2532583345700608415
 PrefabInstance:
   m_ObjectHideFlags: 0

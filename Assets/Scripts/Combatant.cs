@@ -15,20 +15,22 @@ public class Combatant : MonoBehaviour
     [SerializeField] public AbilityTimer abilityTimer;
     
 
-    public UnityEvent<BattleAbility> ActionSelected = new UnityEvent<BattleAbility>();
-    public UnityEvent DefenseSelected = new UnityEvent();
+    public UnityEvent<BattleAttackAbility> ActionSelected = new UnityEvent<BattleAttackAbility>();
+    public UnityEvent<DefenseAbility> DefenseSelected = new UnityEvent<DefenseAbility>();
     public UnityEvent<int> TurnActionComplete = new UnityEvent<int>();
     public UnityEvent DeathConfirmed = new UnityEvent();
 
-    public BattleAbility[] actionAbilities;
-    protected BattleAbility selectedAbility;
+    public BattleAttackAbility[] actionAbilities;
+    public DefenseAbility[] defenseAbilities;
+    protected BattleAttackAbility selectedAbility;
+    protected DefenseAbility selectedDefense;
     
     private Random random = new Random();
     
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
-        
+        defenseAbilities = GetComponents<DefenseAbility>();
     }
 
     // Update is called once per frame
@@ -39,11 +41,18 @@ public class Combatant : MonoBehaviour
 
     public virtual void SelectAction()
     {
-        actionAbilities = GetComponents<BattleAbility>();
-
+        actionAbilities = GetComponents<BattleAttackAbility>();
+       
         int randomIndex = random.Next(0, actionAbilities.Length);
         selectedAbility = actionAbilities[randomIndex];
         ActionSelected.Invoke(actionAbilities[randomIndex]);
+    }
+
+    public virtual void SelectDefense()
+    {
+        defenseAbilities = GetComponents<DefenseAbility>();
+        selectedDefense = defenseAbilities[0];
+        DefenseSelected.Invoke(selectedDefense);
     }
 
     public void TakeAction()
@@ -51,6 +60,11 @@ public class Combatant : MonoBehaviour
         selectedAbility.AbilityComplete.AddListener(CompleteTurnAction);
         abilityTimer.StartTimer(selectedAbility.abilityDuration);
         selectedAbility.ExecuteAction();
+    }
+
+    public void TakeDefense(float duration)
+    {
+        selectedDefense.ExecuteDefense(duration);
     }
 
     private void CompleteTurnAction(int attackPower)

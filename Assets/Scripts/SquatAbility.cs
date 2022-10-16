@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SquatAbility : BattleAbility
+public class SquatAbility : BattleAttackAbility
 {
     private int repCounter = 0;
     private bool counting = false;
