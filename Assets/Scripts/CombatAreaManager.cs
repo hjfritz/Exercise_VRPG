@@ -47,10 +47,11 @@ public class CombatAreaManager : MonoBehaviour
         
         
         StartFight.Invoke();
-        
-        var pm = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
-        if (pm)
+
+        var playermanagerobject = GameObject.Find("PlayerManager");
+        if (playermanagerobject)
         {
+            var pm = playermanagerobject.GetComponent<PlayerManager>();
             pm.transform.position = transform.position ;
             pm.transform.rotation = transform.rotation;
             pm.currentCombatManager= transform.parent.GetComponent<CombatManager>();
@@ -58,17 +59,15 @@ public class CombatAreaManager : MonoBehaviour
             pm.currentCombatManager.StartBattle();
             pm.FightStart.Invoke();
         }
-        
-        BeginTeleport();
 
     }
 
     private void OnTriggerExit(Collider other)
     {
-        var pm = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
-        if (pm)
+        var playermanagerobject = GameObject.Find("PlayerManager");
+        if (playermanagerobject)
         {
-
+            var pm = playermanagerobject.GetComponent<PlayerManager>();
             pm.currentCombatManager = null;
             pm.menu.SetActive(false);
             pm.FightEnd.Invoke();
