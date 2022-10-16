@@ -51,11 +51,10 @@ public class CombatAreaManager : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //bugfix - ontriggerenter was getting called multiple times during the fight by the colliders on the hands. 
-        //There is still an issue if the XR rig leaves and triggers again durring the battle, but that seems like
+        //There is still an issue if the XR rig leaves and triggers again during the battle, but that seems like
         //something we can solve hen we disable locomotion
         if (other.gameObject == _rig.gameObject)
         {
-            Debug.Log("XRRIg Triggered Enter");
             StartFight.Invoke();
         
             if (_pm)
@@ -63,7 +62,12 @@ public class CombatAreaManager : MonoBehaviour
                 _pm.transform.position = transform.position ;
                 _pm.transform.rotation = transform.rotation;
                 _pm.currentCombatManager= transform.parent.GetComponent<CombatManager>();
-                //_pm.menu.SetActive(true);
+                //this is a hack to check if its the autonomous combat manager, so that both can work in the scene 
+                //at the same time while e are transitioning
+                if (!_pm.currentCombatManager.GetComponentInChildren<PlayerCombatant>())
+                {
+                    _pm.menu.SetActive(true);
+                }
                 _pm.currentCombatManager.StartBattle();
                 _pm.FightStart.Invoke();
             }
@@ -79,7 +83,6 @@ public class CombatAreaManager : MonoBehaviour
         //bugfix - ontriggerexit was getting triggered by hands
         if (other.gameObject == _rig.gameObject)
         {
-            Debug.Log("XRRIg Triggered Exit");
             var pm = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
             if (pm)
             {

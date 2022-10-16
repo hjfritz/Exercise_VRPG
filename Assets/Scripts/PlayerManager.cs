@@ -7,8 +7,9 @@ using UnityEngine.Events;
 public class PlayerManager : MonoBehaviour
 {
 
-    
-    [Range(1,5)] public int difficulty;
+    // bug fix- this was defaulting to 0 (despite this range attribute), ememies were dying after one hit
+    // explicitly setting to default to 1
+    [Range(1,5)] public int difficulty = 1;
     public CombatManager currentCombatManager;
     public GameObject menu;
 

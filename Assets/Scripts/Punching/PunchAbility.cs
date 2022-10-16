@@ -48,7 +48,7 @@ public class PunchAbility : BattleAttackAbility
     private void settarget()
     {
 
-        punchingArea = GetComponent<PlayerManager>().currentCombatManager.transform
+        punchingArea = FindObjectOfType<PlayerManager>().currentCombatManager.transform
             .GetComponentInChildren<CombatAreaManager>().transform;
         
         
