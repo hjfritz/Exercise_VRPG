@@ -1750,6 +1750,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  _teleportTime: 1.5
 --- !u!1 &7253273651754753636
 GameObject:
   m_ObjectHideFlags: 0
@@ -2109,6 +2110,8 @@ GameObject:
   - component: {fileID: 8396746476015940969}
   - component: {fileID: 8396746476015940968}
   - component: {fileID: 8396746476015940975}
+  - component: {fileID: 5651390747595548861}
+  - component: {fileID: 124660616666063877}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -2230,6 +2233,46 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5651390747595548861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8396746476015940973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ea8b69bf41370b4683089cfd6700c12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8396746476851257106}
+        m_TargetAssemblyTypeName: CombatManager, Assembly-CSharp
+        m_MethodName: StartBattle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &124660616666063877
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8396746476015940973}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 201.19464, y: 50.007507, z: 7.07111}
+  m_Center: {x: -0.09561157, y: -0.1324768, z: -0.7340145}
 --- !u!1 &8396746476065791264
 GameObject:
   m_ObjectHideFlags: 0
@@ -2510,6 +2553,8 @@ GameObject:
   - component: {fileID: 8396746476106738481}
   - component: {fileID: 8396746476106738480}
   - component: {fileID: 8396746476106738487}
+  - component: {fileID: 4449195800971441736}
+  - component: {fileID: 4860199254598520223}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -2631,6 +2676,46 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4449195800971441736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8396746476106738485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ea8b69bf41370b4683089cfd6700c12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8396746476851257106}
+        m_TargetAssemblyTypeName: CombatManager, Assembly-CSharp
+        m_MethodName: StartBattle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &4860199254598520223
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8396746476106738485}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 201.19464, y: 50.007507, z: 7.07111}
+  m_Center: {x: -0.09561157, y: -0.1324768, z: -0.7340145}
 --- !u!1 &8396746476205853990
 GameObject:
   m_ObjectHideFlags: 0
@@ -3075,6 +3160,7 @@ MonoBehaviour:
   BGM: {fileID: 0}
   BattleTurnOrder: []
   menu: {fileID: 8396746477335751135}
+  battleActive: 0
 --- !u!82 &8396746476851257116
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3478,6 +3564,7 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Dummy Ability
   abilityDuration: 0
+  targetReps: 30
   buttonRef: {fileID: 3133590359150246299, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &8244514961083520715
 MonoBehaviour:
@@ -3516,6 +3603,7 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Squat Ability
   abilityDuration: 0
+  targetReps: 12
   sfx: {fileID: 8396746476851257116}
   repCountClip: {fileID: 8300000, guid: e93b01c5ae35a1a409cde18b82462657, type: 3}
 --- !u!114 &8396746477685065899
@@ -3536,6 +3624,7 @@ MonoBehaviour:
   DisplayName: Rsuuian Twists Ability
   abilityDuration: 0
   targetsPrefab: {fileID: 6215593975301883444, guid: 2a3b43178f8ff1f4aa803153ed82ded0, type: 3}
+  targetReps: 25
   sfx: {fileID: 8396746476851257116}
   repCountClip: {fileID: 8300000, guid: e93b01c5ae35a1a409cde18b82462657, type: 3}
 --- !u!114 &3859031888861055199
