@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1187245096350469598}
   - component: {fileID: 2946453165593202673}
   - component: {fileID: 6137551662243800177}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AbilitySphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

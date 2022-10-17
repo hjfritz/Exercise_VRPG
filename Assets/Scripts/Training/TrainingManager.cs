@@ -13,6 +13,7 @@ namespace Training
 
         private int trainingNumber = 1;
         public static bool training = false;
+        public static GameObject currentTeacher = null;
 
         // Start is called before the first frame update
         void Start()
@@ -30,8 +31,9 @@ namespace Training
             }
         }
 
-        public static void StartTraining()
+        public static void StartTraining(GameObject teacher)
         {
+            currentTeacher = teacher;
             training = true;
         }
 

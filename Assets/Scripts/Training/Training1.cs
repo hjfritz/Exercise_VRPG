@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Net;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,7 +8,7 @@ namespace Training
 {
     public class Training1 : MonoBehaviour
     {
-        [SerializeField] private GameObject teacher;
+        
         [SerializeField] private GameObject orbA1;
         
         //AudioClips
@@ -18,8 +19,9 @@ namespace Training
         [SerializeField] private AudioClip outro;
 
         public static bool option = false;
-        public static bool punched = false;
+        public static bool done = false;
 
+        private GameObject teacher;
         private bool chosen = false;
         
         // Start is called before the first frame update
@@ -35,25 +37,26 @@ namespace Training
             {
                 if (option)
                 {
-                    YesOption();
+                    StartCoroutine(YesOption());
                 }
                 else
                 {
-                    NoOption();
+                    StartCoroutine(NoOption());
                 }
 
                 chosen = false;
             }
 
-            if (punched)
+            if (done)
             {
                 Outro();
-                punched = false;
+                done = false;
             }
         }
 
         public void StartTraining1()
         {
+            teacher = TrainingManager.currentTeacher;
             StartCoroutine(PlayIntro());
         }
 
@@ -62,9 +65,10 @@ namespace Training
             teacher.GetComponent<AudioSource>().PlayOneShot(intro);
             yield return new WaitUntil((() => teacher.GetComponent<AudioSource>().isPlaying == false));
             
-            Debug.Log("played");
-            
             //Insert Button Options
+            
+            //For Testing
+            StartCoroutine(YesOption());
         }
 
         public void ButtonYes()
@@ -85,6 +89,9 @@ namespace Training
             yield return new WaitUntil((() => teacher.GetComponent<AudioSource>().isPlaying == false));
             
             //Insert Squat ability detection
+            
+            //For Testing
+            StartCoroutine(Outro());
         }
         
         IEnumerator NoOption()
@@ -95,10 +102,12 @@ namespace Training
 
         IEnumerator Outro()
         {
-            Instantiate(orbA1);
+            Instantiate(orbA1, teacher.transform.position, quaternion.identity);
             
             teacher.GetComponent<AudioSource>().PlayOneShot(outro);
             yield return new WaitUntil((() => teacher.GetComponent<AudioSource>().isPlaying == false));
+            
+            TrainingManager.currentTeacher.SetActive(false);
         }
     }
 }

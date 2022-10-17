@@ -8,7 +8,7 @@ namespace Training
         {
             if (other.CompareTag("Player"))
             {
-                TrainingManager.StartTraining();
+                TrainingManager.StartTraining(this.gameObject);
             }
         }
     }
