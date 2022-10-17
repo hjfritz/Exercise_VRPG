@@ -10,7 +10,7 @@ public class BattleAbility : MonoBehaviour
     public UnityEvent<int> AbilityComplete = new UnityEvent<int>();
     public String DisplayName = "Display Name Not Set";
     public float abilityDuration;
-
+    protected Combatant target;
     protected XROrigin xrOrigin;
     
 
@@ -27,9 +27,9 @@ public class BattleAbility : MonoBehaviour
         
     }
 
-    public virtual void ExecuteAction()
+    public virtual void ExecuteAction(Combatant target)
     {
-        
+        this.target = target;
     }
     
     public virtual void ExecuteDefense(float duration)

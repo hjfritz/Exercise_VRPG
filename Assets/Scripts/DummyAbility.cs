@@ -30,12 +30,12 @@ public class DummyAbility : BattleAttackAbility
         }
     }
     
-    public override void ExecuteAction()
+    public override void ExecuteAction(Combatant target)
     {
         SetRepsWithDifficulty();
         counting = true;
         attackTimer = attackDuration;
-        base.ExecuteAction();
+        base.ExecuteAction(target);
     }
 
     public override void FinalizeAction()
@@ -50,6 +50,8 @@ public class DummyAbility : BattleAttackAbility
         if (counting)
         {
             repCounter++;
+            target.TakeMitigatedDamage(1);
+            
         }
         
     }

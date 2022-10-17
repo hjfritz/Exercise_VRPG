@@ -31,7 +31,7 @@ namespace ActionLayers.EnergyBallAttack
             WholeLayer.SetActive(false);
         }
         
-        public override void ExecuteAction()
+        public override void ExecuteAction(Combatant target)
         {
             _attackTimer = _attackDuration;
             attackPower = 0;
@@ -40,7 +40,7 @@ namespace ActionLayers.EnergyBallAttack
             energyBall.transform.position = energyBallLayer.transform.position;
             WholeLayer.SetActive(true);
             triggerLayer.SetActive(true);
-            base.ExecuteAction();
+            base.ExecuteAction(target);
         }
 
         // Update is called once per frame
@@ -64,6 +64,8 @@ namespace ActionLayers.EnergyBallAttack
         
         public override void FinalizeAction()
         {
+            int damage = Mathf.FloorToInt(attackPower * .2f);
+            target.TakeMitigatedDamage(damage);
             AbilityComplete.Invoke(attackPower);
             energyBall.GetComponent<Rigidbody>().AddForce(Vector3.forward * 60);
             ResetAbility();

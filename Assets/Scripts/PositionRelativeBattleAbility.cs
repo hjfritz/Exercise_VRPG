@@ -31,8 +31,9 @@ public class PositionRelativeBattleAbility : BattleAttackAbility
         targetsPrefab.transform.parent = null;
     }
 
-    public override void ExecuteAction()
+    public override void ExecuteAction(Combatant target)
     {
         SetPrefabPostion();
+        base.ExecuteAction(target);
     }
 }

@@ -37,6 +37,7 @@ public class PunchAbility : BattleAttackAbility
     {
         sfx.PlayOneShot(punchClip);
         repCounter++;
+        target.TakeMitigatedDamage(1);
         
         if (repCounter > targetReps)
         {
@@ -69,7 +70,7 @@ public class PunchAbility : BattleAttackAbility
             targetReps *= pm.difficulty;
         }
     }
-    public override void ExecuteAction()
+    public override void ExecuteAction(Combatant target)
     {
         SetRepsWithDifficulty();
         settarget();
@@ -85,7 +86,7 @@ public class PunchAbility : BattleAttackAbility
         counting = true;
         attackTimer = attackDuration;
         targetsPrefab.SetActive(true);
-        base.ExecuteAction();
+        base.ExecuteAction(target);
     }
     
     public override void FinalizeAction()
