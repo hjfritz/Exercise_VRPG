@@ -24,7 +24,7 @@ public class CombatManagerMenu : MonoBehaviour
         
     }
 
-    public void ShowWelcomeCanvas()
+   /* public void ShowWelcomeCanvas()
     {
         restartCanvas.gameObject.SetActive(false);
         welcomeCanvas.gameObject.SetActive(true);
@@ -38,7 +38,8 @@ public class CombatManagerMenu : MonoBehaviour
         welcomeCanvas.gameObject.SetActive(false);
         battleHudCanvas.gameObject.SetActive(false);
     }
-    
+    */
+   
     public void ShowBattleHudCanvas()
     {
         restartCanvas.gameObject.SetActive(false);
@@ -50,6 +51,6 @@ public class CombatManagerMenu : MonoBehaviour
     {
         restartCanvas.gameObject.SetActive(false);
         welcomeCanvas.gameObject.SetActive(false);
-        battleHudCanvas.gameObject.SetActive(true);
+        battleHudCanvas.gameObject.SetActive(false);
     }
 }

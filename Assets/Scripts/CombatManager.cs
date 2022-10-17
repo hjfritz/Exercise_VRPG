@@ -23,9 +23,9 @@ public class CombatManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //menu.ShowWelcomeCanvas();
         PartyMembers = FindObjectsOfType<PlayerCombatant>();
         menu = FindObjectOfType<PlayerManager>().GetComponentInChildren<CombatManagerMenu>();
+        menu.HideMenu();
     }
 
     public void StartBattle()
@@ -79,7 +79,7 @@ public class CombatManager : MonoBehaviour
         if (damageTarget.GetHP() <= 0)
         {
             Debug.Log($"Battle Over - Fatal Blow Dealt by {battleAction.actionTaker}");
-            menu.ShowRestartCanvas(battleAction.actionTaker.displayName);
+            menu.HideMenu();
             //BGM.Stop();
             ShowHideHealthBars(false);
             battleActive = false;
