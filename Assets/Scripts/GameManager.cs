@@ -20,6 +20,6 @@ public class GameManager : MonoBehaviour
 
     public static void OpenPortal()
     {
-        
+        Debug.Log("Success!");
     }
 }
