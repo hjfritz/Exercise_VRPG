@@ -9,7 +9,7 @@ namespace ActionLayers.ForceField
         private GameObject forceFieldLayer;
         private GameObject actionLayer;
 
-        [SerializeField] private AudioSource sfx;
+        private AudioSource sfx;
         [SerializeField] private AudioClip ambiance;
         
         public static int fieldStrength = 0;
@@ -38,6 +38,7 @@ namespace ActionLayers.ForceField
             targetsPrefab = Instantiate(targetsPrefab, xrOrigin.transform);
             
             actionLayer = targetsPrefab;
+            sfx = actionLayer.GetComponent<AudioSource>();
             forceFieldLayer = targetsPrefab.GetComponentInChildren<CircleDefenseFacing>().gameObject;
             forceField = targetsPrefab.GetComponentInChildren<global::ForceField>().gameObject;
             forceField.transform.localScale = new Vector3(0,0,0);

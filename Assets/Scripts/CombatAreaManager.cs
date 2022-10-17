@@ -15,13 +15,20 @@ public class CombatAreaManager : MonoBehaviour
     private Vector3 _teleportEnd;
     private bool _isTeleporting;
     private XROrigin _rig;
+    private PlayerManager _pm;
     private float _teleportTimer = 0f;
+
+    private void Start()
+    {
+        _rig = FindObjectOfType<XROrigin>();
+        _pm = FindObjectOfType<PlayerManager>();
+    }
 
     private void BeginTeleport()
     {
-        _rig = GameObject.Find("XR Origin").GetComponent<XROrigin>();
         _teleportStart = _rig.transform.position;
-        _teleportEnd = transform.position;
+        //small fix until we flatten out combat regions
+        _teleportEnd = new Vector3(transform.position.x, _teleportStart.y, transform.position.z);
         _isTeleporting = true;
     }
 
@@ -44,33 +51,46 @@ public class CombatAreaManager : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
-        
-        
-        StartFight.Invoke();
-
-        var playermanagerobject = GameObject.Find("PlayerManager");
-        if (playermanagerobject)
+        //bugfix - ontriggerenter was getting called multiple times during the fight by the colliders on the hands. 
+        //There is still an issue if the XR rig leaves and triggers again during the battle, but that seems like
+        //something we can solve hen we disable locomotion
+        if (other.gameObject == _rig.gameObject)
         {
-            var pm = playermanagerobject.GetComponent<PlayerManager>();
-            pm.transform.position = transform.position ;
-            pm.transform.rotation = transform.rotation;
-            pm.currentCombatManager= transform.parent.GetComponent<CombatManager>();
-            pm.menu.SetActive(true);
-            pm.currentCombatManager.StartBattle();
-            pm.FightStart.Invoke();
+            StartFight.Invoke();
+        
+            if (_pm)
+            {
+                _pm.transform.position = transform.position ;
+                _pm.transform.rotation = transform.rotation;
+                _pm.currentCombatManager= transform.parent.GetComponent<CombatManager>();
+                //this is a hack to check if its the autonomous combat manager, so that both can work in the scene 
+                //at the same time while e are transitioning
+                if (!_pm.currentCombatManager.GetComponentInChildren<PlayerCombatant>())
+                {
+                    _pm.menu.SetActive(true);
+                }
+                _pm.currentCombatManager.StartBattle();
+                _pm.FightStart.Invoke();
+            }
+        
+            BeginTeleport();
         }
+        
 
     }
 
     private void OnTriggerExit(Collider other)
     {
-        var playermanagerobject = GameObject.Find("PlayerManager");
-        if (playermanagerobject)
+        //bugfix - ontriggerexit was getting triggered by hands
+        if (other.gameObject == _rig.gameObject)
         {
-            var pm = playermanagerobject.GetComponent<PlayerManager>();
-            pm.currentCombatManager = null;
-            pm.menu.SetActive(false);
-            pm.FightEnd.Invoke();
+            var pm = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
+            if (pm)
+            {
+                pm.currentCombatManager = null;
+                pm.menu.SetActive(false);
+                pm.FightEnd.Invoke();
+            }
         }
     }
     

@@ -1175,7 +1175,7 @@ GameObject:
   - component: {fileID: 719515567649543707}
   - component: {fileID: 719515567649543706}
   m_Layer: 0
-  m_Name: PlayerManager
+  m_Name: PlayerManager (deprecated)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
