@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/TestLandscape.unity
-    guid: b86dc4b50f117354ea25c5fb46c9569a
+    path: Assets/Scenes/IslandScene.unity
+    guid: 23e8b4bafd7b6f5419246ed8c1dafdd0
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfd92b473b7109a4cb1f765ec89895a0, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ece0095073c585648a936a8c79098b34, type: 2}
