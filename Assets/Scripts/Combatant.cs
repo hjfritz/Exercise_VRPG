@@ -24,6 +24,7 @@ public class Combatant : MonoBehaviour
     public DefenseAbility[] defenseAbilities;
     protected BattleAttackAbility selectedAbility;
     protected DefenseAbility selectedDefense;
+    protected Combatant selectedTarget;
     
     private Random random = new Random();
     
@@ -57,9 +58,16 @@ public class Combatant : MonoBehaviour
 
     public void TakeAction(Combatant target)
     {
+        selectedTarget = target;
+        selectedTarget.DeathConfirmed.AddListener(CancelActionOnDeath);
         selectedAbility.AbilityComplete.AddListener(CompleteTurnAction);
         abilityTimer.StartTimer(selectedAbility.abilityDuration);
         selectedAbility.ExecuteAction(target);
+    }
+
+    public void CancelActionOnDeath()
+    {
+        selectedAbility.FinalizeAction();
     }
 
     public void TakeDefense(float duration)
@@ -77,6 +85,7 @@ public class Combatant : MonoBehaviour
     protected virtual void ResetForNextTurn()
     {
         selectedAbility.AbilityComplete.RemoveListener(CompleteTurnAction);
+        selectedTarget.DeathConfirmed.RemoveListener(CancelActionOnDeath);
     }
 
     public void UpdateHP(int newHP)
@@ -103,6 +112,7 @@ public class Combatant : MonoBehaviour
         if (HP <= 0)
         {
             DeathConfirmed.Invoke();
+            selectedDefense.FinalizeAction();
         }
     }
 
