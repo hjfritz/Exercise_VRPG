@@ -55,11 +55,11 @@ public class Combatant : MonoBehaviour
         DefenseSelected.Invoke(selectedDefense);
     }
 
-    public void TakeAction()
+    public void TakeAction(Combatant target)
     {
         selectedAbility.AbilityComplete.AddListener(CompleteTurnAction);
         abilityTimer.StartTimer(selectedAbility.abilityDuration);
-        selectedAbility.ExecuteAction();
+        selectedAbility.ExecuteAction(target);
     }
 
     public void TakeDefense(float duration)
@@ -104,5 +104,12 @@ public class Combatant : MonoBehaviour
         {
             DeathConfirmed.Invoke();
         }
+    }
+
+    public void TakeMitigatedDamage(int damage)
+    {
+        //Do some calculation here to factor in defense
+        int mitigatedDamage = damage;
+        TakeDamage(mitigatedDamage);
     }
 }

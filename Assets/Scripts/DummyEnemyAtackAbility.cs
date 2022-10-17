@@ -35,15 +35,17 @@ public class DummyEnemyAtackAbility : BattleAttackAbility
         } 
     }
     
-    public override void ExecuteAction()
+    public override void ExecuteAction(Combatant target)
     {
         counting = true;
         attackTimer = attackDuration;
-        base.ExecuteAction();
+        base.ExecuteAction(target);
     }
     public override void FinalizeAction()
     {
-        AbilityComplete.Invoke(random.Next(0,100));
+        int damage = Mathf.FloorToInt(random.Next(0, 100) * .2f);
+        target.TakeMitigatedDamage(damage);
+        AbilityComplete.Invoke(damage);
         ResetAbility();
     }
     

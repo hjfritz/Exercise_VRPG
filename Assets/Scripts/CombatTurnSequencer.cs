@@ -40,7 +40,7 @@ public class CombatTurnSequencer
     private void SynchronizeStart()
     {
         currentAction.actionTaker.TurnActionComplete.AddListener(ActionComplete);
-        currentAction.actionTaker.TakeAction();
+        currentAction.actionTaker.TakeAction(currentAction.actionTarget);
         currentAction.selectedDefense.AbilityComplete.AddListener(DefenseComplete);
         currentAction.actionTarget.TakeDefense(currentAction.selectedAbility.abilityDuration);
     }

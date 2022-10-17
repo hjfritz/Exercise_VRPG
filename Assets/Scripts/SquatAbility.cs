@@ -35,14 +35,14 @@ public class SquatAbility : BattleAttackAbility
             targetReps *= pm.difficulty;
         }
     }
-    public override void ExecuteAction()
+    public override void ExecuteAction(Combatant target)
     {
         SetRepsWithDifficulty();
         counting = true;
         attackTimer = attackDuration;
         squatThresholdHeight = head.transform.localPosition.y * .85f;
         Debug.Log($"head height set to {head.transform.localPosition.y}");
-        base.ExecuteAction();
+        base.ExecuteAction(target);
     }
 
     public override void FinalizeAction()
@@ -72,6 +72,7 @@ public class SquatAbility : BattleAttackAbility
                     {
                         squatting = true;
                         repCounter++;
+                        target.TakeMitigatedDamage(1);
                         sfx.PlayOneShot(repCountClip);
                     }
                 }
