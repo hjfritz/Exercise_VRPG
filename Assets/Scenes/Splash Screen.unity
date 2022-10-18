@@ -1374,10 +1374,18 @@ PrefabInstance:
     - target: {fileID: 2029769939, guid: 90cc1449bc881c64a8a60c40e8062b9f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1217281691}
+    - target: {fileID: 2029769939, guid: 90cc1449bc881c64a8a60c40e8062b9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToScene
       objectReference: {fileID: 0}
     - target: {fileID: 735340931677548332, guid: 90cc1449bc881c64a8a60c40e8062b9f, type: 3}
       propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1217281691}
+    - target: {fileID: 735340931677548332, guid: 90cc1449bc881c64a8a60c40e8062b9f, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToScene
       objectReference: {fileID: 0}
     - target: {fileID: 2652773326000355737, guid: 90cc1449bc881c64a8a60c40e8062b9f, type: 3}
       propertyPath: m_PresetInfoIsWorld

@@ -23,7 +23,7 @@ public class Climber : MonoBehaviour
         velocity = Vector3.zero;
         character = transform.parent.parent.GetComponent<CharacterController>();
         _continuousMoveProviderBase = transform.parent.parent.GetComponent<ContinuousMoveProviderBase>();
-        //_electricOwl = GetComponent<ElectricOwl>();
+        _electricOwl = transform.parent.parent.GetComponent<ElectricOwl>();
     }
 
     // Update is called once per frame
@@ -32,11 +32,13 @@ public class Climber : MonoBehaviour
         if (climbingHand)
         {
             _continuousMoveProviderBase.enabled = false;
+            _electricOwl.enabled = false;
             Climb();
         }
         else
         {
             _continuousMoveProviderBase.enabled = true;
+            _electricOwl.enabled = true;
 
         }
     }
