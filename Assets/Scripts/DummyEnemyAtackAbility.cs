@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = System.Random;
 
 public class DummyEnemyAtackAbility : BattleAttackAbility
@@ -8,12 +9,13 @@ public class DummyEnemyAtackAbility : BattleAttackAbility
     private bool counting = false;
     private float attackDuration = 10.0f;
     private float attackTimer = 0f;
+    [SerializeField] public float repDuration = .9f;
+    private float repTimer = 0f;
     
     private Random random = new Random();
     
     new void Start()
     {
-        
         DisplayName = "Enemy Ability";
         abilityDuration = attackDuration;
         base.Start();
@@ -28,9 +30,15 @@ public class DummyEnemyAtackAbility : BattleAttackAbility
             {
                 FinalizeAction();
             }
+            else if (repTimer <= 0)
+            {
+                target.TakeMitigatedDamage(1);
+                repTimer = repDuration;
+            }
             else
             {
                 attackTimer -= Time.deltaTime;
+                repTimer -= Time.deltaTime;
             }
         } 
     }
@@ -39,12 +47,11 @@ public class DummyEnemyAtackAbility : BattleAttackAbility
     {
         counting = true;
         attackTimer = attackDuration;
+        repTimer = repDuration;
         base.ExecuteAction(target);
     }
     public override void FinalizeAction()
     {
-        int damage = Mathf.FloorToInt(random.Next(0, 100) * .2f);
-        target.TakeMitigatedDamage(damage);
         AbilityComplete.Invoke();
         ResetAbility();
     }

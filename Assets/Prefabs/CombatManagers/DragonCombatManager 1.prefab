@@ -1227,6 +1227,7 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Display Name Not Set
   abilityDuration: 0
+  repDuration: 1.15
 --- !u!114 &269950418490123943
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class EnemySelector : MonoBehaviour
 {
     public GameObject enemyprefab;
     public Transform enemySpawnPosition;
+    public float repDuration = 1f;
 
     public EnemyANimationManager anim;
 
@@ -22,7 +23,9 @@ public class EnemySelector : MonoBehaviour
         combatant.DefenseSelected.AddListener(LaunchDefense);
         combatant.TurnActionComplete.AddListener(LaunchDefense2);
         combatant.DeathConfirmed.AddListener(anim.Death);
-        
+
+        combatant.GetComponent<DummyEnemyAtackAbility>().repDuration = repDuration;
+
     }
 
 
