@@ -7,7 +7,7 @@ using UnityEngine.Events;
 
 public class BattleAbility : MonoBehaviour
 {
-    public UnityEvent<int> AbilityComplete = new UnityEvent<int>();
+    public UnityEvent AbilityComplete = new UnityEvent();
     public String DisplayName = "Display Name Not Set";
     public float abilityDuration;
     protected Combatant target;

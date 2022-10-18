@@ -46,7 +46,7 @@ public class DefenseAbility : BattleAbility
     public override void FinalizeAction()
     {
         ResetAbility();
-        AbilityComplete.Invoke(random.Next(0,100));
+        AbilityComplete.Invoke();
     }
     
     private void ResetAbility()

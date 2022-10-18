@@ -36,7 +36,7 @@ public class EnemySelector : MonoBehaviour
         anim.Defense();
     }
 
-    private void LaunchDefense2(int i)
+    private void LaunchDefense2()
     {
         anim.Defense();
     }

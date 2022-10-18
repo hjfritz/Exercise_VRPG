@@ -45,17 +45,15 @@ public class CombatTurnSequencer
         currentAction.actionTarget.TakeDefense(currentAction.selectedAbility.abilityDuration);
     }
 
-    private void ActionComplete(int attackPower)
+    private void ActionComplete()
     {
-        currentAction.attackPower = attackPower;
         currentAction.attackComplete = true;
         ActionAndDefenseComplete();
 
     }
 
-    private void DefenseComplete(int defensePower)
+    private void DefenseComplete()
     {
-        currentAction.defensePower = defensePower;
         currentAction.defenseComplete = true;
         ActionAndDefenseComplete();
     }
