@@ -23,6 +23,7 @@ namespace Training
 
         private GameObject teacher;
         private bool chosen = false;
+        private Animator _animator;
         
         // Start is called before the first frame update
         void Start()
@@ -57,6 +58,7 @@ namespace Training
         public void StartTraining1()
         {
             teacher = TrainingManager.currentTeacher;
+            _animator = teacher.GetComponentInChildren<Animator>();
             StartCoroutine(PlayIntro());
         }
 
@@ -85,8 +87,10 @@ namespace Training
         {
             teacher.GetComponent<AudioSource>().PlayOneShot(yes);
             yield return new WaitUntil((() => teacher.GetComponent<AudioSource>().isPlaying == false));
+            _animator.SetBool("SquatTraining", true);
             teacher.GetComponent<AudioSource>().PlayOneShot(training);
             yield return new WaitUntil((() => teacher.GetComponent<AudioSource>().isPlaying == false));
+            _animator.SetBool("SquatTraining", false);
             
             //Insert Squat ability detection
             
@@ -98,6 +102,7 @@ namespace Training
         {
             teacher.GetComponent<AudioSource>().PlayOneShot(no);
             yield return new WaitUntil((() => teacher.GetComponent<AudioSource>().isPlaying == false));
+            TrainingManager.trainingNumber -= 1;
         }
 
         IEnumerator Outro()
