@@ -23,4 +23,9 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void GoToScene(int sceneid)
+    {
+        SceneManager.LoadScene(sceneid);
+    }
 }

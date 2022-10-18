@@ -648,6 +648,7 @@ GameObject:
   - component: {fileID: 2650274694705121737}
   - component: {fileID: 2650274694705121749}
   - component: {fileID: 2650274694705121748}
+  - component: {fileID: 1593397208}
   m_Layer: 0
   m_Name: EnemyCombatant
   m_TagString: Untagged
@@ -762,6 +763,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75d53e8a4a2368d47ad17d05e0afa15f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  DisplayName: Display Name Not Set
+  abilityDuration: 0
+--- !u!114 &1593397208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2650274694705121747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 791763ea0c1edc040addf34903a2ed35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   AbilityComplete:
@@ -2277,15 +2295,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 399379299900698868, guid: 121ceb7013834744a8324e69d3947f4b, type: 3}
       propertyPath: m_Name
-      value: Punching Area 1
+      value: Combat Area 1
       objectReference: {fileID: 0}
     - target: {fileID: 399379299900698869, guid: 121ceb7013834744a8324e69d3947f4b, type: 3}
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 399379299900698869, guid: 121ceb7013834744a8324e69d3947f4b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 399379299900698869, guid: 121ceb7013834744a8324e69d3947f4b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.46007
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 399379299900698869, guid: 121ceb7013834744a8324e69d3947f4b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 399379299900698869, guid: 121ceb7013834744a8324e69d3947f4b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2325,6 +2351,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 399379299900698869, guid: 121ceb7013834744a8324e69d3947f4b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 399379299900698870, guid: 121ceb7013834744a8324e69d3947f4b, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 399379299900698870, guid: 121ceb7013834744a8324e69d3947f4b, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 399379299900698871, guid: 121ceb7013834744a8324e69d3947f4b, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -2717,6 +2755,11 @@ PrefabInstance:
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d2171db87be44245bc6553678ac647f, type: 3}
+--- !u!224 &6068914394451194343 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2211281168651552604, guid: 7d2171db87be44245bc6553678ac647f, type: 3}
+  m_PrefabInstance: {fileID: 5370843810928015035}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6068914394451194342 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2211281168651552605, guid: 7d2171db87be44245bc6553678ac647f, type: 3}
@@ -2728,11 +2771,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e398197c3a6c4324bb0ce26c21ca8416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &6068914394451194343 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2211281168651552604, guid: 7d2171db87be44245bc6553678ac647f, type: 3}
-  m_PrefabInstance: {fileID: 5370843810928015035}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7583622436299561217
 PrefabInstance:
   m_ObjectHideFlags: 0

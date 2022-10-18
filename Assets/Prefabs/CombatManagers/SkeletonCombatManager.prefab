@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 6810531993460488802}
   - component: {fileID: 8732389256116277715}
   m_Layer: 0
-  m_Name: Punching Area 1
+  m_Name: Combat Area 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -559,7 +559,7 @@ Transform:
   m_GameObject: {fileID: 6810531993460488800}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.3, z: -1.93}
-  m_LocalScale: {x: 1.46007, y: 1.46007, z: 1.46007}
+  m_LocalScale: {x: 4, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 8396746476851257107}
   m_RootOrder: 2
@@ -579,7 +579,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6810531993460488800}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1132,8 +1132,8 @@ MonoBehaviour:
   ActionSelected:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3224246694147822079}
-        m_TargetAssemblyTypeName: SkeletonManager, Assembly-CSharp
+      - m_Target: {fileID: 1725648179128757144}
+        m_TargetAssemblyTypeName: EnemyANimationManager, Assembly-CSharp
         m_MethodName: Attack
         m_Mode: 1
         m_Arguments:
@@ -1147,8 +1147,8 @@ MonoBehaviour:
   DefenseSelected:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3224246694147822079}
-        m_TargetAssemblyTypeName: SkeletonManager, Assembly-CSharp
+      - m_Target: {fileID: 1725648179128757144}
+        m_TargetAssemblyTypeName: EnemyANimationManager, Assembly-CSharp
         m_MethodName: Defense
         m_Mode: 1
         m_Arguments:
@@ -1162,8 +1162,8 @@ MonoBehaviour:
   TurnActionComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3224246694147822079}
-        m_TargetAssemblyTypeName: SkeletonManager, Assembly-CSharp
+      - m_Target: {fileID: 1725648179128757144}
+        m_TargetAssemblyTypeName: EnemyANimationManager, Assembly-CSharp
         m_MethodName: Defense
         m_Mode: 1
         m_Arguments:
@@ -1177,8 +1177,8 @@ MonoBehaviour:
   DeathConfirmed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3224246694147822079}
-        m_TargetAssemblyTypeName: SkeletonManager, Assembly-CSharp
+      - m_Target: {fileID: 1725648179128757144}
+        m_TargetAssemblyTypeName: EnemyANimationManager, Assembly-CSharp
         m_MethodName: Death
         m_Mode: 1
         m_Arguments:
@@ -1583,7 +1583,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 124657207290914339, guid: f81fae7066b91fa40b77246a104de3d9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f81fae7066b91fa40b77246a104de3d9, type: 3}
 --- !u!1 &5757881214504833014 stripped
 GameObject:
@@ -1600,17 +1601,6 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 7939142439354321950, guid: f81fae7066b91fa40b77246a104de3d9, type: 3}
   m_PrefabInstance: {fileID: 3243731207328692188}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3224246694147822079 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 124657207290914339, guid: f81fae7066b91fa40b77246a104de3d9, type: 3}
-  m_PrefabInstance: {fileID: 3243731207328692188}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5757881214504833014}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b124a607042b47044b495a5adc82a1a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &4947543150127949512
 PrefabInstance:
   m_ObjectHideFlags: 0

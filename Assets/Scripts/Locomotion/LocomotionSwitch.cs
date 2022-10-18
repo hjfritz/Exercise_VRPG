@@ -29,5 +29,10 @@ namespace Locomotion
                 this.GetComponent<ActionBasedContinuousMoveProvider>().enabled = false;
             }
         }
+
+        public void ToggleLocomotion(bool loc)
+        {
+            locomotionOn = loc;
+        }
     }
 }

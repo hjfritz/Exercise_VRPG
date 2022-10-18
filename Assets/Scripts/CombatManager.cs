@@ -83,7 +83,7 @@ public class CombatManager : MonoBehaviour
             //BGM.Stop();
             ShowHideHealthBars(false);
             battleActive = false;
-
+            
         }
         else
         {

@@ -25,6 +25,7 @@ public class CombatAreaManager : MonoBehaviour
         _rig = FindObjectOfType<XROrigin>();
         _pm = FindObjectOfType<PlayerManager>();
         _camera = GameObject.FindGameObjectsWithTag("MainCamera")[0].GetComponent<Camera>();
+        GetComponent<MeshRenderer>().enabled = false;
     }
 
     private void BeginTeleport()
@@ -32,7 +33,9 @@ public class CombatAreaManager : MonoBehaviour
         //somewhat magical fix to the remaining prefab positioning bugs.... I wouldn't trust it 
         //https://www.youtube.com/watch?v=EmjBonbATS0
         var rotationAngleY = _rig.transform.rotation.eulerAngles.y - _camera.transform.rotation.eulerAngles.y;
+        
         _rig.transform.Rotate(0, -rotationAngleY, 0);
+        
         
         _teleportStart = _rig.transform.position;
         //small fix until we flatten out combat regions
