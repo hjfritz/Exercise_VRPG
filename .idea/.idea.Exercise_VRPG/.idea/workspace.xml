@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="minor fixes">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-    </list>
+    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="Adding a few extra 3d models and enemies" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -330,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666101273883</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Adding a few extra 3d models and enemies">
+      <created>1666104535729</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1666104535729</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,7 +357,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Updating the Punching Activity logic" />
     <MESSAGE value="Merging all branches back to main" />
     <MESSAGE value="Setup post merge" />
     <MESSAGE value="1st commit week 2 post merge" />
@@ -378,6 +381,7 @@
     <MESSAGE value="* Wider triggers for all Combat Managers (you can see the area in Editor mode but they deactivate in Play Mode)&#10;* Locomotion deactivated when entering Combat Area (in the Player Manager from the startfight startend events) Still need to be reactivated IF the fight is won - working on it now&#10;* Redistribution of enemies across Level 1 for better final gameplay feeling&#10;* Adding Splash Screen and main menu ( Load scene called Splash Screen)&#10;* Level 1 is working with Climbing" />
     <MESSAGE value="Fix for locomotion reactivate on combat end&#10;smaller bugs fixes" />
     <MESSAGE value="minor fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor fixes" />
+    <MESSAGE value="Adding a few extra 3d models and enemies" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding a few extra 3d models and enemies" />
   </component>
 </project>
