@@ -13,8 +13,9 @@ public class Combatant : MonoBehaviour
     [SerializeField] private int maxHP = 100;
     [SerializeField] public ProgressBar healthBar;
     [SerializeField] public AbilityTimer abilityTimer;
-    
 
+    [SerializeField] private ParticleSystem damageEffect;
+    
     public UnityEvent<BattleAttackAbility> ActionSelected = new UnityEvent<BattleAttackAbility>();
     public UnityEvent<DefenseAbility> DefenseSelected = new UnityEvent<DefenseAbility>();
     public UnityEvent<int> TurnActionComplete = new UnityEvent<int>();
@@ -109,7 +110,10 @@ public class Combatant : MonoBehaviour
     {
         HP = Mathf.Max(0, HP - damage);
         healthBar.SetProgress(HP, maxHP);
-
+        if (damageEffect != null)
+        {
+            damageEffect.Play();
+        }
         if (HP <= 0)
         {
             DeathConfirmed.Invoke();
