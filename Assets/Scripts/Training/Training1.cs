@@ -10,6 +10,7 @@ namespace Training
     {
         
         [SerializeField] private GameObject orbA1;
+        [SerializeField] private GameObject player;
         
         //AudioClips
         [SerializeField] private AudioClip intro;
@@ -113,6 +114,8 @@ namespace Training
             yield return new WaitUntil((() => teacher.GetComponent<AudioSource>().isPlaying == false));
             
             TrainingManager.currentTeacher.SetActive(false);
+            player.GetComponent<ElectricOwl>().enabled = true;
+            
         }
     }
 }
