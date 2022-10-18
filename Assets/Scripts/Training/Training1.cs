@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Net;
+using Locomotion;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
@@ -114,7 +115,7 @@ namespace Training
             yield return new WaitUntil((() => teacher.GetComponent<AudioSource>().isPlaying == false));
             
             TrainingManager.currentTeacher.SetActive(false);
-            player.GetComponent<ElectricOwl>().enabled = true;
+            player.GetComponent<LocomotionSwitch>().locomotionOn = true;
             
         }
     }

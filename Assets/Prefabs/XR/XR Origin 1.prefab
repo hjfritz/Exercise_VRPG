@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 896349397167408764}
   - component: {fileID: 896349397167408765}
   - component: {fileID: 896349397167408766}
+  - component: {fileID: 3824654296200701510}
   - component: {fileID: 8939385299853133676}
   m_Layer: 3
   m_Name: XR Origin 1
@@ -170,6 +171,19 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!114 &3824654296200701510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896349397167408761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7ba81b94de7094d8f71f98888e52f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  locomotionOn: 1
 --- !u!114 &8939385299853133676
 MonoBehaviour:
   m_ObjectHideFlags: 0

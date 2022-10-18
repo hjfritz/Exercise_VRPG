@@ -1,3 +1,4 @@
+using Locomotion;
 using UnityEngine;
 
 namespace Training
@@ -18,7 +19,7 @@ namespace Training
                     this.transform.LookAt(new Vector3(other.transform.position.x, this.transform.position.y, other.transform.position.z));
                     ps.Play();
                     model.SetActive(true);
-                    other.GetComponentInParent<ElectricOwl>().enabled = false;
+                    other.GetComponentInParent<LocomotionSwitch>().locomotionOn = false;
                     TrainingManager.StartTraining(this.gameObject);
                     entered = true;
                 }

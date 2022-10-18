@@ -5,22 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="updating level1 to be back working">
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/DirtPath.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/DirtPath.jpg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/DirtPath.terrainlayer" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/DirtPath.terrainlayer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Locomotion/LocomotionSwitch.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Locomotion/LocomotionSwitch.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Training/Trainer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Training/Trainer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/IslandScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/IslandScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Training/Training1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Training/Training1.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Training/Training2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Training/Training2.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Training/Training3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Training/Training3.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Training/Training4.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Training/Training4.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Training/Training5.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Training/Training5.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Training/TrainingTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Training/TrainingTrigger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Terrain/Terrain_0_0_18c9d2e8-c3e9-40e3-ba70-665c202124ec.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Terrain/Terrain_0_0_18c9d2e8-c3e9-40e3-ba70-665c202124ec.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/Grass.terrainlayer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Grass.terrainlayer" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +33,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyANimationManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Locomotion/ElectricOwl.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Locomotion/LocomotionSwitch.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuDisplay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Punching/MasterManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Punching/PunchAbility.cs" root0="FORCE_HIGHLIGHTING" />
@@ -125,7 +119,7 @@
       <workItem from="1665507992619" duration="1597000" />
       <workItem from="1665667979521" duration="13273000" />
       <workItem from="1665748977315" duration="20148000" />
-      <workItem from="1666065704802" duration="4275000" />
+      <workItem from="1666065704802" duration="5193000" />
     </task>
     <task id="LOCAL-00001" summary="trying to create a separated branch">
       <created>1664612695537</created>
