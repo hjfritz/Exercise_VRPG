@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="Adding a few extra 3d models and enemies">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Button UI.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Button UI/ButtonTextFacing.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Button UI/ButtonTextFacing.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Button UI/ButtonTrigger.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Button UI/ButtonTrigger.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Button UI/OptionButtons.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Button UI/OptionButtons.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/XR/XR Origin 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/XR/XR Origin 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/IslandScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/IslandScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Training/Training1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Training/Training1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Training/Training2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Training/Training2.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Training/Training3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Training/Training3.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Training/Training4.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Training/Training4.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Training/Training5.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Training/Training5.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Training/TrainingTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Training/TrainingTrigger.cs" afterDir="false" />
-    </list>
+    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="Adding a few extra 3d models and enemies" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -130,7 +113,7 @@
       <workItem from="1665667979521" duration="13273000" />
       <workItem from="1665748977315" duration="20148000" />
       <workItem from="1666065704802" duration="5193000" />
-      <workItem from="1666114312354" duration="9055000" />
+      <workItem from="1666114312354" duration="9679000" />
     </task>
     <task id="LOCAL-00001" summary="trying to create a separated branch">
       <created>1664612695537</created>

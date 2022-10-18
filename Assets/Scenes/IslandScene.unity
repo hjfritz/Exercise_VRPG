@@ -875,6 +875,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 987073986, guid: 49d1fd0a964c1ea43a22d7b3a4a98cfb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a0744d6791684b642879e06941ade31b, type: 2}
+    - target: {fileID: 1713895712, guid: 49d1fd0a964c1ea43a22d7b3a4a98cfb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 92d6d91233d9c2f47a0a682cc46dd2d8, type: 2}
     - target: {fileID: 896349397167408761, guid: 49d1fd0a964c1ea43a22d7b3a4a98cfb, type: 3}
       propertyPath: m_Name
       value: XR Origin 1
