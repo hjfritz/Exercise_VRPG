@@ -11,7 +11,7 @@ namespace Training
         [SerializeField] private UnityEvent training4;
         [SerializeField] private UnityEvent training5;
 
-        private int trainingNumber = 1;
+        public static int trainingNumber = 1;
         public static bool training = false;
         public static GameObject currentTeacher = null;
 
