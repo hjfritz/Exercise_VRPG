@@ -67,6 +67,7 @@ public class Combatant : MonoBehaviour
 
     public void CancelActionOnDeath()
     {
+        selectedTarget.DeathConfirmed.RemoveListener(CancelActionOnDeath);
         selectedAbility.FinalizeAction();
     }
 
