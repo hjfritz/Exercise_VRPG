@@ -5,6 +5,7 @@ using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
 using UnityEngine.Events;
+using UnityEngine.PlayerLoop;
 
 public class CombatAreaManager : MonoBehaviour
 {
@@ -16,16 +17,23 @@ public class CombatAreaManager : MonoBehaviour
     private bool _isTeleporting;
     private XROrigin _rig;
     private PlayerManager _pm;
+    private Camera _camera;
     private float _teleportTimer = 0f;
 
     private void Start()
     {
         _rig = FindObjectOfType<XROrigin>();
         _pm = FindObjectOfType<PlayerManager>();
+        _camera = GameObject.FindGameObjectsWithTag("MainCamera")[0].GetComponent<Camera>();
     }
 
     private void BeginTeleport()
     {
+        //somewhat magical fix to the remaining prefab positioning bugs.... I wouldn't trust it 
+        //https://www.youtube.com/watch?v=EmjBonbATS0
+        var rotationAngleY = _rig.transform.rotation.eulerAngles.y - _camera.transform.rotation.eulerAngles.y;
+        _rig.transform.Rotate(0, -rotationAngleY, 0);
+        
         _teleportStart = _rig.transform.position;
         //small fix until we flatten out combat regions
         _teleportEnd = new Vector3(transform.position.x, _teleportStart.y, transform.position.z);
