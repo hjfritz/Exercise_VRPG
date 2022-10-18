@@ -1423,13 +1423,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f60650e0dddf943bc2b8ecb659e79f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PartyMembers:
-  - {fileID: 0}
   EnemyPartyMembers:
   - {fileID: 2650274694705121749}
   BGM: {fileID: 6754960455577409057}
   BattleTurnOrder: []
-  menu: {fileID: 0}
   battleActive: 0
 --- !u!82 &2650274696374030224
 AudioSource:
@@ -2695,6 +2692,10 @@ PrefabInstance:
     - target: {fileID: 2211281168651552604, guid: 7d2171db87be44245bc6553678ac647f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211281168651552605, guid: 7d2171db87be44245bc6553678ac647f, type: 3}
+      propertyPath: DefaultSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2211281168651552607, guid: 7d2171db87be44245bc6553678ac647f, type: 3}
       propertyPath: m_Name

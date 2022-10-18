@@ -1370,6 +1370,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2211281168651552605, guid: 7d2171db87be44245bc6553678ac647f, type: 3}
+      propertyPath: DefaultSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2211281168651552607, guid: 7d2171db87be44245bc6553678ac647f, type: 3}
       propertyPath: m_Name
       value: Progress Bar 2

@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ProgressImage: {fileID: 322442612905304429}
-  DefaultSpeed: 1
+  DefaultSpeed: 3
   label: {fileID: 322442612690442263}
 --- !u!1 &322442614177658998
 GameObject:
