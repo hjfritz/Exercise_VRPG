@@ -18,7 +18,7 @@ public class Combatant : MonoBehaviour
     
     public UnityEvent<BattleAttackAbility> ActionSelected = new UnityEvent<BattleAttackAbility>();
     public UnityEvent<DefenseAbility> DefenseSelected = new UnityEvent<DefenseAbility>();
-    public UnityEvent<int> TurnActionComplete = new UnityEvent<int>();
+    public UnityEvent TurnActionComplete = new UnityEvent();
     public UnityEvent DeathConfirmed = new UnityEvent();
 
     public BattleAttackAbility[] actionAbilities;
@@ -77,10 +77,10 @@ public class Combatant : MonoBehaviour
         selectedDefense.ExecuteDefense(duration);
     }
 
-    private void CompleteTurnAction(int attackPower)
+    private void CompleteTurnAction()
     {
         ResetForNextTurn();
-        TurnActionComplete.Invoke(attackPower);
+        TurnActionComplete.Invoke();
         
     }
 

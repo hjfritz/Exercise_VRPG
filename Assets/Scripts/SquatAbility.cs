@@ -47,8 +47,7 @@ public class SquatAbility : BattleAttackAbility
 
     public override void FinalizeAction()
     {
-        int attackPower = (int)(Mathf.Min((float)repCounter / (float)targetReps, 1f) * 100);
-        AbilityComplete.Invoke(attackPower);
+        AbilityComplete.Invoke();
         ResetAbility();
     }
     

@@ -66,7 +66,7 @@ namespace ActionLayers.EnergyBallAttack
         {
             int damage = Mathf.FloorToInt(attackPower * .2f);
             target.TakeMitigatedDamage(damage);
-            AbilityComplete.Invoke(attackPower);
+            AbilityComplete.Invoke();
             energyBall.GetComponent<Rigidbody>().AddForce(Vector3.forward * 60);
             ResetAbility();
         }

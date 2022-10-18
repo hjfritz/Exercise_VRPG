@@ -45,7 +45,7 @@ public class DummyEnemyAtackAbility : BattleAttackAbility
     {
         int damage = Mathf.FloorToInt(random.Next(0, 100) * .2f);
         target.TakeMitigatedDamage(damage);
-        AbilityComplete.Invoke(damage);
+        AbilityComplete.Invoke();
         ResetAbility();
     }
     

@@ -97,7 +97,7 @@ namespace ActionLayers.ForceField
         public override void FinalizeAction()
         {
             Debug.Log("finalizing");
-            AbilityComplete.Invoke(fieldStrength);
+            AbilityComplete.Invoke();
             ResetAbility();
         }
         
