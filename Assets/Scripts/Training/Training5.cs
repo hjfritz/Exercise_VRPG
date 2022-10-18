@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Net;
+using Locomotion;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,6 +11,7 @@ namespace Training
     {
         
         [SerializeField] private GameObject orbA1;
+        [SerializeField] private GameObject player;
         
         //AudioClips
         [SerializeField] private AudioClip intro2;
@@ -110,6 +112,7 @@ namespace Training
             yield return new WaitUntil((() => teacher.GetComponent<AudioSource>().isPlaying == false));
             
             TrainingManager.currentTeacher.SetActive(false);
+            player.GetComponent<LocomotionSwitch>().locomotionOn = true;
         }
     }
 }
