@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using Locomotion;
 using UnityEngine;
 
@@ -8,8 +10,22 @@ namespace Training
         [SerializeField] private GameObject model;
         [SerializeField] private ParticleSystem ps;
 
-        private bool entered = false;
-        
+        public bool entered = false;
+        public bool trainerActive = false;
+
+
+        private void Update()
+        {
+            if (trainerActive)
+            {
+                model.SetActive(true);
+            }
+            else
+            {
+                model.SetActive(false);
+            }
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
@@ -18,12 +34,19 @@ namespace Training
                 {
                     this.transform.LookAt(new Vector3(other.transform.position.x, this.transform.position.y, other.transform.position.z));
                     ps.Play();
-                    model.SetActive(true);
+                    trainerActive = true;
                     other.GetComponentInParent<LocomotionSwitch>().locomotionOn = false;
                     TrainingManager.StartTraining(this.gameObject);
                     entered = true;
                 }
             }
+        }
+
+        public IEnumerator ResetTrainer()
+        {
+            trainerActive = false;
+            yield return new WaitForSeconds(5);
+            entered = false;
         }
     }
 }

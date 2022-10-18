@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Net;
+using Button_UI;
 using Locomotion;
 using Unity.Mathematics;
 using UnityEngine;
@@ -54,6 +55,19 @@ namespace Training
                 Outro();
                 done = false;
             }
+            
+            if (OptionButtons.ButtonChoice != 0 && TrainingManager.trainingNumber == 6)
+            {
+                if (OptionButtons.ButtonChoice == 1)
+                {
+                    ButtonYes();
+                }
+                else
+                {
+                    ButtonNo();
+                }
+                OptionButtons.ResetButtons();
+            }
         }
 
         public void StartTraining5()
@@ -67,11 +81,8 @@ namespace Training
         {
             teacher.GetComponent<AudioSource>().PlayOneShot(intro2);
             yield return new WaitUntil((() => teacher.GetComponent<AudioSource>().isPlaying == false));
-            
-            //Insert Button Options
-            
-            //For Testing
-            StartCoroutine(YesOption());
+
+            OptionButtons.ButtonsOn = true;
         }
 
         public void ButtonYes()
@@ -102,6 +113,9 @@ namespace Training
             teacher.GetComponent<AudioSource>().PlayOneShot(no2);
             yield return new WaitUntil((() => teacher.GetComponent<AudioSource>().isPlaying == false));
             TrainingManager.trainingNumber -= 1;
+            
+            StartCoroutine(teacher.GetComponentInChildren<TrainingTrigger>().ResetTrainer());
+            player.GetComponent<LocomotionSwitch>().locomotionOn = true;
         }
 
         IEnumerator Outro()
@@ -111,7 +125,7 @@ namespace Training
             teacher.GetComponent<AudioSource>().PlayOneShot(outroA5);
             yield return new WaitUntil((() => teacher.GetComponent<AudioSource>().isPlaying == false));
             
-            TrainingManager.currentTeacher.SetActive(false);
+            teacher.SetActive(false);
             player.GetComponent<LocomotionSwitch>().locomotionOn = true;
         }
     }
