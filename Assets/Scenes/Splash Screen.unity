@@ -1379,6 +1379,10 @@ PrefabInstance:
       propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2652773326000355737, guid: 90cc1449bc881c64a8a60c40e8062b9f, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2985223005230231117, guid: 90cc1449bc881c64a8a60c40e8062b9f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1393,27 +1397,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2985223005230231117, guid: 90cc1449bc881c64a8a60c40e8062b9f, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2985223005230231117, guid: 90cc1449bc881c64a8a60c40e8062b9f, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2985223005230231117, guid: 90cc1449bc881c64a8a60c40e8062b9f, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2985223005230231117, guid: 90cc1449bc881c64a8a60c40e8062b9f, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2985223005230231117, guid: 90cc1449bc881c64a8a60c40e8062b9f, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 843
       objectReference: {fileID: 0}
     - target: {fileID: 2985223005230231117, guid: 90cc1449bc881c64a8a60c40e8062b9f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 474
+      objectReference: {fileID: 0}
+    - target: {fileID: 2985223005230231117, guid: 90cc1449bc881c64a8a60c40e8062b9f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2985223005230231117, guid: 90cc1449bc881c64a8a60c40e8062b9f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2985223005230231117, guid: 90cc1449bc881c64a8a60c40e8062b9f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 2985223005230231117, guid: 90cc1449bc881c64a8a60c40e8062b9f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1425,7 +1441,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2985223005230231117, guid: 90cc1449bc881c64a8a60c40e8062b9f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -109.84
+      value: -109.87
       objectReference: {fileID: 0}
     - target: {fileID: 2985223005230231117, guid: 90cc1449bc881c64a8a60c40e8062b9f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1445,11 +1461,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2985223005230231117, guid: 90cc1449bc881c64a8a60c40e8062b9f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -10.009
+      value: -10.13
       objectReference: {fileID: 0}
     - target: {fileID: 2985223005230231117, guid: 90cc1449bc881c64a8a60c40e8062b9f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 13.389
+      value: 13.09
       objectReference: {fileID: 0}
     - target: {fileID: 2985223005230231117, guid: 90cc1449bc881c64a8a60c40e8062b9f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1474,6 +1490,10 @@ PrefabInstance:
     - target: {fileID: 7747833318437943489, guid: 90cc1449bc881c64a8a60c40e8062b9f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GoToScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275736548840661614, guid: 90cc1449bc881c64a8a60c40e8062b9f, type: 3}
+      propertyPath: m_RenderMode
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90cc1449bc881c64a8a60c40e8062b9f, type: 3}

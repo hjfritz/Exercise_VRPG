@@ -83,7 +83,13 @@ public class CombatManager : MonoBehaviour
             //BGM.Stop();
             ShowHideHealthBars(false);
             battleActive = false;
-            
+
+            // ending the battle and deactivating the Combat Area Manager
+            CombatAreaManager CAM = GetComponentInChildren<CombatAreaManager>();
+            if (CAM)
+            {
+                CAM.endoffight();
+            }
         }
         else
         {

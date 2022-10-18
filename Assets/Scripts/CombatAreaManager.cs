@@ -95,13 +95,19 @@ public class CombatAreaManager : MonoBehaviour
         //bugfix - ontriggerexit was getting triggered by hands
         if (other.gameObject == _rig.gameObject)
         {
-            var pm = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
-            if (pm)
-            {
-                pm.currentCombatManager = null;
-                pm.menu.SetActive(false);
-                pm.FightEnd.Invoke();
-            }
+            endoffight();
+        }
+    }
+
+    public void endoffight()
+    {
+        var pm = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
+        if (pm)
+        {
+            pm.currentCombatManager = null;
+            pm.menu.SetActive(false);
+            pm.FightEnd.Invoke();
+            gameObject.SetActive(false); //deactivating the triger so another fight will not start
         }
     }
     

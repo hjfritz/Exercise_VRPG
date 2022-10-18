@@ -4,34 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="updating level1 to be back working">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/CombatManagers/GeneralCombatManager.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/CombatManagers/GeneralCombatManager.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Splash Screen.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EnemySelector.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EnemySelector.cs.meta" afterDir="false" />
+    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="* Wider triggers for all Combat Managers (you can see the area in Editor mode but they deactivate in Play Mode)&#10;* Locomotion deactivated when entering Combat Area (in the Player Manager from the startfight startend events) Still need to be reactivated IF the fight is won - working on it now&#10;* Redistribution of enemies across Level 1 for better final gameplay feeling&#10;* Adding Splash Screen and main menu ( Load scene called Splash Screen)&#10;* Level 1 is working with Climbing">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Autonomous.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Autonomous/AutonomousCombatManager.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Autonomous/AutonomousCombatManager.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Autonomous/PlayerManager (deprecated).prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Autonomous/PlayerManager (deprecated).prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CombatManagers/DragonCombatManager 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CombatManagers/DragonCombatManager 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CombatManagers/SkeletonCombatManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CombatManagers/SkeletonCombatManager.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CombatManagers/WitchCombatManager 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CombatManagers/WitchCombatManager 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Skeleton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Skeleton.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Game Menu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Game Menu.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameManager.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/XR/XR Origin w climb.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/XR/XR Origin w climb.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SikIslandScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SikIslandScene.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Splash Screen.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Splash Screen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Splash Screen.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CombatAreaManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CombatAreaManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CombatManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CombatManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Locomotion/LocomotionSwitch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Locomotion/LocomotionSwitch.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MenuActionTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MenuActionTrigger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -331,7 +309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665950961239</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="* Wider triggers for all Combat Managers (you can see the area in Editor mode but they deactivate in Play Mode)&#10;* Locomotion deactivated when entering Combat Area (in the Player Manager from the startfight startend events) Still need to be reactivated IF the fight is won - working on it now&#10;* Redistribution of enemies across Level 1 for better final gameplay feeling&#10;* Adding Splash Screen and main menu ( Load scene called Splash Screen)&#10;* Level 1 is working with Climbing">
+      <created>1666097865638</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1666097865638</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,7 +339,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="renaming scene" />
     <MESSAGE value="merging with kate's commit" />
     <MESSAGE value="prefabing XR rig and Game Manager" />
     <MESSAGE value="Updating the Punching Activity logic" />
@@ -379,6 +363,7 @@
     <MESSAGE value="UI direct input + xrrig telport on combat area enter" />
     <MESSAGE value="CAUTION _ Trying a post merge push -" />
     <MESSAGE value="updating level1 to be back working" />
-    <option name="LAST_COMMIT_MESSAGE" value="updating level1 to be back working" />
+    <MESSAGE value="* Wider triggers for all Combat Managers (you can see the area in Editor mode but they deactivate in Play Mode)&#10;* Locomotion deactivated when entering Combat Area (in the Player Manager from the startfight startend events) Still need to be reactivated IF the fight is won - working on it now&#10;* Redistribution of enemies across Level 1 for better final gameplay feeling&#10;* Adding Splash Screen and main menu ( Load scene called Splash Screen)&#10;* Level 1 is working with Climbing" />
+    <option name="LAST_COMMIT_MESSAGE" value="* Wider triggers for all Combat Managers (you can see the area in Editor mode but they deactivate in Play Mode)&#10;* Locomotion deactivated when entering Combat Area (in the Player Manager from the startfight startend events) Still need to be reactivated IF the fight is won - working on it now&#10;* Redistribution of enemies across Level 1 for better final gameplay feeling&#10;* Adding Splash Screen and main menu ( Load scene called Splash Screen)&#10;* Level 1 is working with Climbing" />
   </component>
 </project>
