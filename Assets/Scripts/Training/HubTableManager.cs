@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -11,7 +12,13 @@ namespace Training
         [SerializeField] private XRSocketInteractor socket4;
         [SerializeField] private XRSocketInteractor socket5;
 
-        private int SphereCount = 0;
+        [SerializeField] private GameObject map;
+        [SerializeField] private Transform start;
+        [SerializeField] private Transform end;
+
+        [SerializeField] private AudioSource AS;
+
+        [SerializeField] private int SphereCount = 0;
         
         // Start is called before the first frame update
         void Start()
@@ -27,7 +34,8 @@ namespace Training
             socket3.selectExited.AddListener(SphereOut);
             socket4.selectExited.AddListener(SphereOut);
             socket5.selectExited.AddListener(SphereOut);
-            
+
+            map.transform.position = start.position;
         }
 
         private void SphereOut(SelectExitEventArgs arg0)
@@ -45,7 +53,18 @@ namespace Training
         {
             if (SphereCount == 5)
             {
-                GameManager.OpenPortal();
+                //Lift Map
+                if (map.transform.localPosition.z < end.localPosition.z)
+                {
+                    AS.Play();
+                    map.transform.Translate(Vector3.up * Time.deltaTime * .1f);
+                }
+                else
+                {
+                    AS.Stop();
+                }
+                
+                //GameManager.OpenPortal();
             }
         }
     }
