@@ -24,6 +24,15 @@ namespace Training
         private bool chosen = false;
         private Animator _animator;
         private bool actionComplete = false;
+        
+        private BattleAbility trainingAbility;
+
+
+        private void Start()
+        {
+            trainingAbility = FindObjectOfType<PlayerCombatant>().GetComponent<PunchAbility>();
+        }
+
 
         // Update is called once per frame
         void Update()
@@ -81,12 +90,17 @@ namespace Training
             _animator.SetBool("PunchTraining", false);
             teacher.GetComponentInChildren<TrainingObjects>().punching = false;
             
-            //Insert Squat ability detection
+            trainingAbility.TrainingComplete.AddListener(DetectedAction);
+            trainingAbility.TrainAction();
             
-            //For Testing
+        }
+
+        private void DetectedAction()
+        {
+            trainingAbility.TrainingComplete.RemoveListener(DetectedAction);
             StartCoroutine(Outro());
         }
-        
+
         IEnumerator NoOption()
         {
             teacher.GetComponent<AudioSource>().PlayOneShot(no2);

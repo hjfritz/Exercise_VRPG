@@ -36,4 +36,9 @@ public class PositionRelativeBattleAbility : BattleAttackAbility
         SetPrefabPostion();
         base.ExecuteAction(target);
     }
+    public override void TrainAction()
+    {
+        SetPrefabPostion();
+        base.TrainAction();
+    }
 }

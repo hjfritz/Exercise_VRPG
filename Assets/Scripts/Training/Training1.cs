@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Net;
 using Button_UI;
@@ -25,6 +26,14 @@ namespace Training
         private bool chosen = false;
         private Animator _animator;
         private bool actionComplete = false;
+
+        private BattleAbility trainingAbility;
+
+
+        private void Start()
+        {
+            trainingAbility = FindObjectOfType<PlayerCombatant>().GetComponent<SquatAbility>();
+        }
 
         // Update is called once per frame
         void Update()
@@ -82,16 +91,17 @@ namespace Training
             yield return new WaitUntil((() => teacher.GetComponent<AudioSource>().isPlaying == false));
             _animator.SetBool("SquatTraining", false);
             
-            
             //Insert Squat ability detection
+            trainingAbility.TrainingComplete.AddListener(DetectedAction);
+            trainingAbility.TrainAction();
+        }
+
+        private void DetectedAction()
+        {
+            trainingAbility.TrainingComplete.RemoveListener(DetectedAction);
             StartCoroutine(Outro());
         }
 
-        // IEnumerator DetectAction()
-        // {
-        //     
-        // }
-        
         IEnumerator NoOption()
         {
             teacher.GetComponent<AudioSource>().PlayOneShot(no);

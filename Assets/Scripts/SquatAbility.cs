@@ -5,11 +5,12 @@ using UnityEngine;
 public class SquatAbility : BattleAttackAbility
 {
     private int repCounter = 0;
+    private int trainingReps = 3;
     private bool counting = false;
     private float attackDuration = 15.0f;
     private float attackTimer = 0f;
-    
-    
+
+    private bool training = false;
 
     private bool squatting;
     private float squatThresholdHeight;
@@ -25,14 +26,26 @@ public class SquatAbility : BattleAttackAbility
         head = GameObject.FindGameObjectsWithTag("MainCamera")[0].transform;
         base.Start();
     }
+
+    private void InitializeAction()
+    {
+        squatThresholdHeight = head.transform.localPosition.y * .85f;
+        Debug.Log($"head height set to {head.transform.localPosition.y}");
+    }
     
     public override void ExecuteAction(Combatant target)
     {
         counting = true;
         attackTimer = attackDuration;
-        squatThresholdHeight = head.transform.localPosition.y * .85f;
-        Debug.Log($"head height set to {head.transform.localPosition.y}");
+        InitializeAction();
         base.ExecuteAction(target);
+    }
+
+    public override void TrainAction()
+    {
+        training = true;
+        InitializeAction();
+        base.TrainAction();
     }
 
     public override void FinalizeAction()
@@ -41,13 +54,19 @@ public class SquatAbility : BattleAttackAbility
         ResetAbility();
     }
     
+    public void FinalizeTraining()
+    {
+        TrainingComplete.Invoke();
+        ResetAbility();
+    }
+    
 
     // Update is called once per frame
     void Update()
     {
-        if (counting)
+        if (counting || training)
         {
-            if (attackTimer < 0)
+            if (counting && attackTimer < 0)
             {
                 FinalizeAction();
             }
@@ -61,8 +80,12 @@ public class SquatAbility : BattleAttackAbility
                     {
                         squatting = true;
                         repCounter++;
-                        target.TakeMitigatedDamage(playerRepDamage);
+                        target?.TakeMitigatedDamage(playerRepDamage);
                         sfx.PlayOneShot(repCountClip);
+                        if (training && repCounter == trainingReps)
+                        {
+                            FinalizeTraining();
+                        }
                     }
                 }
                 else
@@ -78,6 +101,7 @@ public class SquatAbility : BattleAttackAbility
     {
         counting = false;
         squatting = false;
+        training = false;
         attackTimer = 0.0f;
         repCounter = 0;
     }

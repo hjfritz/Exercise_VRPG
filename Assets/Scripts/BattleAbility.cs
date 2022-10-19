@@ -8,6 +8,7 @@ using UnityEngine.Events;
 public class BattleAbility : MonoBehaviour
 {
     public UnityEvent AbilityComplete = new UnityEvent();
+    public UnityEvent TrainingComplete = new UnityEvent();
     public String DisplayName = "Display Name Not Set";
     public float abilityDuration;
     protected Combatant target;
@@ -45,4 +46,10 @@ public class BattleAbility : MonoBehaviour
     {
         
     }
+
+    public virtual void TrainAction()
+    {
+        
+    }
+
 }

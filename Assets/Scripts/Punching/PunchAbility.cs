@@ -5,10 +5,12 @@ using UnityEngine;
 
 
 
-public class PunchAbility : BattleAttackAbility
+public class PunchAbility : PositionRelativeBattleAbility
 {
     private int repCounter = 0;
+    private int trainingReps = 6;
     private bool counting = false;
+    private bool training = false;
     private float attackTimer = 0f;
     private PunchTarget _punchTarget;  
     
@@ -18,27 +20,35 @@ public class PunchAbility : BattleAttackAbility
     [SerializeField] private AudioSource sfx;
     [SerializeField] private AudioClip repCountClip;
     [SerializeField] private AudioClip punchClip;
-    [SerializeField] private GameObject targetsPrefab;
     [SerializeField] private Transform punchingArea;
     
     // Start is called before the first frame update
     new void Start()
     {
+        relativeTransform = new Vector3(0f, -.1f, .6f);
+        base.Start();
         DisplayName = "Punch Ability";
         abilityDuration = attackDuration;
+        _punchTarget = targetsPrefab.GetComponent<PunchTarget>();
+        _punchTarget.SingleHitTrigger.AddListener(TargetTriggered);
+        targetsPrefab.gameObject.SetActive(false);
         
-        base.Start();
     }
 
     private void TargetTriggered(int targethit)
     {
         sfx.PlayOneShot(punchClip);
         repCounter++;
-        target.TakeMitigatedDamage(playerRepDamage);
+        target?.TakeMitigatedDamage(playerRepDamage);
         
         if (repCounter > targetReps)
         {
             sfx.PlayOneShot(repCountClip);
+        }
+        
+        if (training && repCounter == trainingReps)
+        {
+            FinalizeTraining();
         }
 
     }
@@ -46,12 +56,12 @@ public class PunchAbility : BattleAttackAbility
     private void settarget()
     {
 
-        punchingArea = FindObjectOfType<PlayerManager>().currentCombatManager.transform
-            .GetComponentInChildren<CombatAreaManager>().transform;
+       //punchingArea = FindObjectOfType<PlayerManager>().currentCombatManager.transform
+            //.GetComponentInChildren<CombatAreaManager>().transform;
         
         
         targetsPrefab = Instantiate(targetsPrefab, punchingArea);
-        targetsPrefab.transform.position = new Vector3(0f , 1.4f, 0f) + punchingArea.position + (punchingArea.forward * 0.5f); //new Vector3(0f , 1.4f, .8f) + p
+        targetsPrefab.transform.position = new Vector3(0f, 0f, 0f); //+ punchingArea.position + (punchingArea.forward * 0.5f); //new Vector3(0f , 1.4f, .8f) + p
         //targetsPrefab.transform.rotation = transform.rotation ;// factor 1 / .77 / .44
         _punchTarget = targetsPrefab.GetComponent<PunchTarget>();
         _punchTarget.SingleHitTrigger.AddListener(TargetTriggered);
@@ -60,19 +70,35 @@ public class PunchAbility : BattleAttackAbility
     }
 
 
+    private void InitializeAction()
+    {
+        targetsPrefab.SetActive(true);
+        targetsPrefab.transform.localEulerAngles = new Vector3(90, 0, 90);
+    }
     public override void ExecuteAction(Combatant target)
     {
-        settarget();
-
         counting = true;
         attackTimer = attackDuration;
-        targetsPrefab.SetActive(true);
         base.ExecuteAction(target);
+        InitializeAction();
+    }
+    
+    public override void TrainAction()
+    {
+        training = true;
+        base.TrainAction();
+        InitializeAction();
     }
     
     public override void FinalizeAction()
     {
         AbilityComplete.Invoke();
+        ResetAbility();
+    }
+    
+    public void FinalizeTraining()
+    {
+        TrainingComplete.Invoke();
         ResetAbility();
     }
     
@@ -98,6 +124,7 @@ public class PunchAbility : BattleAttackAbility
     private void ResetAbility()
     {
         counting = false;
+        training = false;
         attackTimer = 0.0f;
         repCounter = 0;
         _punchTarget.ResetTarget();
