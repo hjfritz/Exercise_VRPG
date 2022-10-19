@@ -14,6 +14,10 @@ namespace ActionLayers.EnergyBallAttack
         private float _attackDuration = 20.0f;
         private float _attackTimer = 0f;
         private bool counting = false;
+        
+        private bool training = false;
+        public static int repCounter = 0;
+        private int trainingReps = 4;
     
         // Start is called before the first frame update
         new void Start()
@@ -31,33 +35,48 @@ namespace ActionLayers.EnergyBallAttack
             WholeLayer.SetActive(false);
         }
         
+        private void  InitializeAction()
+        {
+            energyBall.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            energyBall.transform.position = energyBallLayer.transform.position;
+            WholeLayer.SetActive(true);
+            triggerLayer.SetActive(true);
+        }
+        
         public override void ExecuteAction(Combatant target)
         {
             _attackTimer = _attackDuration;
             attackPower = 0;
             counting = true;
-            energyBall.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            energyBall.transform.position = energyBallLayer.transform.position;
-            WholeLayer.SetActive(true);
-            triggerLayer.SetActive(true);
+            InitializeAction();
             base.ExecuteAction(target);
+        }
+        
+        public override void TrainAction()
+        {
+            training = true;
+            InitializeAction();
+            base.TrainAction();
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (counting)
+            if (counting || training)
             {
-                if (_attackTimer < 0)
+                if (counting && _attackTimer < 0)
                 {
                     FinalizeAction();
-                    counting = false;
                 }
                 else
                 {
                     _attackTimer -= Time.deltaTime;
                     var psEmission = energyBall.GetComponent<ParticleSystem>().emission;
                     psEmission.rateOverTime = attackPower;
+                    if (training && repCounter == trainingReps)
+                    {
+                        FinalizeTraining();
+                    }
                 }
             }
         }
@@ -67,13 +86,23 @@ namespace ActionLayers.EnergyBallAttack
             int damage = Mathf.FloorToInt(attackPower * .2f);
             target.TakeMitigatedDamage(damage);
             AbilityComplete.Invoke();
-            energyBall.GetComponent<Rigidbody>().AddForce(Vector3.forward * 60);
+            energyBall.GetComponent<Rigidbody>().AddForce(Vector3.forward * 60); //make changes below too
+            ResetAbility();
+        }
+        
+        public void FinalizeTraining()
+        {
+            TrainingComplete.Invoke();
+            energyBall.GetComponent<Rigidbody>().AddForce(Vector3.forward * 60); //make changes above too
             ResetAbility();
         }
         
         private void ResetAbility()
         {
             _attackTimer = _attackDuration;
+            counting = false;
+            training = false;
+            repCounter = 0;
             triggerLayer.SetActive(false);
         }
     }

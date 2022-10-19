@@ -19,6 +19,8 @@ namespace ActionLayers.ForceField
         private float _defenseTimer = 0f;
 
         private bool abilityActive = false;
+        private bool training = false;
+        private int trainingStrength = 50;
         
         protected GameObject mainCameraObj;
         [SerializeField] protected GameObject targetsPrefab;
@@ -49,15 +51,27 @@ namespace ActionLayers.ForceField
 
         }
 
-        public override void ExecuteDefense(float duration)
+        private void InitializeAction()
         {
-            abilityActive = true;
-            _defenseTimer = duration;
             actionLayer.SetActive(true);
             fieldStrength = 0;
             forceFieldLayer.SetActive(true);
             sfx.PlayOneShot(ambiance);
             SetPrefabPosition();
+        }
+
+        public override void ExecuteDefense(float duration)
+        {
+            abilityActive = true;
+            _defenseTimer = duration;
+            InitializeAction();
+        }
+        
+        public override void TrainAction()
+        {
+            training = true;
+            InitializeAction();
+            base.TrainAction();
         }
         
         public void SetPrefabPosition()
@@ -72,9 +86,9 @@ namespace ActionLayers.ForceField
         // Update is called once per frame
         void Update()
         {
-            if (abilityActive)
+            if (abilityActive || training)
             {
-                if (_defenseTimer < 0)
+                if (abilityActive && _defenseTimer < 0)
                 {
                     FinalizeAction();
                 }
@@ -88,6 +102,11 @@ namespace ActionLayers.ForceField
                     forceField.transform.localScale = _ffScale;
 
                     defensePower = fieldStrength;
+                    Debug.Log($"defense power- {defensePower}");
+                    if (training && defensePower >= trainingStrength)
+                    {
+                        FinalizeTraining();
+                    }
                 }
             }
             
@@ -99,10 +118,16 @@ namespace ActionLayers.ForceField
             AbilityComplete.Invoke();
             ResetAbility();
         }
+        public void FinalizeTraining()
+        {
+            TrainingComplete.Invoke();
+            ResetAbility();
+        }
         
         private void ResetAbility()
         {
             abilityActive = false;
+            training = false;
             actionLayer.SetActive(false);
             defensePower = 0;
             sfx.Stop();

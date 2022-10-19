@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Net;
+using ActionLayers.EnergyBallAttack;
 using Button_UI;
 using Locomotion;
 using Unity.Mathematics;
@@ -24,6 +25,14 @@ namespace Training
         private bool chosen = false;
         private Animator _animator;
         private bool actionComplete = false;
+        
+        private BattleAbility trainingAbility;
+
+
+        private void Start()
+        {
+            trainingAbility = FindObjectOfType<PlayerCombatant>().GetComponent<EnergyBallAttack>();
+        }
 
         // Update is called once per frame
         void Update()
@@ -82,9 +91,14 @@ namespace Training
             _animator.SetBool("EnergyBallTraining", false);
             teacher.GetComponentInChildren<TrainingObjects>().energizing = false;
             
-            //Insert Squat ability detection
+            trainingAbility.TrainingComplete.AddListener(DetectedAction);
+            trainingAbility.TrainAction();
             
-            //For Testing
+        }
+        
+        private void DetectedAction()
+        {
+            trainingAbility.TrainingComplete.RemoveListener(DetectedAction);
             StartCoroutine(Outro());
         }
         

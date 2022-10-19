@@ -24,6 +24,14 @@ namespace Training
         private bool chosen = false;
         private Animator _animator;
         private bool actionComplete = false;
+        
+        private BattleAbility trainingAbility;
+
+
+        private void Start()
+        {
+            trainingAbility = FindObjectOfType<PlayerCombatant>().GetComponent<RussianTwistAbility>();
+        }
 
         // Update is called once per frame
         void Update()
@@ -82,9 +90,14 @@ namespace Training
             _animator.SetBool("TwistTraining", false);
             teacher.GetComponentInChildren<TrainingObjects>().twisting = false;
             
-            //Insert Squat ability detection
-            
-            //For Testing
+            trainingAbility.TrainingComplete.AddListener(DetectedAction);
+            trainingAbility.TrainAction();
+
+        }
+        
+        private void DetectedAction()
+        {
+            trainingAbility.TrainingComplete.RemoveListener(DetectedAction);
             StartCoroutine(Outro());
         }
         
