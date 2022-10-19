@@ -20,42 +20,14 @@ namespace Training
         [SerializeField] private AudioClip training2;
         [SerializeField] private AudioClip outroA2;
 
-        public static bool option = false;
-        public static bool done = false;
-
         private GameObject teacher;
         private bool chosen = false;
         private Animator _animator;
-        
-        // Start is called before the first frame update
-        void Start()
-        {
-            
-        }
+        private bool actionComplete = false;
 
         // Update is called once per frame
         void Update()
         {
-            if (chosen)
-            {
-                if (option)
-                {
-                    StartCoroutine(YesOption());
-                }
-                else
-                {
-                    StartCoroutine(NoOption());
-                }
-
-                chosen = false;
-            }
-
-            if (done)
-            {
-                Outro();
-                done = false;
-            }
-            
             if (OptionButtons.ButtonChoice != 0 && TrainingManager.trainingNumber == 3)
             {
                 if (OptionButtons.ButtonChoice == 1)
@@ -67,6 +39,12 @@ namespace Training
                     ButtonNo();
                 }
                 OptionButtons.ResetButtons();
+            }
+            
+            if (actionComplete)
+            {
+                StartCoroutine(Outro());
+                actionComplete = false;
             }
         }
 
@@ -98,8 +76,10 @@ namespace Training
         {
             teacher.GetComponent<AudioSource>().PlayOneShot(training2);
             _animator.SetBool("PunchTraining", true);
+            teacher.GetComponentInChildren<TrainingObjects>().punching = true;
             yield return new WaitUntil((() => teacher.GetComponent<AudioSource>().isPlaying == false));
             _animator.SetBool("PunchTraining", false);
+            teacher.GetComponentInChildren<TrainingObjects>().punching = false;
             
             //Insert Squat ability detection
             

@@ -9,10 +9,10 @@ namespace Training
     {
         [SerializeField] private GameObject model;
         [SerializeField] private ParticleSystem ps;
+        [SerializeField] private ParticleSystem ps2;
 
         public bool entered = false;
         public bool trainerActive = false;
-
 
         private void Update()
         {
@@ -33,6 +33,7 @@ namespace Training
                 if (!entered)
                 {
                     this.transform.LookAt(new Vector3(other.transform.position.x, this.transform.position.y, other.transform.position.z));
+                    ps2.Stop();
                     ps.Play();
                     trainerActive = true;
                     other.GetComponentInParent<LocomotionSwitch>().locomotionOn = false;
@@ -47,6 +48,7 @@ namespace Training
             trainerActive = false;
             yield return new WaitForSeconds(5);
             entered = false;
+            ps2.Play();
         }
     }
 }
