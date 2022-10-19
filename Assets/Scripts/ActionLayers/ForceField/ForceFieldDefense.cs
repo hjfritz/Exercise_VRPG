@@ -74,10 +74,7 @@ namespace ActionLayers.ForceField
         {
             if (abilityActive)
             {
-                if (fieldStrength >= 100)
-                {
-                    FinalizeAction();
-                }else if (_defenseTimer < 0)
+                if (_defenseTimer < 0)
                 {
                     FinalizeAction();
                 }
@@ -89,6 +86,8 @@ namespace ActionLayers.ForceField
                     _ffScale = new Vector3(.01f * fieldStrength, .01f * fieldStrength, .01f);
 
                     forceField.transform.localScale = _ffScale;
+
+                    defensePower = fieldStrength;
                 }
             }
             
@@ -105,6 +104,7 @@ namespace ActionLayers.ForceField
         {
             abilityActive = false;
             actionLayer.SetActive(false);
+            defensePower = 0;
             sfx.Stop();
         }
     }
