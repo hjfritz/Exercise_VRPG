@@ -123,8 +123,9 @@ public class Combatant : MonoBehaviour
 
     public void TakeMitigatedDamage(int damage)
     {
-        //Do some calculation here to factor in defense
-        int mitigatedDamage = damage;
+        float mitigation = 1 - selectedDefense.defensePower / 100;
+        int mitigatedDamage = Mathf.CeilToInt((float)damage * mitigation);
+        Debug.Log($"Damage = {damage}, defense power = {selectedDefense.defensePower}, MitigatedDamage = {mitigatedDamage}");
         TakeDamage(mitigatedDamage);
     }
 }

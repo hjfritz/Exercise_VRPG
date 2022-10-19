@@ -8,6 +8,7 @@ public class DefenseAbility : BattleAbility
 {
     private bool defending = false;
     private float defenseTimer = 0f;
+    public int defensePower = 0;
     
     private System.Random random = new Random();
 
@@ -31,6 +32,7 @@ public class DefenseAbility : BattleAbility
             else
             {
                 //Debug.Log($"DEFENSE {gameObject.name} {defenseTimer}");
+                defensePower = random.Next(0, 100);
                 defenseTimer -= Time.deltaTime;
             } 
         } 
@@ -53,5 +55,7 @@ public class DefenseAbility : BattleAbility
     {
         defending = false;
         defenseTimer = 0.0f;
+        defensePower = 0;
     }
+    
 }
