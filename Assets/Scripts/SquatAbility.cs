@@ -26,18 +26,8 @@ public class SquatAbility : BattleAttackAbility
         base.Start();
     }
     
-    
-    private void SetRepsWithDifficulty()
-    {
-        var pm = transform.parent.GetComponent<PlayerManager>();
-        if (pm)
-        {
-            targetReps *= pm.difficulty;
-        }
-    }
     public override void ExecuteAction(Combatant target)
     {
-        SetRepsWithDifficulty();
         counting = true;
         attackTimer = attackDuration;
         squatThresholdHeight = head.transform.localPosition.y * .85f;
@@ -71,7 +61,7 @@ public class SquatAbility : BattleAttackAbility
                     {
                         squatting = true;
                         repCounter++;
-                        target.TakeMitigatedDamage(1);
+                        target.TakeMitigatedDamage(playerRepDamage);
                         sfx.PlayOneShot(repCountClip);
                     }
                 }

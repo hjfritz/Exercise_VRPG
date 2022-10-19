@@ -12,13 +12,17 @@ public class BattleAbility : MonoBehaviour
     public float abilityDuration;
     protected Combatant target;
     protected XROrigin xrOrigin;
-    
+    protected PlayerManager playerManager;
+    protected int playerRepDamage;
+    protected int enemyRepDamage;
 
     // Start is called before the first frame update
     protected void Start()
     {
         xrOrigin = FindObjectOfType<XROrigin>();
-
+        playerManager = FindObjectOfType<PlayerManager>();
+        playerRepDamage = playerManager.MAX_DIFFICULTY - playerManager.difficulty;
+        enemyRepDamage = playerManager.difficulty;
     }
 
     // Update is called once per frame

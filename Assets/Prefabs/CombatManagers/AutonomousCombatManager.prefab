@@ -687,7 +687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Enemy
   HP: 20
-  maxHP: 20
+  maxHP: 50
   healthBar: {fileID: 6068914394451194342}
   abilityTimer: {fileID: 6953378101408027524}
   damageEffect: {fileID: 8855604390452655386}
@@ -788,6 +788,7 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Display Name Not Set
   abilityDuration: 0
+  defensePower: 0
 --- !u!1 &2650274694730546819
 GameObject:
   m_ObjectHideFlags: 0

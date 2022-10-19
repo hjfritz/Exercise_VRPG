@@ -49,7 +49,7 @@ public class DummyAbility : BattleAttackAbility
         if (counting)
         {
             repCounter++;
-            target.TakeMitigatedDamage(1);
+            target.TakeMitigatedDamage(playerRepDamage);
             
         }
         

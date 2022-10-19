@@ -15,6 +15,7 @@ public class PlayerManager : MonoBehaviour
     public UnityEvent FightStart;
     public UnityEvent FightEnd;
 
+    public int MAX_DIFFICULTY = 5;
     public void SetDifficulty(int diff)
     {
         difficulty = diff;

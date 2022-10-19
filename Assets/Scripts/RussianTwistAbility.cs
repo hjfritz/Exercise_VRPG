@@ -48,7 +48,7 @@ public class RussianTwistAbility : PositionRelativeBattleAbility
         {
             currentTargetIndex = targetid;
             repCounter++;
-            target.TakeMitigatedDamage(1);
+            target.TakeMitigatedDamage(playerRepDamage);
             sfx.PlayOneShot(repCountClip);
             ToggleCurrentTarget();
         }
@@ -66,18 +66,9 @@ public class RussianTwistAbility : PositionRelativeBattleAbility
         }
     }
     
-    private void SetRepsWithDifficulty()
-    {
-        var pm = transform.parent.GetComponent<PlayerManager>();
-        if (pm)
-        {
-            targetReps *= pm.difficulty;
-        }
-    }
 
     public override void ExecuteAction(Combatant target)
     {
-        SetRepsWithDifficulty();
         counting = true;
         attackTimer = attackDuration;
         targetsPrefab.SetActive(true);

@@ -1244,7 +1244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Enemy
   HP: 20
-  maxHP: 20
+  maxHP: 50
   healthBar: {fileID: 1142188615876352182}
   abilityTimer: {fileID: 4296327979441421012}
   damageEffect: {fileID: 3086044618195085313}
@@ -1279,6 +1279,7 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Display Name Not Set
   abilityDuration: 0
+  repDuration: 0.9
 --- !u!114 &5013363731638029150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1296,6 +1297,7 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Display Name Not Set
   abilityDuration: 0
+  defensePower: 0
 --- !u!114 &9044682607640520540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1310,6 +1312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyprefab: {fileID: 7128096695280760874, guid: f81fae7066b91fa40b77246a104de3d9, type: 3}
   enemySpawnPosition: {fileID: 1288789364}
+  repDuration: 1
   anim: {fileID: 0}
 --- !u!1 &9162408280207533773
 GameObject:

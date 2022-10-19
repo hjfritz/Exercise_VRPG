@@ -7,13 +7,10 @@ using UnityEngine;
 
 public class PunchAbility : BattleAttackAbility
 {
-    
     private int repCounter = 0;
     private bool counting = false;
     private float attackTimer = 0f;
     private PunchTarget _punchTarget;  
-    
-    
     
     [SerializeField] private float attackDuration = 10.0f;
     [SerializeField] private int targetReps = 10;
@@ -37,7 +34,7 @@ public class PunchAbility : BattleAttackAbility
     {
         sfx.PlayOneShot(punchClip);
         repCounter++;
-        target.TakeMitigatedDamage(1);
+        target.TakeMitigatedDamage(playerRepDamage);
         
         if (repCounter > targetReps)
         {
@@ -62,27 +59,11 @@ public class PunchAbility : BattleAttackAbility
         targetsPrefab.gameObject.SetActive(false);
     }
 
-    private void SetRepsWithDifficulty()
-    {
-        var pm = transform.parent.GetComponent<PlayerManager>();
-        if (pm)
-        {
-            targetReps *= pm.difficulty;
-        }
-    }
+
     public override void ExecuteAction(Combatant target)
     {
-        SetRepsWithDifficulty();
         settarget();
-        var pm = transform.parent.GetComponent<PlayerManager>();
-        if (pm)
-        {
-            targetReps *= pm.difficulty;
-            Debug.Log(pm.name);
-            Debug.Log(pm.currentCombatManager.name);
-            Debug.Log(pm.currentCombatManager.GetComponentInChildren<CombatAreaManager>().name);
-            //punchingArea = pm.currentCombatManager.GetComponentInChildren<CombatAreaManager>().transform;
-        }
+
         counting = true;
         attackTimer = attackDuration;
         targetsPrefab.SetActive(true);

@@ -32,7 +32,7 @@ public class DummyEnemyAtackAbility : BattleAttackAbility
             }
             else if (repTimer <= 0)
             {
-                target.TakeMitigatedDamage(1);
+                target.TakeMitigatedDamage(enemyRepDamage);
                 repTimer = repDuration;
             }
             else
