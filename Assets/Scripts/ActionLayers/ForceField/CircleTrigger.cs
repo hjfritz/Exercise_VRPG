@@ -55,14 +55,14 @@ namespace ActionLayers.ForceField
         private void OnTriggerEnter(Collider other)
         {
             _inTrigger = true;
-            Debug.Log("In");
+            //Debug.Log("In");
         }
 
         private void OnTriggerExit(Collider other)
         {
             _inTrigger = false;
             _handSpeed = 0;
-            Debug.Log("Out");
+            //Debug.Log("Out");
         }
 
         private void TrackHand()

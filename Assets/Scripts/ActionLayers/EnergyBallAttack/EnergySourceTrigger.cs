@@ -105,6 +105,7 @@ namespace ActionLayers.EnergyBallAttack
         public void AddPowerToEnergyBall(int addedPower)
         {
             EnergyBallAttack.attackPower += addedPower;
+            EnergyBallAttack.repCounter++;
         }
 
     }

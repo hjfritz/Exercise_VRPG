@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Net;
+using ActionLayers.ForceField;
 using Button_UI;
 using Locomotion;
 using Unity.Mathematics;
@@ -25,6 +26,13 @@ namespace Training
         private Animator _animator;
         private bool actionComplete = false;
 
+        private BattleAbility trainingAbility;
+
+        private void Start()
+        {
+            trainingAbility = FindObjectOfType<PlayerCombatant>().GetComponent<ForceFieldDefense>();
+        }
+        
         // Update is called once per frame
         void Update()
         {
@@ -82,9 +90,14 @@ namespace Training
             _animator.SetBool("ForceFieldTraining", false);
             teacher.GetComponentInChildren<TrainingObjects>().fielding = false;
             
-            //Insert Squat ability detection
+            trainingAbility.TrainingComplete.AddListener(DetectedAction);
+            trainingAbility.TrainAction();
             
-            //For Testing
+        }
+        
+        private void DetectedAction()
+        {
+            trainingAbility.TrainingComplete.RemoveListener(DetectedAction);
             StartCoroutine(Outro());
         }
         

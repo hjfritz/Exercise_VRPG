@@ -2,15 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class RussianTwistAbility : PositionRelativeBattleAbility
 {
 
     private int repCounter = 0;
+    private int trainingReps = 4;
     private bool counting = false;
     private float attackDuration = 15.0f;
     private float attackTimer = 0f;
-
+    private bool training = false;
     
 
     private RussianTwistTarget[] twistTargets;
@@ -48,9 +50,13 @@ public class RussianTwistAbility : PositionRelativeBattleAbility
         {
             currentTargetIndex = targetid;
             repCounter++;
-            target.TakeMitigatedDamage(playerRepDamage);
+            target?.TakeMitigatedDamage(playerRepDamage);
             sfx.PlayOneShot(repCountClip);
             ToggleCurrentTarget();
+            if (training && repCounter == trainingReps)
+            {
+                FinalizeTraining();
+            }
         }
     }
 
@@ -65,15 +71,26 @@ public class RussianTwistAbility : PositionRelativeBattleAbility
             currentTargetIndex = 0;
         }
     }
-    
+
+    private void  InitializeAction()
+    {
+        targetsPrefab.SetActive(true);
+        SetPrefabPostion();
+    }
 
     public override void ExecuteAction(Combatant target)
     {
         counting = true;
         attackTimer = attackDuration;
-        targetsPrefab.SetActive(true);
-        SetPrefabPostion();
+        InitializeAction();
         base.ExecuteAction(target);
+    }
+    
+    public override void TrainAction()
+    {
+        training = true;
+        InitializeAction();
+        base.TrainAction();
     }
 
     public override void FinalizeAction()
@@ -100,10 +117,16 @@ public class RussianTwistAbility : PositionRelativeBattleAbility
        
     }
     
+    public void FinalizeTraining()
+    {
+        TrainingComplete.Invoke();
+        ResetAbility();
+    }
 
     private void ResetAbility()
     {
         counting = false;
+        training = false;
         attackTimer = 0.0f;
         repCounter = 0;
         currentTargetIndex = -1;
