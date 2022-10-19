@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="Adding a few extra 3d models and enemies" />
+    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="Adding a few extra 3d models and enemies">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Training/TrainingObjects.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Training/TrainingObjects.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/TrainingAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/TrainingAnimator.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Training/Trainer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Training/Trainer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Training/Training1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Training/Training1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Training/Training2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Training/Training2.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Training/Training3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Training/Training3.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Training/Training4.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Training/Training4.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Training/Training5.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Training/Training5.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Training/TrainingTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Training/TrainingTrigger.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,6 +45,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SliderManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Training/AbilitySphere.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Training/HubTableManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Training/TrainingObjects.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Training/TrainingTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.3.0/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.probuilder@4.5.2/Runtime/Core/Submesh.cs" root0="SKIP_HIGHLIGHTING" />
@@ -113,7 +126,7 @@
       <workItem from="1665667979521" duration="13273000" />
       <workItem from="1665748977315" duration="20148000" />
       <workItem from="1666065704802" duration="5193000" />
-      <workItem from="1666114312354" duration="9679000" />
+      <workItem from="1666114312354" duration="14967000" />
     </task>
     <task id="LOCAL-00001" summary="trying to create a separated branch">
       <created>1664612695537</created>
