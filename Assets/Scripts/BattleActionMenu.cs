@@ -51,7 +51,7 @@ public class BattleActionMenu : MonoBehaviour
             Button button = Instantiate(buttonPrefab,canvas.GetComponent<RectTransform>());
 
             RectTransform rect = button.GetComponent<RectTransform>();
-            rect.anchoredPosition = new Vector2(0, i * -70);
+            rect.anchoredPosition = new Vector2(0, i * -170);
 
             BattleActionMenuButton battleActionMenuButton = button.GetComponent<BattleActionMenuButton>();
             battleActionMenuButton.id = i;
