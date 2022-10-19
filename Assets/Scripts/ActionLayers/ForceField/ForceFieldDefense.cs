@@ -102,7 +102,7 @@ namespace ActionLayers.ForceField
                     forceField.transform.localScale = _ffScale;
 
                     defensePower = fieldStrength;
-                    Debug.Log($"defense power- {defensePower}");
+                    //Debug.Log($"defense power- {defensePower}");
                     if (training && defensePower >= trainingStrength)
                     {
                         FinalizeTraining();
