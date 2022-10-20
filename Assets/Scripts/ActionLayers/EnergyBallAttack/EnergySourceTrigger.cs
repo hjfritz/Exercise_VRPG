@@ -33,6 +33,8 @@ namespace ActionLayers.EnergyBallAttack
                 gripRight.action.started += RightGripped;
                 gripRight.action.canceled += RightStoppedGrip;
             }
+            
+            
         }
 
         // Update is called once per frame

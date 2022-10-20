@@ -6,6 +6,9 @@ namespace Training
 {
     public class HubTableManager : MonoBehaviour
     {
+        [SerializeField] private GameObject socketParent;
+        [SerializeField] private GameObject orbParent;
+        
         [SerializeField] private XRSocketInteractor socket1;
         [SerializeField] private XRSocketInteractor socket2;
         [SerializeField] private XRSocketInteractor socket3;
@@ -17,6 +20,7 @@ namespace Training
         [SerializeField] private Transform end;
 
         [SerializeField] private AudioSource AS;
+        [SerializeField] private AudioClip grind;
 
         [SerializeField] private int SphereCount = 0;
         
@@ -56,15 +60,16 @@ namespace Training
                 //Lift Map
                 if (map.transform.localPosition.z < end.localPosition.z)
                 {
-                    AS.Play();
+                    AS.PlayOneShot(grind);
                     map.transform.Translate(Vector3.up * Time.deltaTime * .1f);
                 }
                 else
                 {
                     AS.Stop();
+                    socketParent.SetActive(false);
+                    orbParent.SetActive(false);
+                    MapManager.map = true;
                 }
-                
-                //GameManager.OpenPortal();
             }
         }
     }

@@ -15,6 +15,8 @@ namespace Training
         [SerializeField] private GameObject orbA1;
         [SerializeField] private GameObject player;
         
+        [SerializeField] private Transform orbParent;
+        
         [SerializeField] private float speed;
         
         //AudioClips
@@ -124,6 +126,7 @@ namespace Training
             
             teacher.SetActive(false);
             player.GetComponent<LocomotionSwitch>().locomotionOn = true;
+            TrainingManager.trainingNumber++;
         }
         
         IEnumerator FloatSphereToPlayer()
@@ -132,7 +135,7 @@ namespace Training
             Vector3 startPos = teacher.transform.position + (Vector3.up * 1.5f);
             Vector3 endPos = startPos + (((player.transform.position + (Vector3.up * 1.5f))- startPos) * .75f);
 
-            currentOrb = Instantiate(orbA1, startPos, Quaternion.identity);
+            currentOrb = Instantiate(orbA1, startPos, Quaternion.identity, orbParent);
 
             while (elapsedTime < speed)
             {
