@@ -21,9 +21,13 @@ namespace Button_UI
         // Update is called once per frame
         void Update()
         {
-            if (ButtonsOn)
+            if (ButtonsOn && !MapManager.map)
             {
                 buttons.transform.LookAt(TrainingManager.currentTeacher.transform);
+                buttons.SetActive(true);
+            }else if (ButtonsOn && MapManager.map)
+            {
+                buttons.transform.LookAt(MapManager.look);
                 buttons.SetActive(true);
             }
             else

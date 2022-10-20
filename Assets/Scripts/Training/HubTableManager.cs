@@ -68,6 +68,7 @@ namespace Training
                     AS.Stop();
                     socketParent.SetActive(false);
                     orbParent.SetActive(false);
+                    MapManager.map = true;
                 }
             }
         }
