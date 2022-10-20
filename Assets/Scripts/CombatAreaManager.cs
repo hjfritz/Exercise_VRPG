@@ -55,6 +55,15 @@ public class CombatAreaManager : MonoBehaviour
             {
                 _isTeleporting = false;
                 _teleportTimer = 0f;
+                
+                //this is a hack to check if its the autonomous combat manager, so that both can work in the scene 
+                //at the same time while e are transitioning
+                if (!_pm.currentCombatManager.GetComponentInChildren<PlayerCombatant>())
+                {
+                    _pm.menu.SetActive(true);
+                }
+                _pm.currentCombatManager.StartBattle();
+                _pm.FightStart.Invoke();
             }
         }
     }
@@ -74,14 +83,7 @@ public class CombatAreaManager : MonoBehaviour
                 _pm.transform.position = transform.position ;
                 _pm.transform.rotation = transform.rotation;
                 _pm.currentCombatManager= transform.parent.GetComponent<CombatManager>();
-                //this is a hack to check if its the autonomous combat manager, so that both can work in the scene 
-                //at the same time while e are transitioning
-                if (!_pm.currentCombatManager.GetComponentInChildren<PlayerCombatant>())
-                {
-                    _pm.menu.SetActive(true);
-                }
-                _pm.currentCombatManager.StartBattle();
-                _pm.FightStart.Invoke();
+                
             }
         
             BeginTeleport();

@@ -4,7 +4,7 @@ namespace Button_UI
 {
     public class ButtonTextFacing : MonoBehaviour
     {
-        [SerializeField] private Camera _camera;
+        [SerializeField] public Camera _camera;
                 
         // Start is called before the first frame update
         void Start()
