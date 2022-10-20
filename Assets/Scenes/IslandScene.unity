@@ -4954,6 +4954,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6850900913966352275}
   - component: {fileID: 6077777820571753770}
+  - component: {fileID: 6077777820571753771}
   m_Layer: 0
   m_Name: HubTableTop
   m_TagString: Untagged
@@ -5057,6 +5058,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6077777820571753771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6077777820571753769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 529c3152c21f81e449ecfc89305df466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  island: {fileID: 1730067984}
+  mountain: {fileID: 1709047183}
 --- !u!23 &6099007744242466621
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -69,8 +69,6 @@ namespace Training
                     socketParent.SetActive(false);
                     orbParent.SetActive(false);
                 }
-                
-                //GameManager.OpenPortal();
             }
         }
     }
