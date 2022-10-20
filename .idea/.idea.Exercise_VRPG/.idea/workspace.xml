@@ -6,9 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="Adding a few extra 3d models and enemies">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/IslandMaterials/Particle.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/IslandMaterials/Particle.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/XR/XR Origin 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/XR/XR Origin 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Button UI/ButtonTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Button UI/ButtonTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/IslandScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/IslandScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Training/HubTableManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Training/HubTableManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Training/Training1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Training/Training1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Training/Training2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Training/Training2.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Training/Training3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Training/Training3.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Training/Training4.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Training/Training4.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Training/Training5.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Training/Training5.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
