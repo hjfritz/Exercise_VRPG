@@ -598,7 +598,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6810531993460488800}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1225,6 +1225,9 @@ MonoBehaviour:
   AbilityComplete:
     m_PersistentCalls:
       m_Calls: []
+  TrainingComplete:
+    m_PersistentCalls:
+      m_Calls: []
   DisplayName: Display Name Not Set
   abilityDuration: 0
   repDuration: 1.15
@@ -1241,6 +1244,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AbilityComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  TrainingComplete:
     m_PersistentCalls:
       m_Calls: []
   DisplayName: Display Name Not Set
@@ -1629,7 +1635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8510e24b9341fda49b4e1c7b08f57b72, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.03242874
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8510e24b9341fda49b4e1c7b08f57b72, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1637,7 +1643,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8510e24b9341fda49b4e1c7b08f57b72, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.46228027
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8510e24b9341fda49b4e1c7b08f57b72, type: 3}
       propertyPath: m_LocalRotation.w

@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="Adding a few extra 3d models and enemies">
+    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="Updating big enemies prefab for ui visibility + positions to ensure easy selection">
+      <change afterPath="$PROJECT_DIR$/Assets/XR/Loaders/Open XR Loader No Pre Init.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/XR/Loaders/Open XR Loader No Pre Init.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/XR/Loaders/Open XR Loader.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/XR/Loaders/Open XR Loader.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/XR/Settings/Open XR Package Settings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/XR/Settings/Open XR Package Settings.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Editor Settings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Editor Settings.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/IslandScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/IslandScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Training/Training5.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Training/Training5.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Training/TrainingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Training/TrainingManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CombatManagers/DragonCombatManager 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CombatManagers/DragonCombatManager 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +35,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BattleUI/ProgressBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Button UI/ButtonTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyANimationManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemySelector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Locomotion/ElectricOwl.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Locomotion/LocomotionSwitch.cs" root0="FORCE_HIGHLIGHTING" />
@@ -44,6 +53,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.probuilder@4.5.2/Runtime/Core/Submesh.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.1.1/Runtime/Inputs/InputActionManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.1.1/Runtime/Interaction/Controllers/ActionBasedController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.1.1/Runtime/Interaction/Controllers/XRBaseController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.1.1/Runtime/Interaction/XRInteractionManager.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -120,6 +130,7 @@
       <workItem from="1665748977315" duration="20148000" />
       <workItem from="1666065704802" duration="5193000" />
       <workItem from="1666114312354" duration="14967000" />
+      <workItem from="1666251610273" duration="775000" />
     </task>
     <task id="LOCAL-00001" summary="trying to create a separated branch">
       <created>1664612695537</created>
@@ -361,7 +372,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Merging all branches back to main" />
     <MESSAGE value="Setup post merge" />
     <MESSAGE value="1st commit week 2 post merge" />
     <MESSAGE value="Reupdating branch" />
@@ -386,6 +396,7 @@
     <MESSAGE value="Fix for locomotion reactivate on combat end&#10;smaller bugs fixes" />
     <MESSAGE value="minor fixes" />
     <MESSAGE value="Adding a few extra 3d models and enemies" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding a few extra 3d models and enemies" />
+    <MESSAGE value="Updating big enemies prefab for ui visibility + positions to ensure easy selection" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating big enemies prefab for ui visibility + positions to ensure easy selection" />
   </component>
 </project>

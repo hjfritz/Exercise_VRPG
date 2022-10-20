@@ -3107,6 +3107,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1515688133}
     m_Modifications:
+    - target: {fileID: 1288789364, guid: b559379129f59b54b84ed2c18d27919b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1288789364, guid: b559379129f59b54b84ed2c18d27919b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.87
+      objectReference: {fileID: 0}
     - target: {fileID: 9044682607640520540, guid: b559379129f59b54b84ed2c18d27919b, type: 3}
       propertyPath: enemyprefab
       value: 
@@ -3125,19 +3133,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9162408280207533775, guid: b559379129f59b54b84ed2c18d27919b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -75.439995
+      value: -3.23
       objectReference: {fileID: 0}
     - target: {fileID: 9162408280207533775, guid: b559379129f59b54b84ed2c18d27919b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.629002
+      value: 16.85
       objectReference: {fileID: 0}
     - target: {fileID: 9162408280207533775, guid: b559379129f59b54b84ed2c18d27919b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -157.13
+      value: -168.84
       objectReference: {fileID: 0}
     - target: {fileID: 9162408280207533775, guid: b559379129f59b54b84ed2c18d27919b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.37728995
+      value: 0.7622246
       objectReference: {fileID: 0}
     - target: {fileID: 9162408280207533775, guid: b559379129f59b54b84ed2c18d27919b, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3145,7 +3153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9162408280207533775, guid: b559379129f59b54b84ed2c18d27919b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9260952
+      value: 0.6473127
       objectReference: {fileID: 0}
     - target: {fileID: 9162408280207533775, guid: b559379129f59b54b84ed2c18d27919b, type: 3}
       propertyPath: m_LocalRotation.z
@@ -3157,7 +3165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9162408280207533775, guid: b559379129f59b54b84ed2c18d27919b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 135.668
+      value: 80.679
       objectReference: {fileID: 0}
     - target: {fileID: 9162408280207533775, guid: b559379129f59b54b84ed2c18d27919b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -4217,14 +4225,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1515688133}
     m_Modifications:
-    - target: {fileID: 6810531993460488800, guid: 0c3e11b2008df9d4380e04c8fd2c7e25, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6810531993460488803, guid: 0c3e11b2008df9d4380e04c8fd2c7e25, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8396746476851257105, guid: 0c3e11b2008df9d4380e04c8fd2c7e25, type: 3}
       propertyPath: m_Name
       value: DragonCombatManager 1
