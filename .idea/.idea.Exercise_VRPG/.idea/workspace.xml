@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="Updating big enemies prefab for ui visibility + positions to ensure easy selection">
-      <change afterPath="$PROJECT_DIR$/Assets/XR/Loaders/Open XR Loader No Pre Init.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/XR/Loaders/Open XR Loader No Pre Init.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/XR/Loaders/Open XR Loader.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/XR/Loaders/Open XR Loader.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/XR/Settings/Open XR Package Settings.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/XR/Settings/Open XR Package Settings.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Editor Settings.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Editor Settings.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CombatManagers/DragonCombatManager 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CombatManagers/DragonCombatManager 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-    </list>
+    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="Updating big enemies prefab for ui visibility + positions to ensure easy selection" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +18,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/Assets/Prefabs/CombatManagers/DragonCombatManager 1.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BattleUI/AbilityTimer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BattleUI/ProgressBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Button UI/ButtonTrigger.cs" root0="FORCE_HIGHLIGHTING" />
@@ -130,7 +118,7 @@
       <workItem from="1665748977315" duration="20148000" />
       <workItem from="1666065704802" duration="5193000" />
       <workItem from="1666114312354" duration="14967000" />
-      <workItem from="1666251610273" duration="775000" />
+      <workItem from="1666251610273" duration="1191000" />
     </task>
     <task id="LOCAL-00001" summary="trying to create a separated branch">
       <created>1664612695537</created>
@@ -349,7 +337,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666104535729</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Updating big enemies prefab for ui visibility + positions to ensure easy selection">
+      <created>1666268814884</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1666268814884</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
