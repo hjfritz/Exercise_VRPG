@@ -126,6 +126,7 @@ namespace Training
             
             teacher.SetActive(false);
             player.GetComponent<LocomotionSwitch>().locomotionOn = true;
+            TrainingManager.trainingNumber++;
         }
         
         IEnumerator FloatSphereToPlayer()

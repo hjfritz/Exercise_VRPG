@@ -1496,15 +1496,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 896349397167408767, guid: 49d1fd0a964c1ea43a22d7b3a4a98cfb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 171.29
+      value: 216.46
       objectReference: {fileID: 0}
     - target: {fileID: 896349397167408767, guid: 49d1fd0a964c1ea43a22d7b3a4a98cfb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 35.93
+      value: 0.84
       objectReference: {fileID: 0}
     - target: {fileID: 896349397167408767, guid: 49d1fd0a964c1ea43a22d7b3a4a98cfb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 182.33
+      value: 88.81
       objectReference: {fileID: 0}
     - target: {fileID: 896349397167408767, guid: 49d1fd0a964c1ea43a22d7b3a4a98cfb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2826,7 +2826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orbA1: {fileID: 3356597816339879014, guid: ec19a5e7aa874564580134e2245d4118, type: 3}
-  player: {fileID: 0}
+  player: {fileID: 1169470690}
   orbParent: {fileID: 1932011015}
   speed: 3
   intro2: {fileID: 8300000, guid: c9c03221d5701904abfea7722d2e304c, type: 3}

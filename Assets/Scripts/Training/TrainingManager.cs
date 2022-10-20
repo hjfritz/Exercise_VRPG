@@ -61,7 +61,7 @@ namespace Training
                 trainingNumber += 1;
             }else if (trainingNumber == 6)
             {
-                GameManager.OpenPortal();
+                //trainingNumber += 1;
             }
         }
     }
