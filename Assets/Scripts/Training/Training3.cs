@@ -15,6 +15,8 @@ namespace Training
         [SerializeField] private GameObject orbA1;
         [SerializeField] private GameObject player;
         
+        [SerializeField] private float speed;
+        
         //AudioClips
         [SerializeField] private AudioClip intro2;
         [SerializeField] private AudioClip no2;
@@ -22,6 +24,7 @@ namespace Training
         [SerializeField] private AudioClip outroA3;
 
         private GameObject teacher;
+        private GameObject currentOrb;
         private bool chosen = false;
         private Animator _animator;
         private bool actionComplete = false;
@@ -113,13 +116,29 @@ namespace Training
 
         IEnumerator Outro()
         {
-            Instantiate(orbA1, teacher.transform.position, quaternion.identity);
+            StartCoroutine(FloatSphereToPlayer());
             
             teacher.GetComponent<AudioSource>().PlayOneShot(outroA3);
             yield return new WaitUntil((() => teacher.GetComponent<AudioSource>().isPlaying == false));
             
             teacher.SetActive(false);
             player.GetComponent<LocomotionSwitch>().locomotionOn = true;
+        }
+        
+        IEnumerator FloatSphereToPlayer()
+        {
+            float elapsedTime = 0;
+            Vector3 startPos = teacher.transform.position + (Vector3.up * 1.5f);
+            Vector3 endPos = startPos + (((player.transform.position + (Vector3.up * 1.5f))- startPos) * .75f);
+
+            currentOrb = Instantiate(orbA1, startPos, Quaternion.identity);
+
+            while (elapsedTime < speed)
+            {
+                currentOrb.transform.position = Vector3.Lerp(startPos, endPos, elapsedTime / speed);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
         }
     }
 }

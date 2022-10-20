@@ -5,7 +5,7 @@ namespace Button_UI
 {
     public class ButtonTrigger : MonoBehaviour
     {
-        [SerializeField] private bool yes = true;
+        [SerializeField] private int number = 0;
         
         // Start is called before the first frame update
         void Start()
@@ -21,14 +21,11 @@ namespace Button_UI
 
         private void OnTriggerEnter(Collider other)
         {
-            if (yes)
+            if (number != 0)
                 {
-                    OptionButtons.ButtonChoice = 1;
+                    OptionButtons.ButtonChoice = number;
                 }
-                else
-                {
-                    OptionButtons.ButtonChoice = 2;
-                }
+                
         }
     }
 }
