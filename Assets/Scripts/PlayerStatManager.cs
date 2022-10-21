@@ -7,6 +7,8 @@ public class PlayerStatManager : MonoBehaviour
 {
     [SerializeField] private GameObject _rig;
     
+    [SerializeField] private bool loadPrefs;
+    
     private PlayerCombatant pCombatant;
 
     public bool hasGloves=false;
@@ -23,7 +25,7 @@ public class PlayerStatManager : MonoBehaviour
     void Start()
     {
         pCombatant = Resources.FindObjectsOfTypeAll<PlayerCombatant>()[0];
-        if (PlayerPrefs.HasKey("X"))
+        if (loadPrefs)
         {
             Load();
         }
