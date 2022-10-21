@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="Updating big enemies prefab for ui visibility + positions to ensure easy selection">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Collectible.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Collectible.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerStatManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerStatManager.cs.meta" afterDir="false" />
+    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="up">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Game Menu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Game Menu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleUI/ProgressBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BattleUI/ProgressBar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Collectible.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Collectible.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combatant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combatant.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerStatManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerStatManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +27,11 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/Assets/Scenes/Level 1.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BattleUI/AbilityTimer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BattleUI/ProgressBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Button UI/ButtonTrigger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/Assets/Scripts/Collectible.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/Assets/Scripts/CombatAreaManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyANimationManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemySelector.cs" root0="FORCE_HIGHLIGHTING" />
@@ -353,7 +357,21 @@
       <option name="project" value="LOCAL" />
       <updated>1666268814884</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Adding Playerstatmanager / collectibles">
+      <created>1666375353888</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1666375353888</updated>
+    </task>
+    <task id="LOCAL-00034" summary="up">
+      <created>1666375364404</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1666375364404</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -376,7 +394,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Setup post merge" />
     <MESSAGE value="1st commit week 2 post merge" />
     <MESSAGE value="Reupdating branch" />
     <MESSAGE value="script optimization" />
@@ -390,7 +407,6 @@
     <MESSAGE value="Adding the menu prefab ( to be either displayed on a specific scene or on the hand when triggering secondary button of right controller" />
     <MESSAGE value="Working on the separated player manager" />
     <MESSAGE value="fighting with autonomous combat managers" />
-    <MESSAGE value="up" />
     <MESSAGE value="Implementing the climbing mechanics" />
     <MESSAGE value="Climbing completed" />
     <MESSAGE value="UI direct input + xrrig telport on combat area enter" />
@@ -401,6 +417,8 @@
     <MESSAGE value="minor fixes" />
     <MESSAGE value="Adding a few extra 3d models and enemies" />
     <MESSAGE value="Updating big enemies prefab for ui visibility + positions to ensure easy selection" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating big enemies prefab for ui visibility + positions to ensure easy selection" />
+    <MESSAGE value="Adding Playerstatmanager / collectibles" />
+    <MESSAGE value="up" />
+    <option name="LAST_COMMIT_MESSAGE" value="up" />
   </component>
 </project>
