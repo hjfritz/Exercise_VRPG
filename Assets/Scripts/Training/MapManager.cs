@@ -35,7 +35,7 @@ namespace Training
             {
                 level1Option = false;
                 OptionButtons.ResetButtons();
-                GameManager.OpenPortal();
+                GameManager.OpenPortal(1);
             }
         }
 
