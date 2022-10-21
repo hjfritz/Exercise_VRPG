@@ -120,6 +120,14 @@ public class Combatant : MonoBehaviour
             selectedDefense.FinalizeAction();
         }
     }
+    
+    public void HealDamage(int healpoints)
+    {
+        HP = Mathf.Max(maxHP, HP + healpoints);
+        if(healthBar.isActiveAndEnabled)
+        healthBar.SetProgress(HP, maxHP);
+
+    }
 
     public void TakeMitigatedDamage(int damage)
     {

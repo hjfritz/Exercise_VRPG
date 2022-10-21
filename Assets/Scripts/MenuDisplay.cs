@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class MenuDisplay : MonoBehaviour
 {
     [SerializeField] private InputActionReference MenuActionReference;
+    private Transform panel;
 
     // Start is called before the first frame update
     void Start()
@@ -15,8 +16,8 @@ public class MenuDisplay : MonoBehaviour
 
     private void OnMenu(InputAction.CallbackContext obj)
     {
-        Transform panel = transform.GetChild(0);
-        if(panel.gameObject.activeSelf) panel.gameObject.SetActive(false);
+        panel = transform.GetChild(0);
+        if(panel.gameObject.activeInHierarchy) panel.gameObject.SetActive(false);
         else
         {
             panel.gameObject.SetActive(true);

@@ -1,12 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class Level1GoalTrigger : MonoBehaviour
 {
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -19,13 +17,8 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public static void OpenPortal(int scene)
+    private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(scene);
-    }
-
-    public void GoToScene(int sceneid)
-    {
-        SceneManager.LoadScene(sceneid);
+        GameManager.OpenPortal(0);
     }
 }
