@@ -35,7 +35,7 @@ namespace Training
 
         private void Start()
         {
-            trainingAbility = FindObjectOfType<PlayerCombatant>().GetComponent<PunchAbility>();
+            trainingAbility = FindObjectOfType<PlayerCombatant>(true).GetComponent<PunchAbility>();
         }
 
 
@@ -113,7 +113,7 @@ namespace Training
             TrainingManager.trainingNumber -= 1;
             
             StartCoroutine(teacher.GetComponentInChildren<TrainingTrigger>().ResetTrainer());
-            player.GetComponent<LocomotionSwitch>().locomotionOn = true;
+            player.GetComponent<LocomotionSwitch>().ToggleLocomotion(true);
         }
 
         IEnumerator Outro()
@@ -124,7 +124,7 @@ namespace Training
             yield return new WaitUntil((() => teacher.GetComponent<AudioSource>().isPlaying == false));
             
             teacher.SetActive(false);
-            player.GetComponent<LocomotionSwitch>().locomotionOn = true;
+            player.GetComponent<LocomotionSwitch>().ToggleLocomotion(true);
         }
         
         IEnumerator FloatSphereToPlayer()

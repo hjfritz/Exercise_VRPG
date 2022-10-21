@@ -215,34 +215,6 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
---- !u!114 &2985670389458288991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1063773540157418220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8926a419bdc38a7468b6c7c0176e5805, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StartFight:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7515785293807246530}
-        m_TargetAssemblyTypeName: EnemyANimationManager, Assembly-CSharp
-        m_MethodName: StartAnim
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  _teleportTime: 1.5
 --- !u!1 &1890233319183911522
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,6 +740,9 @@ MonoBehaviour:
   AbilityComplete:
     m_PersistentCalls:
       m_Calls: []
+  TrainingComplete:
+    m_PersistentCalls:
+      m_Calls: []
   DisplayName: Display Name Not Set
   abilityDuration: 0
   repDuration: 0.75
@@ -784,6 +759,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AbilityComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  TrainingComplete:
     m_PersistentCalls:
       m_Calls: []
   DisplayName: Display Name Not Set
@@ -2370,11 +2348,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 399379299900698873, guid: 121ceb7013834744a8324e69d3947f4b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 121ceb7013834744a8324e69d3947f4b, type: 3}
---- !u!1 &1063773540157418220 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 399379299900698868, guid: 121ceb7013834744a8324e69d3947f4b, type: 3}
-  m_PrefabInstance: {fileID: 813367289250535960}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1063773540157418221 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 399379299900698869, guid: 121ceb7013834744a8324e69d3947f4b, type: 3}
@@ -2913,14 +2886,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4144f60b481e994cae14bcb880a6a3d, type: 3}
---- !u!1 &3780350955044868270 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6393176675605958820, guid: c4144f60b481e994cae14bcb880a6a3d, type: 3}
-  m_PrefabInstance: {fileID: 7840663022808612874}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4556888036141582868 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6049162217947793950, guid: c4144f60b481e994cae14bcb880a6a3d, type: 3}
+  m_PrefabInstance: {fileID: 7840663022808612874}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3780350955044868270 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6393176675605958820, guid: c4144f60b481e994cae14bcb880a6a3d, type: 3}
   m_PrefabInstance: {fileID: 7840663022808612874}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &4086991353835059959 stripped

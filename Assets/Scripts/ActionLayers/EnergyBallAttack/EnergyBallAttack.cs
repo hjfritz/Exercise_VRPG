@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace ActionLayers.EnergyBallAttack
 {
-    public class EnergyBallAttack : PositionRelativeBattleAbility
+    public class EnergyBallAttack : BattleAttackAbility
     {
         private GameObject WholeLayer;
         private GameObject triggerLayer;
@@ -18,14 +18,14 @@ namespace ActionLayers.EnergyBallAttack
         private bool training = false;
         public static int repCounter = 0;
         private int trainingReps = 4;
+        
+        [SerializeField] protected GameObject targetsPrefab;
     
         // Start is called before the first frame update
         new void Start()
         {
             base.Start();
             abilityDuration = _attackDuration;
-            relativeTransform = new Vector3(0f, -.5f, .2f);
-            //relativeTransform = new Vector3(0f, 0f, 0f);
 
             WholeLayer = targetsPrefab;
             triggerLayer = targetsPrefab.GetComponentInChildren<TriggersLayer>().gameObject;

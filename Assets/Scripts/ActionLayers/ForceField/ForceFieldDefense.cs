@@ -31,14 +31,8 @@ namespace ActionLayers.ForceField
         new void Start()
         {
             base.Start();
-            
-            //abilityDuration = _defenseDuration;
-            relativeTransform = new Vector3(0f, -.5f, .3f);
-            //relativeTransform = new Vector3(0f, 0f, 0f);
 
             mainCameraObj = GameObject.FindGameObjectsWithTag("MainCamera")[0];
-            targetsPrefab = Instantiate(targetsPrefab, xrOrigin.transform);
-            
             actionLayer = targetsPrefab;
             sfx = actionLayer.GetComponent<AudioSource>();
             forceFieldLayer = targetsPrefab.GetComponentInChildren<CircleDefenseFacing>().gameObject;
@@ -46,9 +40,6 @@ namespace ActionLayers.ForceField
             forceField.transform.localScale = new Vector3(0,0,0);
             actionLayer.SetActive(false);
             
-            
-            SetPrefabPosition();
-
         }
 
         private void InitializeAction()
@@ -57,7 +48,6 @@ namespace ActionLayers.ForceField
             fieldStrength = 0;
             forceFieldLayer.SetActive(true);
             sfx.PlayOneShot(ambiance);
-            SetPrefabPosition();
         }
 
         public override void ExecuteDefense(float duration)
@@ -72,15 +62,6 @@ namespace ActionLayers.ForceField
             training = true;
             InitializeAction();
             base.TrainAction();
-        }
-        
-        public void SetPrefabPosition()
-        {
-            targetsPrefab.transform.parent = xrOrigin.transform.GetChild(0);
-            float yRotation = mainCameraObj.transform.localEulerAngles.y;
-            targetsPrefab.transform.localEulerAngles = new Vector3(0, yRotation, 0);
-            targetsPrefab.transform.localPosition = relativeTransform + mainCameraObj.transform.localPosition;
-            targetsPrefab.transform.parent = null;
         }
 
         // Update is called once per frame

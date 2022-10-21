@@ -36,7 +36,7 @@ namespace Training
                     ps2.Stop();
                     ps.Play();
                     trainerActive = true;
-                    other.GetComponentInParent<LocomotionSwitch>().locomotionOn = false;
+                    other.GetComponentInParent<LocomotionSwitch>().ToggleLocomotion(false);
                     TrainingManager.StartTraining(this.gameObject);
                     entered = true;
                 }

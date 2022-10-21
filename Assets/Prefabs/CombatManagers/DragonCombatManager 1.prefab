@@ -561,7 +561,6 @@ GameObject:
   - component: {fileID: 6810531993460488812}
   - component: {fileID: 6810531993460488803}
   - component: {fileID: 6810531993460488802}
-  - component: {fileID: 8732389256116277715}
   m_Layer: 0
   m_Name: Combat Area 1
   m_TagString: Untagged
@@ -645,34 +644,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8732389256116277715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6810531993460488800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8926a419bdc38a7468b6c7c0176e5805, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StartFight:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7168774816612745130}
-        m_TargetAssemblyTypeName: EnemyANimationManager, Assembly-CSharp
-        m_MethodName: StartAnim
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  _teleportTime: 1.5
 --- !u!1 &7325732922456047279
 GameObject:
   m_ObjectHideFlags: 0

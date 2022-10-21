@@ -36,7 +36,7 @@ namespace Training
 
         private void Start()
         {
-            trainingAbility = FindObjectOfType<PlayerCombatant>().GetComponent<SquatAbility>();
+            trainingAbility = FindObjectOfType<PlayerCombatant>(true).GetComponent<SquatAbility>();
         }
 
         // Update is called once per frame
@@ -113,7 +113,7 @@ namespace Training
             TrainingManager.trainingNumber -= 1;
 
             StartCoroutine(teacher.GetComponentInChildren<TrainingTrigger>().ResetTrainer());
-            player.GetComponent<LocomotionSwitch>().locomotionOn = true;
+            player.GetComponent<LocomotionSwitch>().ToggleLocomotion(true);
         }
 
         IEnumerator Outro()
@@ -124,7 +124,7 @@ namespace Training
             yield return new WaitUntil((() => teacher.GetComponent<AudioSource>().isPlaying == false));
             
             Destroy(teacher);
-            player.GetComponent<LocomotionSwitch>().locomotionOn = true;
+            player.GetComponent<LocomotionSwitch>().ToggleLocomotion(true);
             
         }
         

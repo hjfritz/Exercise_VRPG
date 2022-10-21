@@ -5,7 +5,7 @@ namespace Locomotion
 {
     public class LocomotionSwitch : MonoBehaviour
     {
-        public bool locomotionOn = true;
+        //public bool locomotionOn = true;
         
         // Start is called before the first frame update
         void Start()
@@ -16,23 +16,15 @@ namespace Locomotion
         // Update is called once per frame
         void Update()
         {
-            if (locomotionOn)
-            {
-                this.GetComponent<ElectricOwl>().enabled = true;
-                this.GetComponent<ActionBasedSnapTurnProvider>().enabled = true;
-                this.GetComponent<ActionBasedContinuousMoveProvider>().enabled = true;
-            }
-            else
-            {
-                this.GetComponent<ElectricOwl>().enabled = false;
-                this.GetComponent<ActionBasedSnapTurnProvider>().enabled = false;
-                this.GetComponent<ActionBasedContinuousMoveProvider>().enabled = false;
-            }
+
         }
 
         public void ToggleLocomotion(bool loc)
         {
-            locomotionOn = loc;
+            //locomotionOn = loc;
+            this.GetComponent<ElectricOwl>().enabled = loc;
+            this.GetComponent<ActionBasedSnapTurnProvider>().enabled = loc;
+            this.GetComponent<ActionBasedContinuousMoveProvider>().enabled = loc;
         }
     }
 }

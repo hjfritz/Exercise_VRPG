@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
-public class RussianTwistAbility : PositionRelativeBattleAbility
+public class RussianTwistAbility : BattleAttackAbility
 {
 
     private int repCounter = 0;
@@ -22,6 +22,7 @@ public class RussianTwistAbility : PositionRelativeBattleAbility
     [SerializeField] private AudioSource sfx;
     [SerializeField] private AudioClip repCountClip;
 
+    [SerializeField] protected GameObject targetsPrefab;
     
 
     // Start is called before the first frame update
@@ -30,8 +31,7 @@ public class RussianTwistAbility : PositionRelativeBattleAbility
         base.Start();
         DisplayName = "Russian Twist Ability";
         abilityDuration = attackDuration;
-        relativeTransform = new Vector3(0f, -.3f, .1f);
-        //relativeTransform = new Vector3(0f, 0f, 0f);
+       
         twistTargets = targetsPrefab.GetComponentsInChildren<RussianTwistTarget>();
 
         foreach (var twistTarget in twistTargets)
@@ -75,7 +75,6 @@ public class RussianTwistAbility : PositionRelativeBattleAbility
     private void  InitializeAction()
     {
         targetsPrefab.SetActive(true);
-        SetPrefabPostion();
     }
 
     public override void ExecuteAction(Combatant target)
