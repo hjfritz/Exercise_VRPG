@@ -6,6 +6,8 @@ using UnityEngine;
 public class PlayerStatManager : MonoBehaviour
 {
     [SerializeField] private GameObject _rig;
+    
+    private PlayerCombatant pCombatant;
 
     public bool hasGloves=false;
 
@@ -14,14 +16,17 @@ public class PlayerStatManager : MonoBehaviour
     public int hps=100;
 
     public int defeatedEnemies=0;
+
+    public int levelprogression = 0;
     
     // Start is called before the first frame update
     void Start()
     {
-        /*if (PlayerPrefs.GetFloat("X") != null)
+        pCombatant = Resources.FindObjectsOfTypeAll<PlayerCombatant>()[0];
+        if (PlayerPrefs.HasKey("X"))
         {
             Load();
-        }*/
+        }
 
     }
 
@@ -33,6 +38,7 @@ public class PlayerStatManager : MonoBehaviour
 
     public void Save()
     {
+        hps = pCombatant.GetHP();
         PlayerPrefs.SetFloat("X", _rig.transform.position.x); 
         PlayerPrefs.SetFloat("Y", _rig.transform.position.y); 
         PlayerPrefs.SetFloat("Z", _rig.transform.position.z);
@@ -40,6 +46,7 @@ public class PlayerStatManager : MonoBehaviour
         PlayerPrefs.SetInt("Coins", countCoins);
         PlayerPrefs.SetInt("HP", hps);
         PlayerPrefs.SetInt("Enemies", defeatedEnemies);
+        PlayerPrefs.SetInt("Level", levelprogression);
     }
 
     public void Load()
@@ -50,7 +57,9 @@ public class PlayerStatManager : MonoBehaviour
         _rig.transform.position = new Vector3(xpos, ypos, zpos);
         countCoins = PlayerPrefs.GetInt("Coins");
         hps = PlayerPrefs.GetInt(("HP"));
+        pCombatant.UpdateHP(hps);
         defeatedEnemies = PlayerPrefs.GetInt("Enemies");
+        levelprogression = PlayerPrefs.GetInt("Level");
         //hasGloves= PlayerPrefs.GetInt("Gloves");
     }
     
