@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="Updating big enemies prefab for ui visibility + positions to ensure easy selection">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
+    <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="minor fix to avoid unwanted pref load">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MenuDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MenuDisplay.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +21,12 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/Assets/Scenes/Level 1.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BattleUI/AbilityTimer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BattleUI/ProgressBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Button UI/ButtonTrigger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/Assets/Scripts/Collectible.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/Assets/Scripts/CombatAreaManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyANimationManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemySelector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -31,6 +35,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuActionTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuDisplay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerStatManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/Assets/Scripts/PlayerStatManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Punching/MasterManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Punching/PunchAbility.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Punching/SkeletonManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -57,22 +62,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
-    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;rider.run.widget.enabled.cache&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Discover.Launch.Via.Unity": "true",
+    "Git.Branch.Popup.ShowAllRemotes": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "rider.run.widget.enabled.cache": "false",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2020.3.12f1\Editor\Unity.exe" />
@@ -122,7 +127,6 @@
       <workItem from="1666065704802" duration="5193000" />
       <workItem from="1666114312354" duration="14967000" />
       <workItem from="1666251610273" duration="1191000" />
-      <workItem from="1666378820513" duration="765000" />
     </task>
     <task id="LOCAL-00001" summary="trying to create a separated branch">
       <created>1664612695537</created>
@@ -348,7 +352,35 @@
       <option name="project" value="LOCAL" />
       <updated>1666268814884</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Adding Playerstatmanager / collectibles">
+      <created>1666375353888</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1666375353888</updated>
+    </task>
+    <task id="LOCAL-00034" summary="up">
+      <created>1666375364404</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1666375364404</updated>
+    </task>
+    <task id="LOCAL-00035" summary="* hand menu available in Level1&#10;* Haven't tried the Load/Save but somehow implemented it&#10;* SImply deactivate the HandMenu in XR Origin 1 if anybug arise&#10; in ProgressBar.cs line 52 i am  adding  as i keep getting an error&#10;&#10;if(ProgressImage.isActiveAndEnabled)&#10;            AnimationCoroutine = StartCoroutine(AnimateProgress(HP, maxHP, Speed));">
+      <created>1666379334478</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1666379334478</updated>
+    </task>
+    <task id="LOCAL-00036" summary="minor fix to avoid unwanted pref load">
+      <created>1666379507985</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1666379507985</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,9 +403,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Setup post merge" />
-    <MESSAGE value="1st commit week 2 post merge" />
-    <MESSAGE value="Reupdating branch" />
     <MESSAGE value="script optimization" />
     <MESSAGE value="Polishing enemy animation" />
     <MESSAGE value="reviewing file structure" />
@@ -385,7 +414,6 @@
     <MESSAGE value="Adding the menu prefab ( to be either displayed on a specific scene or on the hand when triggering secondary button of right controller" />
     <MESSAGE value="Working on the separated player manager" />
     <MESSAGE value="fighting with autonomous combat managers" />
-    <MESSAGE value="up" />
     <MESSAGE value="Implementing the climbing mechanics" />
     <MESSAGE value="Climbing completed" />
     <MESSAGE value="UI direct input + xrrig telport on combat area enter" />
@@ -396,6 +424,10 @@
     <MESSAGE value="minor fixes" />
     <MESSAGE value="Adding a few extra 3d models and enemies" />
     <MESSAGE value="Updating big enemies prefab for ui visibility + positions to ensure easy selection" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating big enemies prefab for ui visibility + positions to ensure easy selection" />
+    <MESSAGE value="Adding Playerstatmanager / collectibles" />
+    <MESSAGE value="up" />
+    <MESSAGE value="* hand menu available in Level1&#10;* Haven't tried the Load/Save but somehow implemented it&#10;* SImply deactivate the HandMenu in XR Origin 1 if anybug arise&#10; in ProgressBar.cs line 52 i am  adding  as i keep getting an error&#10;&#10;if(ProgressImage.isActiveAndEnabled)&#10;            AnimationCoroutine = StartCoroutine(AnimateProgress(HP, maxHP, Speed));" />
+    <MESSAGE value="minor fix to avoid unwanted pref load" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor fix to avoid unwanted pref load" />
   </component>
 </project>
