@@ -15,8 +15,6 @@ public class Collectible : MonoBehaviour
     private GameObject gm;
     private PlayerStatManager pmsm;
     private AudioSource audio;
-    private PlayerCombatant pCombatant;
-    
     [SerializeField]private Effect effect;
 
     [SerializeField] private int collectibleValue;
@@ -26,7 +24,6 @@ public class Collectible : MonoBehaviour
         gm = GameObject.Find("GameManager");
         pmsm = gm.GetComponent<PlayerStatManager>();
         audio = GetComponent<AudioSource>();
-        pCombatant = Resources.FindObjectsOfTypeAll<PlayerCombatant>()[0];
     }
 
     // Update is called once per frame
@@ -42,10 +39,7 @@ public class Collectible : MonoBehaviour
             audio.Play();
             if (effect == Effect.Potion)
             {
-                
-                pCombatant.HealDamage(collectibleValue);
-                pmsm.hps = pCombatant.GetHP();
-
+                pmsm.hps += collectibleValue;
             }
             else if (effect == Effect.Coin)
             {
@@ -55,8 +49,6 @@ public class Collectible : MonoBehaviour
             {
                 pmsm.hasGloves = true;
             }
-
-            GetComponent<MeshRenderer>().enabled = false;
             
             Destroy(gameObject,1);
         }
