@@ -27,12 +27,6 @@ public class CombatManager : MonoBehaviour
         PartyMembers = FindObjectsOfType<PlayerCombatant>(true);
         menu = FindObjectOfType<PlayerManager>(true).GetComponentInChildren<CombatManagerMenu>();
         menu.HideMenu();
-        //check to see if it is the training island or the level1 scene.
-        if (!GetComponent<TrainingTrigger>())
-        {
-            gameObject.SetActive(false);
-        }
-        
     }
 
     public void StartBattle()

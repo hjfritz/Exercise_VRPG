@@ -18,6 +18,6 @@ public class CombatTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         FindObjectOfType<CombatAreaManager>().TriggerCombat();
-        GetComponent<BoxCollider>().enabled = false;  //deactivating the trigger so another fight will not start
+        GetComponent<Collider>().enabled = false;  //deactivating the trigger so another fight will not start
     }
 }

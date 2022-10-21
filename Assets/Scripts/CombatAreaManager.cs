@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Locomotion;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
@@ -44,10 +45,7 @@ public class CombatAreaManager : MonoBehaviour
         //small fix until we flatten out combat regions
         _teleportEnd = new Vector3(destination.x, _teleportStart.y, destination.z);
         _isTeleporting = true;
-        //lookAtDirection = _pm.currentCombatManager.transform - _battleRig.transform;
         
-        
-
     }
     
     private void TeleportToLevel()
@@ -71,7 +69,7 @@ public class CombatAreaManager : MonoBehaviour
             }
 
             var enemyTransform = _pm.currentCombatManager.transform;
-            _battleRig.transform.LookAt(new Vector3(enemyTransform.position.x, this.transform.position.y, enemyTransform.position.z));
+            _battleRig.transform.LookAt(new Vector3(enemyTransform.position.x, enemyTransform.position.y, enemyTransform.position.z));
         }
     }
 
@@ -82,7 +80,15 @@ public class CombatAreaManager : MonoBehaviour
         
         _pm.currentCombatManager = _combatManagers[currentBattleIndex];
         _pm.currentCombatManager.gameObject.SetActive(true);
-        TeleportToBattle();
+
+        var enemyTransform = _pm.currentCombatManager.transform;
+        _battleRig.transform.LookAt(new Vector3(enemyTransform.position.x, enemyTransform.position.y, enemyTransform.position.z));
+        _battleRig.GetComponent<LocomotionSwitch>().ToggleLocomotion(false);
+        //"look away" - https://forum.unity.com/threads/whats-the-opposite-of-lookat.392668/
+        _pm.currentCombatManager.transform.rotation = Quaternion.LookRotation(_pm.currentCombatManager.transform.position - _battleRig.transform.position);
+        
+        
+      
         _pm.menu.SetActive(true);
         _pm.currentCombatManager.StartBattle();
         _pm.FightStart.Invoke();
@@ -94,12 +100,11 @@ public class CombatAreaManager : MonoBehaviour
     
     public void endoffight()
     {
-        _pm.currentCombatManager.gameObject.SetActive(false);
         _pm.currentCombatManager = null;
         _pm.menu.SetActive(false);
         currentBattleIndex++;
         _pm.FightEnd.Invoke();
-        //TeleportToLevel();
+        _battleRig.GetComponent<LocomotionSwitch>().ToggleLocomotion(true);
     }
     
     
