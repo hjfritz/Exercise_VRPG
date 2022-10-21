@@ -19,9 +19,9 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public static void OpenPortal()
+    public static void OpenPortal(int scene)
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(scene);
     }
 
     public void GoToScene(int sceneid)

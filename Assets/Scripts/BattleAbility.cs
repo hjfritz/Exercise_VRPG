@@ -16,12 +16,13 @@ public class BattleAbility : MonoBehaviour
     protected PlayerManager playerManager;
     protected int playerRepDamage;
     protected int enemyRepDamage;
+    
 
     // Start is called before the first frame update
     protected void Start()
     {
         xrOrigin = FindObjectOfType<XROrigin>();
-        playerManager = FindObjectOfType<PlayerManager>();
+        playerManager = FindObjectOfType<PlayerManager>(true);
         playerRepDamage = playerManager.MAX_DIFFICULTY - playerManager.difficulty;
         enemyRepDamage = playerManager.difficulty;
     }

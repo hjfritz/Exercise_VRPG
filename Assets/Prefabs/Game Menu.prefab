@@ -1276,7 +1276,6 @@ GameObject:
   - component: {fileID: 2652773326000355737}
   - component: {fileID: 5590269664888481130}
   - component: {fileID: 7420714079967034452}
-  - component: {fileID: 8247172176371807862}
   m_Layer: 5
   m_Name: Game Menu
   m_TagString: Untagged
@@ -1348,7 +1347,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &5590269664888481130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1385,19 +1384,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
---- !u!114 &8247172176371807862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4089558024091469958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 673cf69d18df67448beb558a0251dce3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MenuActionReference: {fileID: 1401608993895213066, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &4158645740328843146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,7 +1737,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 9100790911160488813}
   m_Direction: 0
   m_MinValue: 1
-  m_MaxValue: 5
+  m_MaxValue: 2
   m_WholeNumbers: 1
   m_Value: 1
   m_OnValueChanged:

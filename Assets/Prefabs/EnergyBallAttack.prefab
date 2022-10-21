@@ -5269,13 +5269,14 @@ GameObject:
   m_Component:
   - component: {fileID: 8342547735152388496}
   - component: {fileID: 1033520152547631495}
+  - component: {fileID: 709607443036762}
   m_Layer: 0
   m_Name: EnergyBallAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8342547735152388496
 Transform:
   m_ObjectHideFlags: 0
@@ -5388,3 +5389,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &709607443036762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8342547735152388511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6a900b1b2ca1f94089e6a2609822302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

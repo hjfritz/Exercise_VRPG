@@ -15,6 +15,8 @@ namespace Training
         [SerializeField] private GameObject orbA1;
 
         [SerializeField] private float speed;
+
+        [SerializeField] private Transform orbParent;
         
         //AudioClips
         [SerializeField] private AudioClip intro;
@@ -34,7 +36,7 @@ namespace Training
 
         private void Start()
         {
-            trainingAbility = FindObjectOfType<PlayerCombatant>().GetComponent<SquatAbility>();
+            trainingAbility = FindObjectOfType<PlayerCombatant>(true).GetComponent<SquatAbility>();
         }
 
         // Update is called once per frame
@@ -111,7 +113,7 @@ namespace Training
             TrainingManager.trainingNumber -= 1;
 
             StartCoroutine(teacher.GetComponentInChildren<TrainingTrigger>().ResetTrainer());
-            player.GetComponent<LocomotionSwitch>().locomotionOn = true;
+            player.GetComponent<LocomotionSwitch>().ToggleLocomotion(true);
         }
 
         IEnumerator Outro()
@@ -122,7 +124,7 @@ namespace Training
             yield return new WaitUntil((() => teacher.GetComponent<AudioSource>().isPlaying == false));
             
             Destroy(teacher);
-            player.GetComponent<LocomotionSwitch>().locomotionOn = true;
+            player.GetComponent<LocomotionSwitch>().ToggleLocomotion(true);
             
         }
         
@@ -132,7 +134,7 @@ namespace Training
             Vector3 startPos = teacher.transform.position + (Vector3.up * 1.5f);
             Vector3 endPos = startPos + (((player.transform.position + (Vector3.up * 1.5f))- startPos) * .75f);
 
-            currentOrb = Instantiate(orbA1, startPos, Quaternion.identity);
+            currentOrb = Instantiate(orbA1, startPos, Quaternion.identity, orbParent);
 
             while (elapsedTime < speed)
             {

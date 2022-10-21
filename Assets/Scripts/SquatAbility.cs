@@ -23,12 +23,12 @@ public class SquatAbility : BattleAttackAbility
     {
         DisplayName = "Squat Ability";
         abilityDuration = attackDuration;
-        head = GameObject.FindGameObjectsWithTag("MainCamera")[0].transform;
         base.Start();
     }
 
     private void InitializeAction()
     {
+        head = GameObject.FindGameObjectsWithTag("MainCamera")[0].transform;
         squatThresholdHeight = head.transform.localPosition.y * .85f;
         Debug.Log($"head height set to {head.transform.localPosition.y}");
     }

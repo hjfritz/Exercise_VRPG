@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Training;
 using UnityEngine;
 
 public class CombatManager : MonoBehaviour
@@ -23,8 +24,8 @@ public class CombatManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PartyMembers = FindObjectsOfType<PlayerCombatant>();
-        menu = FindObjectOfType<PlayerManager>().GetComponentInChildren<CombatManagerMenu>();
+        PartyMembers = FindObjectsOfType<PlayerCombatant>(true);
+        menu = FindObjectOfType<PlayerManager>(true).GetComponentInChildren<CombatManagerMenu>();
         menu.HideMenu();
     }
 
@@ -78,7 +79,7 @@ public class CombatManager : MonoBehaviour
             battleActive = false;
 
             // ending the battle and deactivating the Combat Area Manager
-            CombatAreaManager CAM = GetComponentInChildren<CombatAreaManager>();
+            CombatAreaManager CAM = FindObjectOfType<CombatAreaManager>();
             if (CAM)
             {
                 CAM.endoffight();

@@ -343,8 +343,8 @@ GameObject:
   - component: {fileID: 6134900379705426877}
   - component: {fileID: 6134900379705426864}
   - component: {fileID: 6134900379705426879}
-  - component: {fileID: 6134900379705426878}
-  - component: {fileID: 8255089753097693199}
+  - component: {fileID: 6771885275946339499}
+  - component: {fileID: 6032723882404178085}
   m_Layer: 0
   m_Name: Combat Area 1
   m_TagString: Untagged
@@ -360,8 +360,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6134900379705426876}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.3, z: -1.93}
-  m_LocalScale: {x: 4, y: 2, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9162408280207533775}
   m_RootOrder: 2
@@ -381,7 +381,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6134900379705426876}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -415,8 +415,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6134900379705426878
-BoxCollider:
+--- !u!114 &6771885275946339499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6134900379705426876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31edf07efa39a2e4d8053655456db6f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &6032723882404178085
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -426,36 +438,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8255089753097693199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6134900379705426876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8926a419bdc38a7468b6c7c0176e5805, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StartFight:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 9044682607640520540}
-        m_TargetAssemblyTypeName: EnemySelector, Assembly-CSharp
-        m_MethodName: StartAnim
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  _teleportTime: 1.5
 --- !u!1 &6425018163981592367
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,6 +1261,9 @@ MonoBehaviour:
   AbilityComplete:
     m_PersistentCalls:
       m_Calls: []
+  TrainingComplete:
+    m_PersistentCalls:
+      m_Calls: []
   DisplayName: Display Name Not Set
   abilityDuration: 0
   repDuration: 0.9
@@ -1293,6 +1280,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AbilityComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  TrainingComplete:
     m_PersistentCalls:
       m_Calls: []
   DisplayName: Display Name Not Set

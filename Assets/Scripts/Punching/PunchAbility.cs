@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 
-public class PunchAbility : PositionRelativeBattleAbility
+public class PunchAbility : BattleAttackAbility
 {
     private int repCounter = 0;
     private int trainingReps = 6;
@@ -22,10 +22,11 @@ public class PunchAbility : PositionRelativeBattleAbility
     [SerializeField] private AudioClip punchClip;
     [SerializeField] private Transform punchingArea;
     
+    [SerializeField] protected GameObject targetsPrefab;
+    
     // Start is called before the first frame update
     new void Start()
     {
-        relativeTransform = new Vector3(0f, -.1f, .6f);
         base.Start();
         DisplayName = "Punch Ability";
         abilityDuration = attackDuration;
@@ -53,27 +54,9 @@ public class PunchAbility : PositionRelativeBattleAbility
 
     }
 
-    private void settarget()
-    {
-
-       //punchingArea = FindObjectOfType<PlayerManager>().currentCombatManager.transform
-            //.GetComponentInChildren<CombatAreaManager>().transform;
-        
-        
-        targetsPrefab = Instantiate(targetsPrefab, punchingArea);
-        targetsPrefab.transform.position = new Vector3(0f, 0f, 0f); //+ punchingArea.position + (punchingArea.forward * 0.5f); //new Vector3(0f , 1.4f, .8f) + p
-        //targetsPrefab.transform.rotation = transform.rotation ;// factor 1 / .77 / .44
-        _punchTarget = targetsPrefab.GetComponent<PunchTarget>();
-        _punchTarget.SingleHitTrigger.AddListener(TargetTriggered);
-        //_punchTarget.DoubleHitTrigger.AddListener(TargetTriggered);
-        targetsPrefab.gameObject.SetActive(false);
-    }
-
-
     private void InitializeAction()
     {
         targetsPrefab.SetActive(true);
-        targetsPrefab.transform.localEulerAngles = new Vector3(90, 0, 90);
     }
     public override void ExecuteAction(Combatant target)
     {

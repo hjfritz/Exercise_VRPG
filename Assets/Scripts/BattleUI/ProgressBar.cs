@@ -49,6 +49,7 @@ public class ProgressBar : MonoBehaviour
                 StopCoroutine(AnimationCoroutine);
             }
 
+            if(ProgressImage.isActiveAndEnabled)
             AnimationCoroutine = StartCoroutine(AnimateProgress(HP, maxHP, Speed));
         }
     }
