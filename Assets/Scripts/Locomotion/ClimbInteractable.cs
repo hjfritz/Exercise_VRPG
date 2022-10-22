@@ -5,30 +5,28 @@ namespace Locomotion
 {
     public class ClimbInteractable : XRBaseInteractable
     {
-        protected override void OnSelectEntered(SelectEnterEventArgs args)
+        protected override void OnSelectEntered(XRBaseInteractor interactor)
         {
-            base.OnSelectEntered(args);
-            
-            XRDirectInteractor xrd = args.interactorObject.transform.GetComponent<XRDirectInteractor>();
-            if (xrd)
+            base.OnSelectEntered(interactor);
+            Debug.Log("climb interactable select enter");
+
+            if (interactor is XRDirectInteractor)
             {
-                Climber.climbingHand = args.interactorObject.transform
-                    .GetComponent<ActionBasedController>();
+                Climber.climbingHand = interactor.GetComponent<XRBaseController>();
             }
-                
         }
 
-        protected override void OnSelectExited(SelectExitEventArgs args)
+        protected override void OnSelectExited(XRBaseInteractor interactor)
         {
-            base.OnSelectExited(args);
+            base.OnSelectExited(interactor);
+            Debug.Log("climb interactable select exit");
             
-            XRDirectInteractor xrd = args.interactorObject.transform.GetComponent<XRDirectInteractor>();
-            if(xrd)
+           if(interactor is XRDirectInteractor)
             {
-                if(Climber.climbingHand && Climber.climbingHand.name == args.interactorObject.transform.name)
+                if(Climber.climbingHand && Climber.climbingHand.name == interactor.name)
                     Climber.climbingHand = null;
             }
-            
         }
+        
     }
 }

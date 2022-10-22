@@ -5,25 +5,25 @@ using UnityEngine.InputSystem;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 using CommonUsages = UnityEngine.XR.CommonUsages;
+using InputDevice = UnityEngine.XR.InputDevice;
 
 public class Climber : MonoBehaviour
 {
 
     private CharacterController character;
-    private Vector3 velocity;
-    
-    public static ActionBasedController climbingHand;
-    public InputActionProperty velocityProp;
-    private ContinuousMoveProviderBase _continuousMoveProviderBase;
-    private ElectricOwl _electricOwl;
+
+    public static XRBaseController climbingHand;
+
+    private ContinuousMoveProviderBase continuousMovement;
+
+    //private ElectricOwl _electricOwl;
     
     // Start is called before the first frame update
     void Start()
     {
-        velocity = Vector3.zero;
-        character = transform.parent.parent.GetComponent<CharacterController>();
-        _continuousMoveProviderBase = transform.parent.parent.GetComponent<ContinuousMoveProviderBase>();
-        _electricOwl = transform.parent.parent.GetComponent<ElectricOwl>();
+        character = GetComponent<CharacterController>();
+        continuousMovement = GetComponent<ContinuousMoveProviderBase>();
+        //_electricOwl = transform.parent.parent.GetComponent<ElectricOwl>();
     }
 
     // Update is called once per frame
@@ -31,14 +31,14 @@ public class Climber : MonoBehaviour
     {
         if (climbingHand)
         {
-            _continuousMoveProviderBase.enabled = false;
-            _electricOwl.enabled = false;
+            continuousMovement.enabled = false;
+            //_electricOwl.enabled = false;
             Climb();
         }
         else
         {
-            _continuousMoveProviderBase.enabled = true;
-            _electricOwl.enabled = true;
+            continuousMovement.enabled = true;
+            //_electricOwl.enabled = true;
 
         }
     }
@@ -46,9 +46,12 @@ public class Climber : MonoBehaviour
     private void Climb()
     {
         Debug.Log("Start Climbing");
-        if(climbingHand == transform.GetComponent<ActionBasedController>())
-        velocity = velocityProp.action.ReadValue<Vector3>();
-        //InputDevices.GetDeviceAtXRNode(climbingHand.controllerNode).TryGetFeatureValue(CommonUsages.deviceVelocity, out Vector3 velocity);
-        character.Move(transform.rotation * -velocity * Time.fixedDeltaTime );
+        //if(climbingHand == transform.GetComponent<ActionBasedController>())
+        //velocity = velocityProp.action.ReadValue<Vector3>();
+        Debug.Log(climbingHand.name);
+        
+        XRNode node = climbingHand.name.Contains("Left")? XRNode.LeftHand : XRNode.RightHand;
+        InputDevices.GetDeviceAtXRNode(node).TryGetFeatureValue(CommonUsages.deviceVelocity, out Vector3 velocity);
+        character.Move( transform.rotation * -velocity * Time.fixedDeltaTime );
     }
 }
