@@ -39,6 +39,7 @@ namespace ActionLayers.EnergyBallAttack
         {
             energyBall.GetComponent<Rigidbody>().velocity = Vector3.zero;
             energyBall.transform.position = energyBallLayer.transform.position;
+            EnergySourceTrigger.taskDone = false;
             WholeLayer.SetActive(true);
             triggerLayer.SetActive(true);
         }
@@ -104,6 +105,7 @@ namespace ActionLayers.EnergyBallAttack
             training = false;
             repCounter = 0;
             triggerLayer.SetActive(false);
+            EnergySourceTrigger.taskDone = true;
         }
     }
 }

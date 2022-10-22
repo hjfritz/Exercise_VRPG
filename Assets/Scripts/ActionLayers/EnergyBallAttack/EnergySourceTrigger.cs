@@ -15,6 +15,7 @@ namespace ActionLayers.EnergyBallAttack
         
         public static bool leftInDestination = false;
         public static bool rightInDestination = false;
+        public static bool taskDone = false;
 
         private bool gripHeld = false;
         private bool startedInBox = false;
@@ -33,8 +34,16 @@ namespace ActionLayers.EnergyBallAttack
                 gripRight.action.started += RightGripped;
                 gripRight.action.canceled += RightStoppedGrip;
             }
-            
-            
+
+            if (taskDone && left)
+            {
+                gripLeft.action.started -= LeftGripped;
+                gripLeft.action.canceled -= LeftStoppedGrip;
+            }else if (taskDone && !left)
+            {
+                gripRight.action.started -= RightGripped;
+                gripRight.action.canceled -= RightStoppedGrip;
+            }
         }
 
         // Update is called once per frame
