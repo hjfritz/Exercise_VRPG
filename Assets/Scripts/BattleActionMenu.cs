@@ -55,12 +55,12 @@ public class BattleActionMenu : MonoBehaviour
         
         for (int i = 0; i<abilities.Length; i++)
         {
-            GameObject button = Instantiate(buttonPrefab,xrOrigin.gameObject.transform);
+            GameObject button = Instantiate(buttonPrefab,transform);
             //var facing = button.GetComponent<ButtonTextFacing>()._camera = camera;
             
-            Vector3 position = new Vector3(-offset + (i * .21f), .4f, .5f);
-            button.transform.localPosition = position + camera.transform.localPosition;
-            button.transform.parent = this.transform;
+            Vector3 position = new Vector3(-offset + (i * .21f), 1.7f, 1.5f);
+            button.transform.localPosition = position;// + camera.transform.localPosition;
+            //button.transform.parent = this.transform;
             //RectTransform rect = button.GetComponent<RectTransform>();
             //rect.anchoredPosition = new Vector2(0, i * -170);
 

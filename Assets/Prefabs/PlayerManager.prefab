@@ -1787,7 +1787,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   abilityButtons: []
-  buttonPrefab: {fileID: 4758328591546002948, guid: fcd7b5e4ce3f5f34c8258b94bca317f8, type: 3}
+  buttonPrefab: {fileID: 4682058118212191237, guid: 466a52d6926492942841ffa6c1869404, type: 3}
 --- !u!1 &719515568492996137
 GameObject:
   m_ObjectHideFlags: 0
