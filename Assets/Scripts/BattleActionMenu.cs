@@ -68,8 +68,17 @@ public class BattleActionMenu : MonoBehaviour
             battleActionMenuButton.id = i;
             battleActionMenuButton.BattleMenuButtonClicked.AddListener(ButtonClicked);
 
-            TMP_Text buttonText = button.GetComponentInChildren<TMP_Text>();
-            buttonText.text = $"{abilities[i].DisplayName}";
+            if (abilities[i].runeMaterial)
+            {
+                button.GetComponentInChildren<Rune>().GetComponent<MeshRenderer>().material = abilities[i].runeMaterial;
+            }
+            else
+            {
+                button.GetComponentInChildren<Rune>().gameObject.SetActive(false);
+                TMP_Text buttonText = button.GetComponentInChildren<TMP_Text>();
+                buttonText.text = $"{abilities[i].DisplayName}";
+            }
+            
             
             abilityButtons[i] = button;
         }

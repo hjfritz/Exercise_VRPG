@@ -647,6 +647,7 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Dummy Ability
   abilityDuration: 0
+  runeMaterial: {fileID: 0}
   targetReps: 30
   buttonRef: {fileID: 3133590359150246299, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &719515567318764952
@@ -669,6 +670,7 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Force Field Defense
   abilityDuration: 0
+  runeMaterial: {fileID: 0}
   defensePower: 0
   ambiance: {fileID: 8300000, guid: af88e937d79beb74e93d0eea9acc76c7, type: 3}
   targetsPrefab: {fileID: 1646926091751065471, guid: b973d5a6b55ace94ba04ba20be5db30b, type: 3}
@@ -692,6 +694,7 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Squat Ability
   abilityDuration: 0
+  runeMaterial: {fileID: 2100000, guid: b870258786e7de942a335d86c4aea999, type: 2}
   targetReps: 12
   sfx: {fileID: 133259381952732260}
   repCountClip: {fileID: 8300000, guid: e93b01c5ae35a1a409cde18b82462657, type: 3}
@@ -715,6 +718,7 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Rsuuian Twists Ability
   abilityDuration: 0
+  runeMaterial: {fileID: 2100000, guid: 197670bd8a2e0254895327bfa4e5cad6, type: 2}
   targetReps: 25
   sfx: {fileID: 133259381952732260}
   repCountClip: {fileID: 8300000, guid: e93b01c5ae35a1a409cde18b82462657, type: 3}
@@ -739,6 +743,7 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Punching Ability
   abilityDuration: 0
+  runeMaterial: {fileID: 2100000, guid: 8e8bb365e078b6e4da46f8de69b2125a, type: 2}
   attackDuration: 10
   targetReps: 10
   floor: {fileID: 0}
@@ -767,6 +772,7 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Energy Ball
   abilityDuration: 0
+  runeMaterial: {fileID: 2100000, guid: da7c8d396cb17364b9dda28db5949407, type: 2}
   targetsPrefab: {fileID: 8342547735152388511, guid: b46a14d895ce6a140bc7f7529bb9b58b, type: 3}
 --- !u!1 &719515567367126677
 GameObject:

@@ -16,6 +16,8 @@ public class BattleAbility : MonoBehaviour
     protected PlayerManager playerManager;
     protected int playerRepDamage;
     protected int enemyRepDamage;
+
+    [SerializeField] public Material runeMaterial;
     
 
     // Start is called before the first frame update
