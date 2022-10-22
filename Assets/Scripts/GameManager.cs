@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -17,15 +15,5 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public static void OpenPortal(int scene)
-    {
-        SceneManager.LoadScene(scene);
-    }
-
-    public void GoToScene(int sceneid)
-    {
-        SceneManager.LoadScene(sceneid);
     }
 }

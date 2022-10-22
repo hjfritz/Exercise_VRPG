@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Level1GoalTrigger : MonoBehaviour
 {
+    public PortalSceneChange sceneChange;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,6 @@ public class Level1GoalTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        GameManager.OpenPortal(0);
+        sceneChange.OpenPortal(0);
     }
 }

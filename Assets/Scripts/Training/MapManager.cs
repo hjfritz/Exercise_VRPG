@@ -11,6 +11,8 @@ namespace Training
         [SerializeField] private XRSocketInteractor island;
         [SerializeField] private XRSocketInteractor mountain;
 
+        public PortalSceneChange sceneChange;
+
         private bool level1Option = false;
         private bool islandOption = false;
         
@@ -35,7 +37,7 @@ namespace Training
             {
                 level1Option = false;
                 OptionButtons.ResetButtons();
-                GameManager.OpenPortal(1);
+                sceneChange.OpenPortal(1);
             }
         }
 
