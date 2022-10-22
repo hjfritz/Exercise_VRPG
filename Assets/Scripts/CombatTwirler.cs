@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Training;
 using UnityEngine;
 
 public class CombatTwirler : MonoBehaviour
@@ -18,6 +19,10 @@ public class CombatTwirler : MonoBehaviour
         if (_pm.currentCombatManager)
         {
             this.transform.LookAt(_pm.currentCombatManager.transform);
+        }
+        else if (TrainingManager.currentTeacher)
+        {
+            this.transform.LookAt(TrainingManager.currentTeacher.transform);
         }
     }
 }
