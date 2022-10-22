@@ -15,7 +15,10 @@ public class Climber : MonoBehaviour
     public static XRBaseController climbingHand;
 
     private ContinuousMoveProviderBase continuousMovement;
-
+    
+    /* seemingly no need to disable electric owl while climbing.
+       unlikely player would grip and press primary buttons at the same time
+       seems like a livable bug for MVP*/
     //private ElectricOwl _electricOwl;
     
     // Start is called before the first frame update
@@ -23,7 +26,7 @@ public class Climber : MonoBehaviour
     {
         character = GetComponent<CharacterController>();
         continuousMovement = GetComponent<ContinuousMoveProviderBase>();
-        //_electricOwl = transform.parent.parent.GetComponent<ElectricOwl>();
+        //_electricOwl = GetComponent<ElectricOwl>();
     }
 
     // Update is called once per frame
@@ -38,7 +41,7 @@ public class Climber : MonoBehaviour
         else
         {
             continuousMovement.enabled = true;
-            //_electricOwl.enabled = true;
+           //_electricOwl.enabled = true;
 
         }
     }
@@ -46,8 +49,6 @@ public class Climber : MonoBehaviour
     private void Climb()
     {
         Debug.Log("Start Climbing");
-        //if(climbingHand == transform.GetComponent<ActionBasedController>())
-        //velocity = velocityProp.action.ReadValue<Vector3>();
         Debug.Log(climbingHand.name);
         
         XRNode node = climbingHand.name.Contains("Left")? XRNode.LeftHand : XRNode.RightHand;
