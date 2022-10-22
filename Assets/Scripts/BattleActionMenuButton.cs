@@ -14,7 +14,7 @@ public class BattleActionMenuButton : MonoBehaviour
     private Button button;
     
     // Start is called before the first frame update
-    void Start()
+   /* void Start()
     {
         button = GetComponent<Button>();
         button.onClick.AddListener(ClickListener);
@@ -23,7 +23,7 @@ public class BattleActionMenuButton : MonoBehaviour
     private void ClickListener()
     {
         BattleMenuButtonClicked.Invoke(id);
-    }
+    }*/
 
     private void OnTriggerEnter(Collider other)
     {

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3189692946525829009}
   - component: {fileID: 1247424322959387906}
   - component: {fileID: 3079462509123312096}
+  - component: {fileID: 1681801952106902121}
   m_Layer: 0
   m_Name: PunchTarget
   m_TagString: Untagged
@@ -113,3 +114,15 @@ MonoBehaviour:
       m_Calls: []
   id: 0
   hitsinTrigger: 0
+--- !u!114 &1681801952106902121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3321317725838458476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6a900b1b2ca1f94089e6a2609822302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

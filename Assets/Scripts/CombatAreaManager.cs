@@ -76,19 +76,15 @@ public class CombatAreaManager : MonoBehaviour
     public void TriggerCombat()
     {
         StartFight.Invoke();
-       
         
         _pm.currentCombatManager = _combatManagers[currentBattleIndex];
         _pm.currentCombatManager.gameObject.SetActive(true);
-
-        var enemyTransform = _pm.currentCombatManager.transform;
-        _battleRig.transform.LookAt(new Vector3(enemyTransform.position.x, enemyTransform.position.y, enemyTransform.position.z));
+        
         _battleRig.GetComponent<LocomotionSwitch>().ToggleLocomotion(false);
         //"look away" - https://forum.unity.com/threads/whats-the-opposite-of-lookat.392668/
         _pm.currentCombatManager.transform.rotation = Quaternion.LookRotation(_pm.currentCombatManager.transform.position - _battleRig.transform.position);
         
         
-      
         _pm.menu.SetActive(true);
         _pm.currentCombatManager.StartBattle();
         _pm.FightStart.Invoke();
