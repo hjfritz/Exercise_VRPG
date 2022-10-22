@@ -27,12 +27,17 @@ public class CombatAreaManager : MonoBehaviour
     private float _teleportTimer = 0f;
 
     private Vector3 lookAtDirection;
-    
-    
+
+    [SerializeField] private AudioSource BGMsource;
+    [SerializeField] private AudioClip backgroundMusic;
+    [SerializeField] private AudioClip combatMusic;
+
     private void Start()
     {
         _pm = FindObjectOfType<PlayerManager>(true);
         _combatManagers = GetComponentsInChildren<CombatManager>(true);
+        BGMsource.clip = backgroundMusic;
+        BGMsource.Play();
     }
 
     private void TeleportToBattle()
@@ -90,8 +95,11 @@ public class CombatAreaManager : MonoBehaviour
         
         _pm.currentCombatManager.GetComponentInChildren<Combatant>().GetComponentInChildren<EnemyANimationManager>().StartAnim();
         _pm.FightStart.Invoke();
-            
-        
+
+        BGMsource.clip = combatMusic;
+        BGMsource.Play();
+
+
     }
     
 
@@ -103,6 +111,9 @@ public class CombatAreaManager : MonoBehaviour
         currentBattleIndex++;
         _pm.FightEnd.Invoke();
         _battleRig.GetComponent<LocomotionSwitch>().ToggleLocomotion(true);
+        
+        BGMsource.clip = backgroundMusic;
+        BGMsource.Play();
     }
     
     
