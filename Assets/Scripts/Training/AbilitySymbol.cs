@@ -21,32 +21,38 @@ namespace Training
         {
             if (TrainingManager.trainingNumber == 2)
             {
+                DeactivateAll();
                 SquatSymbol.SetActive(true);
             }else if (TrainingManager.trainingNumber == 3)
             {
-                SquatSymbol.SetActive(false);
+                DeactivateAll();
                 PunchSymbol.SetActive(true);
             }else if (TrainingManager.trainingNumber == 4)
             {
-                PunchSymbol.SetActive(false);
+                DeactivateAll();
                 ForceFieldSymbol.SetActive(true);
             }else if (TrainingManager.trainingNumber == 5)
             {
-                ForceFieldSymbol.SetActive(false);
+                DeactivateAll();
                 TwistSymbol.SetActive(true);
             }else if (TrainingManager.trainingNumber == 6)
             {
-                TwistSymbol.SetActive(false);
+                DeactivateAll();
                 EnergyBallSymbol.SetActive(true);
             }
             else
             {
-                SquatSymbol.SetActive(false);
-                PunchSymbol.SetActive(false);
-                ForceFieldSymbol.SetActive(false);
-                TwistSymbol.SetActive(false);
-                EnergyBallSymbol.SetActive(false);
+                DeactivateAll();
             }
+        }
+
+        private void DeactivateAll()
+        {
+            SquatSymbol.SetActive(false);
+            PunchSymbol.SetActive(false);
+            ForceFieldSymbol.SetActive(false);
+            TwistSymbol.SetActive(false);
+            EnergyBallSymbol.SetActive(false);
         }
     }
 }
