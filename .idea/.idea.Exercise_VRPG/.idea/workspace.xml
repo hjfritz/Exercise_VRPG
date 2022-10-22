@@ -5,24 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/IslandMaterials/AbilitySymbols.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/IslandMaterials/AbilitySymbols/Eball.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/IslandMaterials/AbilitySymbols/Eball.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/IslandMaterials/AbilitySymbols/Punch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/IslandMaterials/AbilitySymbols/Punch.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/IslandMaterials/AbilitySymbols/PunchSymbol.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/IslandMaterials/AbilitySymbols/PunchSymbol.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/IslandMaterials/AbilitySymbols/Squat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/IslandMaterials/AbilitySymbols/Squat.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/IslandMaterials/AbilitySymbols/Twist.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/IslandMaterials/AbilitySymbols/Twist.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Training/AbilitySymbol.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Training/AbilitySymbol.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/IslandMaterials/TokenIndicator.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/IslandMaterials/TokenIndicator.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Training/Trainer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Training/Trainer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/IslandScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/IslandScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnergyBallAttack.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/EnergyBallAttack.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/RussianTwistTargets.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/RussianTwistTargets.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
