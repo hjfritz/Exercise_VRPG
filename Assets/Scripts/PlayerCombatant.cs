@@ -33,7 +33,7 @@ public class PlayerCombatant : Combatant
     
     public void displayActionMenu()
     {
-        actionMenu.BuildMenu(actionAbilities);
+        //actionMenu.BuildMenu(actionAbilities);
         actionMenu.gameObject.SetActive(true);
     }
 

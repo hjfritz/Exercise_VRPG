@@ -1341,18 +1341,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6af4e6296e48a4747b5dff2779f7ef22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityProp:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Velocity Prop
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 1b25e396-e51e-4a22-9c6f-ef5680699dbf
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 903627057585529675, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &7500061382361561889
 GameObject:
   m_ObjectHideFlags: 0
@@ -2186,18 +2174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6af4e6296e48a4747b5dff2779f7ef22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityProp:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Velocity Prop
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 1b25e396-e51e-4a22-9c6f-ef5680699dbf
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 2970647723970256598, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1001 &4065024716044716780
 PrefabInstance:
   m_ObjectHideFlags: 0
