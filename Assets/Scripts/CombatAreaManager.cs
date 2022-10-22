@@ -87,6 +87,8 @@ public class CombatAreaManager : MonoBehaviour
         
         _pm.menu.SetActive(true);
         _pm.currentCombatManager.StartBattle();
+        
+        _pm.currentCombatManager.GetComponentInChildren<Combatant>().GetComponentInChildren<EnemyANimationManager>().StartAnim();
         _pm.FightStart.Invoke();
             
         
