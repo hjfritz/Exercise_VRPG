@@ -16,16 +16,15 @@ namespace Button_UI
         // Update is called once per frame
         void Update()
         {
-        
+            
         }
 
         private void OnTriggerEnter(Collider other)
         {
             if (number != 0)
-                {
-                    OptionButtons.ButtonChoice = number;
-                }
-                
+            {
+                OptionButtons.ButtonChoice = number;
+            }
         }
     }
 }
