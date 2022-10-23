@@ -758,6 +758,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trainer
       objectReference: {fileID: 0}
+    - target: {fileID: 3309426593637258223, guid: 5a2aea0ce623f6a4ba11cfa6d722d8ef, type: 3}
+      propertyPath: sphere
+      value: 
+      objectReference: {fileID: 1747107442}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a2aea0ce623f6a4ba11cfa6d722d8ef, type: 3}
 --- !u!4 &87191912 stripped
@@ -1751,6 +1755,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trainer (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3309426593637258223, guid: 5a2aea0ce623f6a4ba11cfa6d722d8ef, type: 3}
+      propertyPath: sphere
+      value: 
+      objectReference: {fileID: 2037102520}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a2aea0ce623f6a4ba11cfa6d722d8ef, type: 3}
 --- !u!4 &222629962 stripped
@@ -2954,6 +2962,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trainer (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3309426593637258223, guid: 5a2aea0ce623f6a4ba11cfa6d722d8ef, type: 3}
+      propertyPath: sphere
+      value: 
+      objectReference: {fileID: 775069060}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a2aea0ce623f6a4ba11cfa6d722d8ef, type: 3}
 --- !u!4 &555351435 stripped
@@ -3712,6 +3724,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f25b260da8cf037459681b14be477f6d, type: 3}
+--- !u!1 &701965156 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9010322205306558567, guid: 5a2aea0ce623f6a4ba11cfa6d722d8ef, type: 3}
+  m_PrefabInstance: {fileID: 1693087036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &717417635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3934,6 +3951,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2224639850703271653, guid: f25b260da8cf037459681b14be477f6d, type: 3}
   m_PrefabInstance: {fileID: 161237770}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &775069060 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9010322205306558567, guid: 5a2aea0ce623f6a4ba11cfa6d722d8ef, type: 3}
+  m_PrefabInstance: {fileID: 555351434}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &776758610 stripped
 Transform:
@@ -4320,6 +4342,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2224639850703271653, guid: f25b260da8cf037459681b14be477f6d, type: 3}
   m_PrefabInstance: {fileID: 1693133521}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &841442186 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9010322205306558567, guid: 5a2aea0ce623f6a4ba11cfa6d722d8ef, type: 3}
+  m_PrefabInstance: {fileID: 2122585512}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &848934543 stripped
 Transform:
@@ -5610,6 +5637,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2224639850703271653, guid: f25b260da8cf037459681b14be477f6d, type: 3}
   m_PrefabInstance: {fileID: 2007157951}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1198073551 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9010322205306558567, guid: 5a2aea0ce623f6a4ba11cfa6d722d8ef, type: 3}
+  m_PrefabInstance: {fileID: 1400954612}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1210834610
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6094,6 +6126,7 @@ GameObject:
   - component: {fileID: 1258923079}
   - component: {fileID: 1258923080}
   - component: {fileID: 1258923081}
+  - component: {fileID: 1258923082}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -6141,6 +6174,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeScreen: {fileID: 653665557}
+  save: {fileID: 1258923082}
+--- !u!114 &1258923082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258923078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e4bc8251d6f92442b151d73b527b496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rig: {fileID: 1519120147}
+  loadPrefs: 1
+  hasGloves: 0
+  countCoins: 0
+  hps: 100
+  defeatedEnemies: 0
+  trainersFinished: 0
+  levelProgression: 0
 --- !u!1001 &1264663850
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7369,6 +7423,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trainer (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3309426593637258223, guid: 5a2aea0ce623f6a4ba11cfa6d722d8ef, type: 3}
+      propertyPath: sphere
+      value: 
+      objectReference: {fileID: 1198073551}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a2aea0ce623f6a4ba11cfa6d722d8ef, type: 3}
 --- !u!4 &1400954613 stripped
@@ -8033,15 +8091,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8849368370645469831, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 216.46
+      value: 212.06
       objectReference: {fileID: 0}
     - target: {fileID: 8849368370645469831, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.84
+      value: 2.44
       objectReference: {fileID: 0}
     - target: {fileID: 8849368370645469831, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 88.81
+      value: 95.44
       objectReference: {fileID: 0}
     - target: {fileID: 8849368370645469831, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8375,6 +8433,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  trainerNum: {fileID: 0}
 --- !u!114 &1557939728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9303,6 +9362,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trainer (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3309426593637258223, guid: 5a2aea0ce623f6a4ba11cfa6d722d8ef, type: 3}
+      propertyPath: sphere
+      value: 
+      objectReference: {fileID: 701965156}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a2aea0ce623f6a4ba11cfa6d722d8ef, type: 3}
 --- !u!4 &1693087037 stripped
@@ -9786,6 +9849,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1297532679950800024, guid: 31613c93751111a44a65711f78989db4, type: 3}
   m_PrefabInstance: {fileID: 1743896679}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1747107442 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9010322205306558567, guid: 5a2aea0ce623f6a4ba11cfa6d722d8ef, type: 3}
+  m_PrefabInstance: {fileID: 87191911}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1764143195 stripped
 Transform:
@@ -10946,6 +11014,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2224639850703271653, guid: f25b260da8cf037459681b14be477f6d, type: 3}
   m_PrefabInstance: {fileID: 154097579}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2037102520 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9010322205306558567, guid: 5a2aea0ce623f6a4ba11cfa6d722d8ef, type: 3}
+  m_PrefabInstance: {fileID: 222629961}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2041889916
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12045,6 +12118,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trainer (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3309426593637258223, guid: 5a2aea0ce623f6a4ba11cfa6d722d8ef, type: 3}
+      propertyPath: sphere
+      value: 
+      objectReference: {fileID: 841442186}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a2aea0ce623f6a4ba11cfa6d722d8ef, type: 3}
 --- !u!4 &2122585513 stripped
@@ -13048,6 +13125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   island: {fileID: 1730067984}
   mountain: {fileID: 1709047183}
+  levelProg: {fileID: 1258923082}
   sceneChange: {fileID: 1258923081}
 --- !u!114 &6077777820571753772
 MonoBehaviour:
@@ -13062,6 +13140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeScreen: {fileID: 653665557}
+  save: {fileID: 1258923082}
 --- !u!23 &6099007744242466621
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13180,6 +13259,7 @@ MonoBehaviour:
   AS: {fileID: 6077777820571753770}
   grind: {fileID: 8300000, guid: 586d00df133d28c49b977c0769e2af4e, type: 3}
   SphereCount: 0
+  trainersDone: {fileID: 1258923082}
 --- !u!4 &6850900913966352275
 Transform:
   m_ObjectHideFlags: 0

@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class PortalSceneChange : MonoBehaviour
 {
     public PortalFadeScreen fadeScreen;
+
+    public PlayerStatManager save;
     
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,7 @@ public class PortalSceneChange : MonoBehaviour
     
     public void OpenPortal(int scene)
     {
+        save.Save();
         StartCoroutine(GoToSceneRoutine(scene));
     }
 

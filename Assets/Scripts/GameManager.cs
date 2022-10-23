@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GetComponent<PlayerStatManager>().Load();
     }
 
     // Update is called once per frame
