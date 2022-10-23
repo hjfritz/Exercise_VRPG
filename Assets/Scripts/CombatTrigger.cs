@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 
 public class CombatTrigger : MonoBehaviour
@@ -17,7 +18,11 @@ public class CombatTrigger : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        FindObjectOfType<CombatAreaManager>().TriggerCombat();
-        GetComponent<Collider>().enabled = false;  //deactivating the trigger so another fight will not start
+        //ignore collectibles
+        if (other.gameObject.GetComponent<XROrigin>())
+        {
+            FindObjectOfType<CombatAreaManager>().TriggerCombat();
+            GetComponent<Collider>().enabled = false;  //deactivating the trigger so another fight will not start
+        }
     }
 }
