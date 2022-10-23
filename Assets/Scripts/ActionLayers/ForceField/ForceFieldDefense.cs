@@ -44,6 +44,7 @@ namespace ActionLayers.ForceField
 
         private void InitializeAction()
         {
+            targetsPrefab.GetComponent<TargetPrefabHeightAdjust>().AdjustHeight();
             actionLayer.SetActive(true);
             fieldStrength = 0;
             forceFieldLayer.SetActive(true);

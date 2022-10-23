@@ -74,6 +74,7 @@ public class RussianTwistAbility : BattleAttackAbility
 
     private void  InitializeAction()
     {
+        targetsPrefab.GetComponent<TargetPrefabHeightAdjust>().AdjustHeight();
         targetsPrefab.SetActive(true);
     }
 

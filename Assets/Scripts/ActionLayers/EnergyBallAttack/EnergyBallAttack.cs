@@ -37,6 +37,7 @@ namespace ActionLayers.EnergyBallAttack
         
         private void  InitializeAction()
         {
+            targetsPrefab.GetComponent<TargetPrefabHeightAdjust>().AdjustHeight();
             energyBall.GetComponent<Rigidbody>().velocity = Vector3.zero;
             energyBall.transform.position = energyBallLayer.transform.position;
             EnergySourceTrigger.taskDone = false;
