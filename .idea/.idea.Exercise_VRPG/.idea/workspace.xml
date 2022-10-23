@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SplashScreen.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SplashScreen/GameMenuManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SplashScreen/GameMenuManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/HapticInteractable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/HapticInteractable.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Exercise_VRPG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Button UI/ButtonTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Button UI/ButtonTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Collectibles/Coin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Collectibles/Coin.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Collectibles/Glove.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Collectibles/Glove.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Collectibles/Potion2_Filled.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Collectibles/Potion2_Filled.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/XR/LeftHand.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/XR/LeftHand.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/XR/XR Origin 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/XR/XR Origin 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/XR/XR Origin Battle Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/XR/XR Origin Battle Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +29,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/Shadow/Documents/Unity/Exercise_VRPG/Assets/Prefabs/Collectibles/Coin.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BattleUI/AbilityTimer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BattleUI/ProgressBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Button UI/ButtonTrigger.cs" root0="FORCE_HIGHLIGHTING" />
