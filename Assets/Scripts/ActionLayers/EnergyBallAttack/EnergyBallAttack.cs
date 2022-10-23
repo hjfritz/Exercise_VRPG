@@ -101,6 +101,9 @@ namespace ActionLayers.EnergyBallAttack
         
         private void ResetAbility()
         {
+            attackPower = 0;
+            var psEmission = energyBall.GetComponent<ParticleSystem>().emission;
+            psEmission.rateOverTime = attackPower;
             _attackTimer = _attackDuration;
             counting = false;
             training = false;
