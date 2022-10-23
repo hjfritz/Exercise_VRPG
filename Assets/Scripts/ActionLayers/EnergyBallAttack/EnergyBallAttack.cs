@@ -87,14 +87,14 @@ namespace ActionLayers.EnergyBallAttack
             int damage = Mathf.FloorToInt(attackPower * .2f);
             target.TakeMitigatedDamage(damage);
             AbilityComplete.Invoke();
-            energyBall.GetComponent<Rigidbody>().AddForce(Vector3.forward * 60); //make changes below too
+            energyBall.GetComponent<Rigidbody>().AddForce((targetsPrefab.transform.forward).normalized * 60); //make changes below too
             ResetAbility();
         }
         
         public void FinalizeTraining()
         {
             TrainingComplete.Invoke();
-            energyBall.GetComponent<Rigidbody>().AddForce(Vector3.forward * 60); //make changes above too
+            energyBall.GetComponent<Rigidbody>().AddForce((targetsPrefab.transform.forward).normalized * 60); //make changes above too
             ResetAbility();
         }
         
