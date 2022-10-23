@@ -758,7 +758,7 @@ MonoBehaviour:
   controllerSmoothingCacheSize: 5
   _movingInertia: 1
   movingInertiaTimeToStopAtMaxSpeed: 1
-  _stoppingInertia: 1
+  _stoppingInertia: 0
   stoppingInertiaTimeToStopAtMaxSpeed: 0.35
   raycastGroundLayerMask:
     serializedVersion: 2
