@@ -11,6 +11,8 @@ namespace Training
         [SerializeField] private UnityEvent training4;
         [SerializeField] private UnityEvent training5;
 
+        public PlayerStatManager trainerNum;
+        
         public static int trainingNumber = 1;
         public static bool training = false;
         public static GameObject currentTeacher = null;
@@ -18,7 +20,7 @@ namespace Training
         // Start is called before the first frame update
         void Start()
         {
-        
+            
         }
 
         // Update is called once per frame

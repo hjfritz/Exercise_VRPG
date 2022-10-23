@@ -11,6 +11,7 @@ namespace Training
         [SerializeField] private XRSocketInteractor island;
         [SerializeField] private XRSocketInteractor mountain;
 
+        public PlayerStatManager levelProg;
         public PortalSceneChange sceneChange;
 
         private bool level1Option = false;
@@ -36,6 +37,7 @@ namespace Training
             }else if (level1Option && OptionButtons.ButtonChoice == 1)
             {
                 level1Option = false;
+                levelProg.levelProgression += 1;
                 OptionButtons.ResetButtons();
                 sceneChange.OpenPortal(1);
             }

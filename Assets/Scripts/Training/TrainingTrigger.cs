@@ -10,6 +10,7 @@ namespace Training
         [SerializeField] private GameObject model;
         [SerializeField] private ParticleSystem ps;
         [SerializeField] private ParticleSystem ps2;
+        [SerializeField] private GameObject sphere;
 
         public bool entered = false;
         public bool trainerActive = false;
@@ -32,6 +33,7 @@ namespace Training
             {
                 if (!entered)
                 {
+                    sphere.SetActive(false);
                     this.transform.LookAt(new Vector3(other.transform.position.x, this.transform.position.y, other.transform.position.z));
                     ps2.Stop();
                     ps.Play();
