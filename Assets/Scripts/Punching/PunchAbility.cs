@@ -57,6 +57,7 @@ public class PunchAbility : BattleAttackAbility
     private void InitializeAction()
     {
         targetsPrefab.SetActive(true);
+        targetsPrefab.GetComponent<TargetPrefabHeightAdjust>().AdjustHeight();
     }
     public override void ExecuteAction(Combatant target)
     {

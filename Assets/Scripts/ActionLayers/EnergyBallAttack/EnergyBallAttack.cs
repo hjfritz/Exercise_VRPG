@@ -37,6 +37,7 @@ namespace ActionLayers.EnergyBallAttack
         
         private void  InitializeAction()
         {
+            targetsPrefab.GetComponent<TargetPrefabHeightAdjust>().AdjustHeight();
             energyBall.GetComponent<Rigidbody>().velocity = Vector3.zero;
             energyBall.transform.position = energyBallLayer.transform.position;
             EnergySourceTrigger.taskDone = false;
@@ -100,6 +101,9 @@ namespace ActionLayers.EnergyBallAttack
         
         private void ResetAbility()
         {
+            attackPower = 0;
+            var psEmission = energyBall.GetComponent<ParticleSystem>().emission;
+            psEmission.rateOverTime = attackPower;
             _attackTimer = _attackDuration;
             counting = false;
             training = false;

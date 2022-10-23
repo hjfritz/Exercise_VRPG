@@ -33,8 +33,8 @@ public class PlayerCombatant : Combatant
     
     public void displayActionMenu()
     {
-        //actionMenu.BuildMenu(actionAbilities);
         actionMenu.gameObject.SetActive(true);
+        actionMenu.GetComponent<TargetPrefabHeightAdjust>().AdjustHeight();
     }
 
     public void hideActionMenu()
