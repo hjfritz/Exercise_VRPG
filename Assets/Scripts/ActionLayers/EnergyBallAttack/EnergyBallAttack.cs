@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace ActionLayers.EnergyBallAttack
@@ -40,6 +41,7 @@ namespace ActionLayers.EnergyBallAttack
             targetsPrefab.GetComponent<TargetPrefabHeightAdjust>().AdjustHeight();
             energyBall.GetComponent<Rigidbody>().velocity = Vector3.zero;
             energyBall.transform.position = energyBallLayer.transform.position;
+            energyBall.SetActive(true);
             EnergySourceTrigger.taskDone = false;
             WholeLayer.SetActive(true);
             triggerLayer.SetActive(true);
@@ -68,7 +70,7 @@ namespace ActionLayers.EnergyBallAttack
             {
                 if (counting && _attackTimer < 0)
                 {
-                    FinalizeAction();
+                    StartCoroutine(DelayFinalize());
                 }
                 else
                 {
@@ -77,9 +79,26 @@ namespace ActionLayers.EnergyBallAttack
                     psEmission.rateOverTime = attackPower;
                     if (training && repCounter == trainingReps)
                     {
-                        FinalizeTraining();
+                        StartCoroutine(DelayFinalize());
                     }
                 }
+            }
+        }
+
+        IEnumerator DelayFinalize()
+        {
+            energyBall.GetComponent<Rigidbody>().AddForce((targetsPrefab.transform.forward).normalized * 190); //make changes below too
+            if (training)
+            {
+                training = false;
+                yield return new WaitForSeconds(1.5f);
+                FinalizeTraining();
+            }
+            else
+            {
+                counting = false;
+                yield return new WaitForSeconds(1.5f);
+                FinalizeAction();
             }
         }
         
@@ -88,14 +107,12 @@ namespace ActionLayers.EnergyBallAttack
             int damage = Mathf.FloorToInt(attackPower * .2f);
             target.TakeMitigatedDamage(damage);
             AbilityComplete.Invoke();
-            energyBall.GetComponent<Rigidbody>().AddForce((targetsPrefab.transform.forward).normalized * 60); //make changes below too
             ResetAbility();
         }
         
         public void FinalizeTraining()
         {
             TrainingComplete.Invoke();
-            energyBall.GetComponent<Rigidbody>().AddForce((targetsPrefab.transform.forward).normalized * 60); //make changes above too
             ResetAbility();
         }
         
@@ -104,6 +121,7 @@ namespace ActionLayers.EnergyBallAttack
             attackPower = 0;
             var psEmission = energyBall.GetComponent<ParticleSystem>().emission;
             psEmission.rateOverTime = attackPower;
+            energyBall.SetActive(false);
             _attackTimer = _attackDuration;
             counting = false;
             training = false;
