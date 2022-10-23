@@ -23,6 +23,7 @@ public class HapticInteractable : MonoBehaviour
         if (controllerInteractor)
         {
             Debug.Log("Trigger Haptic");
+            
             TriggerHaptic(controllerInteractor.xrController);
         }
     }
