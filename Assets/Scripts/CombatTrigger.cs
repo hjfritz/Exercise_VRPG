@@ -21,7 +21,7 @@ public class CombatTrigger : MonoBehaviour
         //ignore collectibles
         if (other.gameObject.GetComponent<XROrigin>())
         {
-            FindObjectOfType<CombatAreaManager>().TriggerCombat();
+            FindObjectOfType<CombatAreaManager>().TriggerCombat(transform.parent.GetComponent<CombatManager>());
             GetComponent<Collider>().enabled = false;  //deactivating the trigger so another fight will not start
         }
     }

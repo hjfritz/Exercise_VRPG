@@ -16,9 +16,6 @@ public class CombatAreaManager : MonoBehaviour
     [SerializeField] private XROrigin _battleRig;
     private PlayerManager _pm;
 
-    private CombatManager[] _combatManagers;
-    private int currentBattleIndex = 0;
-   
     [SerializeField] private float _teleportTime = 1.5f;
 
     private Vector3 _teleportStart;
@@ -35,7 +32,6 @@ public class CombatAreaManager : MonoBehaviour
     private void Start()
     {
         _pm = FindObjectOfType<PlayerManager>(true);
-        _combatManagers = GetComponentsInChildren<CombatManager>(true);
         BGMsource.clip = backgroundMusic;
         BGMsource.Play();
     }
@@ -78,11 +74,11 @@ public class CombatAreaManager : MonoBehaviour
         }
     }
 
-    public void TriggerCombat()
+    public void TriggerCombat(CombatManager combatManager)
     {
         StartFight.Invoke();
-        
-        _pm.currentCombatManager = _combatManagers[currentBattleIndex];
+
+        _pm.currentCombatManager = combatManager;
         _pm.currentCombatManager.gameObject.SetActive(true);
         
         _battleRig.GetComponent<LocomotionSwitch>().ToggleLocomotion(false);
@@ -108,7 +104,6 @@ public class CombatAreaManager : MonoBehaviour
     {
         _pm.currentCombatManager = null;
         _pm.menu.SetActive(false);
-        currentBattleIndex++;
         _pm.FightEnd.Invoke();
         _battleRig.GetComponent<LocomotionSwitch>().ToggleLocomotion(true);
         
