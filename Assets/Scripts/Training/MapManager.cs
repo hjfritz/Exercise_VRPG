@@ -37,7 +37,6 @@ namespace Training
             }else if (level1Option && OptionButtons.ButtonChoice == 1)
             {
                 level1Option = false;
-                levelProg.levelProgression += 1;
                 OptionButtons.ResetButtons();
                 sceneChange.OpenPortal(1);
             }

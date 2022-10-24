@@ -80,6 +80,7 @@ namespace Training
                     MapManager.map = true;
                     SphereCount++;
                     trainersDone.trainersFinished = 5;
+                    trainersDone.levelProgression++;
                 }
             }
 
