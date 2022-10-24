@@ -38,7 +38,7 @@ public class TargetPrefabHeightAdjust : MonoBehaviour
             heightInitialized = true;
         }
 
-        adjustFrames = 10;
+        adjustFrames = 4;
 
     }
 
