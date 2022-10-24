@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -25,6 +26,16 @@ public class HapticInteractable : MonoBehaviour
             Debug.Log("Trigger Haptic");
             
             TriggerHaptic(controllerInteractor.xrController);
+        }
+
+        var rig = other.gameObject.GetComponent<XROrigin>();
+        if (rig)
+        {
+            var controllers = rig.GetComponentsInChildren<XRBaseControllerInteractor>();
+            foreach (var controller in controllers)
+            {
+                TriggerHaptic(controller.xrController);
+            }
         }
     }
 }
