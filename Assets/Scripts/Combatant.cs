@@ -88,6 +88,7 @@ public class Combatant : MonoBehaviour
     {
         selectedAbility.AbilityComplete.RemoveListener(CompleteTurnAction);
         selectedTarget.DeathConfirmed.RemoveListener(CancelActionOnDeath);
+        abilityTimer.StartTimer(0);
     }
 
     public void UpdateHP(int newHP)
