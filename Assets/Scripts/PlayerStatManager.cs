@@ -9,7 +9,7 @@ public class PlayerStatManager : MonoBehaviour
     
     public bool loadPrefs = true;
     
-    private PlayerCombatant pCombatant;
+    //private PlayerCombatant pCombatant;
 
     public bool hasGloves=false;
 
@@ -26,7 +26,7 @@ public class PlayerStatManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pCombatant = Resources.FindObjectsOfTypeAll<PlayerCombatant>()[0];
+        //pCombatant = Resources.FindObjectsOfTypeAll<PlayerCombatant>()[0];
         if (loadPrefs)
         {
             Load();
