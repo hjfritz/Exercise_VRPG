@@ -57,7 +57,7 @@ public class Combatant : MonoBehaviour
         DefenseSelected.Invoke(selectedDefense);
     }
 
-    public void TakeAction(Combatant target)
+    public virtual void TakeAction(Combatant target)
     {
         selectedTarget = target;
         selectedTarget.DeathConfirmed.AddListener(CancelActionOnDeath);
@@ -72,7 +72,7 @@ public class Combatant : MonoBehaviour
         selectedAbility.FinalizeAction();
     }
 
-    public void TakeDefense(float duration)
+    public virtual void TakeDefense(float duration)
     {
         selectedDefense.ExecuteDefense(duration);
     }
