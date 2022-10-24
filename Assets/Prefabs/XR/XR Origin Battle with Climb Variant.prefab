@@ -383,6 +383,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1386787805518926520, guid: fd2ae40803f110443ba6757d29480167, type: 3}
+      propertyPath: m_LeftHandMoveAction.m_UseReference
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1386787805518926521, guid: fd2ae40803f110443ba6757d29480167, type: 3}
       propertyPath: m_Enabled
       value: 1

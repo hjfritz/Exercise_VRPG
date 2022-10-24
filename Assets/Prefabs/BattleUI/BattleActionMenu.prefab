@@ -63,7 +63,6 @@ GameObject:
   - component: {fileID: 2417536487547369046}
   - component: {fileID: 1932707688745877469}
   - component: {fileID: 7859876353509643476}
-  - component: {fileID: 8464125784391868937}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -223,21 +222,6 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
---- !u!114 &8464125784391868937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6971896159811537064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8cf140e9a4b95f47b489308e980456f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MenuActionSelected:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1001 &2570023472957182580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -400,6 +384,10 @@ PrefabInstance:
     - target: {fileID: 4682058118212191237, guid: 466a52d6926492942841ffa6c1869404, type: 3}
       propertyPath: m_Name
       value: PunchButton (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4682058118212191237, guid: 466a52d6926492942841ffa6c1869404, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4682058118212191238, guid: 466a52d6926492942841ffa6c1869404, type: 3}
       propertyPath: m_RootOrder
