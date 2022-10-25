@@ -11,6 +11,8 @@ public class Climber : MonoBehaviour
 {
 
     private CharacterController character;
+    [SerializeField] private CapsuleCollider col;
+    [SerializeField] private Rigidbody rb;
 
     public static XRBaseController climbingHand;
 
@@ -35,13 +37,20 @@ public class Climber : MonoBehaviour
         if (climbingHand)
         {
             continuousMovement.enabled = false;
+            character.enabled = true;
+            col.enabled = false;
+            rb.isKinematic = true;
+            
             //_electricOwl.enabled = false;
             Climb();
         }
         else
         {
             continuousMovement.enabled = true;
-           //_electricOwl.enabled = true;
+            character.enabled = false;
+            col.enabled = true;
+            rb.isKinematic = false;
+            //_electricOwl.enabled = true;
 
         }
     }
