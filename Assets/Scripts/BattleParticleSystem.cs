@@ -20,17 +20,13 @@ public class BattleParticleSystem : MonoBehaviour
         
     }
 
-    public void togglePS()
+    public void PSON()
     {
-        if (!on)
-        {
-            battle.Play();
-            on = true;
-        }
-        else
-        {
-            battle.Stop();
-            on = false;
-        }
+        battle.Play();
+    }
+
+    public void PSOff()
+    {
+        battle.Stop();
     }
 }

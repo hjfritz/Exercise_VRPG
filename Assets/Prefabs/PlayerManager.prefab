@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 81249880038595121}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -27.85, y: -17.89, z: -434.38}
+  m_LocalPosition: {x: 0, y: 0, z: 2.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 719515567649543707}
@@ -5949,7 +5949,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4832153721653930940}
         m_TargetAssemblyTypeName: BattleParticleSystem, Assembly-CSharp
-        m_MethodName: togglePS
+        m_MethodName: PSON
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5964,7 +5964,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4832153721653930940}
         m_TargetAssemblyTypeName: BattleParticleSystem, Assembly-CSharp
-        m_MethodName: togglePS
+        m_MethodName: PSOff
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7413,6 +7413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6188795000865367463, guid: 41d40b47821f6ef48a9e7d56ce4353c6, type: 3}
+    - {fileID: 831277025518286888, guid: 41d40b47821f6ef48a9e7d56ce4353c6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 41d40b47821f6ef48a9e7d56ce4353c6, type: 3}
 --- !u!4 &7970585307942655644 stripped
 Transform:
