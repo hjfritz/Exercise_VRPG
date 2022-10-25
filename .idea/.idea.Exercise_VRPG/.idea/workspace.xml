@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8cdf18c3-c958-4aa4-bb04-8b0cb94540b3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/IslandMaterials/Particle.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/IslandMaterials/Particle.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/BattleParticleSystem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayerManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerManager.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,6 +136,7 @@
       <workItem from="1666458444483" duration="1671000" />
       <workItem from="1666552241420" duration="7534000" />
       <workItem from="1666643780215" duration="970000" />
+      <workItem from="1666729597553" duration="278000" />
     </task>
     <task id="LOCAL-00001" summary="trying to create a separated branch">
       <created>1664612695537</created>
