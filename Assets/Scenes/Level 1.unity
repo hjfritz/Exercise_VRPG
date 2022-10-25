@@ -1832,6 +1832,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa6105287f77b1240a0017f7d23434c2, type: 3}
+--- !u!114 &184032330 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7350708852795351348, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
+  m_PrefabInstance: {fileID: 999089307}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899cd8016a69cf842a935edea1944217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &196832544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4486,7 +4497,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2075512245604781729, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
   m_PrefabInstance: {fileID: 999089307}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1370104501}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0cb9aa70a22847b5925ee5f067c10a9, type: 3}
@@ -11563,6 +11574,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18cea87bdb7d0fa46986e492321f3d1e, type: 3}
+--- !u!1 &1370104501 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2075512245604781728, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
+  m_PrefabInstance: {fileID: 999089307}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1378918173
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16318,7 +16334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca810a29d1565b4a99d393aaf7bb45f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeScreen: {fileID: 0}
+  fadeScreen: {fileID: 184032330}
   save: {fileID: 2043872042}
 --- !u!114 &2043872042
 MonoBehaviour:
@@ -16332,7 +16348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e4bc8251d6f92442b151d73b527b496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rig: {fileID: 0}
+  _rig: {fileID: 1370104501}
   loadPrefs: 1
   hasGloves: 0
   countCoins: 0
