@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 
 public class ColliderCheck : MonoBehaviour
@@ -14,7 +15,8 @@ public class ColliderCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log($"I have a rigidBody {GetComponent<Rigidbody>()}");
+        Debug.Log($"I have a collider =  {GetComponent<Collider>()}");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,5 +27,7 @@ public class ColliderCheck : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log($"{gameObject.name} collided with {collision.collider.gameObject.name}");
+        Debug.Log($"{collision.collider.gameObject.name} isKinematic = {collision.collider.GetComponent<Rigidbody>().isKinematic}");
+        Debug.Log(GetComponent<Rigidbody>().isKinematic);
     }
 }
