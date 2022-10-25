@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -279,6 +278,8 @@ public class ElectricOwl : MonoBehaviour {
 	[SerializeField] private GameObject rightControllerGameObject;
 	[SerializeField] private XRBaseController leftController;
 	[SerializeField] private XRBaseController rightController;
+	private int leftControllerIndex;
+	private int rightControllerIndex;
 
 	// Wall Clip tracking
 	[HideInInspector]
@@ -292,7 +293,9 @@ public class ElectricOwl : MonoBehaviour {
 
 	// One Button Same Controller Exclusive mode only
 	private GameObject activeSwingController = null;
-	
+
+	// Prevent Wall Clip's HeadsetCollider script
+	private HeadsetCollider headsetCollider;
 
 	// GameObjects
 	[SerializeField] private GameObject headsetGameObject;
@@ -303,6 +306,11 @@ public class ElectricOwl : MonoBehaviour {
 	
 	/****** INITIALIZATION ******/
 	void Awake() {
+		
+		// Setup wall clipping on the headset gameobject, if enabled
+		if (preventWallClip) {
+			setupHeadsetCollider();
+		}
 
 		// Save the initial movement curve, in case it's switched off
 		inspectorCurve = armSwingControllerToMovementCurve;
@@ -356,7 +364,11 @@ public class ElectricOwl : MonoBehaviour {
 		rewindThisFrame = false;
 		wallClipThisFrame = false;
 
-		
+		// Check for wall clipping
+		if (preventWallClip && headsetCollider.inGeometry) {
+			triggerRewind(PreventionReason.HEADSET);
+		}
+
 		// Save the current controller positions for our use
 		leftControllerLocalPosition = leftControllerGameObject.transform.localPosition;
 		rightControllerLocalPosition = rightControllerGameObject.transform.localPosition;
@@ -397,9 +409,7 @@ public class ElectricOwl : MonoBehaviour {
     /***** VERIFY SETTINGS *****/
     void verifySettings() {
 
-
-
-        // Rewind Settings
+	    // Rewind Settings
         if (rewindNumSavedPositionsToRewind > rewindNumSavedPositionsToStore) {
             Debug.LogError("ArmSwinger.verifySettings():: rewindNumSavedPositionsToRewind is greater than rewindNumSavedPositionsToStore, rewinding will fail.");
         }
@@ -457,6 +467,23 @@ public class ElectricOwl : MonoBehaviour {
 		}
 
 		if (movedThisFrame) {
+			// If raycastOnlyHeightAdjustWhileArmSwinging is enabled, check to see if the Y distance between the previous arm swinging position and
+			// the current ArmSwinging position are higher than the instant height change max.  This ensures that players who have 
+			// raycastOnlyHeightAdjustWhileArmSwinging enabled are not instantly teleported to the terrain when they start arm swinging.
+			if (!armSwinging && raycastOnlyHeightAdjustWhileArmSwinging) {
+				armSwinging = true;
+
+				bool didStartSwingingRayHit;
+				RaycastHit startSwingingRaycastHit = raycast(headsetGameObject.transform.position, Vector3.down, raycastMaxLength, raycastGroundLayerMask, out didStartSwingingRayHit);
+				
+				if (didStartSwingingRayHit) {
+					ohawasInstantHeightChangeCheck(startSwingingRaycastHit.point.y, lastRaycastHitWhileArmSwinging.point.y);
+					// If we need to rewind, don't arm swing this frame
+					if (currentPreventionReason != PreventionReason.NONE) {
+						return Vector3.zero;
+					}
+				}
+			}
 
 			armSwinging = true;
 			
@@ -902,6 +929,10 @@ public class ElectricOwl : MonoBehaviour {
 
 		float heightDifference = thisYValue - lastYValue;
 
+		/*if (thisYValue == 10.3f || lastYValue == 10.3f)
+		{
+			return PreventionReason.NONE;
+		}*/
 		if (preventClimbing && heightDifference >= instantHeightMaxChange) {
 			return PreventionReason.INSTANT_CLIMBING;
 		}
@@ -917,11 +948,44 @@ public class ElectricOwl : MonoBehaviour {
 		if (preventionsPaused || anglePreventionsPaused) {
 			return;
 		}
+
+		// We allow players to climb/descend stairs instantly (across one frame) as long as the stair is shorter than instantHeightMaxChange
+		// If the current raycast and the previous raycast indicate a height difference larger than instantHeightMaxChange,
+		// we know for sure that the player needs to be rewound.
+
+		// This also prevents players from taking a long fall over a single frame (since multiple frames in a row need to agree to rewind normally)
+
+		// Finally, this also affects raycastOnlyHeightAdjustWhileArmSwinging.  If the player moves around physically, and then starts Arm Swinging again,
+		// we'll instantly check to see if they've changed more than instantHeightMaxChange.  If they have, we'll do a quick rewind to ensure
+		// they start in a comfortable position
+
+		PreventionReason preventionReason = instantHeightChangeReason(thisYValue, lastYValue);
+
+		if (preventionReason != PreventionReason.NONE) {
+			triggerRewind(preventionReason);
+		}
 	}
 
+	// Instant Height Change Check for when raycastOnlyHeightAdjustWhileArmSwinging (OHAWAS) is enabled, and the player starts ArmSwinging
+	void ohawasInstantHeightChangeCheck(float thisYValue, float lastYValue) {
+		if (instantHeightChangeReason(thisYValue, lastYValue) != PreventionReason.NONE) {
+			triggerRewind(PreventionReason.OHAWAS);
+		}
+	}
 
+	// Adjusts the camera rig for raycastOnlyHeightAdjustWhileArmSwinging (OHAWAS) without triggering other Prevention mechanisms
+	void ohawasCameraRigAdjust() {
+		bool didRayHit;
+		RaycastHit raycastHit = raycast(headsetGameObject.transform.position, Vector3.down, raycastMaxLength, raycastGroundLayerMask, out didRayHit);
 
-	
+		if (didRayHit) {
+			moveCameraRig(new Vector3(cameraRigGameObject.transform.position.x, raycastHit.point.y, cameraRigGameObject.transform.position.z), PreventionReason.OHAWAS);
+			fadeIn();
+		} else {
+			fadeIn();
+			outOfBounds = false;
+		}
+	}
 
 	void centerPreventionCheck(RaycastHit thisRaycastHit, RaycastHit lastRaycastHit) {
 
@@ -941,7 +1005,9 @@ public class ElectricOwl : MonoBehaviour {
 				}
 			}
 
-			
+			if (allReasonsAgree) {
+				triggerRewind(thisOOBReason);
+			}
 		}
 	}
 
@@ -970,7 +1036,10 @@ public class ElectricOwl : MonoBehaviour {
 				}
 			}
 
-		
+			// If the number of wall walks is >= numWallWalkChecksOOBBeforeRewind, trigger a rewind
+			if (wallWalkCount >= checksNumWallWalkChecksOOBBeforeRewind) {
+				triggerRewind(thisOOBReason);
+			}
 		}
 	}
 
@@ -1033,7 +1102,46 @@ public class ElectricOwl : MonoBehaviour {
 
 		return PreventionReason.NONE;
 	}
-	
+
+	public void triggerRewind(PreventionReason reason = PreventionReason.MANUAL) {
+
+        currentPreventionReason = reason;
+
+		if (reason == PreventionReason.HEADSET) {
+			wallClipThisFrame = true;
+		}
+
+        //Debug.Log(Time.frameCount + "|ArmSwinger.triggerRewind():: Rewind triggered due to " + reason);
+
+		if (!outOfBounds) {
+			// Special handling for raycastOnlyHeightAdjustWhileArmSwinging (OHAWAS) events where the player walks into geometry and then starts arm swinging.
+			if (reason == PreventionReason.OHAWAS) {
+				outOfBounds = true;
+				fadeOut();
+				Invoke("ohawasCameraRigAdjust", rewindFadeOutSec);
+			}
+			// Everything else
+			else {
+				outOfBounds = true;
+
+                // If the prevention mode is REWIND and a rewind isn't already pending - fade out, rewind, fade back in
+                if (currentPreventionMode == PreventionMode.Rewind && !rewindInProgress) {
+					rewindInProgress = true;
+					Debug.Log(reason);
+					fadeOut();
+					Invoke("rewindPositionModeRewind", rewindFadeOutSec);
+					Invoke("fadeIn", rewindFadeOutSec);
+				}
+				// Otherwise the mode is PushBack, so we instantly push back
+				else {
+					rewindPosition(PreventionMode.PushBack);
+					if (pushBackOverride) {
+						decrementPushBackOverride();
+					}
+				}
+			}			
+		}
+	}
 
 	// Helper function for the Invoke() in triggerRewind, since Invoke doesn't support any parameters in called functions
 	void rewindPositionModeRewind() {
@@ -1196,7 +1304,11 @@ public class ElectricOwl : MonoBehaviour {
 		// start with the assumption that the position is safe
 		// if we the features and options enabled below have us check and find an unsafe position, we'll change it then
 		bool isPositionSafe = true;
-		
+
+		// if the headset is in geometry, don't save this position
+		if (preventWallClip && headsetCollider.inGeometry) {
+			isPositionSafe = false;
+		}
 
 		// only applies if both preventFalling and preventClimbing are enabled, and if the user wants to skip unsafe positions
 		if (isPositionSafe && preventFalling && preventClimbing && rewindDontSaveUnsafeClimbFallPositions) {
@@ -1315,22 +1427,27 @@ public class ElectricOwl : MonoBehaviour {
 	void getControllerButtons() {
 		// Left
 		leftButtonPressed = leftButton.action.ReadValue<float>() == 1f;
-		
 
 		//Right
-		
 		rightButtonPressed = rightButton.action.ReadValue<float>() == 1f;
-		
 	}
-
-
 
 	// Returns the average of two Quaternions
 	Quaternion averageRotation(Quaternion rot1, Quaternion rot2) {
 		return Quaternion.Slerp(rot1, rot2, 0.5f);
 	}
 
-	// Returns a Vector3 with only the X and Z components (Y is 0'd)
+	// Fade the screen to black
+	void fadeOut() {
+		Debug.Log("kate says- would be nice to fade out");
+    }
+
+    // Fade the screen back to clear
+    void fadeIn() {
+	    Debug.Log("kate says- would be nice to fade in");
+    }
+
+    // Returns a Vector3 with only the X and Z components (Y is 0'd)
     public static Vector3 vector3XZOnly(Vector3 vec) {
 		return new Vector3(vec.x, 0f, vec.z);
 	}
@@ -1459,7 +1576,18 @@ public class ElectricOwl : MonoBehaviour {
 	bool isDistanceFarEnough(Vector3 position1, Vector3 position2, float minDistance) {
 		return (Vector3.Distance(position1, position2) >= minDistance);
 	}
-	
+
+	// Adds the Collider script to the headset if it doesn't already exist
+	void setupHeadsetCollider() {
+		headsetCollider = headsetGameObject.GetComponent<HeadsetCollider>();
+		if (!headsetCollider) {
+			headsetCollider = headsetGameObject.AddComponent<HeadsetCollider>();
+
+		}
+		headsetCollider.setLayerMask(preventWallClipLayerMask);
+		headsetCollider.setHeadsetSphereColliderRadius(preventWallClipHeadsetColliderRadius);
+		headsetCollider.setMinAngleWallClipForOOB(preventWallClipMinAngleToTrigger);
+	}
 
 	static float calculateMovement(AnimationCurve curve, float change, float maxInput, float maxSpeed) {
 		float changeInWUPS = change / Time.deltaTime;
@@ -1627,7 +1755,38 @@ public class ElectricOwl : MonoBehaviour {
 			}
 		}
 	}
-	
+
+	public bool preventWallClip {
+		get {
+			return _preventWallClip;
+		}
+
+		set {
+			_preventWallClip = value;
+			if (_preventWallClip) {
+				setupHeadsetCollider();
+			}
+		}
+	}
+
+	public float preventWallClipMinAngleToTrigger {
+		get {
+			return _preventWallClipMinAngleToTrigger;
+		}
+
+		set {
+			float min = 0f;
+			float max = 90f;
+
+			if (value >= min && value <= max) {
+				_preventWallClipMinAngleToTrigger = value;
+				headsetCollider.setMinAngleWallClipForOOB(value);
+			}
+			else {
+				Debug.LogWarning("ArmSwinger:preventWallClipMinAngleToTrigger:: Requested new value " + value + " is out of range (" + min + ".." + max + ")");
+			}
+		}
+	}
 
 	public float preventClimbingMaxAnglePlayerCanClimb {
 		get {
@@ -1842,6 +2001,5 @@ public class ElectricOwl : MonoBehaviour {
 			_stoppingInertia = value;
 		}
 	}
-
 	
 }
