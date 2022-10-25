@@ -12545,8 +12545,8 @@ MonoBehaviour:
   _battleRig: {fileID: 1611643898}
   _teleportTime: 1.5
   BGMsource: {fileID: 1515688135}
-  backgroundMusic: {fileID: 8300000, guid: 65a576071d3e54e4e9bc518974bd2c22, type: 3}
-  combatMusic: {fileID: 8300000, guid: c6941d3bdabdbdd458d22880b10863af, type: 3}
+  backgroundMusic: {fileID: 8300000, guid: b09aa6127bb4d5f41ba932811a1fc204, type: 3}
+  combatMusic: {fileID: 8300000, guid: 8de90e377f03fc34897bb74eb21d8a35, type: 3}
 --- !u!82 &1515688135
 AudioSource:
   m_ObjectHideFlags: 0

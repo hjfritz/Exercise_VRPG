@@ -6612,6 +6612,7 @@ MonoBehaviour:
   countCoins: 0
   hps: 100
   defeatedEnemies: 0
+  difficulty: 1
   trainersFinished: 0
   levelProgression: 0
 --- !u!1001 &1264663850
@@ -11863,7 +11864,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8805893985719147355, guid: 7ce451a0abd8e4a4dbdf9fc300524193, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 65a576071d3e54e4e9bc518974bd2c22, type: 3}
+  m_audioClip: {fileID: 8300000, guid: de8185566a8fd33419ca5a53129b9830, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
