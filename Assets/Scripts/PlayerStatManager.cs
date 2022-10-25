@@ -7,7 +7,7 @@ public class PlayerStatManager : MonoBehaviour
 {
     [SerializeField] private GameObject _rig;
     
-    public bool loadPrefs = true;
+    public bool loadPrefs = false;
     
     //private PlayerCombatant pCombatant;
 
@@ -18,6 +18,8 @@ public class PlayerStatManager : MonoBehaviour
     public int hps=100;
 
     public int defeatedEnemies=0;
+
+    public bool difficulty = true;
 
     public int trainersFinished=0;
 
@@ -50,6 +52,7 @@ public class PlayerStatManager : MonoBehaviour
        // PlayerPrefs.SetInt("Coins", countCoins);
        // PlayerPrefs.SetInt("HP", hps);
         //PlayerPrefs.SetInt("Enemies", defeatedEnemies);
+        PlayerPrefs.SetInt("Difficulty", Convert.ToInt32(difficulty));
         PlayerPrefs.SetInt("Trainers", trainersFinished);
         PlayerPrefs.SetInt("Level", levelProgression);
     }
@@ -66,6 +69,14 @@ public class PlayerStatManager : MonoBehaviour
         //defeatedEnemies = PlayerPrefs.GetInt("Enemies");
         trainersFinished = PlayerPrefs.GetInt("Trainers");
         levelProgression = PlayerPrefs.GetInt("Level");
+        if (PlayerPrefs.GetInt("Difficulty") == 0)
+        {
+            difficulty = false;
+        }else if (PlayerPrefs.GetInt("Difficulty") == 1)
+        {
+            difficulty = true;
+        }
+        
         //hasGloves= PlayerPrefs.GetInt("Gloves");
     }
     

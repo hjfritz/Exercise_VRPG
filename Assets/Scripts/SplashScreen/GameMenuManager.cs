@@ -8,6 +8,9 @@ namespace SplashScreen
     {
         public PortalSceneChange portal;
         
+        [SerializeField] private GameObject mainMenu;
+        [SerializeField] private GameObject optionsMenu;
+        
         // Start is called before the first frame update
         void Start()
         {
@@ -26,18 +29,24 @@ namespace SplashScreen
                 }else if (OptionButtons.ButtonChoice == 2)
                 {
                     //Option Button
+                    optionsMenu.SetActive(true);
+                    mainMenu.SetActive(false);
                     OptionButtons.ResetButtons();
                 }else if (OptionButtons.ButtonChoice == 3)
                 {
                     //Quit Button
+#if UNITY_EDITOR
+                    UnityEditor.EditorApplication.isPlaying = false;
+#endif
+                    Application.Quit();
                     OptionButtons.ResetButtons();
                 }else if (OptionButtons.ButtonChoice == 4)
                 {
-                    //Load Button
+                    //Credits Button
                     OptionButtons.ResetButtons();
                 }else if (OptionButtons.ButtonChoice == 5)
                 {
-                    //Credits Button
+                    //Load Button
                     OptionButtons.ResetButtons();
                 }
             }

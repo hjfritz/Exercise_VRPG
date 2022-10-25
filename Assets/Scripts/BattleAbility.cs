@@ -25,8 +25,8 @@ public class BattleAbility : MonoBehaviour
     {
         xrOrigin = FindObjectOfType<XROrigin>();
         playerManager = FindObjectOfType<PlayerManager>(true);
-        playerRepDamage = playerManager.MAX_DIFFICULTY - playerManager.difficulty;
-        enemyRepDamage = playerManager.difficulty;
+        playerRepDamage = 1;
+        enemyRepDamage = 1;
     }
 
     // Update is called once per frame
