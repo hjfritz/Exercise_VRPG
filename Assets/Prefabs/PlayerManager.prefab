@@ -627,7 +627,7 @@ MonoBehaviour:
   actionAbilities: []
   defenseAbilities: []
   actionMenu: {fileID: 2363313412129414585}
-  kenobi: {fileID: 7555319675282418673}
+  kenobi: {fileID: 0}
 --- !u!114 &719515567318764955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2323,19 +2323,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnText: {fileID: 719515568649293397}
---- !u!114 &7555319675282418673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7338305217281051686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37a469de0da5fe245beb236cafce5bca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  kenobi: {fileID: 0}
 --- !u!1001 &1082172847275017884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2582,11 +2569,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6188795000865367463, guid: 41d40b47821f6ef48a9e7d56ce4353c6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 41d40b47821f6ef48a9e7d56ce4353c6, type: 3}
---- !u!1 &7338305217281051686 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 709575940236470731, guid: 41d40b47821f6ef48a9e7d56ce4353c6, type: 3}
-  m_PrefabInstance: {fileID: 7786176447833155053}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7970585307942655644 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 185557028885050225, guid: 41d40b47821f6ef48a9e7d56ce4353c6, type: 3}
