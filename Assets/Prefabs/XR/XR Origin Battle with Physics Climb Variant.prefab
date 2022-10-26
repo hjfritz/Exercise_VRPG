@@ -544,6 +544,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 8556624485875507509, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
+      propertyPath: leftFist
+      value: 
+      objectReference: {fileID: 3934792268215007722}
+    - target: {fileID: 8556624485875507509, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
+      propertyPath: rightFist
+      value: 
+      objectReference: {fileID: 4438953750776720101}
     - target: {fileID: 8556624486242511790, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
       propertyPath: m_Layer
       value: 8

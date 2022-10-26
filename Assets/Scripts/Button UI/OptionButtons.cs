@@ -8,6 +8,8 @@ namespace Button_UI
     public class OptionButtons : MonoBehaviour
     {
         [SerializeField] private GameObject buttons;
+        [SerializeField] private HandAnimationController leftFist;
+        [SerializeField] private HandAnimationController rightFist;
         
         public static int ButtonChoice = 0;
         public static bool ButtonsOn = false;
@@ -25,13 +27,19 @@ namespace Button_UI
             {
                 buttons.transform.LookAt(TrainingManager.currentTeacher.transform);
                 buttons.SetActive(true);
+                leftFist.Fist(true);
+                rightFist.Fist(true);
             }else if (ButtonsOn && MapManager.map)
             {
                 buttons.transform.LookAt(MapManager.look);
                 buttons.SetActive(true);
+                leftFist.Fist(true);
+                rightFist.Fist(true);
             }
             else
             {
+                leftFist.Fist(false);
+                rightFist.Fist(false);
                 buttons.SetActive(false);
             }
         }
