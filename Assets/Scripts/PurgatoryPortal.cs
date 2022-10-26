@@ -24,11 +24,11 @@ public class PurgatoryPortal : MonoBehaviour
     {
         if (restart)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
         else
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
     }
 }

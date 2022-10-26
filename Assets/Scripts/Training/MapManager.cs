@@ -38,7 +38,7 @@ namespace Training
             {
                 level1Option = false;
                 OptionButtons.ResetButtons();
-                sceneChange.OpenPortal(1);
+                sceneChange.OpenPortal(2);
             }
         }
 

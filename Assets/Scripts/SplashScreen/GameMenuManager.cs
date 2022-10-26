@@ -25,7 +25,8 @@ namespace SplashScreen
             {
                 if (OptionButtons.ButtonChoice == 1)
                 {
-                    portal.OpenPortal(0);
+                    //Start Button
+                    portal.OpenPortal(1);
                     OptionButtons.ResetButtons();
                 }else if (OptionButtons.ButtonChoice == 2)
                 {

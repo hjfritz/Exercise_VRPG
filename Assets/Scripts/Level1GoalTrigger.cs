@@ -26,7 +26,7 @@ public class Level1GoalTrigger : MonoBehaviour
         {
             Debug.Log("entered");
             levelProg.levelProgression += 1;
-            sceneChange.OpenPortal(0);
+            sceneChange.OpenPortal(1);
         }
     }
 }
