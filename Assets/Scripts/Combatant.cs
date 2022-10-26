@@ -9,8 +9,8 @@ using Random = System.Random;
 public class Combatant : MonoBehaviour
 {
     [SerializeField] public string displayName = "Enemy";
-    [SerializeField] private int HP;
-    [SerializeField] private int maxHP = 100;
+    [SerializeField] protected int HP;
+    [SerializeField] protected int maxHP = 100;
     [SerializeField] public ProgressBar healthBar;
     [SerializeField] public AbilityTimer abilityTimer;
 
@@ -122,13 +122,7 @@ public class Combatant : MonoBehaviour
         }
     }
     
-    public void HealDamage(int healpoints)
-    {
-        HP = Mathf.Max(maxHP, HP + healpoints);
-        if(healthBar.isActiveAndEnabled)
-        healthBar.SetProgress(HP, maxHP);
 
-    }
 
     public void TakeMitigatedDamage(int damage)
     {

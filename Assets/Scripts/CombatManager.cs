@@ -107,7 +107,7 @@ public class CombatManager : MonoBehaviour
 
     private void ShowHideHealthBars(bool show)
     {
-        foreach (var combatant in BattleTurnOrder)
+        foreach (var combatant in EnemyPartyMembers)
         {
             combatant.healthBar.gameObject.SetActive(show);
         }
