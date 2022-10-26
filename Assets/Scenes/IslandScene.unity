@@ -13768,7 +13768,6 @@ GameObject:
   - component: {fileID: 4654634545727884582}
   - component: {fileID: 318428369245335594}
   - component: {fileID: 6099007744242466621}
-  - component: {fileID: 2300695744868729712}
   m_Layer: 0
   m_Name: Plane.001
   m_TagString: Untagged
@@ -13776,20 +13775,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &2300695744868729712
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2300695744868729711}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4579454407841743219, guid: a8fd2ab856395ed4dbf1ab3970f26310, type: 3}
 --- !u!33 &2322384840033760677
 MeshFilter:
   m_ObjectHideFlags: 0
