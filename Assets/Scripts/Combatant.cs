@@ -26,8 +26,13 @@ public class Combatant : MonoBehaviour
     protected BattleAttackAbility selectedAbility;
     protected DefenseAbility selectedDefense;
     protected Combatant selectedTarget;
+
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private List<AudioClip> damageSFXClips = new List<AudioClip>();
+    
     
     private Random random = new Random();
+    private Random randomSFX = new Random();
     
     // Start is called before the first frame update
     protected virtual void Start()
@@ -107,6 +112,11 @@ public class Combatant : MonoBehaviour
         UpdateHP(maxHP);
     }
 
+    public void InitializeHPBar()
+    {
+        healthBar.InitializeHP(HP, maxHP);
+    }
+
     public void TakeDamage(int damage)
     {
         HP = Mathf.Max(0, HP - damage);
@@ -115,6 +125,11 @@ public class Combatant : MonoBehaviour
         {
             damageEffect.Play();
         }
+        if (damageSFXClips.Count > 0)
+        {
+            int randomIndex = randomSFX.Next(0, damageSFXClips.Count);
+            audioSource.PlayOneShot(damageSFXClips[randomIndex]);
+        } 
         if (HP <= 0)
         {
             DeathConfirmed.Invoke();
@@ -126,9 +141,10 @@ public class Combatant : MonoBehaviour
 
     public void TakeMitigatedDamage(int damage)
     {
-        float mitigation = 1 - selectedDefense.defensePower / 100;
-        int mitigatedDamage = Mathf.CeilToInt((float)damage * mitigation);
-        Debug.Log($"Damage = {damage}, defense power = {selectedDefense.defensePower}, MitigatedDamage = {mitigatedDamage}");
-        TakeDamage(mitigatedDamage);
+        float mitigation = 1 - (float)selectedDefense.defensePower / 100f;
+        float mitigatedDamage = damage * mitigation;
+        int roundUpDamage = Mathf.CeilToInt(mitigatedDamage);
+        Debug.Log($"Damage = {damage}, defense power = {selectedDefense.defensePower},mitigation = {mitigation}, MitigatedDamage = {mitigatedDamage}, Rounded = {roundUpDamage}");
+        TakeDamage(roundUpDamage);
     }
 }

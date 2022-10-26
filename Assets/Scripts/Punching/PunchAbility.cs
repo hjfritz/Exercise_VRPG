@@ -43,7 +43,7 @@ public class PunchAbility : BattleAttackAbility
     {
         sfx.PlayOneShot(punchClip);
         repCounter++;
-        target?.TakeMitigatedDamage(playerRepDamage);
+        target?.TakeMitigatedDamage(playerRepDamage/4);
         
         if (repCounter > targetReps)
         {

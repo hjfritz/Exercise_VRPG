@@ -14,8 +14,8 @@ public class BattleAbility : MonoBehaviour
     protected Combatant target;
     protected XROrigin xrOrigin;
     protected PlayerManager playerManager;
-    protected int playerRepDamage;
-    protected int enemyRepDamage;
+    protected int playerRepDamage = 4;
+    protected int enemyRepDamage = 4;
 
     [SerializeField] public Material runeMaterial;
     
@@ -24,9 +24,12 @@ public class BattleAbility : MonoBehaviour
     protected void Start()
     {
         xrOrigin = FindObjectOfType<XROrigin>();
-        playerManager = FindObjectOfType<PlayerManager>(true);
-        playerRepDamage = 1;
-        enemyRepDamage = 1;
+        PlayerStatManager playerStatManager = FindObjectOfType<PlayerStatManager>(true);
+        if (!playerStatManager.difficulty)
+        {
+            playerRepDamage = 8;
+            enemyRepDamage = 2;
+        }
     }
 
     // Update is called once per frame

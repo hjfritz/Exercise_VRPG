@@ -683,8 +683,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Enemy
-  HP: 20
-  maxHP: 50
+  HP: 100
+  maxHP: 100
   healthBar: {fileID: 6068914394451194342}
   abilityTimer: {fileID: 6953378101408027524}
   damageEffect: {fileID: 8855604390452655386}
@@ -770,6 +770,7 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Display Name Not Set
   abilityDuration: 0
+  runeMaterial: {fileID: 0}
   repDuration: 0.75
 --- !u!114 &1593397208
 MonoBehaviour:
@@ -791,6 +792,7 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Display Name Not Set
   abilityDuration: 0
+  runeMaterial: {fileID: 0}
   defensePower: 0
 --- !u!1 &2650274694730546819
 GameObject:
@@ -1396,8 +1398,6 @@ MonoBehaviour:
   MenuActionSelected:
     m_PersistentCalls:
       m_Calls: []
-  abilityButtons: []
-  buttonPrefab: {fileID: 4758328591546002948, guid: fcd7b5e4ce3f5f34c8258b94bca317f8, type: 3}
 --- !u!1 &2650274696374030237
 GameObject:
   m_ObjectHideFlags: 0

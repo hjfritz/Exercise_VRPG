@@ -5427,8 +5427,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Player
-  HP: 100
-  maxHP: 100
+  HP: 250
+  maxHP: 250
   healthBar: {fileID: 719515568492996133}
   abilityTimer: {fileID: 719515567092920865}
   damageEffect: {fileID: 4304953831355836050}
@@ -5446,6 +5446,11 @@ MonoBehaviour:
       m_Calls: []
   actionAbilities: []
   defenseAbilities: []
+  audioSource: {fileID: 133259381952732260}
+  damageSFXClips:
+  - {fileID: 8300000, guid: 0715b72a67312d040be8a82e74bc284a, type: 3}
+  - {fileID: 8300000, guid: 701ab71a7e8bcdf49995b6da2eada040, type: 3}
+  - {fileID: 8300000, guid: 3e08b469a78b13942a897a41b5b86973, type: 3}
   actionMenu: {fileID: 2363313412129414585}
   kenobi: {fileID: 0}
   menu: {fileID: 719515567614841307}

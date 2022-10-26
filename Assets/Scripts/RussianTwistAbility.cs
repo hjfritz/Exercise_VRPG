@@ -50,7 +50,7 @@ public class RussianTwistAbility : BattleAttackAbility
         {
             currentTargetIndex = targetid;
             repCounter++;
-            target?.TakeMitigatedDamage(playerRepDamage);
+            target?.TakeMitigatedDamage(playerRepDamage/4);
             sfx.PlayOneShot(repCountClip);
             ToggleCurrentTarget();
             if (training && repCounter == trainingReps)

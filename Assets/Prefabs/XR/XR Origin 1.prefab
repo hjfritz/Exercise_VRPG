@@ -836,6 +836,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttons: {fileID: 1658319790}
+  leftFist: {fileID: 0}
+  rightFist: {fileID: 0}
+  holdingfists: 0
 --- !u!1 &896349397374699176
 GameObject:
   m_ObjectHideFlags: 0

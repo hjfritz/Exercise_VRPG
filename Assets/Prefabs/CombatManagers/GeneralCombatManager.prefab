@@ -257,6 +257,9 @@ MonoBehaviour:
   ProgressImage: {fileID: 1142188615876352177}
   DefaultSpeed: 3
   label: {fileID: 1142188615623352779}
+  AnimationComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1142188617152889258
 GameObject:
   m_ObjectHideFlags: 0
@@ -1227,8 +1230,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Enemy
-  HP: 20
-  maxHP: 50
+  HP: 100
+  maxHP: 100
   healthBar: {fileID: 1142188615876352182}
   abilityTimer: {fileID: 4296327979441421012}
   damageEffect: {fileID: 3086044618195085313}
@@ -1266,6 +1269,7 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Display Name Not Set
   abilityDuration: 0
+  runeMaterial: {fileID: 0}
   repDuration: 0.9
 --- !u!114 &5013363731638029150
 MonoBehaviour:
@@ -1287,6 +1291,7 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Display Name Not Set
   abilityDuration: 0
+  runeMaterial: {fileID: 0}
   defensePower: 0
 --- !u!114 &9044682607640520540
 MonoBehaviour:
@@ -1500,8 +1505,6 @@ MonoBehaviour:
   MenuActionSelected:
     m_PersistentCalls:
       m_Calls: []
-  abilityButtons: []
-  buttonPrefab: {fileID: 4758328591546002948, guid: fcd7b5e4ce3f5f34c8258b94bca317f8, type: 3}
 --- !u!1001 &4109754639384478746
 PrefabInstance:
   m_ObjectHideFlags: 0
