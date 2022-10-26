@@ -13,6 +13,8 @@ namespace Button_UI
         
         public static int ButtonChoice = 0;
         public static bool ButtonsOn = false;
+
+        public bool holdingfists = false;
     
         // Start is called before the first frame update
         void Start()
@@ -29,17 +31,24 @@ namespace Button_UI
                 buttons.SetActive(true);
                 leftFist.Fist(true);
                 rightFist.Fist(true);
+                holdingfists = true;
             }else if (ButtonsOn && MapManager.map)
             {
                 buttons.transform.LookAt(MapManager.look);
                 buttons.SetActive(true);
                 leftFist.Fist(true);
                 rightFist.Fist(true);
+                holdingfists = true;
             }
             else
             {
-                leftFist.Fist(false);
-                rightFist.Fist(false);
+                if (holdingfists)
+                {
+                    leftFist.Fist(false);
+                    rightFist.Fist(false);
+                    holdingfists = false;
+                }
+                
                 buttons.SetActive(false);
             }
         }
