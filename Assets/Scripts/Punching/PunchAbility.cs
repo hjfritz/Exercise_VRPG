@@ -23,6 +23,9 @@ public class PunchAbility : BattleAttackAbility
     [SerializeField] private Transform punchingArea;
     
     [SerializeField] protected GameObject targetsPrefab;
+    [SerializeField] private HandAnimationController leftFist;
+    [SerializeField] private HandAnimationController rightFist;
+    
     
     // Start is called before the first frame update
     new void Start()
@@ -58,6 +61,8 @@ public class PunchAbility : BattleAttackAbility
     {
         targetsPrefab.SetActive(true);
         targetsPrefab.GetComponent<TargetPrefabHeightAdjust>().AdjustHeight();
+        leftFist.Fist(true);
+        rightFist.Fist(true);
     }
     public override void ExecuteAction(Combatant target)
     {
@@ -111,6 +116,8 @@ public class PunchAbility : BattleAttackAbility
         training = false;
         attackTimer = 0.0f;
         repCounter = 0;
+        leftFist.Fist(false);
+        rightFist.Fist(false);
         _punchTarget.ResetTarget();
         targetsPrefab.SetActive(false);
     }

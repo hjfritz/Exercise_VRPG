@@ -212,6 +212,14 @@ PrefabInstance:
       propertyPath: DeathConfirmed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1820313457542825639, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
+      propertyPath: leftFist
+      value: 
+      objectReference: {fileID: 3934792268215007722}
+    - target: {fileID: 1820313457542825639, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
+      propertyPath: rightFist
+      value: 
+      objectReference: {fileID: 4438953750776720101}
     - target: {fileID: 1908211935944559919, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
       propertyPath: m_Layer
       value: 0
