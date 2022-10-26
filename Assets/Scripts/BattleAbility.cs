@@ -14,7 +14,7 @@ public class BattleAbility : MonoBehaviour
     protected Combatant target;
     protected XROrigin xrOrigin;
     protected PlayerManager playerManager;
-    protected int playerRepDamage = 1;
+    protected int playerRepDamage = 4;
     protected int enemyRepDamage = 4;
 
     [SerializeField] public Material runeMaterial;
@@ -27,7 +27,7 @@ public class BattleAbility : MonoBehaviour
         PlayerStatManager playerStatManager = FindObjectOfType<PlayerStatManager>(true);
         if (!playerStatManager.difficulty)
         {
-            playerRepDamage = 5;
+            playerRepDamage = 8;
             enemyRepDamage = 2;
         }
     }

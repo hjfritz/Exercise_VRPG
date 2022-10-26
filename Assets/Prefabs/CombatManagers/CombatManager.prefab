@@ -311,8 +311,6 @@ MonoBehaviour:
   MenuActionSelected:
     m_PersistentCalls:
       m_Calls: []
-  abilityButtons: []
-  buttonPrefab: {fileID: 4758328591546002948, guid: fcd7b5e4ce3f5f34c8258b94bca317f8, type: 3}
 --- !u!1 &2230399105182139667
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,8 +479,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Enemy
-  HP: 20
-  maxHP: 50
+  HP: 100
+  maxHP: 100
   healthBar: {fileID: 7930082053657885017}
   abilityTimer: {fileID: 6506309937530477371}
   damageEffect: {fileID: 6961309538886172598}
@@ -568,6 +566,7 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Display Name Not Set
   abilityDuration: 0
+  runeMaterial: {fileID: 0}
   repDuration: 0.75
 --- !u!114 &1765924697
 MonoBehaviour:
@@ -589,6 +588,7 @@ MonoBehaviour:
       m_Calls: []
   DisplayName: Display Name Not Set
   abilityDuration: 0
+  runeMaterial: {fileID: 0}
   defensePower: 0
 --- !u!1 &2310108908824183517
 GameObject:
@@ -717,18 +717,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1617215669469380073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3816548374009881171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31edf07efa39a2e4d8053655456db6f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &6782038852351682606
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -742,6 +730,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1617215669469380073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3816548374009881171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31edf07efa39a2e4d8053655456db6f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4081712356268164263
 GameObject:
   m_ObjectHideFlags: 0
