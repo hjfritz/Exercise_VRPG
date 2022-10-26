@@ -73,4 +73,10 @@ public class ProgressBar : MonoBehaviour
         label.text = $"HP {HP}/{maxHP}";
         AnimationComplete.Invoke();
     }
+
+    public void InitializeHP(int HP, int maxHP)
+    {
+        ProgressImage.fillAmount = 1f;
+        label.text = $"HP {HP}/{maxHP}";
+    }
 }

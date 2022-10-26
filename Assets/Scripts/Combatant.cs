@@ -112,6 +112,11 @@ public class Combatant : MonoBehaviour
         UpdateHP(maxHP);
     }
 
+    public void InitializeHPBar()
+    {
+        healthBar.InitializeHP(HP, maxHP);
+    }
+
     public void TakeDamage(int damage)
     {
         HP = Mathf.Max(0, HP - damage);
