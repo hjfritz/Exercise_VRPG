@@ -459,7 +459,7 @@ GameObject:
   - component: {fileID: 138480212}
   - component: {fileID: 138480211}
   - component: {fileID: 138480210}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: SelectedRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -637,7 +637,7 @@ GameObject:
   - component: {fileID: 206386587}
   - component: {fileID: 206386586}
   - component: {fileID: 206386585}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -777,7 +777,7 @@ GameObject:
   - component: {fileID: 353634340}
   - component: {fileID: 353634342}
   - component: {fileID: 353634341}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -946,7 +946,7 @@ GameObject:
   m_Component:
   - component: {fileID: 366546642}
   - component: {fileID: 366546643}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -993,7 +993,7 @@ GameObject:
   - component: {fileID: 447992115}
   - component: {fileID: 447992117}
   - component: {fileID: 447992116}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1452,7 +1452,7 @@ GameObject:
   - component: {fileID: 584921216}
   - component: {fileID: 584921215}
   - component: {fileID: 584921214}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1551,7 +1551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 652122608}
   - component: {fileID: 652122609}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: LoadButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1597,7 +1597,7 @@ GameObject:
   m_Component:
   - component: {fileID: 677154558}
   - component: {fileID: 677154559}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: OptionsMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1650,7 +1650,7 @@ GameObject:
   - component: {fileID: 756448320}
   - component: {fileID: 756448322}
   - component: {fileID: 756448321}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2078,7 +2078,7 @@ GameObject:
   m_Component:
   - component: {fileID: 937599679}
   - component: {fileID: 937599680}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: HardButton (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2125,7 +2125,7 @@ GameObject:
   - component: {fileID: 1000379409}
   - component: {fileID: 1000379411}
   - component: {fileID: 1000379410}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2353,7 +2353,7 @@ GameObject:
   - component: {fileID: 1044992685}
   - component: {fileID: 1044992687}
   - component: {fileID: 1044992686}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2601,7 +2601,7 @@ GameObject:
   - component: {fileID: 1090901795}
   - component: {fileID: 1090901794}
   - component: {fileID: 1090901793}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2710,7 +2710,7 @@ GameObject:
   - component: {fileID: 1139822458}
   - component: {fileID: 1139822457}
   - component: {fileID: 1139822456}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: SelectedRing (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3023,7 +3023,7 @@ GameObject:
   - component: {fileID: 1299145763}
   - component: {fileID: 1299145762}
   - component: {fileID: 1299145761}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3134,7 +3134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1338881514}
   - component: {fileID: 1338881515}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: EasyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3180,7 +3180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1429791717}
   - component: {fileID: 1429791718}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: HardButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3528,7 +3528,7 @@ GameObject:
   - component: {fileID: 1620643761}
   - component: {fileID: 1620643763}
   - component: {fileID: 1620643762}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3954,7 +3954,7 @@ GameObject:
   - component: {fileID: 1930219474}
   - component: {fileID: 1930219473}
   - component: {fileID: 1930219472}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4251,7 +4251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1980274857}
   - component: {fileID: 1980274858}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: CreditsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4310,7 +4310,7 @@ GameObject:
   - component: {fileID: 2128563849}
   - component: {fileID: 2128563848}
   - component: {fileID: 2128563847}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6633,7 +6633,7 @@ GameObject:
   - component: {fileID: 3047302075494366183}
   - component: {fileID: 3047302075494366182}
   - component: {fileID: 3047302075494366177}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6718,7 +6718,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3047302075940575422}
   - component: {fileID: 3047302075940575423}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: StartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6773,7 +6773,7 @@ GameObject:
   - component: {fileID: 4623401409937415667}
   - component: {fileID: 3615652712741276990}
   - component: {fileID: 3297491796074321935}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8274,7 +8274,7 @@ GameObject:
   - component: {fileID: 5352219492566510523}
   - component: {fileID: 5352219492566510522}
   - component: {fileID: 5352219492566510525}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8380,7 +8380,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5352219492673931490}
   - component: {fileID: 5352219492673931491}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: OptionButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8506,7 +8506,7 @@ GameObject:
   - component: {fileID: 2316338143753915823}
   - component: {fileID: 5918212246422478178}
   - component: {fileID: 5606943068633270355}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10024,7 +10024,7 @@ GameObject:
   - component: {fileID: 8298921205550837045}
   - component: {fileID: 8298921205550837044}
   - component: {fileID: 8298921205550837043}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10084,7 +10084,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8298921205642628716}
   - component: {fileID: 8298921205642628717}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: QuitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10118,7 +10118,7 @@ GameObject:
   - component: {fileID: 1821739981319342881}
   - component: {fileID: 7731802282750745580}
   - component: {fileID: 8404432253424291549}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11201,7 +11201,7 @@ GameObject:
   - component: {fileID: 2646365451942961368}
   - component: {fileID: 8852456587600418896}
   - component: {fileID: 8852456587600418895}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Game Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
