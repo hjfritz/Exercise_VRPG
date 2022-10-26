@@ -9506,11 +9506,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9169887051186537091, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
       propertyPath: HP
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 9169887051186537091, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
       propertyPath: maxHP
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 9169887051186537091, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
       propertyPath: DeathConfirmed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
