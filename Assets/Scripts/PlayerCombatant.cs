@@ -8,6 +8,9 @@ public class PlayerCombatant : Combatant
     [SerializeField] private BattleActionMenu actionMenu;
     [SerializeField] private Kenobi kenobi;
     
+    [SerializeField] private HandAnimationController leftFist;
+    [SerializeField] private HandAnimationController rightFist;
+    
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -43,18 +46,23 @@ public class PlayerCombatant : Combatant
     private void MenuActionSelected(int arg0)
     {
         selectedAbility = actionAbilities[arg0];
-        ActionSelected.Invoke(actionAbilities[arg0]);
         hideActionMenu();
+        ActionSelected.Invoke(actionAbilities[arg0]);
+        
     }
     
     public void displayActionMenu()
     {
         actionMenu.gameObject.SetActive(true);
+        leftFist.Fist(true);
+        rightFist.Fist(true);
         actionMenu.GetComponent<TargetPrefabHeightAdjust>().AdjustHeight();
     }
 
     public void hideActionMenu()
     {
+        leftFist.Fist(false);
+        rightFist.Fist(false);
         actionMenu.gameObject.SetActive(false);
     }
     
