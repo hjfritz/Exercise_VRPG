@@ -12,6 +12,8 @@ namespace Training
         [SerializeField] private ParticleSystem ps2;
         [SerializeField] private GameObject sphere;
 
+        public Animator teacherAnimator;
+
         public bool entered = false;
         public bool trainerActive = false;
 
