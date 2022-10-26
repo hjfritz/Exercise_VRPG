@@ -26,8 +26,13 @@ public class Combatant : MonoBehaviour
     protected BattleAttackAbility selectedAbility;
     protected DefenseAbility selectedDefense;
     protected Combatant selectedTarget;
+
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private List<AudioClip> damageSFXClips = new List<AudioClip>();
+    
     
     private Random random = new Random();
+    private Random randomSFX = new Random();
     
     // Start is called before the first frame update
     protected virtual void Start()
@@ -115,6 +120,11 @@ public class Combatant : MonoBehaviour
         {
             damageEffect.Play();
         }
+        if (damageSFXClips.Count > 0)
+        {
+            int randomIndex = randomSFX.Next(0, damageSFXClips.Count);
+            audioSource.PlayOneShot(damageSFXClips[randomIndex]);
+        } 
         if (HP <= 0)
         {
             DeathConfirmed.Invoke();
