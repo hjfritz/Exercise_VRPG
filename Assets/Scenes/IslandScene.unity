@@ -9950,6 +9950,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Origin Battle with Physics Climb Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2075512245604781729, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
+      propertyPath: m_RequestedTrackingOriginMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2075512245604781734, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
       propertyPath: m_RootOrder
       value: 2
