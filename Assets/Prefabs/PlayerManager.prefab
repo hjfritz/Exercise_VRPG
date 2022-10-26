@@ -5427,8 +5427,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Player
-  HP: 100
-  maxHP: 100
+  HP: 250
+  maxHP: 250
   healthBar: {fileID: 719515568492996133}
   abilityTimer: {fileID: 719515567092920865}
   damageEffect: {fileID: 4304953831355836050}

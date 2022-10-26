@@ -80,7 +80,7 @@ namespace ActionLayers.ForceField
         
         private void AddFieldStrength(float handSpeed)
         {
-            ForceFieldDefense.fieldStrength += (int)handSpeed;
+            ForceFieldDefense.fieldStrength += (int)handSpeed*2;
         }
     }
 }
