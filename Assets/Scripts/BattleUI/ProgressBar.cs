@@ -17,6 +17,8 @@ public class ProgressBar : MonoBehaviour
 
     private Coroutine AnimationCoroutine;
 
+    public UnityEvent AnimationComplete;
+
     private void Start()
     {
         if (ProgressImage.type != Image.Type.Filled)
@@ -48,8 +50,7 @@ public class ProgressBar : MonoBehaviour
             {
                 StopCoroutine(AnimationCoroutine);
             }
-
-            if(ProgressImage.isActiveAndEnabled)
+            
             AnimationCoroutine = StartCoroutine(AnimateProgress(HP, maxHP, Speed));
         }
     }
@@ -70,5 +71,6 @@ public class ProgressBar : MonoBehaviour
 
         ProgressImage.fillAmount = Progress;
         label.text = $"HP {HP}/{maxHP}";
+        AnimationComplete.Invoke();
     }
 }

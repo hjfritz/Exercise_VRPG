@@ -7,7 +7,7 @@ public class PlayerCombatant : Combatant
 {
     [SerializeField] private BattleActionMenu actionMenu;
     [SerializeField] private Kenobi kenobi;
-    
+    [SerializeField] private CombatManagerMenu menu;
     [SerializeField] private HandAnimationController leftFist;
     [SerializeField] private HandAnimationController rightFist;
     
@@ -71,5 +71,23 @@ public class PlayerCombatant : Combatant
         base.ResetForNextTurn();
         actionMenu.MenuActionSelected.RemoveListener(MenuActionSelected);
         kenobi.StopDemo();
+    }
+    
+    public void HealDamage(int healpoints)
+    {
+        HP = Mathf.Min(maxHP, HP + healpoints);
+        menu.gameObject.SetActive(true);
+        menu.ShowBattleHudCanvas();
+        kenobi.gameObject.SetActive(false);
+        healthBar.AnimationComplete.AddListener(HealComplete);
+        healthBar.SetProgress(HP, maxHP, 1f);
+    }
+
+    private void HealComplete()
+    {
+        healthBar.AnimationComplete.RemoveListener(HealComplete);
+        kenobi.gameObject.SetActive(true);
+        menu.HideMenu();
+        menu.gameObject.SetActive(false);
     }
 }

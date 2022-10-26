@@ -5448,6 +5448,9 @@ MonoBehaviour:
   defenseAbilities: []
   actionMenu: {fileID: 2363313412129414585}
   kenobi: {fileID: 0}
+  menu: {fileID: 719515567614841307}
+  leftFist: {fileID: 0}
+  rightFist: {fileID: 0}
 --- !u!114 &719515567318764955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5548,6 +5551,8 @@ MonoBehaviour:
   punchClip: {fileID: 8300000, guid: fe132cb3d1683ae47bb94b752bc8a42e, type: 3}
   punchingArea: {fileID: 0}
   targetsPrefab: {fileID: 3321317725838458476, guid: 8668b2c6555876447b60a2a8b483903e, type: 3}
+  leftFist: {fileID: 0}
+  rightFist: {fileID: 0}
 --- !u!114 &719515567318764958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6566,6 +6571,9 @@ MonoBehaviour:
   ProgressImage: {fileID: 719515568492996139}
   DefaultSpeed: 3
   label: {fileID: 719515567867081668}
+  AnimationComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &719515568538975718
 GameObject:
   m_ObjectHideFlags: 0
