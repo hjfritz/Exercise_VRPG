@@ -9452,6 +9452,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1679570804627966736, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1714871463060630759, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1714871463438684094, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2075512245604781728, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
       propertyPath: m_Name
       value: XR Origin Battle with Physics Climb Variant
@@ -9499,6 +9511,30 @@ PrefabInstance:
     - target: {fileID: 2075512245604781734, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324324096153406878, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360007590639020649, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360007591001246000, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5633591322947427778, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669454999878924853, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669455000036776300, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9169887050845313283, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
       propertyPath: difficulty
