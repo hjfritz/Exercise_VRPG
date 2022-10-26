@@ -15,7 +15,10 @@ namespace Button_UI
 
         private bool menuOpen = false;
         private bool battleMenuWasOpen = false;
-        
+        [SerializeField] private HandAnimationController leftFist;
+        [SerializeField] private HandAnimationController rightFist;
+
+        private bool holdingFists = false;
         
         // Start is called before the first frame update
         void Start()
@@ -58,16 +61,30 @@ namespace Button_UI
                     battleActionMenu.SetActive(false);
                     battleMenuWasOpen = true;
                 }
+                leftFist.Fist(true);
+                rightFist.Fist(true);
+                holdingFists = true;
+
+
             }
             else
             {
                 optionsMenu.SetActive(false);
+                if (holdingFists)
+                {
+                    leftFist.Fist(false);
+                    rightFist.Fist(false);
+                    holdingFists = false;
+                }
+                
             }
 
             if (battleMenuWasOpen && !menuOpen)
             {
                 battleActionMenu.SetActive(true);
                 battleMenuWasOpen = false;
+                leftFist.Fist(true);
+                rightFist.Fist(true);
             }
             
             //Button operations

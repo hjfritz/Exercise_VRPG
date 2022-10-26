@@ -148,6 +148,14 @@ PrefabInstance:
       propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1353108004178299977, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
+      propertyPath: leftFist
+      value: 
+      objectReference: {fileID: 3934792268215007722}
+    - target: {fileID: 1353108004178299977, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
+      propertyPath: rightFist
+      value: 
+      objectReference: {fileID: 4438953750776720101}
     - target: {fileID: 1357487818140216902, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
       propertyPath: m_Layer
       value: 3
