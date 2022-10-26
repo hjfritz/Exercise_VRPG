@@ -2,9 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DeathZone : MonoBehaviour
 {
+    [SerializeField] private UnityEvent GoToHell;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +22,6 @@ public class DeathZone : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Call Death
+        GoToHell.Invoke();
     }
 }
