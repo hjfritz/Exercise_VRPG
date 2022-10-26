@@ -4155,7 +4155,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 746493605}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AttachTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9934,6 +9934,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1679570804627966736, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1714871463060630759, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1714871463438684094, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2075512245604781728, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
       propertyPath: m_Name
       value: XR Origin Battle with Physics Climb Variant
@@ -9981,6 +9993,30 @@ PrefabInstance:
     - target: {fileID: 2075512245604781734, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324324096153406878, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360007590639020649, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360007591001246000, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5633591322947427778, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669454999878924853, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669455000036776300, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7832562336009015221, guid: fadf11564c45f454a8be05070c2efa63, type: 3}
       propertyPath: _armSwingMaxSpeed
@@ -13802,7 +13838,7 @@ GameObject:
   - component: {fileID: 3576140901067742306}
   - component: {fileID: 3576140901067742305}
   - component: {fileID: 3576140901067742307}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HubToken
   m_TagString: Untagged
   m_Icon: {fileID: 0}

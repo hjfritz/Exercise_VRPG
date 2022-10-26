@@ -64,6 +64,15 @@ namespace Button_UI
                 leftFist.Fist(true);
                 rightFist.Fist(true);
                 holdingFists = true;
+                
+                if (player.difficulty)
+                {
+                    difficulty.text = "Hard";
+                }
+                else
+                {
+                    difficulty.text = "Easy";
+                }
 
 
             }
@@ -103,14 +112,14 @@ namespace Button_UI
             {
                 if (player.difficulty)
                 {
+                    player.difficulty = false;
                     difficulty.text = "Easy";
                 }
                 else
                 {
+                    player.difficulty = true;
                     difficulty.text = "Hard";
                 }
-                
-                player.difficulty = !player.difficulty;
                 OptionButtons.ResetButtons();
             }
         }
