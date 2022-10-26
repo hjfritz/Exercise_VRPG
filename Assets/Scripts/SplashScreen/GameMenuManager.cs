@@ -10,6 +10,7 @@ namespace SplashScreen
         
         [SerializeField] private GameObject mainMenu;
         [SerializeField] private GameObject optionsMenu;
+        [SerializeField] private GameObject creditsMenu;
         
         // Start is called before the first frame update
         void Start()
@@ -43,6 +44,8 @@ namespace SplashScreen
                 }else if (OptionButtons.ButtonChoice == 4)
                 {
                     //Credits Button
+                    creditsMenu.SetActive(true);
+                    mainMenu.SetActive(false);
                     OptionButtons.ResetButtons();
                 }else if (OptionButtons.ButtonChoice == 5)
                 {
