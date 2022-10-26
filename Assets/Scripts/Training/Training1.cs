@@ -65,7 +65,7 @@ namespace Training
         public void StartTraining1()
         {
             teacher = TrainingManager.currentTeacher;
-            _animator = teacher.GetComponentInChildren<Animator>();
+            _animator = teacher.GetComponent<TrainingTrigger>().teacherAnimator;
             StartCoroutine(PlayIntro());
         }
 

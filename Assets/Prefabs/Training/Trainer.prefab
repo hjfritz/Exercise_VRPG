@@ -6268,7 +6268,8 @@ MonoBehaviour:
   model: {fileID: 3309426591934010784}
   ps: {fileID: 7293089469635773720}
   ps2: {fileID: 4065795603993269798}
-  sphere: {fileID: 0}
+  sphere: {fileID: 9010322205306558567}
+  teacherAnimator: {fileID: 3575070591880799876}
   entered: 0
   trainerActive: 0
 --- !u!1 &3349001752472803748
