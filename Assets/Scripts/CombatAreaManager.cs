@@ -107,8 +107,12 @@ public class CombatAreaManager : MonoBehaviour
         _pm.FightEnd.Invoke();
         _battleRig.GetComponent<LocomotionSwitch>().ToggleLocomotion(true);
         
-        BGMsource.clip = backgroundMusic;
-        BGMsource.Play();
+        
+        if (_pm.GetComponentInChildren<PlayerCombatant>().GetHP() > 0)
+        {
+            BGMsource.clip = backgroundMusic;
+            BGMsource.Play();
+        }
     }
     
     
