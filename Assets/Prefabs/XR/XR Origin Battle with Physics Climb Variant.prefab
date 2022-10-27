@@ -290,6 +290,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4438953750776720101}
     - target: {fileID: 1820313457542825634, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
+      propertyPath: damageSFXClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: e92f75da5818787459ee1ce1737d4f8e, type: 3}
+    - target: {fileID: 1820313457542825634, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
+      propertyPath: damageSFXClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: a0712b28f4d7d4641847ec6f82d85472, type: 3}
+    - target: {fileID: 1820313457542825634, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
+      propertyPath: damageSFXClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: ca51dd6d172184741889a63385bfafea, type: 3}
+    - target: {fileID: 1820313457542825634, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
       propertyPath: DeathConfirmed.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
