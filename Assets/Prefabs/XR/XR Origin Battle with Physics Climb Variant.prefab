@@ -533,6 +533,42 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4586022140633499399, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586022140633499399, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.98080873
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586022140633499399, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586022140633499399, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
+      propertyPath: TrailModule.colorOverTrail.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586022140633499399, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
+      propertyPath: TrailModule.colorOverTrail.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586022140633499399, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
+      propertyPath: TrailModule.colorOverTrail.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586022140633499399, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586022140633499399, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586022140633499399, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4715924744816308316, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -824,6 +860,10 @@ PrefabInstance:
     - target: {fileID: 8849368370645469831, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849368371374004413, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
+      propertyPath: near clip plane
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 8849368371761425958, guid: b35e6346483c82e4f9d085374bc3da34, type: 3}
       propertyPath: m_AnimateModel

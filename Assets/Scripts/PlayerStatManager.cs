@@ -52,9 +52,9 @@ public class PlayerStatManager : MonoBehaviour
        // PlayerPrefs.SetInt("Coins", countCoins);
        // PlayerPrefs.SetInt("HP", hps);
         //PlayerPrefs.SetInt("Enemies", defeatedEnemies);
-        PlayerPrefs.SetInt("Difficulty", Convert.ToInt32(difficulty));
-        PlayerPrefs.SetInt("Trainers", trainersFinished);
-        PlayerPrefs.SetInt("Level", levelProgression);
+        //PlayerPrefs.SetInt("Difficulty", Convert.ToInt32(difficulty));
+        //PlayerPrefs.SetInt("Trainers", trainersFinished);
+        //PlayerPrefs.SetInt("Level", levelProgression);
     }
 
     public void Load()
@@ -67,15 +67,15 @@ public class PlayerStatManager : MonoBehaviour
         //hps = PlayerPrefs.GetInt(("HP"));
         //pCombatant.UpdateHP(hps);
         //defeatedEnemies = PlayerPrefs.GetInt("Enemies");
-        trainersFinished = PlayerPrefs.GetInt("Trainers");
-        levelProgression = PlayerPrefs.GetInt("Level");
-        if (PlayerPrefs.GetInt("Difficulty") == 0)
-        {
-            difficulty = false;
-        }else if (PlayerPrefs.GetInt("Difficulty") == 1)
-        {
-            difficulty = true;
-        }
+        //trainersFinished = PlayerPrefs.GetInt("Trainers");
+        //levelProgression = PlayerPrefs.GetInt("Level");
+        //if (PlayerPrefs.GetInt("Difficulty") == 0)
+        //{
+        //    difficulty = false;
+        //}else if (PlayerPrefs.GetInt("Difficulty") == 1)
+        //{
+        //    difficulty = true;
+        //}
         
         //hasGloves= PlayerPrefs.GetInt("Gloves");
     }
