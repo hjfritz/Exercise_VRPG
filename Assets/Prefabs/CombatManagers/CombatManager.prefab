@@ -147,7 +147,7 @@ Transform:
   - {fileID: 2230399104789029662}
   - {fileID: 3816548374009881170}
   - {fileID: 7058260561946494117}
-  - {fileID: 8351697174751284972}
+  - {fileID: 8754849850849150134}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -483,7 +483,7 @@ MonoBehaviour:
   maxHP: 100
   healthBar: {fileID: 7930082053657885017}
   abilityTimer: {fileID: 6506309937530477371}
-  damageEffect: {fileID: 6961309538886172598}
+  damageEffect: {fileID: 7639164886723393004}
   ActionSelected:
     m_PersistentCalls:
       m_Calls:
@@ -546,6 +546,8 @@ MonoBehaviour:
         m_CallState: 2
   actionAbilities: []
   defenseAbilities: []
+  audioSource: {fileID: 0}
+  damageSFXClips: []
 --- !u!114 &2230399106149630315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1428,7 +1430,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2211281168651552604, guid: 7d2171db87be44245bc6553678ac647f, type: 3}
   m_PrefabInstance: {fileID: 8123723094881140228}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &8304803806283666349
+--- !u!1001 &8780012487279401463
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1457,11 +1459,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 47190332247809345, guid: ebf83faea22867e408d208c6562def5e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.1
+      value: 1.173
       objectReference: {fileID: 0}
     - target: {fileID: 47190332247809345, guid: ebf83faea22867e408d208c6562def5e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.15
+      value: -0.333
       objectReference: {fileID: 0}
     - target: {fileID: 47190332247809345, guid: ebf83faea22867e408d208c6562def5e, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1477,13 +1479,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebf83faea22867e408d208c6562def5e, type: 3}
---- !u!198 &6961309538886172598 stripped
+--- !u!198 &7639164886723393004 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 1430769378181295131, guid: ebf83faea22867e408d208c6562def5e, type: 3}
-  m_PrefabInstance: {fileID: 8304803806283666349}
+  m_PrefabInstance: {fileID: 8780012487279401463}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &8351697174751284972 stripped
+--- !u!4 &8754849850849150134 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 47190332247809345, guid: ebf83faea22867e408d208c6562def5e, type: 3}
-  m_PrefabInstance: {fileID: 8304803806283666349}
+  m_PrefabInstance: {fileID: 8780012487279401463}
   m_PrefabAsset: {fileID: 0}

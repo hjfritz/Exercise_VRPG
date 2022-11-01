@@ -750,6 +750,8 @@ MonoBehaviour:
         m_CallState: 2
   actionAbilities: []
   defenseAbilities: []
+  audioSource: {fileID: 0}
+  damageSFXClips: []
 --- !u!114 &2650274694705121748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2794,11 +2796,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 47190332247809345, guid: ebf83faea22867e408d208c6562def5e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.97
+      value: 1.173
       objectReference: {fileID: 0}
     - target: {fileID: 47190332247809345, guid: ebf83faea22867e408d208c6562def5e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.15
+      value: -0.333
       objectReference: {fileID: 0}
     - target: {fileID: 47190332247809345, guid: ebf83faea22867e408d208c6562def5e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2830,7 +2832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6836787974875191792, guid: ebf83faea22867e408d208c6562def5e, type: 3}
       propertyPath: m_Name
-      value: ExclamationParticleSystem
+      value: DamagePS
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebf83faea22867e408d208c6562def5e, type: 3}

@@ -1134,7 +1134,7 @@ MonoBehaviour:
   maxHP: 100
   healthBar: {fileID: 322442612905304426}
   abilityTimer: {fileID: 3476719741845373704}
-  damageEffect: {fileID: 4135933185621088891}
+  damageEffect: {fileID: 1303780401367801379}
   ActionSelected:
     m_PersistentCalls:
       m_Calls:
@@ -1197,6 +1197,8 @@ MonoBehaviour:
         m_CallState: 2
   actionAbilities: []
   defenseAbilities: []
+  audioSource: {fileID: 0}
+  damageSFXClips: []
 --- !u!114 &8396746476087466328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1273,7 +1275,7 @@ Transform:
   - {fileID: 8396746476087466309}
   - {fileID: 8396746477444905773}
   - {fileID: 6810531993460488801}
-  - {fileID: 3033582413470493473}
+  - {fileID: 102262477023276921}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1538,7 +1540,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!1001 &3080132817929205344
+--- !u!1001 &129734079412466232
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1567,11 +1569,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 47190332247809345, guid: ebf83faea22867e408d208c6562def5e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.23
+      value: 1.173
       objectReference: {fileID: 0}
     - target: {fileID: 47190332247809345, guid: ebf83faea22867e408d208c6562def5e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.15
+      value: -0.333
       objectReference: {fileID: 0}
     - target: {fileID: 47190332247809345, guid: ebf83faea22867e408d208c6562def5e, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1587,15 +1589,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebf83faea22867e408d208c6562def5e, type: 3}
---- !u!4 &3033582413470493473 stripped
+--- !u!4 &102262477023276921 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 47190332247809345, guid: ebf83faea22867e408d208c6562def5e, type: 3}
-  m_PrefabInstance: {fileID: 3080132817929205344}
+  m_PrefabInstance: {fileID: 129734079412466232}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &4135933185621088891 stripped
+--- !u!198 &1303780401367801379 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 1430769378181295131, guid: ebf83faea22867e408d208c6562def5e, type: 3}
-  m_PrefabInstance: {fileID: 3080132817929205344}
+  m_PrefabInstance: {fileID: 129734079412466232}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5798404786456619165
 PrefabInstance:
