@@ -8,6 +8,7 @@ public class HandAnimationController : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private InputActionReference grab;
+    [SerializeField] private SkinnedMeshRenderer renderer;
 
     private void Start()
     {
@@ -31,5 +32,10 @@ public class HandAnimationController : MonoBehaviour
     public void Fist(bool fist)
     {
         animator.SetBool("Fist", fist);
+    }
+
+    public void HideHand(bool hide)
+    {
+        renderer.enabled = !hide;
     }
 }
